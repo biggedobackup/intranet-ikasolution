@@ -1,0 +1,44 @@
+Liste SharePoint : EmployesDuMois
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title) — Nom du collaborateur
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Poste
+   - Type : Ligne de texte
+   - Requis : Oui
+
+3. Département
+   - Type : Choix (Direction, Gestion de projet, Développement, Comptabilité, Système, ...)
+   - Requis : Oui
+
+4. Mois
+   - Type : Choix (Janvier ... Décembre)
+   - Requis : Oui
+
+5. Année
+   - Type : Nombre
+   - Requis : Oui
+
+6. Citation
+   - Type : Texte multiligne
+   - Requis : Oui
+
+7. Photo
+   - Type : Texte multiligne (JSON {"fileName":"..."})
+   - Requis : Non
+
+8. Nombre de likes (LikedBy)
+   - Type : Texte multiligne (JSON de emails)
+   - Requis : Non
+
+9. Commentaires (Comments)
+   - Type : Texte multiligne (JSON)
+   - Requis : Non
+
+10. Active
+    - Type : Oui/Non
+    - Requis : Oui

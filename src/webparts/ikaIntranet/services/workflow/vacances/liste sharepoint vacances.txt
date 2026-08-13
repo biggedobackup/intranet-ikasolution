@@ -1,0 +1,55 @@
+Liste SharePoint : Demande de Vacances
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title)
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Demandeur
+   - Type : Personne ou groupe
+   - Requis : Oui
+
+3. Destination
+   - Type : Ligne de texte
+   - Requis : Oui
+
+4. DateDebut
+   - Type : Date
+   - Requis : Oui
+
+5. DateFin
+   - Type : Date
+   - Requis : Oui
+
+6. Jours
+   - Type : Nombre
+   - Requis : Oui
+
+7. Motif
+   - Type : Texte multiligne
+   - Requis : Oui
+
+8. Validateur
+   - Type : Personne ou groupe
+   - Requis : Non
+   - Usage : Personne en charge de la validation de la demande
+
+9. Statut
+   - Type : Choix (En attente, Approuvé, Refusé, Annulé)
+   - Requis : Oui
+
+10. CommentaireDecision
+   - Type : Texte multiligne
+   - Requis : Non
+   - Usage : Commentaire du validateur lors de la validation ou du rejet
+
+11. DateDecision
+   - Type : Date
+   - Requis : Non
+   - Usage : Date à laquelle la demande a été validée ou rejetée
+
+12. Active
+   - Type : Oui/Non
+   - Requis : Oui

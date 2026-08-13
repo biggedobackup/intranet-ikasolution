@@ -1,0 +1,32 @@
+Liste SharePoint : Produits
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title) — Nom du produit/service
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Description
+   - Type : Texte multiligne
+   - Requis : Oui
+
+3. Catégorie
+   - Type : Choix (Développement, Infrastructure, Systèmes d'information, Services, ...)
+   - Requis : Oui
+
+4. Icone
+   - Type : Choix (cubes, cloud, chart-line, mobile-screen-button, headset, graduation-cap)
+   - Requis : Oui
+
+5. Points forts
+   - Type : Texte multiligne (un par ligne)
+   - Requis : Non
+
+6. Images
+   - Type : Texte multiligne (JSON {"fileName":"..."})
+   - Requis : Non
+
+7. Active
+   - Type : Oui/Non
+   - Requis : Oui

@@ -1,0 +1,32 @@
+Liste SharePoint : Annonces
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title)
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Type
+   - Type : Choix (Anniversaire, Mariage, Naissance, Absence, ...)
+   - Requis : Oui
+
+3. Message
+   - Type : Texte multiligne
+   - Requis : Oui
+
+4. Date de publication
+   - Type : Date et heure
+   - Requis : Oui
+
+5. Utilisateurs (avatars)
+   - Type : Texte multiligne (JSON des URLs/emails)
+   - Requis : Non
+
+6. Photo
+   - Type : Texte multiligne (JSON {"fileName":"..."})
+   - Requis : Non
+
+7. Active
+   - Type : Oui/Non
+   - Requis : Oui

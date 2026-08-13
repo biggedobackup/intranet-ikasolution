@@ -1,0 +1,59 @@
+{
+  "name": "ika-intranet-v2",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=22.14.0 < 23.0.0"
+  },
+  "scripts": {
+    "build": "heft test --clean --production && heft package-solution --production",
+    "clean": "heft clean",
+    "start": "heft start --clean",
+    "dev": "heft start --clean",
+    "tailwind:build": "tailwindcss -i ./src/webparts/ikaIntranet/assets/css/tailwind.css -o ./src/webparts/ikaIntranet/assets/css/tailwind.generated.css --minify"
+  },
+  "dependencies": {
+    "@fluentui/react": "^8.106.4",
+    "@microsoft/sp-component-base": "1.23.0",
+    "@microsoft/sp-core-library": "1.23.0",
+    "@microsoft/sp-lodash-subset": "1.23.0",
+    "@microsoft/sp-office-ui-fabric-core": "1.23.0",
+    "@microsoft/sp-property-pane": "1.23.0",
+    "@microsoft/sp-webpart-base": "1.23.0",
+    "jquery": "3.7.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-icons": "^4.12.0",
+    "swiper": "^12.2.0",
+    "tslib": "2.3.1"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-config-spfx": "1.23.0",
+    "@microsoft/eslint-plugin-spfx": "1.23.0",
+    "@microsoft/sp-module-interfaces": "1.23.0",
+    "@microsoft/spfx-heft-plugins": "1.23.0",
+    "@microsoft/spfx-web-build-rig": "1.23.0",
+    "@rushstack/heft": "1.2.17",
+    "@types/jest": "30.0.0",
+    "@types/jquery": "^3.5.14",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
+    "@types/webpack-env": "~1.15.2",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^10.0.3",
+    "css-loader": "~7.1.2",
+    "eslint": "9.37.0",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "postcss": "^8.4.49",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.0"
+  },
+  "overrides": {
+    "@rushstack/heft": "1.2.17"
+  },
+  "resolutions": {
+    "@types/react": "17.0.45"
+  }
+}

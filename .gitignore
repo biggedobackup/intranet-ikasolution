@@ -1,0 +1,5 @@
+# Dépendances
+node_modules
+
+# Système macOS
+.DS_Store

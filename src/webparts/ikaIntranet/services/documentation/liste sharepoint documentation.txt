@@ -1,0 +1,32 @@
+Liste SharePoint : Documentation
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title) — Nom du document
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Description
+   - Type : Texte multiligne
+   - Requis : Non
+
+3. Dossier
+   - Type : Choix (IKAR, DEV, SP, COMPTA, GCIBTC)
+   - Requis : Oui
+
+4. Type de fichier
+   - Type : Choix (PDF, DOCX, XLSX, ...)
+   - Requis : Oui
+
+5. Fichier
+   - Type : Texte multiligne (JSON {"fileName":"..."}) via AttachmentFiles
+   - Requis : Oui
+
+6. Taille
+   - Type : Ligne de texte
+   - Requis : Non
+
+7. Active
+   - Type : Oui/Non
+   - Requis : Oui

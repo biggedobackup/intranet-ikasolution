@@ -1,0 +1,36 @@
+Liste SharePoint : Projets
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title) — Nom du projet
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Description
+   - Type : Texte multiligne
+   - Requis : Oui
+
+3. Client
+   - Type : Ligne de texte
+   - Requis : Non
+
+4. Date de début
+   - Type : Date
+   - Requis : Oui
+
+5. Date de fin
+   - Type : Date
+   - Requis : Non
+
+6. Statut
+   - Type : Choix (En cours, Terminé, En retard, En attente, ...)
+   - Requis : Oui
+
+7. Équipe projet
+   - Type : Texte multiligne
+   - Requis : Non
+
+8. Active
+   - Type : Oui/Non
+   - Requis : Oui

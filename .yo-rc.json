@@ -1,0 +1,23 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "ika-intranet-v2",
+    "environment": "spo",
+    "packageManager": "npm",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "useGulp": false,
+    "componentType": "webpart",
+    "template": "react",
+    "componentName": "IkaIntranetApp",
+    "componentDescription": "Web Part principal de l'intranet IKA Solution",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "25.6.0",
+    "sdksVersions": {},
+    "version": "1.23.0",
+    "libraryName": "ika-intranet-v2",
+    "libraryId": "5be2c080-eff9-476b-ab54-d9ed721149b8",
+    "solutionShortDescription": "ika-intranet-v2 description"
+  }
+}

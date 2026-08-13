@@ -1,0 +1,28 @@
+Liste SharePoint : Bilans
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title) — Période du bilan
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Résumé
+   - Type : Texte multiligne
+   - Requis : Oui
+
+3. Points clés
+   - Type : Texte multiligne (un par ligne)
+   - Requis : Non
+
+4. Fichier PDF
+   - Type : Texte multiligne (JSON {"fileName":"..."}) via AttachmentFiles
+   - Requis : Oui
+
+5. Taille
+   - Type : Ligne de texte
+   - Requis : Non
+
+6. Active
+   - Type : Oui/Non
+   - Requis : Oui

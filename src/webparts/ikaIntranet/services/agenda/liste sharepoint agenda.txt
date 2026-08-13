@@ -1,0 +1,36 @@
+Liste SharePoint : Agendas
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title)
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Description
+   - Type : Texte multiligne
+   - Requis : Oui
+
+3. Date et heure de début
+   - Type : Date et heure
+   - Requis : Oui
+
+4. Date et heure de fin
+   - Type : Date et heure
+   - Requis : Non
+
+5. Localisation
+   - Type : Ligne de texte
+   - Requis : Oui
+
+6. Catégorie
+   - Type : Choix (Réunion, Formation, Échéance, Projet, Séminaire, ...)
+   - Requis : Oui
+
+7. Organisateur
+   - Type : Ligne de texte
+   - Requis : Non
+
+8. Active
+   - Type : Oui/Non
+   - Requis : Oui

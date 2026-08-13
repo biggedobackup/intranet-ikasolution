@@ -1,0 +1,40 @@
+Liste SharePoint : Equipes
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title) — Nom complet
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Poste (Role)
+   - Type : Ligne de texte
+   - Requis : Oui
+
+3. Département
+   - Type : Choix (Direction, Gestion de projet, Développement, Comptabilité, Système, ...)
+   - Requis : Oui
+
+4. Téléphone Mobile
+   - Type : Ligne de texte
+   - Requis : Oui
+
+5. Poste IP
+   - Type : Nombre
+   - Requis : Oui
+
+6. Email
+   - Type : Ligne de texte
+   - Requis : Oui
+
+7. Bio
+   - Type : Texte multiligne
+   - Requis : Non
+
+8. Photo
+   - Type : Texte multiligne (JSON {"fileName":"..."})
+   - Requis : Non
+
+9. Active
+   - Type : Oui/Non
+   - Requis : Oui

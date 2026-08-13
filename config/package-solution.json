@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ika-intranet-v2-client-side-solution",
+    "id": "5be2c080-eff9-476b-ab54-d9ed721149b8",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.23.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ika-intranet-v2 description"
+      },
+      "longDescription": {
+        "default": "ika-intranet-v2 description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ika-intranet-v2 Feature",
+        "description": "The feature that activates elements of the ika-intranet-v2 solution.",
+        "id": "ab732db9-6440-448b-9a2f-652808deafb7",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ika-intranet-v2.sppkg"
+  }
+}

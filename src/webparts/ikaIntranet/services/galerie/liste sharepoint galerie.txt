@@ -1,0 +1,24 @@
+Liste SharePoint : Galerie
+===============================
+
+Champs à créer dans la liste :
+
+1. Titre (Title) — Légende de la photo
+   - Type : Ligne de texte
+   - Requis : Oui
+
+2. Catégorie
+   - Type : Choix (Séminaire, Team Building, Vie d'équipe, Cérémonie, Formation, Atelier, Conférence, ...)
+   - Requis : Oui
+
+3. Image
+   - Type : Texte multiligne (JSON {"fileName":"..."}) via AttachmentFiles
+   - Requis : Oui
+
+4. Date de l'événement
+   - Type : Date
+   - Requis : Non
+
+5. Active
+   - Type : Oui/Non
+   - Requis : Oui
