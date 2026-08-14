@@ -96,13 +96,13 @@ export const App: React.FC<IAppProps> = ({ siteUrl }) => {
     <div ref={rootRef} className="min-h-screen flex flex-col bg-slate-100 text-ikaInk antialiased">
       <Header menuItems={menuItems} />
       <ScrollToTop hash={hash} rootRef={rootRef} />
-      {page === 'accueil' && <Accueil />}
-      {page === 'detail-evenement' && <DetailEvenement />}
-      {page === 'tous-evenements' && <TousEvenements />}
-      {page === 'detail-actualite' && <DetailActualite />}
-      {page === 'toutes-actualites' && <ToutesActualites />}
-      {page === 'detail-agenda' && <DetailAgenda />}
-      {page === 'toutes-agenda' && <ToutesAgenda />}
+      {page === 'accueil' && <Accueil siteUrl={siteUrl} />}
+      {page === 'detail-evenement' && <DetailEvenement siteUrl={siteUrl} />}
+      {page === 'tous-evenements' && <TousEvenements siteUrl={siteUrl} />}
+      {page === 'detail-actualite' && <DetailActualite siteUrl={siteUrl} />}
+      {page === 'toutes-actualites' && <ToutesActualites siteUrl={siteUrl} />}
+      {page === 'detail-agenda' && <DetailAgenda siteUrl={siteUrl} />}
+      {page === 'toutes-agenda' && <ToutesAgenda siteUrl={siteUrl} />}
       {page === 'detail-membre' && <DetailMembre />}
       {page === 'toute-equipe' && <TouteEquipe />}
       {page === 'detail-projet' && <DetailProjet />}

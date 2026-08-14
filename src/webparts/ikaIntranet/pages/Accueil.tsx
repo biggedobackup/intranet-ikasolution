@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { loadAgendas, IAgendaItem } from '../services/agenda/index';
+import { loadActualites, IActualite } from '../services/actualites/index';
+import { loadEvenements, IEvenement } from '../services/evenements/index';
 import {
   FaBullhorn,
   FaCalendarDays,
@@ -61,51 +64,6 @@ const IMG = {
   gal5: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80',
   gal6: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80'
 };
-
-const EVENTS = [
-  {
-    img: IMG.seminar,
-    title: 'Séminaire Innovation & Transformation Digitale',
-    dateIcon: 'text-amber-400',
-    date: '25 - 27 Juillet 2026',
-    locationIcon: 'text-amber-400',
-    location: 'Ouagadougou, Burkina Faso',
-    text: "3 jours d'échanges et d'ateliers autour de l'innovation, des architectures Cloud et de la transformation digitale des entreprises."
-  },
-  {
-    img: IMG.workshop,
-    title: 'Workshop SharePoint Framework (SPFx)',
-    dateIcon: 'text-emerald-400',
-    date: '12 Août 2026',
-    locationIcon: 'text-emerald-400',
-    location: 'Lab DEV IKA SOLUTION',
-    text: "Montée en compétences sur la création des composants WebPart sur-mesure et l'intégration API pour le portail intranet."
-  },
-  {
-    img: IMG.teambuilding,
-    title: 'Afterwork de rentrée & Tech Outdoor Challenge',
-    dateIcon: 'text-purple-400',
-    date: '05 Septembre 2026',
-    locationIcon: 'text-purple-400',
-    location: 'Espace Plein Air — Bangr Weogo',
-    text: "Un moment de partage, d'activités de cohésion et de détente apprécié par l'ensemble des équipes d'IKA SOLUTION."
-  }
-];
-
-const NEWS = [
-  { img: IMG.news1, title: 'Nouvelle charte graphique IKA', text: "Découvrez notre nouvelle identité visuelle qui reflète notre évolution.", time: 'Il y a 2 heures' },
-  { img: IMG.news2, title: 'Succès du projet IKAR', text: 'Le projet IKAR a été livré avec succès au client.', time: 'Il y a 1 jour' },
-  { img: IMG.news3, title: "Afterwork de l'équipe", text: 'Un moment de partage et de détente apprécié par tous !', time: 'Il y a 2 jours' },
-  { img: IMG.news4, title: 'Nouveaux arrivants', text: 'Bienvenue aux nouveaux collaborateurs du département DEV.', time: 'Il y a 3 jours' }
-];
-
-const AGENDA = [
-  { month: 'JUL', day: '17', bg: 'bg-ikaBlueDark', title: "Réunion d'équipe", time: '10:00 - 11:00' },
-  { month: 'JUL', day: '18', bg: 'bg-ikaRed', title: 'Formation Leadership', time: '09:00 - 16:00' },
-  { month: 'JUL', day: '21', bg: 'bg-ikaBlueDark', title: 'Deadline Rapport', time: 'Toute la journée' },
-  { month: 'JUL', day: '23', bg: 'bg-emerald-600', title: 'Soutenance Projet IKAVISITE', time: '14:00 - 15:30' },
-  { month: 'JUL', day: '25', bg: 'bg-ikaRed', title: 'Séminaire Innovation', time: '08:30 - 17:00' }
-];
 
 const DEPT_COLORS: Record<string, string> = {
   Direction: 'bg-blue-50 text-ikaBlue',
@@ -283,8 +241,14 @@ function SectionHeader(props: { iconCls: string; icon: React.ReactNode; title: s
 
 /* ============================== COMPOSANT ACCUEIL ============================== */
 
-export const Accueil: React.FC = () => {
+export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [eventIndex, setEventIndex] = React.useState(0);
+  const [agendas, setAgendas] = React.useState<IAgendaItem[]>([]);
+  const [actualites, setActualites] = React.useState<IActualite[]>([]);
+  const [evenements, setEvenements] = React.useState<IEvenement[]>([]);
+  const [agendaLoading, setAgendaLoading] = React.useState(true);
+  const [actualitesLoading, setActualitesLoading] = React.useState(true);
+  const [evenementsLoading, setEvenementsLoading] = React.useState(true);
   const [teamSearch, setTeamSearch] = React.useState('');
   const [teamDept, setTeamDept] = React.useState('all');
   const [annFilter, setAnnFilter] = React.useState('all');
@@ -297,16 +261,67 @@ export const Accueil: React.FC = () => {
   ]);
   const [commentInput, setCommentInput] = React.useState('');
   const [commentCount, setCommentCount] = React.useState(8);
+  const [annLikes, setAnnLikes] = React.useState<Record<number, { liked: boolean; count: number }>>({
+    1: { liked: false, count: 12 },
+    2: { liked: false, count: 8 },
+    3: { liked: false, count: 5 }
+  });
+  const [annComments, setAnnComments] = React.useState<Record<number, Array<{ user: string; text: string; mine?: boolean }>>>({
+    1: [
+      { user: 'Aïcha KABORÉ :', text: ' Bonne fête Kadiatou ! 🎉' },
+      { user: 'Jean OUEDRAOGO :', text: ' Tous mes vœux ! 👏' }
+    ]
+  });
+  const [annCommentCounts, setAnnCommentCounts] = React.useState<Record<number, number>>({ 1: 12, 2: 7, 3: 4 });
+  const [annonceCommentId, setAnnonceCommentId] = React.useState<number | null>(null);
+  const [annonceCommentInput, setAnnonceCommentInput] = React.useState('');
   const [memberModal, setMemberModal] = React.useState<IMember | null>(null);
   const [galleryModal, setGalleryModal] = React.useState<number | null>(null);
   const [galleryIndex, setGalleryIndex] = React.useState(0);
 
   React.useEffect(() => {
+    if (!siteUrl) {
+      setAgendaLoading(false);
+      setActualitesLoading(false);
+      setEvenementsLoading(false);
+      return;
+    }
+    loadAgendas(siteUrl)
+      .then((data) => {
+        setAgendas(data);
+        setAgendaLoading(false);
+      })
+      .catch((err) => {
+        console.error('[Accueil] Agenda :', err);
+        setAgendaLoading(false);
+      });
+    loadActualites(siteUrl)
+      .then((data) => {
+        setActualites(data);
+        setActualitesLoading(false);
+      })
+      .catch((err) => {
+        console.error('[Accueil] Actualités :', err);
+        setActualitesLoading(false);
+      });
+    loadEvenements(siteUrl)
+      .then((data) => {
+        setEvenements(data);
+        setEvenementsLoading(false);
+      })
+      .catch((err) => {
+        console.error('[Accueil] Événements :', err);
+        setEvenementsLoading(false);
+      });
+  }, [siteUrl]);
+
+  React.useEffect(() => {
+    if (evenements.length < 2) return undefined;
     const timer = setInterval(() => {
-      setEventIndex((prev) => (prev + 1) % EVENTS.length);
+      setEventIndex((prev) => (prev + 1) % evenements.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [evenements.length]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
@@ -356,7 +371,26 @@ export const Accueil: React.FC = () => {
     setCommentModal(false);
   };
 
-  const event = EVENTS[eventIndex];
+  const toggleAnnLike = (id: number): void => {
+    setAnnLikes((prev) => {
+      const cur = prev[id] || { liked: false, count: 0 };
+      return { ...prev, [id]: { liked: !cur.liked, count: cur.liked ? cur.count - 1 : cur.count + 1 } };
+    });
+  };
+
+  const addAnnonceComment = (e: React.FormEvent): void => {
+    e.preventDefault();
+    const val = annonceCommentInput.trim();
+    if (!val) return;
+    const id = annonceCommentId;
+    if (id === null) return;
+    setAnnComments((prev) => ({ ...prev, [id]: [...(prev[id] || []), { user: 'Vous :', text: ` ${val}`, mine: true }] }));
+    setAnnCommentCounts((prev) => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
+    setAnnonceCommentInput('');
+    setAnnonceCommentId(null);
+  };
+
+  const event = evenements.length ? evenements[eventIndex % evenements.length] : null;
 
   return (
     <main id="page-accueil" className="pt-4 sm:pt-5 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -376,7 +410,7 @@ export const Accueil: React.FC = () => {
             <div className="relative flex-1 min-h-[320px] sm:min-h-[350px] rounded-xl overflow-hidden bg-slate-950 text-white flex flex-col justify-end p-5 sm:p-7">
               <div className="absolute top-1/2 right-3 z-30 flex -translate-y-1/2 flex-col items-center gap-2 bg-slate-950/75 backdrop-blur-md px-2 py-2 rounded-full border border-white/15 shadow-xl">
                 <div className="flex flex-col items-center gap-1.5">
-                  {EVENTS.map((e, i) => (
+                  {evenements.map((e, i) => (
                     <button
                       key={i}
                       onClick={() => setEventIndex(i)}
@@ -388,14 +422,14 @@ export const Accueil: React.FC = () => {
                 <div className="w-4 h-px bg-white/20" />
                 <div className="flex flex-col items-center gap-1">
                   <button
-                    onClick={() => setEventIndex((eventIndex + EVENTS.length - 1) % EVENTS.length)}
+                    onClick={() => setEventIndex((eventIndex + evenements.length - 1) % evenements.length)}
                     className="p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5"
                     aria-label="Précédent"
                   >
                     <FaChevronUp className="text-[10px]" />
                   </button>
                   <button
-                    onClick={() => setEventIndex((eventIndex + 1) % EVENTS.length)}
+                    onClick={() => setEventIndex((eventIndex + 1) % evenements.length)}
                     className="p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5"
                     aria-label="Suivant"
                   >
@@ -404,27 +438,35 @@ export const Accueil: React.FC = () => {
                 </div>
               </div>
 
-              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-5 sm:p-7 pb-5 z-10">
-                <img src={event.img} alt={event.title} className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay -z-10" />
-                <div className="max-w-xl mt-auto pr-10">
-                  <h2 className="text-lg sm:text-xl font-bold text-white leading-snug drop-shadow-md">{event.title}</h2>
-                  <div className="flex flex-wrap items-center gap-3 text-[11px] font-semibold text-slate-100 mt-2">
-                    <span className="flex items-center gap-1.5 bg-slate-950/70 px-2 py-0.5 rounded-md border border-white/10 backdrop-blur-sm">
-                      <FaCalendarDays className={event.dateIcon} /> {event.date}
-                    </span>
-                    <span className="flex items-center gap-1.5 bg-slate-950/70 px-2 py-0.5 rounded-md border border-white/10 backdrop-blur-sm">
-                      <FaLocationDot className={event.locationIcon} /> {event.location}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-xs text-slate-200 line-clamp-2 leading-relaxed">{event.text}</p>
-                  <div className="mt-3">
-                    <a href={`#page-detail-evenement&id=${eventIndex + 1}`} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg font-bold text-[11px] bg-white text-ikaBlueDark shadow transition hover:bg-slate-100">
-                      <span>En savoir plus</span>
-                      <FaArrowRight />
-                    </a>
+              {event ? (
+                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-5 sm:p-7 pb-5 z-10">
+                  <img src={event.img} alt={event.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-50 mix-blend-overlay -z-10" />
+                  <div className="max-w-xl mt-auto pr-10">
+                    <h2 className="text-lg sm:text-xl font-bold text-white leading-snug drop-shadow-md">{event.title}</h2>
+                    <div className="flex flex-wrap items-center gap-3 text-[11px] font-semibold text-slate-100 mt-2">
+                      <span className="flex items-center gap-1.5 bg-slate-950/70 px-2 py-0.5 rounded-md border border-white/10 backdrop-blur-sm">
+                        <FaCalendarDays className={event.dateIcon} /> {event.date}
+                      </span>
+                      <span className="flex items-center gap-1.5 bg-slate-950/70 px-2 py-0.5 rounded-md border border-white/10 backdrop-blur-sm">
+                        <FaLocationDot className={event.locationIcon} /> {event.location}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-xs text-slate-200 line-clamp-2 leading-relaxed">{event.text}</p>
+                    <div className="mt-3">
+                      <a href={`#page-detail-evenement&id=${event.id}`} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg font-bold text-[11px] bg-white text-ikaBlueDark shadow transition hover:bg-slate-100">
+                        <span>En savoir plus</span>
+                        <FaArrowRight />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <p className="text-xs text-slate-300 font-semibold">
+                    {evenementsLoading ? 'Chargement des événements...' : 'Aucun événement à venir.'}
+                  </p>
+                </div>
+              )}
             </div>
           </section>
 
@@ -433,16 +475,22 @@ export const Accueil: React.FC = () => {
             <div>
               <SectionHeader iconCls="bg-red-100 text-ikaRed" icon={<FaNewspaper className="text-xs" />} title="Actualités" />
               <div className="space-y-3.5">
-                {NEWS.map((n, i) => (
-                  <a key={i} href={`#page-detail-actualite&id=${i + 1}`} className="flex gap-3 group">
-                    <img src={n.img} alt={`News ${i + 1}`} className="w-16 h-14 rounded-lg object-cover shrink-0 border border-slate-200" />
-                    <div>
-                      <h3 className="text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition leading-snug">{n.title}</h3>
-                      <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">{n.text}</p>
-                      <span className="text-[10px] text-slate-400 font-medium">{n.time}</span>
-                    </div>
-                  </a>
-                ))}
+                {actualitesLoading ? (
+                  <p className="text-[11px] text-slate-400 font-semibold text-center py-4">Chargement...</p>
+                ) : actualites.length === 0 ? (
+                  <p className="text-[11px] text-slate-400 font-semibold text-center py-4">Aucune actualité pour le moment.</p>
+                ) : (
+                  actualites.slice(0, 4).map((n) => (
+                    <a key={n.id} href={`#page-detail-actualite&id=${n.id}`} className="flex gap-3 group">
+                      <img src={n.img} alt={n.title} className="w-16 h-14 rounded-lg object-cover shrink-0 border border-slate-200" />
+                      <div>
+                        <h3 className="text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition leading-snug">{n.title}</h3>
+                        <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">{n.text}</p>
+                        <span className="text-[10px] text-slate-400 font-medium">{n.time}</span>
+                      </div>
+                    </a>
+                  ))
+                )}
               </div>
             </div>
             <a href="#page-toutes-actualites" className="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm">
@@ -455,18 +503,24 @@ export const Accueil: React.FC = () => {
             <div>
               <SectionHeader iconCls="bg-blue-100 text-ikaBlue" icon={<FaCalendarDays className="text-xs" />} title="Agenda" />
               <div className="space-y-3">
-                {AGENDA.map((a, i) => (
-                  <a key={i} href={`#page-detail-agenda&id=${i + 1}`} className="flex items-center gap-3 group">
-                    <div className={`w-12 h-12 rounded-xl ${a.bg} text-white flex flex-col items-center justify-center shrink-0 shadow-sm`}>
-                      <span className="text-[9px] font-black uppercase">{a.month}</span>
-                      <span className="text-sm font-bold leading-none">{a.day}</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition">{a.title}</h3>
-                      <p className="text-[11px] text-slate-500">{a.time}</p>
-                    </div>
-                  </a>
-                ))}
+                {agendaLoading ? (
+                  <p className="text-[11px] text-slate-400 font-semibold text-center py-4">Chargement...</p>
+                ) : agendas.length === 0 ? (
+                  <p className="text-[11px] text-slate-400 font-semibold text-center py-4">Aucun rendez-vous à venir.</p>
+                ) : (
+                  agendas.slice(0, 6).map((a) => (
+                    <a key={a.id} href={`#page-detail-agenda&id=${a.id}`} className="flex items-center gap-3 group">
+                      <div className={`w-12 h-12 rounded-xl ${a.bg} text-white flex flex-col items-center justify-center shrink-0 shadow-sm`}>
+                        <span className="text-[9px] font-black uppercase">{a.month}</span>
+                        <span className="text-sm font-bold leading-none">{a.day}</span>
+                      </div>
+                      <div>
+                        <h3 className="text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition">{a.title}</h3>
+                        <p className="text-[11px] text-slate-500">{a.time}</p>
+                      </div>
+                    </a>
+                  ))
+                )}
               </div>
             </div>
             <a href="#page-toutes-agenda" className="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm">
@@ -606,41 +660,61 @@ export const Accueil: React.FC = () => {
           <section id="annonces" className="lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between">
             <div>
               <SectionHeader iconCls="bg-amber-100 text-amber-600" icon={<FaBullhorn className="text-xs" />} title="Annonces" />
-              <div className="flex flex-wrap items-center gap-1 mb-3 text-[10px] font-bold">
+              <div className="flex flex-wrap items-center gap-1 mb-3 text-[11px] font-bold">
                 {[['all', 'Tous'], ['anniversaire', 'Anniv.'], ['mariage', 'Mariage'], ['absence', 'Absence']].map(([type, label]) => (
                   <button
                     key={type}
                     onClick={() => setAnnFilter(type)}
-                    className={`px-2 py-0.5 rounded-full transition ${annFilter === type ? 'bg-ikaBlue text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                    className={`px-2.5 py-1 rounded-full transition ${annFilter === type ? 'bg-ikaBlue text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                   >
                     {label}
                   </button>
                 ))}
               </div>
               <div className="space-y-2">
-                {filteredAnn.map((a, i) => (
-                  <a key={i} href={`#page-detail-annonce&id=${i + 1}`} className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 border border-slate-100 transition block cursor-pointer">
-                    {'avatars' in a ? (
-                      <div className="flex -space-x-2 shrink-0">
-                        {a.avatars.map((av, j) => (
-                          <img key={j} src={av} className="w-7 h-7 rounded-full object-cover border border-white" alt="" />
-                        ))}
+                {filteredAnn.map((a, i) => {
+                  const annId = i + 1;
+                  const like = annLikes[annId] || { liked: false, count: 0 };
+                  return (
+                    <div key={i} className="rounded-xl border border-slate-100 bg-white hover:bg-slate-50 transition p-2">
+                      <a href={`#page-detail-annonce&id=${annId}`} className="flex items-start gap-2.5 block cursor-pointer">
+                        {'avatars' in a ? (
+                          <div className="flex -space-x-2 shrink-0">
+                            {a.avatars.map((av, j) => (
+                              <img key={j} src={av} className="w-7 h-7 rounded-full object-cover border border-white" alt="" />
+                            ))}
+                          </div>
+                        ) : (
+                          <img src={a.avatar} alt="" className={`w-8 h-8 rounded-full object-cover ${a.badge} shrink-0`} />
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between text-xs">
+                            <h3 className="font-bold text-slate-900">{a.title}</h3>
+                            <span className="text-slate-400 font-normal">{a.time}</span>
+                          </div>
+                          <p className="text-xs text-slate-600 mt-0.5 line-clamp-1">{a.text}</p>
+                        </div>
+                      </a>
+                      <div className="flex items-center gap-2 mt-1.5 pl-10">
+                        <button
+                          onClick={() => toggleAnnLike(annId)}
+                          className={`px-2.5 py-0.5 rounded-full border font-bold text-[11px] transition flex items-center gap-1 ${like.liked ? 'bg-rose-500 text-white border-rose-500' : 'border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100'}`}
+                        >
+                          <FaHeart className="text-[10px]" /> {like.count}
+                        </button>
+                        <button
+                          onClick={() => setAnnonceCommentId(annId)}
+                          className="px-2.5 py-0.5 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-[11px] hover:bg-blue-100 transition flex items-center gap-1"
+                        >
+                          <FaComment className="text-[10px]" /> {annCommentCounts[annId] || 0}
+                        </button>
                       </div>
-                    ) : (
-                      <img src={a.avatar} alt="" className={`w-8 h-8 rounded-full object-cover ${a.badge} shrink-0`} />
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between text-[10px]">
-                        <h3 className="font-bold text-slate-900">{a.title}</h3>
-                        <span className="text-slate-400 font-normal">{a.time}</span>
-                      </div>
-                      <p className="text-[11px] text-slate-600 mt-0.5 line-clamp-1">{a.text}</p>
                     </div>
-                  </a>
-                ))}
+                  );
+                })}
               </div>
             </div>
-            <a href="#page-toutes-annonces" className="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm">
+            <a href="#page-toutes-annonces" className="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-sm text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm">
               Voir toutes les annonces
             </a>
           </section>
@@ -766,6 +840,51 @@ export const Accueil: React.FC = () => {
         </div>
 
       </div>
+
+      {/* ========== MODAL COMMENTAIRE ANNONCE ========== */}
+      {annonceCommentId !== null && (
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative">
+            <button onClick={() => setAnnonceCommentId(null)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg">
+              <FaXmark />
+            </button>
+            <div className="flex items-center gap-3">
+              <span className="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-base"><FaBullhorn /></span>
+              <div>
+                <h3 className="font-black text-slate-900 text-sm">Commenter l&apos;annonce</h3>
+                <p className="text-xs text-slate-500">Laissez votre avis sur {ANNONCES[annonceCommentId - 1] ? ANNONCES[annonceCommentId - 1].title.toLowerCase() : 'cette annonce'}</p>
+              </div>
+            </div>
+            <div className="max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs">
+              {(annComments[annonceCommentId] || []).map((c, i) => (
+                <div key={i} className={`p-2 rounded-lg border ${c.mine ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
+                  <span className="font-bold text-slate-900">{c.user}</span>
+                  <span className="text-slate-600">{c.text}</span>
+                </div>
+              ))}
+            </div>
+            <form onSubmit={addAnnonceComment} className="space-y-3">
+              <textarea
+                value={annonceCommentInput}
+                onChange={(e) => setAnnonceCommentInput(e.target.value)}
+                required
+                rows={3}
+                placeholder="Écrivez votre commentaire ici..."
+                className="w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue"
+              />
+              <div className="flex items-center justify-end gap-2">
+                <button type="button" onClick={() => setAnnonceCommentId(null)} className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50">
+                  Annuler
+                </button>
+                <button type="submit" className="px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5">
+                  <span>Envoyer</span>
+                  <FaPaperPlane className="text-xs" />
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* ========== MODAL COMMENTAIRE ========== */}
       {commentModal && (

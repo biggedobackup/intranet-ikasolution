@@ -1,14 +1,26 @@
 import * as React from 'react';
 import { FaCalendarDays, FaLocationDot, FaMagnifyingGlass } from 'react-icons/fa6';
-import { EVENEMENTS } from '../../services/evenements/data';
+import { loadEvenements, IEvenement } from '../../services/evenements/index';
 
-export const TousEvenements: React.FC = () => {
+export const TousEvenements: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [search, setSearch] = React.useState('');
   const [category, setCategory] = React.useState('all');
+  const [items, setItems] = React.useState<IEvenement[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
 
-  const categories = ['all', ...Array.from(new Set(EVENEMENTS.map((e) => e.category)))];
+  React.useEffect(() => {
+    if (!siteUrl) return;
+    loadEvenements(siteUrl)
+      .then((data) => {
+        setItems(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
 
-  const filtered = EVENEMENTS.filter((e) => {
+  const categories = ['all', ...Array.from(new Set(items.map((e) => e.category)))];
+
+  const filtered = items.filter((e) => {
     const q = search.toLowerCase();
     const matchesSearch = e.title.toLowerCase().includes(q) || e.location.toLowerCase().includes(q) || e.text.toLowerCase().includes(q);
     const matchesCat = category === 'all' || e.category === category;
@@ -59,7 +71,12 @@ export const TousEvenements: React.FC = () => {
         </div>
 
         {/* Grille d'événements */}
-        {filtered.length === 0 ? (
+        {loading ? (
+          <div className="bg-white rounded-2xl p-16 shadow-sm border border-slate-200 text-center">
+            <div className="spinner-border text-ikaBlue" role="status" />
+            <p className="mt-3 text-sm text-slate-500">Chargement des événements...</p>
+          </div>
+        ) : filtered.length === 0 ? (
           <div className="bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center">
             <p className="text-sm text-slate-500 font-semibold">Aucun événement ne correspond à votre recherche.</p>
           </div>
@@ -72,7 +89,7 @@ export const TousEvenements: React.FC = () => {
                 className="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block"
               >
                 <div className="relative h-44 overflow-hidden">
-                  <img src={e.img} alt={e.title} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                  <img src={e.img} alt={e.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaBlueDark backdrop-blur-sm">
                     {e.category}
                   </span>

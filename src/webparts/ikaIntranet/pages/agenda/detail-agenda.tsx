@@ -8,7 +8,7 @@ import {
   FaTag,
   FaCalendarDays
 } from 'react-icons/fa6';
-import { AGENDA, IAgendaItem } from '../../services/agenda/data';
+import { loadAgendas, IAgendaItem } from '../../services/agenda/index';
 
 const getAgendaIdFromHash = (): number => {
   const hash = window.location.hash.replace('#', '');
@@ -41,8 +41,10 @@ const AgendaCard = (props: { item: IAgendaItem }): React.ReactElement => {
   );
 };
 
-export const DetailAgenda: React.FC = () => {
+export const DetailAgenda: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [agendaId, setAgendaId] = React.useState<number>(getAgendaIdFromHash);
+  const [items, setItems] = React.useState<IAgendaItem[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     const onHash = (): void => setAgendaId(getAgendaIdFromHash());
@@ -50,10 +52,43 @@ export const DetailAgenda: React.FC = () => {
     return (): void => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  const item = AGENDA.find((a) => a.id === agendaId) || AGENDA[0];
-  const idx = AGENDA.findIndex((a) => a.id === item.id);
-  const prev = AGENDA[(idx - 1 + AGENDA.length) % AGENDA.length];
-  const next = AGENDA[(idx + 1) % AGENDA.length];
+  React.useEffect(() => {
+    if (!siteUrl) return;
+    loadAgendas(siteUrl)
+      .then((data) => {
+        setItems(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
+
+  if (loading) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <div className="spinner-border text-primary" role="status" />
+          <p className="mt-3 text-sm text-slate-500">Chargement de l&apos;agenda...</p>
+        </div>
+      </main>
+    );
+  }
+
+  const item = items.find((a) => a.id === agendaId) || items[0];
+  if (!item) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <p className="text-sm text-slate-500 font-semibold">Aucun rendez-vous trouvé.</p>
+          <a href="#page-toutes-agenda" className="inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition">
+            Voir l&apos;agenda complet
+          </a>
+        </div>
+      </main>
+    );
+  }
+  const idx = items.findIndex((a) => a.id === item.id);
+  const prev = items[(idx - 1 + items.length) % items.length];
+  const next = items[(idx + 1) % items.length];
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -121,7 +156,7 @@ export const DetailAgenda: React.FC = () => {
                 <FaCalendarDays className="text-ikaBlue text-[11px]" /> Prochains rendez-vous
               </h2>
               <div className="grid grid-cols-1 gap-4">
-                {AGENDA.filter((a) => a.id !== item.id).map((a) => (
+                {items.filter((a) => a.id !== item.id).map((a) => (
                   <AgendaCard key={a.id} item={a} />
                 ))}
               </div>

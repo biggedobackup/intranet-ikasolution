@@ -3,6 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Accueil = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
+var index_1 = require("../services/agenda/index");
+var index_2 = require("../services/actualites/index");
+var index_3 = require("../services/evenements/index");
 var fa6_1 = require("react-icons/fa6");
 /* ============================== DONNÉES ============================== */
 var IMG = {
@@ -28,48 +31,6 @@ var IMG = {
     gal5: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80',
     gal6: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80'
 };
-var EVENTS = [
-    {
-        img: IMG.seminar,
-        title: 'Séminaire Innovation & Transformation Digitale',
-        dateIcon: 'text-amber-400',
-        date: '25 - 27 Juillet 2026',
-        locationIcon: 'text-amber-400',
-        location: 'Ouagadougou, Burkina Faso',
-        text: "3 jours d'échanges et d'ateliers autour de l'innovation, des architectures Cloud et de la transformation digitale des entreprises."
-    },
-    {
-        img: IMG.workshop,
-        title: 'Workshop SharePoint Framework (SPFx)',
-        dateIcon: 'text-emerald-400',
-        date: '12 Août 2026',
-        locationIcon: 'text-emerald-400',
-        location: 'Lab DEV IKA SOLUTION',
-        text: "Montée en compétences sur la création des composants WebPart sur-mesure et l'intégration API pour le portail intranet."
-    },
-    {
-        img: IMG.teambuilding,
-        title: 'Afterwork de rentrée & Tech Outdoor Challenge',
-        dateIcon: 'text-purple-400',
-        date: '05 Septembre 2026',
-        locationIcon: 'text-purple-400',
-        location: 'Espace Plein Air — Bangr Weogo',
-        text: "Un moment de partage, d'activités de cohésion et de détente apprécié par l'ensemble des équipes d'IKA SOLUTION."
-    }
-];
-var NEWS = [
-    { img: IMG.news1, title: 'Nouvelle charte graphique IKA', text: "Découvrez notre nouvelle identité visuelle qui reflète notre évolution.", time: 'Il y a 2 heures' },
-    { img: IMG.news2, title: 'Succès du projet IKAR', text: 'Le projet IKAR a été livré avec succès au client.', time: 'Il y a 1 jour' },
-    { img: IMG.news3, title: "Afterwork de l'équipe", text: 'Un moment de partage et de détente apprécié par tous !', time: 'Il y a 2 jours' },
-    { img: IMG.news4, title: 'Nouveaux arrivants', text: 'Bienvenue aux nouveaux collaborateurs du département DEV.', time: 'Il y a 3 jours' }
-];
-var AGENDA = [
-    { month: 'JUL', day: '17', bg: 'bg-ikaBlueDark', title: "Réunion d'équipe", time: '10:00 - 11:00' },
-    { month: 'JUL', day: '18', bg: 'bg-ikaRed', title: 'Formation Leadership', time: '09:00 - 16:00' },
-    { month: 'JUL', day: '21', bg: 'bg-ikaBlueDark', title: 'Deadline Rapport', time: 'Toute la journée' },
-    { month: 'JUL', day: '23', bg: 'bg-emerald-600', title: 'Soutenance Projet IKAVISITE', time: '14:00 - 15:30' },
-    { month: 'JUL', day: '25', bg: 'bg-ikaRed', title: 'Séminaire Innovation', time: '08:30 - 17:00' }
-];
 var DEPT_COLORS = {
     Direction: 'bg-blue-50 text-ikaBlue',
     'Gestion de projet': 'bg-purple-50 text-purple-700',
@@ -217,29 +178,87 @@ function SectionHeader(props) {
         props.link && React.createElement("a", { href: props.link, className: "text-[11px] font-bold text-ikaBlue hover:underline" }, "Voir tout")));
 }
 /* ============================== COMPOSANT ACCUEIL ============================== */
-var Accueil = function () {
-    var _a = React.useState(0), eventIndex = _a[0], setEventIndex = _a[1];
-    var _b = React.useState(''), teamSearch = _b[0], setTeamSearch = _b[1];
-    var _c = React.useState('all'), teamDept = _c[0], setTeamDept = _c[1];
-    var _d = React.useState('all'), annFilter = _d[0], setAnnFilter = _d[1];
-    var _e = React.useState(false), liked = _e[0], setLiked = _e[1];
-    var _f = React.useState(42), likeCount = _f[0], setLikeCount = _f[1];
-    var _g = React.useState(false), commentModal = _g[0], setCommentModal = _g[1];
-    var _h = React.useState([
+var Accueil = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = React.useState(0), eventIndex = _b[0], setEventIndex = _b[1];
+    var _c = React.useState([]), agendas = _c[0], setAgendas = _c[1];
+    var _d = React.useState([]), actualites = _d[0], setActualites = _d[1];
+    var _e = React.useState([]), evenements = _e[0], setEvenements = _e[1];
+    var _f = React.useState(true), agendaLoading = _f[0], setAgendaLoading = _f[1];
+    var _g = React.useState(true), actualitesLoading = _g[0], setActualitesLoading = _g[1];
+    var _h = React.useState(true), evenementsLoading = _h[0], setEvenementsLoading = _h[1];
+    var _j = React.useState(''), teamSearch = _j[0], setTeamSearch = _j[1];
+    var _k = React.useState('all'), teamDept = _k[0], setTeamDept = _k[1];
+    var _l = React.useState('all'), annFilter = _l[0], setAnnFilter = _l[1];
+    var _m = React.useState(false), liked = _m[0], setLiked = _m[1];
+    var _o = React.useState(42), likeCount = _o[0], setLikeCount = _o[1];
+    var _p = React.useState(false), commentModal = _p[0], setCommentModal = _p[1];
+    var _q = React.useState([
         { user: 'Aïcha KABORÉ :', text: ' Bravo Mouhamed pour la livraison du projet SPFx ! 🎉' },
         { user: 'Jean OUEDRAOGO :', text: ' Travail remarquable, félicitations ! 👏' }
-    ]), comments = _h[0], setComments = _h[1];
-    var _j = React.useState(''), commentInput = _j[0], setCommentInput = _j[1];
-    var _k = React.useState(8), commentCount = _k[0], setCommentCount = _k[1];
-    var _l = React.useState(null), memberModal = _l[0], setMemberModal = _l[1];
-    var _m = React.useState(null), galleryModal = _m[0], setGalleryModal = _m[1];
-    var _o = React.useState(0), galleryIndex = _o[0], setGalleryIndex = _o[1];
+    ]), comments = _q[0], setComments = _q[1];
+    var _r = React.useState(''), commentInput = _r[0], setCommentInput = _r[1];
+    var _s = React.useState(8), commentCount = _s[0], setCommentCount = _s[1];
+    var _t = React.useState({
+        1: { liked: false, count: 12 },
+        2: { liked: false, count: 8 },
+        3: { liked: false, count: 5 }
+    }), annLikes = _t[0], setAnnLikes = _t[1];
+    var _u = React.useState({
+        1: [
+            { user: 'Aïcha KABORÉ :', text: ' Bonne fête Kadiatou ! 🎉' },
+            { user: 'Jean OUEDRAOGO :', text: ' Tous mes vœux ! 👏' }
+        ]
+    }), annComments = _u[0], setAnnComments = _u[1];
+    var _v = React.useState({ 1: 12, 2: 7, 3: 4 }), annCommentCounts = _v[0], setAnnCommentCounts = _v[1];
+    var _w = React.useState(null), annonceCommentId = _w[0], setAnnonceCommentId = _w[1];
+    var _x = React.useState(''), annonceCommentInput = _x[0], setAnnonceCommentInput = _x[1];
+    var _y = React.useState(null), memberModal = _y[0], setMemberModal = _y[1];
+    var _z = React.useState(null), galleryModal = _z[0], setGalleryModal = _z[1];
+    var _0 = React.useState(0), galleryIndex = _0[0], setGalleryIndex = _0[1];
     React.useEffect(function () {
+        if (!siteUrl) {
+            setAgendaLoading(false);
+            setActualitesLoading(false);
+            setEvenementsLoading(false);
+            return;
+        }
+        (0, index_1.loadAgendas)(siteUrl)
+            .then(function (data) {
+            setAgendas(data);
+            setAgendaLoading(false);
+        })
+            .catch(function (err) {
+            console.error('[Accueil] Agenda :', err);
+            setAgendaLoading(false);
+        });
+        (0, index_2.loadActualites)(siteUrl)
+            .then(function (data) {
+            setActualites(data);
+            setActualitesLoading(false);
+        })
+            .catch(function (err) {
+            console.error('[Accueil] Actualités :', err);
+            setActualitesLoading(false);
+        });
+        (0, index_3.loadEvenements)(siteUrl)
+            .then(function (data) {
+            setEvenements(data);
+            setEvenementsLoading(false);
+        })
+            .catch(function (err) {
+            console.error('[Accueil] Événements :', err);
+            setEvenementsLoading(false);
+        });
+    }, [siteUrl]);
+    React.useEffect(function () {
+        if (evenements.length < 2)
+            return undefined;
         var timer = setInterval(function () {
-            setEventIndex(function (prev) { return (prev + 1) % EVENTS.length; });
+            setEventIndex(function (prev) { return (prev + 1) % evenements.length; });
         }, 6000);
         return function () { return clearInterval(timer); };
-    }, []);
+    }, [evenements.length]);
     React.useEffect(function () {
         var onKey = function (e) {
             if (galleryModal !== null) {
@@ -287,7 +306,33 @@ var Accueil = function () {
         setCommentInput('');
         setCommentModal(false);
     };
-    var event = EVENTS[eventIndex];
+    var toggleAnnLike = function (id) {
+        setAnnLikes(function (prev) {
+            var _a;
+            var cur = prev[id] || { liked: false, count: 0 };
+            return tslib_1.__assign(tslib_1.__assign({}, prev), (_a = {}, _a[id] = { liked: !cur.liked, count: cur.liked ? cur.count - 1 : cur.count + 1 }, _a));
+        });
+    };
+    var addAnnonceComment = function (e) {
+        e.preventDefault();
+        var val = annonceCommentInput.trim();
+        if (!val)
+            return;
+        var id = annonceCommentId;
+        if (id === null)
+            return;
+        setAnnComments(function (prev) {
+            var _a;
+            return (tslib_1.__assign(tslib_1.__assign({}, prev), (_a = {}, _a[id] = tslib_1.__spreadArray(tslib_1.__spreadArray([], (prev[id] || []), true), [{ user: 'Vous :', text: " ".concat(val), mine: true }], false), _a)));
+        });
+        setAnnCommentCounts(function (prev) {
+            var _a;
+            return (tslib_1.__assign(tslib_1.__assign({}, prev), (_a = {}, _a[id] = (prev[id] || 0) + 1, _a)));
+        });
+        setAnnonceCommentInput('');
+        setAnnonceCommentId(null);
+    };
+    var event = evenements.length ? evenements[eventIndex % evenements.length] : null;
     return (React.createElement("main", { id: "page-accueil", className: "pt-4 sm:pt-5 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         React.createElement("div", { className: "mx-auto max-w-[1900px] px-3 sm:px-5 lg:px-6 space-y-3" },
             React.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch" },
@@ -300,15 +345,15 @@ var Accueil = function () {
                         React.createElement("a", { href: "#page-tous-evenements", className: "text-[11px] font-bold text-ikaBlue hover:underline" }, "Voir tout")),
                     React.createElement("div", { className: "relative flex-1 min-h-[320px] sm:min-h-[350px] rounded-xl overflow-hidden bg-slate-950 text-white flex flex-col justify-end p-5 sm:p-7" },
                         React.createElement("div", { className: "absolute top-1/2 right-3 z-30 flex -translate-y-1/2 flex-col items-center gap-2 bg-slate-950/75 backdrop-blur-md px-2 py-2 rounded-full border border-white/15 shadow-xl" },
-                            React.createElement("div", { className: "flex flex-col items-center gap-1.5" }, EVENTS.map(function (e, i) { return (React.createElement("button", { key: i, onClick: function () { return setEventIndex(i); }, className: "w-2 h-2 rounded-full transition-all ".concat(i === eventIndex ? 'bg-white' : 'bg-white/40 hover:bg-white'), "aria-label": "Slide ".concat(i + 1) })); })),
+                            React.createElement("div", { className: "flex flex-col items-center gap-1.5" }, evenements.map(function (e, i) { return (React.createElement("button", { key: i, onClick: function () { return setEventIndex(i); }, className: "w-2 h-2 rounded-full transition-all ".concat(i === eventIndex ? 'bg-white' : 'bg-white/40 hover:bg-white'), "aria-label": "Slide ".concat(i + 1) })); })),
                             React.createElement("div", { className: "w-4 h-px bg-white/20" }),
                             React.createElement("div", { className: "flex flex-col items-center gap-1" },
-                                React.createElement("button", { onClick: function () { return setEventIndex((eventIndex + EVENTS.length - 1) % EVENTS.length); }, className: "p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5", "aria-label": "Pr\u00E9c\u00E9dent" },
+                                React.createElement("button", { onClick: function () { return setEventIndex((eventIndex + evenements.length - 1) % evenements.length); }, className: "p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5", "aria-label": "Pr\u00E9c\u00E9dent" },
                                     React.createElement(fa6_1.FaChevronUp, { className: "text-[10px]" })),
-                                React.createElement("button", { onClick: function () { return setEventIndex((eventIndex + 1) % EVENTS.length); }, className: "p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5", "aria-label": "Suivant" },
+                                React.createElement("button", { onClick: function () { return setEventIndex((eventIndex + 1) % evenements.length); }, className: "p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5", "aria-label": "Suivant" },
                                     React.createElement(fa6_1.FaChevronDown, { className: "text-[10px]" })))),
-                        React.createElement("div", { className: "absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-5 sm:p-7 pb-5 z-10" },
-                            React.createElement("img", { src: event.img, alt: event.title, className: "absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay -z-10" }),
+                        event ? (React.createElement("div", { className: "absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-5 sm:p-7 pb-5 z-10" },
+                            React.createElement("img", { src: event.img, alt: event.title, className: "absolute inset-0 w-full h-full object-cover object-top opacity-50 mix-blend-overlay -z-10" }),
                             React.createElement("div", { className: "max-w-xl mt-auto pr-10" },
                                 React.createElement("h2", { className: "text-lg sm:text-xl font-bold text-white leading-snug drop-shadow-md" }, event.title),
                                 React.createElement("div", { className: "flex flex-wrap items-center gap-3 text-[11px] font-semibold text-slate-100 mt-2" },
@@ -322,29 +367,30 @@ var Accueil = function () {
                                         event.location)),
                                 React.createElement("p", { className: "mt-2 text-xs text-slate-200 line-clamp-2 leading-relaxed" }, event.text),
                                 React.createElement("div", { className: "mt-3" },
-                                    React.createElement("a", { href: "#page-detail-evenement&id=".concat(eventIndex + 1), className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg font-bold text-[11px] bg-white text-ikaBlueDark shadow transition hover:bg-slate-100" },
+                                    React.createElement("a", { href: "#page-detail-evenement&id=".concat(event.id), className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg font-bold text-[11px] bg-white text-ikaBlueDark shadow transition hover:bg-slate-100" },
                                         React.createElement("span", null, "En savoir plus"),
-                                        React.createElement(fa6_1.FaArrowRight, null))))))),
+                                        React.createElement(fa6_1.FaArrowRight, null)))))) : (React.createElement("div", { className: "absolute inset-0 flex items-center justify-center z-10" },
+                            React.createElement("p", { className: "text-xs text-slate-300 font-semibold" }, evenementsLoading ? 'Chargement des événements...' : 'Aucun événement à venir.'))))),
                 React.createElement("section", { id: "actualites", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     React.createElement("div", null,
                         React.createElement(SectionHeader, { iconCls: "bg-red-100 text-ikaRed", icon: React.createElement(fa6_1.FaNewspaper, { className: "text-xs" }), title: "Actualit\u00E9s" }),
-                        React.createElement("div", { className: "space-y-3.5" }, NEWS.map(function (n, i) { return (React.createElement("a", { key: i, href: "#page-detail-actualite&id=".concat(i + 1), className: "flex gap-3 group" },
-                            React.createElement("img", { src: n.img, alt: "News ".concat(i + 1), className: "w-16 h-14 rounded-lg object-cover shrink-0 border border-slate-200" }),
+                        React.createElement("div", { className: "space-y-3.5" }, actualitesLoading ? (React.createElement("p", { className: "text-[11px] text-slate-400 font-semibold text-center py-4" }, "Chargement...")) : actualites.length === 0 ? (React.createElement("p", { className: "text-[11px] text-slate-400 font-semibold text-center py-4" }, "Aucune actualit\u00E9 pour le moment.")) : (actualites.slice(0, 4).map(function (n) { return (React.createElement("a", { key: n.id, href: "#page-detail-actualite&id=".concat(n.id), className: "flex gap-3 group" },
+                            React.createElement("img", { src: n.img, alt: n.title, className: "w-16 h-14 rounded-lg object-cover shrink-0 border border-slate-200" }),
                             React.createElement("div", null,
                                 React.createElement("h3", { className: "text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition leading-snug" }, n.title),
                                 React.createElement("p", { className: "text-[11px] text-slate-500 line-clamp-1 mt-0.5" }, n.text),
-                                React.createElement("span", { className: "text-[10px] text-slate-400 font-medium" }, n.time)))); }))),
+                                React.createElement("span", { className: "text-[10px] text-slate-400 font-medium" }, n.time)))); })))),
                     React.createElement("a", { href: "#page-toutes-actualites", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toutes les actualit\u00E9s")),
                 React.createElement("section", { id: "agenda", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     React.createElement("div", null,
                         React.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: React.createElement(fa6_1.FaCalendarDays, { className: "text-xs" }), title: "Agenda" }),
-                        React.createElement("div", { className: "space-y-3" }, AGENDA.map(function (a, i) { return (React.createElement("a", { key: i, href: "#page-detail-agenda&id=".concat(i + 1), className: "flex items-center gap-3 group" },
+                        React.createElement("div", { className: "space-y-3" }, agendaLoading ? (React.createElement("p", { className: "text-[11px] text-slate-400 font-semibold text-center py-4" }, "Chargement...")) : agendas.length === 0 ? (React.createElement("p", { className: "text-[11px] text-slate-400 font-semibold text-center py-4" }, "Aucun rendez-vous \u00E0 venir.")) : (agendas.slice(0, 6).map(function (a) { return (React.createElement("a", { key: a.id, href: "#page-detail-agenda&id=".concat(a.id), className: "flex items-center gap-3 group" },
                             React.createElement("div", { className: "w-12 h-12 rounded-xl ".concat(a.bg, " text-white flex flex-col items-center justify-center shrink-0 shadow-sm") },
                                 React.createElement("span", { className: "text-[9px] font-black uppercase" }, a.month),
                                 React.createElement("span", { className: "text-sm font-bold leading-none" }, a.day)),
                             React.createElement("div", null,
                                 React.createElement("h3", { className: "text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition" }, a.title),
-                                React.createElement("p", { className: "text-[11px] text-slate-500" }, a.time)))); }))),
+                                React.createElement("p", { className: "text-[11px] text-slate-500" }, a.time)))); })))),
                     React.createElement("a", { href: "#page-toutes-agenda", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir l'agenda complet"))),
             React.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch" },
                 React.createElement("section", { id: "equipe", className: "lg:col-span-7 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
@@ -415,18 +461,32 @@ var Accueil = function () {
                 React.createElement("section", { id: "annonces", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     React.createElement("div", null,
                         React.createElement(SectionHeader, { iconCls: "bg-amber-100 text-amber-600", icon: React.createElement(fa6_1.FaBullhorn, { className: "text-xs" }), title: "Annonces" }),
-                        React.createElement("div", { className: "flex flex-wrap items-center gap-1 mb-3 text-[10px] font-bold" }, [['all', 'Tous'], ['anniversaire', 'Anniv.'], ['mariage', 'Mariage'], ['absence', 'Absence']].map(function (_a) {
+                        React.createElement("div", { className: "flex flex-wrap items-center gap-1 mb-3 text-[11px] font-bold" }, [['all', 'Tous'], ['anniversaire', 'Anniv.'], ['mariage', 'Mariage'], ['absence', 'Absence']].map(function (_a) {
                             var type = _a[0], label = _a[1];
-                            return (React.createElement("button", { key: type, onClick: function () { return setAnnFilter(type); }, className: "px-2 py-0.5 rounded-full transition ".concat(annFilter === type ? 'bg-ikaBlue text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200') }, label));
+                            return (React.createElement("button", { key: type, onClick: function () { return setAnnFilter(type); }, className: "px-2.5 py-1 rounded-full transition ".concat(annFilter === type ? 'bg-ikaBlue text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200') }, label));
                         })),
-                        React.createElement("div", { className: "space-y-2" }, filteredAnn.map(function (a, i) { return (React.createElement("a", { key: i, href: "#page-detail-annonce&id=".concat(i + 1), className: "flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 border border-slate-100 transition block cursor-pointer" },
-                            'avatars' in a ? (React.createElement("div", { className: "flex -space-x-2 shrink-0" }, a.avatars.map(function (av, j) { return (React.createElement("img", { key: j, src: av, className: "w-7 h-7 rounded-full object-cover border border-white", alt: "" })); }))) : (React.createElement("img", { src: a.avatar, alt: "", className: "w-8 h-8 rounded-full object-cover ".concat(a.badge, " shrink-0") })),
-                            React.createElement("div", { className: "flex-1 min-w-0" },
-                                React.createElement("div", { className: "flex items-center justify-between text-[10px]" },
-                                    React.createElement("h3", { className: "font-bold text-slate-900" }, a.title),
-                                    React.createElement("span", { className: "text-slate-400 font-normal" }, a.time)),
-                                React.createElement("p", { className: "text-[11px] text-slate-600 mt-0.5 line-clamp-1" }, a.text)))); }))),
-                    React.createElement("a", { href: "#page-toutes-annonces", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toutes les annonces")),
+                        React.createElement("div", { className: "space-y-2" }, filteredAnn.map(function (a, i) {
+                            var annId = i + 1;
+                            var like = annLikes[annId] || { liked: false, count: 0 };
+                            return (React.createElement("div", { key: i, className: "rounded-xl border border-slate-100 bg-white hover:bg-slate-50 transition p-2" },
+                                React.createElement("a", { href: "#page-detail-annonce&id=".concat(annId), className: "flex items-start gap-2.5 block cursor-pointer" },
+                                    'avatars' in a ? (React.createElement("div", { className: "flex -space-x-2 shrink-0" }, a.avatars.map(function (av, j) { return (React.createElement("img", { key: j, src: av, className: "w-7 h-7 rounded-full object-cover border border-white", alt: "" })); }))) : (React.createElement("img", { src: a.avatar, alt: "", className: "w-8 h-8 rounded-full object-cover ".concat(a.badge, " shrink-0") })),
+                                    React.createElement("div", { className: "flex-1 min-w-0" },
+                                        React.createElement("div", { className: "flex items-center justify-between text-xs" },
+                                            React.createElement("h3", { className: "font-bold text-slate-900" }, a.title),
+                                            React.createElement("span", { className: "text-slate-400 font-normal" }, a.time)),
+                                        React.createElement("p", { className: "text-xs text-slate-600 mt-0.5 line-clamp-1" }, a.text))),
+                                React.createElement("div", { className: "flex items-center gap-2 mt-1.5 pl-10" },
+                                    React.createElement("button", { onClick: function () { return toggleAnnLike(annId); }, className: "px-2.5 py-0.5 rounded-full border font-bold text-[11px] transition flex items-center gap-1 ".concat(like.liked ? 'bg-rose-500 text-white border-rose-500' : 'border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100') },
+                                        React.createElement(fa6_1.FaHeart, { className: "text-[10px]" }),
+                                        " ",
+                                        like.count),
+                                    React.createElement("button", { onClick: function () { return setAnnonceCommentId(annId); }, className: "px-2.5 py-0.5 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-[11px] hover:bg-blue-100 transition flex items-center gap-1" },
+                                        React.createElement(fa6_1.FaComment, { className: "text-[10px]" }),
+                                        " ",
+                                        annCommentCounts[annId] || 0))));
+                        }))),
+                    React.createElement("a", { href: "#page-toutes-annonces", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-sm text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toutes les annonces")),
                 React.createElement("section", { id: "employe-mois", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     React.createElement("div", null,
                         React.createElement(SectionHeader, { iconCls: "bg-amber-100 text-amber-600", icon: React.createElement(fa6_1.FaTrophy, { className: "text-xs" }), title: "Employ\u00E9 du mois" }),
@@ -487,6 +547,28 @@ var Accueil = function () {
                             React.createElement("h3", { className: "text-xs font-black text-slate-900 group-hover:text-ikaBlue transition" }, f.name),
                             React.createElement("p", { className: "text-[10px] text-slate-400" }, f.desc))); }))),
                     React.createElement("a", { href: "#page-toute-documentation", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toute la documentation")))),
+        annonceCommentId !== null && (React.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" },
+            React.createElement("div", { className: "bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative" },
+                React.createElement("button", { onClick: function () { return setAnnonceCommentId(null); }, className: "absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg" },
+                    React.createElement(fa6_1.FaXmark, null)),
+                React.createElement("div", { className: "flex items-center gap-3" },
+                    React.createElement("span", { className: "w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-base" },
+                        React.createElement(fa6_1.FaBullhorn, null)),
+                    React.createElement("div", null,
+                        React.createElement("h3", { className: "font-black text-slate-900 text-sm" }, "Commenter l'annonce"),
+                        React.createElement("p", { className: "text-xs text-slate-500" },
+                            "Laissez votre avis sur ",
+                            ANNONCES[annonceCommentId - 1] ? ANNONCES[annonceCommentId - 1].title.toLowerCase() : 'cette annonce'))),
+                React.createElement("div", { className: "max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs" }, (annComments[annonceCommentId] || []).map(function (c, i) { return (React.createElement("div", { key: i, className: "p-2 rounded-lg border ".concat(c.mine ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100') },
+                    React.createElement("span", { className: "font-bold text-slate-900" }, c.user),
+                    React.createElement("span", { className: "text-slate-600" }, c.text))); })),
+                React.createElement("form", { onSubmit: addAnnonceComment, className: "space-y-3" },
+                    React.createElement("textarea", { value: annonceCommentInput, onChange: function (e) { return setAnnonceCommentInput(e.target.value); }, required: true, rows: 3, placeholder: "\u00C9crivez votre commentaire ici...", className: "w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue" }),
+                    React.createElement("div", { className: "flex items-center justify-end gap-2" },
+                        React.createElement("button", { type: "button", onClick: function () { return setAnnonceCommentId(null); }, className: "px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50" }, "Annuler"),
+                        React.createElement("button", { type: "submit", className: "px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5" },
+                            React.createElement("span", null, "Envoyer"),
+                            React.createElement(fa6_1.FaPaperPlane, { className: "text-xs" }))))))),
         commentModal && (React.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" },
             React.createElement("div", { className: "bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative" },
                 React.createElement("button", { onClick: function () { return setCommentModal(false); }, className: "absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg" },

@@ -30,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles("*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::-ms-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*\n! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com\n*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial;font-variation-settings:normal;line-height:1.5;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input:-ms-input-placeholder, textarea:-ms-input-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0}.-bottom-10{bottom:-2.5rem}.-bottom-12{bottom:-3rem}.-bottom-8{bottom:-2rem}.-bottom-9{bottom:-2.25rem}.-right-10{right:-2.5rem}.-top-10{top:-2.5rem}.bottom-0{bottom:0}.left-0{left:0}.left-1\\/2{left:50%}.left-2\\.5{left:.625rem}.left-3{left:.75rem}.left-4{left:1rem}.left-6{left:1.5rem}.right-0{right:0}.right-3{right:.75rem}.right-4{right:1rem}.top-0{top:0}.top-1\\/2{top:50%}.top-2\\.5{top:.625rem}.top-3{top:.75rem}.top-3\\.5{top:.875rem}.top-4{top:1rem}.top-full{top:100%}.-z-10{z-index:-10}.z-10{z-index:10}.z-30{z-index:30}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.ml-2{margin-left:.5rem}.ml-auto{margin-left:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mt-2\\.5{margin-top:.625rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.line-clamp-1{-webkit-line-clamp:1}.line-clamp-1,.line-clamp-2{-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden}.line-clamp-2{-webkit-line-clamp:2}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.table{display:table}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16/9}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:.5rem}.h-20{height:5rem}.h-24{height:6rem}.h-28{height:7rem}.h-36{height:9rem}.h-4{height:1rem}.h-40{height:10rem}.h-44{height:11rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.h-px{height:1px}.max-h-40{max-height:10rem}.max-h-\\[300px\\]{max-height:300px}.max-h-\\[75vh\\]{max-height:75vh}.min-h-\\[320px\\]{min-height:320px}.min-h-\\[50vh\\]{min-height:50vh}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-2{width:.5rem}.w-20{width:5rem}.w-24{width:6rem}.w-28{width:7rem}.w-4{width:1rem}.w-40{width:10rem}.w-48{width:12rem}.w-5{width:1.25rem}.w-56{width:14rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-auto{width:auto}.w-full{width:100%}.min-w-0{min-width:0}.min-w-\\[1000px\\]{min-width:1000px}.min-w-\\[360px\\]{min-width:360px}.min-w-\\[620px\\]{min-width:620px}.min-w-\\[720px\\]{min-width:720px}.min-w-\\[900px\\]{min-width:900px}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-\\[1600px\\]{max-width:1600px}.max-w-\\[1650px\\]{max-width:1650px}.max-w-\\[180px\\]{max-width:180px}.max-w-\\[1900px\\]{max-width:1900px}.max-w-\\[200px\\]{max-width:200px}.max-w-full{max-width:100%}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\\/2{--tw-translate-x:-50%}.-translate-x-1\\/2,.-translate-x-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-x-2{--tw-translate-x:-0.5rem}.-translate-y-1\\/2{--tw-translate-y:-50%}.-translate-y-1\\/2,.translate-x-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-2{--tw-translate-x:0.5rem}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-\\[1fr_auto_1fr\\]{grid-template-columns:1fr auto 1fr}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-10{gap:2.5rem}.gap-2{gap:.5rem}.gap-2\\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-x-3{column-gap:.75rem}.gap-x-4{column-gap:1rem}.gap-y-1{row-gap:.25rem}.gap-y-2{row-gap:.5rem}.-space-x-2>:not([hidden])~:not([hidden]){--tw-space-x-reverse:0;margin-left:calc(-.5rem*(1 - var(--tw-space-x-reverse)));margin-right:calc(-.5rem*var(--tw-space-x-reverse))}.-space-x-2\\.5>:not([hidden])~:not([hidden]){--tw-space-x-reverse:0;margin-left:calc(-.625rem*(1 - var(--tw-space-x-reverse)));margin-right:calc(-.625rem*var(--tw-space-x-reverse))}.-space-x-3>:not([hidden])~:not([hidden]){--tw-space-x-reverse:0;margin-left:calc(-.75rem*(1 - var(--tw-space-x-reverse)));margin-right:calc(-.75rem*var(--tw-space-x-reverse))}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.25rem*var(--tw-space-y-reverse));margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.5rem*var(--tw-space-y-reverse));margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.75rem*var(--tw-space-y-reverse));margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)))}.space-y-3\\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.875rem*var(--tw-space-y-reverse));margin-top:calc(.875rem*(1 - var(--tw-space-y-reverse)))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(1rem*var(--tw-space-y-reverse));margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(1.25rem*var(--tw-space-y-reverse));margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-bottom-width:calc(1px*var(--tw-divide-y-reverse));border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)))}.divide-slate-100>:not([hidden])~:not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249/var(--tw-divide-opacity,1))}.justify-self-start{justify-self:start}.justify-self-end{justify-self:end}.justify-self-center{justify-self:center}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.rounded-b-2xl{border-bottom-left-radius:1rem;border-bottom-right-radius:1rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138/var(--tw-border-opacity,1))}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36/var(--tw-border-opacity,1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254/var(--tw-border-opacity,1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254/var(--tw-border-opacity,1))}.border-emerald-400{--tw-border-opacity:1;border-color:rgb(52 211 153/var(--tw-border-opacity,1))}.border-ikaBlue{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.border-ikaBlue\\/30{border-color:rgba(18,112,184,.3)}.border-ikaRed{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.border-rose-200{--tw-border-opacity:1;border-color:rgb(254 205 211/var(--tw-border-opacity,1))}.border-rose-500{--tw-border-opacity:1;border-color:rgb(244 63 94/var(--tw-border-opacity,1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249/var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225/var(--tw-border-opacity,1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59/var(--tw-border-opacity,1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255/var(--tw-border-opacity,1))}.border-white\\/10{border-color:hsla(0,0%,100%,.1)}.border-white\\/15{border-color:hsla(0,0%,100%,.15)}.border-white\\/20{border-color:hsla(0,0%,100%,.2)}.border-white\\/30{border-color:hsla(0,0%,100%,.3)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199/var(--tw-bg-opacity,1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36/var(--tw-bg-opacity,1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235/var(--tw-bg-opacity,1))}.bg-amber-50\\/60{background-color:rgba(255,251,235,.6)}.bg-black\\/40{background-color:rgba(0,0,0,.4)}.bg-black\\/90{background-color:rgba(0,0,0,.9)}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254/var(--tw-bg-opacity,1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255/var(--tw-bg-opacity,1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245/var(--tw-bg-opacity,1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129/var(--tw-bg-opacity,1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.bg-ikaBlue{--tw-bg-opacity:1;background-color:rgb(18 112 184/var(--tw-bg-opacity,1))}.bg-ikaBlueDark{--tw-bg-opacity:1;background-color:rgb(13 74 126/var(--tw-bg-opacity,1))}.bg-ikaRed{--tw-bg-opacity:1;background-color:rgb(229 26 55/var(--tw-bg-opacity,1))}.bg-ikaSoft{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255/var(--tw-bg-opacity,1))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255/var(--tw-bg-opacity,1))}.bg-purple-600{--tw-bg-opacity:1;background-color:rgb(147 51 234/var(--tw-bg-opacity,1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226/var(--tw-bg-opacity,1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242/var(--tw-bg-opacity,1))}.bg-rose-100{--tw-bg-opacity:1;background-color:rgb(255 228 230/var(--tw-bg-opacity,1))}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242/var(--tw-bg-opacity,1))}.bg-rose-500{--tw-bg-opacity:1;background-color:rgb(244 63 94/var(--tw-bg-opacity,1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.bg-slate-50\\/60{background-color:rgba(248,250,252,.6)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42/var(--tw-bg-opacity,1))}.bg-slate-900\\/60{background-color:rgba(15,23,42,.6)}.bg-slate-900\\/70{background-color:rgba(15,23,42,.7)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23/var(--tw-bg-opacity,1))}.bg-slate-950\\/70{background-color:rgba(2,6,23,.7)}.bg-slate-950\\/75{background-color:rgba(2,6,23,.75)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\\/10{background-color:hsla(0,0%,100%,.1)}.bg-white\\/15{background-color:hsla(0,0%,100%,.15)}.bg-white\\/20{background-color:hsla(0,0%,100%,.2)}.bg-white\\/40{background-color:hsla(0,0%,100%,.4)}.bg-white\\/90{background-color:hsla(0,0%,100%,.9)}.bg-white\\/95{background-color:hsla(0,0%,100%,.95)}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-amber-500{--tw-gradient-from:#f59e0b var(--tw-gradient-from-position);--tw-gradient-to:rgba(245,158,11,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-ikaBlueDark{--tw-gradient-from:#0d4a7e var(--tw-gradient-from-position);--tw-gradient-to:rgba(13,74,126,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-slate-950{--tw-gradient-from:#020617 var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-slate-950\\/80{--tw-gradient-from:rgba(2,6,23,.8) var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-slate-950\\/85{--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(2,6,23,.85) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),transparent var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-amber-400{--tw-gradient-to:#fbbf24 var(--tw-gradient-to-position)}.to-ikaBlue{--tw-gradient-to:#1270b8 var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.p-1{padding:.25rem}.p-1\\.5{padding:.375rem}.p-10{padding:2.5rem}.p-2{padding:.5rem}.p-2\\.5{padding:.625rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\\.5{padding-bottom:.125rem;padding-top:.125rem}.py-1{padding-bottom:.25rem;padding-top:.25rem}.py-1\\.5{padding-bottom:.375rem;padding-top:.375rem}.py-12{padding-bottom:3rem;padding-top:3rem}.py-2{padding-bottom:.5rem;padding-top:.5rem}.py-2\\.5{padding-bottom:.625rem;padding-top:.625rem}.py-3{padding-bottom:.75rem;padding-top:.75rem}.py-4{padding-bottom:1rem;padding-top:1rem}.py-5{padding-bottom:1.25rem;padding-top:1.25rem}.py-7{padding-bottom:1.75rem;padding-top:1.75rem}.pb-14{padding-bottom:3.5rem}.pb-16{padding-bottom:4rem}.pb-3{padding-bottom:.75rem}.pb-4{padding-bottom:1rem}.pb-5{padding-bottom:1.25rem}.pb-6{padding-bottom:1.5rem}.pb-8{padding-bottom:2rem}.pl-2{padding-left:.5rem}.pl-3{padding-left:.75rem}.pl-8{padding-left:2rem}.pl-9{padding-left:2.25rem}.pr-10{padding-right:2.5rem}.pr-3{padding-right:.75rem}.pt-1{padding-top:.25rem}.pt-11{padding-top:2.75rem}.pt-12{padding-top:3rem}.pt-14{padding-top:3.5rem}.pt-16{padding-top:4rem}.pt-2{padding-top:.5rem}.pt-3{padding-top:.75rem}.pt-32{padding-top:8rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-\\[10px\\]{font-size:10px}.text-\\[11px\\]{font-size:11px}.text-\\[9px\\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-\\[0\\.18em\\]{letter-spacing:.18em}.tracking-wide{letter-spacing:.025em}.tracking-wider{letter-spacing:.05em}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36/var(--tw-text-opacity,1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11/var(--tw-text-opacity,1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9/var(--tw-text-opacity,1))}.text-amber-700\\/80{color:rgba(180,83,9,.8)}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14/var(--tw-text-opacity,1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235/var(--tw-text-opacity,1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216/var(--tw-text-opacity,1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153/var(--tw-text-opacity,1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129/var(--tw-text-opacity,1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105/var(--tw-text-opacity,1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87/var(--tw-text-opacity,1))}.text-ikaBlue{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.text-ikaBlueDark{--tw-text-opacity:1;color:rgb(13 74 126/var(--tw-text-opacity,1))}.text-ikaInk{--tw-text-opacity:1;color:rgb(17 24 39/var(--tw-text-opacity,1))}.text-ikaRed{--tw-text-opacity:1;color:rgb(229 26 55/var(--tw-text-opacity,1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229/var(--tw-text-opacity,1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252/var(--tw-text-opacity,1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247/var(--tw-text-opacity,1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234/var(--tw-text-opacity,1))}.text-purple-700{--tw-text-opacity:1;color:rgb(126 34 206/var(--tw-text-opacity,1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94/var(--tw-text-opacity,1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72/var(--tw-text-opacity,1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60/var(--tw-text-opacity,1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249/var(--tw-text-opacity,1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240/var(--tw-text-opacity,1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\\/70{color:hsla(0,0%,100%,.7)}.text-white\\/90{color:hsla(0,0%,100%,.9)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-90{opacity:.9}.mix-blend-overlay{mix-blend-mode:overlay}.shadow{--tw-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)}.shadow,.shadow-2xl{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-lg,.shadow-md{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)}.shadow-premium{--tw-shadow:0 24px 70px rgba(4,31,77,.14);--tw-shadow-colored:0 24px 70px var(--tw-shadow-color)}.shadow-premium,.shadow-sm{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.drop-shadow-md{--tw-drop-shadow:drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06))}.drop-shadow-md,.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px)}.backdrop-blur,.backdrop-blur-md{backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-all{transition-duration:.15s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-transform{transition-duration:.15s;transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1)}.duration-200{transition-duration:.2s}.duration-500{transition-duration:.5s}.hover\\:border-amber-300:hover{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.hover\\:border-blue-200:hover{--tw-border-opacity:1;border-color:rgb(191 219 254/var(--tw-border-opacity,1))}.hover\\:border-ikaBlue:hover{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.hover\\:border-ikaRed:hover{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.hover\\:bg-amber-50\\/50:hover{background-color:rgba(255,251,235,.5)}.hover\\:bg-amber-600:hover{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.hover\\:bg-blue-100:hover{--tw-bg-opacity:1;background-color:rgb(219 234 254/var(--tw-bg-opacity,1))}.hover\\:bg-blue-600:hover{--tw-bg-opacity:1;background-color:rgb(37 99 235/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-700:hover{--tw-bg-opacity:1;background-color:rgb(4 120 87/var(--tw-bg-opacity,1))}.hover\\:bg-ikaBlue:hover{--tw-bg-opacity:1;background-color:rgb(18 112 184/var(--tw-bg-opacity,1))}.hover\\:bg-ikaRed:hover{--tw-bg-opacity:1;background-color:rgb(229 26 55/var(--tw-bg-opacity,1))}.hover\\:bg-ikaSoft:hover{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.hover\\:bg-rose-100:hover{--tw-bg-opacity:1;background-color:rgb(255 228 230/var(--tw-bg-opacity,1))}.hover\\:bg-rose-600:hover{--tw-bg-opacity:1;background-color:rgb(225 29 72/var(--tw-bg-opacity,1))}.hover\\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.hover\\:bg-slate-100\\/80:hover{background-color:rgba(241,245,249,.8)}.hover\\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity,1))}.hover\\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.hover\\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.hover\\:bg-white\\/20:hover{background-color:hsla(0,0%,100%,.2)}.hover\\:bg-white\\/25:hover{background-color:hsla(0,0%,100%,.25)}.hover\\:bg-white\\/30:hover{background-color:hsla(0,0%,100%,.3)}.hover\\:text-ikaBlue:hover{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.hover\\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.hover\\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\\:underline:hover{text-decoration-line:underline}.hover\\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.hover\\:shadow-lg:hover,.hover\\:shadow-sm:hover{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.hover\\:shadow-sm:hover{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.focus\\:border-ikaBlue:focus{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.focus\\:border-ikaRed:focus{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.focus\\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.disabled\\:cursor-not-allowed:disabled{cursor:not-allowed}.disabled\\:opacity-40:disabled{opacity:.4}.group:hover .group-hover\\:block{display:block}.group:hover .group-hover\\:rotate-180{--tw-rotate:180deg}.group:hover .group-hover\\:rotate-180,.group:hover .group-hover\\:scale-105{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05}.group:hover .group-hover\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:border-ikaBlue{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.group:hover .group-hover\\:bg-ikaSoft{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.group:hover .group-hover\\:text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-ikaBlue{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-ikaRed{--tw-text-opacity:1;color:rgb(229 26 55/var(--tw-text-opacity,1))}.group:hover .group-hover\\:opacity-100{opacity:1}@media (min-width:640px){.sm\\:left-8{left:2rem}.sm\\:order-1{order:1}.sm\\:order-2{order:2}.sm\\:h-28{height:7rem}.sm\\:h-40{height:10rem}.sm\\:h-48{height:12rem}.sm\\:h-56{height:14rem}.sm\\:h-80{height:20rem}.sm\\:min-h-\\[350px\\]{min-height:350px}.sm\\:w-28{width:7rem}.sm\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\\:flex-row{flex-direction:row}.sm\\:items-center{align-items:center}.sm\\:justify-between{justify-content:space-between}.sm\\:p-5{padding:1.25rem}.sm\\:p-7{padding:1.75rem}.sm\\:p-8{padding:2rem}.sm\\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:px-8{padding-left:2rem;padding-right:2rem}.sm\\:pt-36{padding-top:9rem}.sm\\:pt-5{padding-top:1.25rem}.sm\\:pt-8{padding-top:2rem}.sm\\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\\:text-base{font-size:1rem;line-height:1.5rem}.sm\\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:768px){.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:col-span-2{grid-column:span 2/span 2}.lg\\:col-span-3{grid-column:span 3/span 3}.lg\\:col-span-5{grid-column:span 5/span 5}.lg\\:col-span-6{grid-column:span 6/span 6}.lg\\:col-span-7{grid-column:span 7/span 7}.lg\\:flex{display:flex}.lg\\:hidden{display:none}.lg\\:h-96{height:24rem}.lg\\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (min-width:1280px){.xl\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.xl\\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.xl\\:gap-4{gap:1rem}}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles("*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::-ms-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*\n! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com\n*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial;font-variation-settings:normal;line-height:1.5;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input:-ms-input-placeholder, textarea:-ms-input-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0}.-bottom-10{bottom:-2.5rem}.-bottom-12{bottom:-3rem}.-bottom-8{bottom:-2rem}.-bottom-9{bottom:-2.25rem}.-right-10{right:-2.5rem}.-top-10{top:-2.5rem}.bottom-0{bottom:0}.left-0{left:0}.left-1\\/2{left:50%}.left-2\\.5{left:.625rem}.left-3{left:.75rem}.left-4{left:1rem}.left-6{left:1.5rem}.right-0{right:0}.right-3{right:.75rem}.right-4{right:1rem}.top-0{top:0}.top-1\\/2{top:50%}.top-2\\.5{top:.625rem}.top-3{top:.75rem}.top-3\\.5{top:.875rem}.top-4{top:1rem}.top-full{top:100%}.-z-10{z-index:-10}.z-10{z-index:10}.z-30{z-index:30}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.ml-2{margin-left:.5rem}.ml-auto{margin-left:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mt-2\\.5{margin-top:.625rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.line-clamp-1{-webkit-line-clamp:1}.line-clamp-1,.line-clamp-2{-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden}.line-clamp-2{-webkit-line-clamp:2}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.table{display:table}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16/9}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:.5rem}.h-20{height:5rem}.h-24{height:6rem}.h-28{height:7rem}.h-36{height:9rem}.h-4{height:1rem}.h-40{height:10rem}.h-44{height:11rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.h-px{height:1px}.max-h-40{max-height:10rem}.max-h-\\[300px\\]{max-height:300px}.max-h-\\[75vh\\]{max-height:75vh}.min-h-\\[320px\\]{min-height:320px}.min-h-\\[50vh\\]{min-height:50vh}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-2{width:.5rem}.w-20{width:5rem}.w-24{width:6rem}.w-28{width:7rem}.w-4{width:1rem}.w-40{width:10rem}.w-48{width:12rem}.w-5{width:1.25rem}.w-56{width:14rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-auto{width:auto}.w-full{width:100%}.min-w-0{min-width:0}.min-w-\\[1000px\\]{min-width:1000px}.min-w-\\[360px\\]{min-width:360px}.min-w-\\[620px\\]{min-width:620px}.min-w-\\[720px\\]{min-width:720px}.min-w-\\[900px\\]{min-width:900px}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-\\[1600px\\]{max-width:1600px}.max-w-\\[1650px\\]{max-width:1650px}.max-w-\\[180px\\]{max-width:180px}.max-w-\\[1900px\\]{max-width:1900px}.max-w-\\[200px\\]{max-width:200px}.max-w-full{max-width:100%}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\\/2{--tw-translate-x:-50%}.-translate-x-1\\/2,.-translate-x-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-x-2{--tw-translate-x:-0.5rem}.-translate-y-1\\/2{--tw-translate-y:-50%}.-translate-y-1\\/2,.translate-x-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-2{--tw-translate-x:0.5rem}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-\\[1fr_auto_1fr\\]{grid-template-columns:1fr auto 1fr}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-10{gap:2.5rem}.gap-2{gap:.5rem}.gap-2\\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-x-3{column-gap:.75rem}.gap-x-4{column-gap:1rem}.gap-y-1{row-gap:.25rem}.gap-y-2{row-gap:.5rem}.-space-x-2>:not([hidden])~:not([hidden]){--tw-space-x-reverse:0;margin-left:calc(-.5rem*(1 - var(--tw-space-x-reverse)));margin-right:calc(-.5rem*var(--tw-space-x-reverse))}.-space-x-2\\.5>:not([hidden])~:not([hidden]){--tw-space-x-reverse:0;margin-left:calc(-.625rem*(1 - var(--tw-space-x-reverse)));margin-right:calc(-.625rem*var(--tw-space-x-reverse))}.-space-x-3>:not([hidden])~:not([hidden]){--tw-space-x-reverse:0;margin-left:calc(-.75rem*(1 - var(--tw-space-x-reverse)));margin-right:calc(-.75rem*var(--tw-space-x-reverse))}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.25rem*var(--tw-space-y-reverse));margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.5rem*var(--tw-space-y-reverse));margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.75rem*var(--tw-space-y-reverse));margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)))}.space-y-3\\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.875rem*var(--tw-space-y-reverse));margin-top:calc(.875rem*(1 - var(--tw-space-y-reverse)))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(1rem*var(--tw-space-y-reverse));margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(1.25rem*var(--tw-space-y-reverse));margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-bottom-width:calc(1px*var(--tw-divide-y-reverse));border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)))}.divide-slate-100>:not([hidden])~:not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249/var(--tw-divide-opacity,1))}.justify-self-start{justify-self:start}.justify-self-end{justify-self:end}.justify-self-center{justify-self:center}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.rounded-b-2xl{border-bottom-left-radius:1rem;border-bottom-right-radius:1rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138/var(--tw-border-opacity,1))}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36/var(--tw-border-opacity,1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254/var(--tw-border-opacity,1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254/var(--tw-border-opacity,1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208/var(--tw-border-opacity,1))}.border-emerald-400{--tw-border-opacity:1;border-color:rgb(52 211 153/var(--tw-border-opacity,1))}.border-emerald-500{--tw-border-opacity:1;border-color:rgb(16 185 129/var(--tw-border-opacity,1))}.border-ikaBlue{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.border-ikaBlue\\/30{border-color:rgba(18,112,184,.3)}.border-ikaRed{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.border-rose-200{--tw-border-opacity:1;border-color:rgb(254 205 211/var(--tw-border-opacity,1))}.border-rose-500{--tw-border-opacity:1;border-color:rgb(244 63 94/var(--tw-border-opacity,1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249/var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225/var(--tw-border-opacity,1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59/var(--tw-border-opacity,1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255/var(--tw-border-opacity,1))}.border-white\\/10{border-color:hsla(0,0%,100%,.1)}.border-white\\/15{border-color:hsla(0,0%,100%,.15)}.border-white\\/20{border-color:hsla(0,0%,100%,.2)}.border-white\\/30{border-color:hsla(0,0%,100%,.3)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199/var(--tw-bg-opacity,1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36/var(--tw-bg-opacity,1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235/var(--tw-bg-opacity,1))}.bg-amber-50\\/60{background-color:rgba(255,251,235,.6)}.bg-amber-600{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.bg-black\\/40{background-color:rgba(0,0,0,.4)}.bg-black\\/90{background-color:rgba(0,0,0,.9)}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254/var(--tw-bg-opacity,1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255/var(--tw-bg-opacity,1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245/var(--tw-bg-opacity,1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129/var(--tw-bg-opacity,1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.bg-ikaBlue{--tw-bg-opacity:1;background-color:rgb(18 112 184/var(--tw-bg-opacity,1))}.bg-ikaBlueDark{--tw-bg-opacity:1;background-color:rgb(13 74 126/var(--tw-bg-opacity,1))}.bg-ikaRed{--tw-bg-opacity:1;background-color:rgb(229 26 55/var(--tw-bg-opacity,1))}.bg-ikaSoft{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255/var(--tw-bg-opacity,1))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255/var(--tw-bg-opacity,1))}.bg-purple-600{--tw-bg-opacity:1;background-color:rgb(147 51 234/var(--tw-bg-opacity,1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226/var(--tw-bg-opacity,1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242/var(--tw-bg-opacity,1))}.bg-rose-100{--tw-bg-opacity:1;background-color:rgb(255 228 230/var(--tw-bg-opacity,1))}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242/var(--tw-bg-opacity,1))}.bg-rose-500{--tw-bg-opacity:1;background-color:rgb(244 63 94/var(--tw-bg-opacity,1))}.bg-rose-600{--tw-bg-opacity:1;background-color:rgb(225 29 72/var(--tw-bg-opacity,1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.bg-slate-50\\/60{background-color:rgba(248,250,252,.6)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42/var(--tw-bg-opacity,1))}.bg-slate-900\\/60{background-color:rgba(15,23,42,.6)}.bg-slate-900\\/70{background-color:rgba(15,23,42,.7)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23/var(--tw-bg-opacity,1))}.bg-slate-950\\/70{background-color:rgba(2,6,23,.7)}.bg-slate-950\\/75{background-color:rgba(2,6,23,.75)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\\/10{background-color:hsla(0,0%,100%,.1)}.bg-white\\/15{background-color:hsla(0,0%,100%,.15)}.bg-white\\/20{background-color:hsla(0,0%,100%,.2)}.bg-white\\/40{background-color:hsla(0,0%,100%,.4)}.bg-white\\/90{background-color:hsla(0,0%,100%,.9)}.bg-white\\/95{background-color:hsla(0,0%,100%,.95)}.bg-opacity-10{--tw-bg-opacity:0.1}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-amber-500{--tw-gradient-from:#f59e0b var(--tw-gradient-from-position);--tw-gradient-to:rgba(245,158,11,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-ikaBlueDark{--tw-gradient-from:#0d4a7e var(--tw-gradient-from-position);--tw-gradient-to:rgba(13,74,126,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-slate-950{--tw-gradient-from:#020617 var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-slate-950\\/80{--tw-gradient-from:rgba(2,6,23,.8) var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-slate-950\\/85{--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(2,6,23,.85) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),transparent var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-amber-400{--tw-gradient-to:#fbbf24 var(--tw-gradient-to-position)}.to-ikaBlue{--tw-gradient-to:#1270b8 var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.object-top{object-position:top}.p-1{padding:.25rem}.p-1\\.5{padding:.375rem}.p-10{padding:2.5rem}.p-16{padding:4rem}.p-2{padding:.5rem}.p-2\\.5{padding:.625rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\\.5{padding-bottom:.125rem;padding-top:.125rem}.py-1{padding-bottom:.25rem;padding-top:.25rem}.py-1\\.5{padding-bottom:.375rem;padding-top:.375rem}.py-12{padding-bottom:3rem;padding-top:3rem}.py-16{padding-bottom:4rem;padding-top:4rem}.py-2{padding-bottom:.5rem;padding-top:.5rem}.py-2\\.5{padding-bottom:.625rem;padding-top:.625rem}.py-3{padding-bottom:.75rem;padding-top:.75rem}.py-4{padding-bottom:1rem;padding-top:1rem}.py-5{padding-bottom:1.25rem;padding-top:1.25rem}.py-7{padding-bottom:1.75rem;padding-top:1.75rem}.pb-14{padding-bottom:3.5rem}.pb-16{padding-bottom:4rem}.pb-3{padding-bottom:.75rem}.pb-4{padding-bottom:1rem}.pb-5{padding-bottom:1.25rem}.pb-6{padding-bottom:1.5rem}.pb-8{padding-bottom:2rem}.pl-10{padding-left:2.5rem}.pl-2{padding-left:.5rem}.pl-3{padding-left:.75rem}.pl-8{padding-left:2rem}.pl-9{padding-left:2.25rem}.pr-10{padding-right:2.5rem}.pr-3{padding-right:.75rem}.pt-1{padding-top:.25rem}.pt-11{padding-top:2.75rem}.pt-12{padding-top:3rem}.pt-14{padding-top:3.5rem}.pt-16{padding-top:4rem}.pt-2{padding-top:.5rem}.pt-3{padding-top:.75rem}.pt-32{padding-top:8rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-\\[10px\\]{font-size:10px}.text-\\[11px\\]{font-size:11px}.text-\\[9px\\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-\\[0\\.18em\\]{letter-spacing:.18em}.tracking-wide{letter-spacing:.025em}.tracking-wider{letter-spacing:.05em}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36/var(--tw-text-opacity,1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11/var(--tw-text-opacity,1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9/var(--tw-text-opacity,1))}.text-amber-700\\/80{color:rgba(180,83,9,.8)}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14/var(--tw-text-opacity,1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250/var(--tw-text-opacity,1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235/var(--tw-text-opacity,1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216/var(--tw-text-opacity,1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153/var(--tw-text-opacity,1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129/var(--tw-text-opacity,1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105/var(--tw-text-opacity,1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87/var(--tw-text-opacity,1))}.text-ikaBlue{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.text-ikaBlueDark{--tw-text-opacity:1;color:rgb(13 74 126/var(--tw-text-opacity,1))}.text-ikaInk{--tw-text-opacity:1;color:rgb(17 24 39/var(--tw-text-opacity,1))}.text-ikaRed{--tw-text-opacity:1;color:rgb(229 26 55/var(--tw-text-opacity,1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229/var(--tw-text-opacity,1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252/var(--tw-text-opacity,1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247/var(--tw-text-opacity,1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234/var(--tw-text-opacity,1))}.text-purple-700{--tw-text-opacity:1;color:rgb(126 34 206/var(--tw-text-opacity,1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133/var(--tw-text-opacity,1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94/var(--tw-text-opacity,1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72/var(--tw-text-opacity,1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60/var(--tw-text-opacity,1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249/var(--tw-text-opacity,1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240/var(--tw-text-opacity,1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\\/70{color:hsla(0,0%,100%,.7)}.text-white\\/90{color:hsla(0,0%,100%,.9)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-90{opacity:.9}.mix-blend-overlay{mix-blend-mode:overlay}.shadow{--tw-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)}.shadow,.shadow-2xl{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-lg,.shadow-md{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)}.shadow-premium{--tw-shadow:0 24px 70px rgba(4,31,77,.14);--tw-shadow-colored:0 24px 70px var(--tw-shadow-color)}.shadow-premium,.shadow-sm{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.drop-shadow-md{--tw-drop-shadow:drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06))}.drop-shadow-md,.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px)}.backdrop-blur,.backdrop-blur-md{backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-all{transition-duration:.15s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-transform{transition-duration:.15s;transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1)}.duration-200{transition-duration:.2s}.duration-500{transition-duration:.5s}.hover\\:border-amber-300:hover{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.hover\\:border-blue-200:hover{--tw-border-opacity:1;border-color:rgb(191 219 254/var(--tw-border-opacity,1))}.hover\\:border-ikaBlue:hover{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.hover\\:border-ikaRed:hover{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.hover\\:bg-amber-50\\/50:hover{background-color:rgba(255,251,235,.5)}.hover\\:bg-amber-600:hover{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.hover\\:bg-blue-100:hover{--tw-bg-opacity:1;background-color:rgb(219 234 254/var(--tw-bg-opacity,1))}.hover\\:bg-blue-600:hover{--tw-bg-opacity:1;background-color:rgb(37 99 235/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-100:hover{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-700:hover{--tw-bg-opacity:1;background-color:rgb(4 120 87/var(--tw-bg-opacity,1))}.hover\\:bg-ikaBlue:hover{--tw-bg-opacity:1;background-color:rgb(18 112 184/var(--tw-bg-opacity,1))}.hover\\:bg-ikaRed:hover{--tw-bg-opacity:1;background-color:rgb(229 26 55/var(--tw-bg-opacity,1))}.hover\\:bg-ikaSoft:hover{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.hover\\:bg-rose-100:hover{--tw-bg-opacity:1;background-color:rgb(255 228 230/var(--tw-bg-opacity,1))}.hover\\:bg-rose-600:hover{--tw-bg-opacity:1;background-color:rgb(225 29 72/var(--tw-bg-opacity,1))}.hover\\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.hover\\:bg-slate-100\\/80:hover{background-color:rgba(241,245,249,.8)}.hover\\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity,1))}.hover\\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.hover\\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.hover\\:bg-white\\/20:hover{background-color:hsla(0,0%,100%,.2)}.hover\\:bg-white\\/25:hover{background-color:hsla(0,0%,100%,.25)}.hover\\:bg-white\\/30:hover{background-color:hsla(0,0%,100%,.3)}.hover\\:text-ikaBlue:hover{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.hover\\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.hover\\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\\:underline:hover{text-decoration-line:underline}.hover\\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.hover\\:shadow-lg:hover,.hover\\:shadow-sm:hover{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.hover\\:shadow-sm:hover{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.focus\\:border-ikaBlue:focus{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.focus\\:border-ikaRed:focus{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.focus\\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.disabled\\:cursor-not-allowed:disabled{cursor:not-allowed}.disabled\\:opacity-40:disabled{opacity:.4}.group:hover .group-hover\\:block{display:block}.group:hover .group-hover\\:rotate-180{--tw-rotate:180deg}.group:hover .group-hover\\:rotate-180,.group:hover .group-hover\\:scale-105{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05}.group:hover .group-hover\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:border-ikaBlue{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.group:hover .group-hover\\:bg-ikaSoft{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.group:hover .group-hover\\:text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-ikaBlue{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-ikaRed{--tw-text-opacity:1;color:rgb(229 26 55/var(--tw-text-opacity,1))}.group:hover .group-hover\\:opacity-100{opacity:1}@media (min-width:640px){.sm\\:left-8{left:2rem}.sm\\:order-1{order:1}.sm\\:order-2{order:2}.sm\\:h-28{height:7rem}.sm\\:h-40{height:10rem}.sm\\:h-48{height:12rem}.sm\\:h-56{height:14rem}.sm\\:h-80{height:20rem}.sm\\:min-h-\\[350px\\]{min-height:350px}.sm\\:w-28{width:7rem}.sm\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\\:flex-row{flex-direction:row}.sm\\:items-center{align-items:center}.sm\\:justify-between{justify-content:space-between}.sm\\:p-5{padding:1.25rem}.sm\\:p-7{padding:1.75rem}.sm\\:p-8{padding:2rem}.sm\\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:px-8{padding-left:2rem;padding-right:2rem}.sm\\:pt-36{padding-top:9rem}.sm\\:pt-5{padding-top:1.25rem}.sm\\:pt-8{padding-top:2rem}.sm\\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\\:text-base{font-size:1rem;line-height:1.5rem}.sm\\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:768px){.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:col-span-2{grid-column:span 2/span 2}.lg\\:col-span-3{grid-column:span 3/span 3}.lg\\:col-span-5{grid-column:span 5/span 5}.lg\\:col-span-6{grid-column:span 6/span 6}.lg\\:col-span-7{grid-column:span 7/span 7}.lg\\:flex{display:flex}.lg\\:hidden{display:none}.lg\\:h-96{height:24rem}.lg\\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (min-width:1280px){.xl\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.xl\\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.xl\\:gap-4{gap:1rem}}", true);
 
 
 /***/ },
@@ -51,7 +51,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Header */ 4086);
 /* harmony import */ var _services_headerMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/headerMenu */ 1397);
-/* harmony import */ var _services_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/footer */ 659);
+/* harmony import */ var _services_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/footer */ 9040);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Footer */ 8072);
 /* harmony import */ var _components_ScrollToTop__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ScrollToTop */ 1000);
 /* harmony import */ var _pages_Accueil__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Accueil */ 5123);
@@ -175,13 +175,13 @@ var App = function (_a) {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { ref: rootRef, className: "min-h-screen flex flex-col bg-slate-100 text-ikaInk antialiased" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_1__.Header, { menuItems: menuItems }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ScrollToTop__WEBPACK_IMPORTED_MODULE_5__.ScrollToTop, { hash: hash, rootRef: rootRef }),
-        page === 'accueil' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Accueil__WEBPACK_IMPORTED_MODULE_6__.Accueil, null),
-        page === 'detail-evenement' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_evenements_detail_evenement__WEBPACK_IMPORTED_MODULE_8__.DetailEvenement, null),
-        page === 'tous-evenements' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_evenements_tous_evenements__WEBPACK_IMPORTED_MODULE_9__.TousEvenements, null),
-        page === 'detail-actualite' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_actualites_detail_actualite__WEBPACK_IMPORTED_MODULE_10__.DetailActualite, null),
-        page === 'toutes-actualites' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_actualites_toutes_les_actualites__WEBPACK_IMPORTED_MODULE_11__.ToutesActualites, null),
-        page === 'detail-agenda' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_agenda_detail_agenda__WEBPACK_IMPORTED_MODULE_12__.DetailAgenda, null),
-        page === 'toutes-agenda' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_agenda_toutes_agenda__WEBPACK_IMPORTED_MODULE_13__.ToutesAgenda, null),
+        page === 'accueil' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Accueil__WEBPACK_IMPORTED_MODULE_6__.Accueil, { siteUrl: siteUrl }),
+        page === 'detail-evenement' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_evenements_detail_evenement__WEBPACK_IMPORTED_MODULE_8__.DetailEvenement, { siteUrl: siteUrl }),
+        page === 'tous-evenements' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_evenements_tous_evenements__WEBPACK_IMPORTED_MODULE_9__.TousEvenements, { siteUrl: siteUrl }),
+        page === 'detail-actualite' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_actualites_detail_actualite__WEBPACK_IMPORTED_MODULE_10__.DetailActualite, { siteUrl: siteUrl }),
+        page === 'toutes-actualites' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_actualites_toutes_les_actualites__WEBPACK_IMPORTED_MODULE_11__.ToutesActualites, { siteUrl: siteUrl }),
+        page === 'detail-agenda' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_agenda_detail_agenda__WEBPACK_IMPORTED_MODULE_12__.DetailAgenda, { siteUrl: siteUrl }),
+        page === 'toutes-agenda' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_agenda_toutes_agenda__WEBPACK_IMPORTED_MODULE_13__.ToutesAgenda, { siteUrl: siteUrl }),
         page === 'detail-membre' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_equipe_detail_membre__WEBPACK_IMPORTED_MODULE_14__.DetailMembre, null),
         page === 'toute-equipe' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_equipe_toute_equipe__WEBPACK_IMPORTED_MODULE_15__.TouteEquipe, null),
         page === 'detail-projet' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_projets_detail_projet__WEBPACK_IMPORTED_MODULE_16__.DetailProjet, null),
@@ -686,7 +686,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 196);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ 5959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa6 */ 251);
+/* harmony import */ var _services_agenda_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/agenda/index */ 5160);
+/* harmony import */ var _services_actualites_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/actualites/index */ 6191);
+/* harmony import */ var _services_evenements_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/evenements/index */ 3228);
+/* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/fa6 */ 251);
+
+
+
 
 
 
@@ -714,48 +720,6 @@ var IMG = {
     gal5: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80',
     gal6: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80'
 };
-var EVENTS = [
-    {
-        img: IMG.seminar,
-        title: 'Séminaire Innovation & Transformation Digitale',
-        dateIcon: 'text-amber-400',
-        date: '25 - 27 Juillet 2026',
-        locationIcon: 'text-amber-400',
-        location: 'Ouagadougou, Burkina Faso',
-        text: "3 jours d'échanges et d'ateliers autour de l'innovation, des architectures Cloud et de la transformation digitale des entreprises."
-    },
-    {
-        img: IMG.workshop,
-        title: 'Workshop SharePoint Framework (SPFx)',
-        dateIcon: 'text-emerald-400',
-        date: '12 Août 2026',
-        locationIcon: 'text-emerald-400',
-        location: 'Lab DEV IKA SOLUTION',
-        text: "Montée en compétences sur la création des composants WebPart sur-mesure et l'intégration API pour le portail intranet."
-    },
-    {
-        img: IMG.teambuilding,
-        title: 'Afterwork de rentrée & Tech Outdoor Challenge',
-        dateIcon: 'text-purple-400',
-        date: '05 Septembre 2026',
-        locationIcon: 'text-purple-400',
-        location: 'Espace Plein Air — Bangr Weogo',
-        text: "Un moment de partage, d'activités de cohésion et de détente apprécié par l'ensemble des équipes d'IKA SOLUTION."
-    }
-];
-var NEWS = [
-    { img: IMG.news1, title: 'Nouvelle charte graphique IKA', text: "Découvrez notre nouvelle identité visuelle qui reflète notre évolution.", time: 'Il y a 2 heures' },
-    { img: IMG.news2, title: 'Succès du projet IKAR', text: 'Le projet IKAR a été livré avec succès au client.', time: 'Il y a 1 jour' },
-    { img: IMG.news3, title: "Afterwork de l'équipe", text: 'Un moment de partage et de détente apprécié par tous !', time: 'Il y a 2 jours' },
-    { img: IMG.news4, title: 'Nouveaux arrivants', text: 'Bienvenue aux nouveaux collaborateurs du département DEV.', time: 'Il y a 3 jours' }
-];
-var AGENDA = [
-    { month: 'JUL', day: '17', bg: 'bg-ikaBlueDark', title: "Réunion d'équipe", time: '10:00 - 11:00' },
-    { month: 'JUL', day: '18', bg: 'bg-ikaRed', title: 'Formation Leadership', time: '09:00 - 16:00' },
-    { month: 'JUL', day: '21', bg: 'bg-ikaBlueDark', title: 'Deadline Rapport', time: 'Toute la journée' },
-    { month: 'JUL', day: '23', bg: 'bg-emerald-600', title: 'Soutenance Projet IKAVISITE', time: '14:00 - 15:30' },
-    { month: 'JUL', day: '25', bg: 'bg-ikaRed', title: 'Séminaire Innovation', time: '08:30 - 17:00' }
-];
 var DEPT_COLORS = {
     Direction: 'bg-blue-50 text-ikaBlue',
     'Gestion de projet': 'bg-purple-50 text-purple-700',
@@ -867,12 +831,12 @@ var PROJECTS = [
     { name: 'PORTAIL RH', start: '10/05/2026', end: '10/07/2026', status: 'En retard', cls: 'bg-rose-100 text-rose-700' }
 ];
 var SERVICES = [
-    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCubes, { className: "text-ikaBlue text-sm" }), title: 'Dev Logiciel' },
-    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCloud, { className: "text-emerald-600 text-sm" }), title: 'Cloud & VPS' },
-    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaChartLine, { className: "text-purple-600 text-sm" }), title: 'Gestion ERP' },
-    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaMobileScreenButton, { className: "text-rose-600 text-sm" }), title: 'App Mobiles' },
-    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaHeadset, { className: "text-amber-600 text-sm" }), title: 'Infogérance' },
-    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaGraduationCap, { className: "text-indigo-600 text-sm" }), title: 'Formation' }
+    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaCubes, { className: "text-ikaBlue text-sm" }), title: 'Dev Logiciel' },
+    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaCloud, { className: "text-emerald-600 text-sm" }), title: 'Cloud & VPS' },
+    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaChartLine, { className: "text-purple-600 text-sm" }), title: 'Gestion ERP' },
+    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaMobileScreenButton, { className: "text-rose-600 text-sm" }), title: 'App Mobiles' },
+    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaHeadset, { className: "text-amber-600 text-sm" }), title: 'Infogérance' },
+    { icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaGraduationCap, { className: "text-indigo-600 text-sm" }), title: 'Formation' }
 ];
 var ANNONCES = [
     { type: 'anniversaire', avatar: IMG.avatarKadiatou, badge: 'border-2 border-amber-400', title: 'Anniversaire', time: "Aujourd'hui", text: 'Kadiatou OUEDRAOGO fête son anniversaire !' },
@@ -903,29 +867,87 @@ function SectionHeader(props) {
         props.link && react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: props.link, className: "text-[11px] font-bold text-ikaBlue hover:underline" }, "Voir tout")));
 }
 /* ============================== COMPOSANT ACCUEIL ============================== */
-var Accueil = function () {
-    var _a = react__WEBPACK_IMPORTED_MODULE_1__.useState(0), eventIndex = _a[0], setEventIndex = _a[1];
-    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), teamSearch = _b[0], setTeamSearch = _b[1];
-    var _c = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), teamDept = _c[0], setTeamDept = _c[1];
-    var _d = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), annFilter = _d[0], setAnnFilter = _d[1];
-    var _e = react__WEBPACK_IMPORTED_MODULE_1__.useState(false), liked = _e[0], setLiked = _e[1];
-    var _f = react__WEBPACK_IMPORTED_MODULE_1__.useState(42), likeCount = _f[0], setLikeCount = _f[1];
-    var _g = react__WEBPACK_IMPORTED_MODULE_1__.useState(false), commentModal = _g[0], setCommentModal = _g[1];
-    var _h = react__WEBPACK_IMPORTED_MODULE_1__.useState([
+var Accueil = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState(0), eventIndex = _b[0], setEventIndex = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), agendas = _c[0], setAgendas = _c[1];
+    var _d = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), actualites = _d[0], setActualites = _d[1];
+    var _e = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), evenements = _e[0], setEvenements = _e[1];
+    var _f = react__WEBPACK_IMPORTED_MODULE_1__.useState(true), agendaLoading = _f[0], setAgendaLoading = _f[1];
+    var _g = react__WEBPACK_IMPORTED_MODULE_1__.useState(true), actualitesLoading = _g[0], setActualitesLoading = _g[1];
+    var _h = react__WEBPACK_IMPORTED_MODULE_1__.useState(true), evenementsLoading = _h[0], setEvenementsLoading = _h[1];
+    var _j = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), teamSearch = _j[0], setTeamSearch = _j[1];
+    var _k = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), teamDept = _k[0], setTeamDept = _k[1];
+    var _l = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), annFilter = _l[0], setAnnFilter = _l[1];
+    var _m = react__WEBPACK_IMPORTED_MODULE_1__.useState(false), liked = _m[0], setLiked = _m[1];
+    var _o = react__WEBPACK_IMPORTED_MODULE_1__.useState(42), likeCount = _o[0], setLikeCount = _o[1];
+    var _p = react__WEBPACK_IMPORTED_MODULE_1__.useState(false), commentModal = _p[0], setCommentModal = _p[1];
+    var _q = react__WEBPACK_IMPORTED_MODULE_1__.useState([
         { user: 'Aïcha KABORÉ :', text: ' Bravo Mouhamed pour la livraison du projet SPFx ! 🎉' },
         { user: 'Jean OUEDRAOGO :', text: ' Travail remarquable, félicitations ! 👏' }
-    ]), comments = _h[0], setComments = _h[1];
-    var _j = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), commentInput = _j[0], setCommentInput = _j[1];
-    var _k = react__WEBPACK_IMPORTED_MODULE_1__.useState(8), commentCount = _k[0], setCommentCount = _k[1];
-    var _l = react__WEBPACK_IMPORTED_MODULE_1__.useState(null), memberModal = _l[0], setMemberModal = _l[1];
-    var _m = react__WEBPACK_IMPORTED_MODULE_1__.useState(null), galleryModal = _m[0], setGalleryModal = _m[1];
-    var _o = react__WEBPACK_IMPORTED_MODULE_1__.useState(0), galleryIndex = _o[0], setGalleryIndex = _o[1];
+    ]), comments = _q[0], setComments = _q[1];
+    var _r = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), commentInput = _r[0], setCommentInput = _r[1];
+    var _s = react__WEBPACK_IMPORTED_MODULE_1__.useState(8), commentCount = _s[0], setCommentCount = _s[1];
+    var _t = react__WEBPACK_IMPORTED_MODULE_1__.useState({
+        1: { liked: false, count: 12 },
+        2: { liked: false, count: 8 },
+        3: { liked: false, count: 5 }
+    }), annLikes = _t[0], setAnnLikes = _t[1];
+    var _u = react__WEBPACK_IMPORTED_MODULE_1__.useState({
+        1: [
+            { user: 'Aïcha KABORÉ :', text: ' Bonne fête Kadiatou ! 🎉' },
+            { user: 'Jean OUEDRAOGO :', text: ' Tous mes vœux ! 👏' }
+        ]
+    }), annComments = _u[0], setAnnComments = _u[1];
+    var _v = react__WEBPACK_IMPORTED_MODULE_1__.useState({ 1: 12, 2: 7, 3: 4 }), annCommentCounts = _v[0], setAnnCommentCounts = _v[1];
+    var _w = react__WEBPACK_IMPORTED_MODULE_1__.useState(null), annonceCommentId = _w[0], setAnnonceCommentId = _w[1];
+    var _x = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), annonceCommentInput = _x[0], setAnnonceCommentInput = _x[1];
+    var _y = react__WEBPACK_IMPORTED_MODULE_1__.useState(null), memberModal = _y[0], setMemberModal = _y[1];
+    var _z = react__WEBPACK_IMPORTED_MODULE_1__.useState(null), galleryModal = _z[0], setGalleryModal = _z[1];
+    var _0 = react__WEBPACK_IMPORTED_MODULE_1__.useState(0), galleryIndex = _0[0], setGalleryIndex = _0[1];
     react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (!siteUrl) {
+            setAgendaLoading(false);
+            setActualitesLoading(false);
+            setEvenementsLoading(false);
+            return;
+        }
+        (0,_services_agenda_index__WEBPACK_IMPORTED_MODULE_2__.loadAgendas)(siteUrl)
+            .then(function (data) {
+            setAgendas(data);
+            setAgendaLoading(false);
+        })
+            .catch(function (err) {
+            console.error('[Accueil] Agenda :', err);
+            setAgendaLoading(false);
+        });
+        (0,_services_actualites_index__WEBPACK_IMPORTED_MODULE_3__.loadActualites)(siteUrl)
+            .then(function (data) {
+            setActualites(data);
+            setActualitesLoading(false);
+        })
+            .catch(function (err) {
+            console.error('[Accueil] Actualités :', err);
+            setActualitesLoading(false);
+        });
+        (0,_services_evenements_index__WEBPACK_IMPORTED_MODULE_4__.loadEvenements)(siteUrl)
+            .then(function (data) {
+            setEvenements(data);
+            setEvenementsLoading(false);
+        })
+            .catch(function (err) {
+            console.error('[Accueil] Événements :', err);
+            setEvenementsLoading(false);
+        });
+    }, [siteUrl]);
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (evenements.length < 2)
+            return undefined;
         var timer = setInterval(function () {
-            setEventIndex(function (prev) { return (prev + 1) % EVENTS.length; });
+            setEventIndex(function (prev) { return (prev + 1) % evenements.length; });
         }, 6000);
         return function () { return clearInterval(timer); };
-    }, []);
+    }, [evenements.length]);
     react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
         var onKey = function (e) {
             if (galleryModal !== null) {
@@ -973,7 +995,33 @@ var Accueil = function () {
         setCommentInput('');
         setCommentModal(false);
     };
-    var event = EVENTS[eventIndex];
+    var toggleAnnLike = function (id) {
+        setAnnLikes(function (prev) {
+            var _a;
+            var cur = prev[id] || { liked: false, count: 0 };
+            return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, prev), (_a = {}, _a[id] = { liked: !cur.liked, count: cur.liked ? cur.count - 1 : cur.count + 1 }, _a));
+        });
+    };
+    var addAnnonceComment = function (e) {
+        e.preventDefault();
+        var val = annonceCommentInput.trim();
+        if (!val)
+            return;
+        var id = annonceCommentId;
+        if (id === null)
+            return;
+        setAnnComments(function (prev) {
+            var _a;
+            return ((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, prev), (_a = {}, _a[id] = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)([], (prev[id] || []), true), [{ user: 'Vous :', text: " ".concat(val), mine: true }], false), _a)));
+        });
+        setAnnCommentCounts(function (prev) {
+            var _a;
+            return ((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, prev), (_a = {}, _a[id] = (prev[id] || 0) + 1, _a)));
+        });
+        setAnnonceCommentInput('');
+        setAnnonceCommentId(null);
+    };
+    var event = evenements.length ? evenements[eventIndex % evenements.length] : null;
     return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", { id: "page-accueil", className: "pt-4 sm:pt-5 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mx-auto max-w-[1900px] px-3 sm:px-5 lg:px-6 space-y-3" },
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch" },
@@ -981,56 +1029,57 @@ var Accueil = function () {
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center justify-between pb-3 border-b border-slate-100 mb-4" },
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-2" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "p-1.5 rounded-lg bg-blue-100 text-ikaBlue" },
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCalendarDays, { className: "text-xs" })),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaCalendarDays, { className: "text-xs" })),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900" }, "\u00C9v\u00E9nements")),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-tous-evenements", className: "text-[11px] font-bold text-ikaBlue hover:underline" }, "Voir tout")),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative flex-1 min-h-[320px] sm:min-h-[350px] rounded-xl overflow-hidden bg-slate-950 text-white flex flex-col justify-end p-5 sm:p-7" },
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "absolute top-1/2 right-3 z-30 flex -translate-y-1/2 flex-col items-center gap-2 bg-slate-950/75 backdrop-blur-md px-2 py-2 rounded-full border border-white/15 shadow-xl" },
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-col items-center gap-1.5" }, EVENTS.map(function (e, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { key: i, onClick: function () { return setEventIndex(i); }, className: "w-2 h-2 rounded-full transition-all ".concat(i === eventIndex ? 'bg-white' : 'bg-white/40 hover:bg-white'), "aria-label": "Slide ".concat(i + 1) })); })),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-col items-center gap-1.5" }, evenements.map(function (e, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { key: i, onClick: function () { return setEventIndex(i); }, className: "w-2 h-2 rounded-full transition-all ".concat(i === eventIndex ? 'bg-white' : 'bg-white/40 hover:bg-white'), "aria-label": "Slide ".concat(i + 1) })); })),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "w-4 h-px bg-white/20" }),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-col items-center gap-1" },
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setEventIndex((eventIndex + EVENTS.length - 1) % EVENTS.length); }, className: "p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5", "aria-label": "Pr\u00E9c\u00E9dent" },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaChevronUp, { className: "text-[10px]" })),
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setEventIndex((eventIndex + 1) % EVENTS.length); }, className: "p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5", "aria-label": "Suivant" },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaChevronDown, { className: "text-[10px]" })))),
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-5 sm:p-7 pb-5 z-10" },
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: event.img, alt: event.title, className: "absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay -z-10" }),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setEventIndex((eventIndex + evenements.length - 1) % evenements.length); }, className: "p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5", "aria-label": "Pr\u00E9c\u00E9dent" },
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaChevronUp, { className: "text-[10px]" })),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setEventIndex((eventIndex + 1) % evenements.length); }, className: "p-1 rounded-full hover:bg-white/20 text-white transition flex items-center justify-center w-5 h-5", "aria-label": "Suivant" },
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaChevronDown, { className: "text-[10px]" })))),
+                        event ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-5 sm:p-7 pb-5 z-10" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: event.img, alt: event.title, className: "absolute inset-0 w-full h-full object-cover object-top opacity-50 mix-blend-overlay -z-10" }),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "max-w-xl mt-auto pr-10" },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-lg sm:text-xl font-bold text-white leading-snug drop-shadow-md" }, event.title),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-wrap items-center gap-3 text-[11px] font-semibold text-slate-100 mt-2" },
                                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "flex items-center gap-1.5 bg-slate-950/70 px-2 py-0.5 rounded-md border border-white/10 backdrop-blur-sm" },
-                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCalendarDays, { className: event.dateIcon }),
+                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaCalendarDays, { className: event.dateIcon }),
                                         " ",
                                         event.date),
                                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "flex items-center gap-1.5 bg-slate-950/70 px-2 py-0.5 rounded-md border border-white/10 backdrop-blur-sm" },
-                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaLocationDot, { className: event.locationIcon }),
+                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaLocationDot, { className: event.locationIcon }),
                                         " ",
                                         event.location)),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-2 text-xs text-slate-200 line-clamp-2 leading-relaxed" }, event.text),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-3" },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-evenement&id=".concat(eventIndex + 1), className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg font-bold text-[11px] bg-white text-ikaBlueDark shadow transition hover:bg-slate-100" },
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-evenement&id=".concat(event.id), className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg font-bold text-[11px] bg-white text-ikaBlueDark shadow transition hover:bg-slate-100" },
                                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "En savoir plus"),
-                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowRight, null))))))),
+                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaArrowRight, null)))))) : (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "absolute inset-0 flex items-center justify-center z-10" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-xs text-slate-300 font-semibold" }, evenementsLoading ? 'Chargement des événements...' : 'Aucun événement à venir.'))))),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "actualites", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-red-100 text-ikaRed", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaNewspaper, { className: "text-xs" }), title: "Actualit\u00E9s" }),
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "space-y-3.5" }, NEWS.map(function (n, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: i, href: "#page-detail-actualite&id=".concat(i + 1), className: "flex gap-3 group" },
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: n.img, alt: "News ".concat(i + 1), className: "w-16 h-14 rounded-lg object-cover shrink-0 border border-slate-200" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-red-100 text-ikaRed", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaNewspaper, { className: "text-xs" }), title: "Actualit\u00E9s" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "space-y-3.5" }, actualitesLoading ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[11px] text-slate-400 font-semibold text-center py-4" }, "Chargement...")) : actualites.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[11px] text-slate-400 font-semibold text-center py-4" }, "Aucune actualit\u00E9 pour le moment.")) : (actualites.slice(0, 4).map(function (n) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: n.id, href: "#page-detail-actualite&id=".concat(n.id), className: "flex gap-3 group" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: n.img, alt: n.title, className: "w-16 h-14 rounded-lg object-cover shrink-0 border border-slate-200" }),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition leading-snug" }, n.title),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[11px] text-slate-500 line-clamp-1 mt-0.5" }, n.text),
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] text-slate-400 font-medium" }, n.time)))); }))),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] text-slate-400 font-medium" }, n.time)))); })))),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-actualites", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toutes les actualit\u00E9s")),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "agenda", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCalendarDays, { className: "text-xs" }), title: "Agenda" }),
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "space-y-3" }, AGENDA.map(function (a, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: i, href: "#page-detail-agenda&id=".concat(i + 1), className: "flex items-center gap-3 group" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaCalendarDays, { className: "text-xs" }), title: "Agenda" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "space-y-3" }, agendaLoading ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[11px] text-slate-400 font-semibold text-center py-4" }, "Chargement...")) : agendas.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[11px] text-slate-400 font-semibold text-center py-4" }, "Aucun rendez-vous \u00E0 venir.")) : (agendas.slice(0, 6).map(function (a) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: a.id, href: "#page-detail-agenda&id=".concat(a.id), className: "flex items-center gap-3 group" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "w-12 h-12 rounded-xl ".concat(a.bg, " text-white flex flex-col items-center justify-center shrink-0 shadow-sm") },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[9px] font-black uppercase" }, a.month),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-sm font-bold leading-none" }, a.day)),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition" }, a.title),
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[11px] text-slate-500" }, a.time)))); }))),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[11px] text-slate-500" }, a.time)))); })))),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-agenda", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir l'agenda complet"))),
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "equipe", className: "lg:col-span-7 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
@@ -1038,12 +1087,12 @@ var Accueil = function () {
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100 mb-4" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-2 shrink-0" },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "p-1.5 rounded-lg bg-blue-100 text-ikaBlue" },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaUsers, { className: "text-xs" })),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaUsers, { className: "text-xs" })),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900" }, "Notre \u00C9quipe")),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-col sm:flex-row items-stretch sm:items-center gap-2 flex-1 max-w-md" },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative flex-1" },
                                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { type: "text", value: teamSearch, onChange: function (e) { return setTeamSearch(e.target.value); }, placeholder: "Nom, T\u00E9l\u00E9phone ou IP...", className: "w-full pl-8 pr-3 py-1.5 rounded-lg border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue" }),
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaMagnifyingGlass, { className: "absolute left-2.5 top-2.5 text-slate-400 text-xs" })),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaMagnifyingGlass, { className: "absolute left-2.5 top-2.5 text-slate-400 text-xs" })),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("select", { value: teamDept, onChange: function (e) { return setTeamDept(e.target.value); }, className: "py-1.5 px-2.5 rounded-lg border border-slate-200 text-xs text-slate-700 font-medium focus:outline-none focus:border-ikaBlue bg-slate-50" },
                                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("option", { value: "all" }, "Tous les d\u00E9partements"),
                                     Object.keys(DEPT_COLORS).map(function (d) { return react__WEBPACK_IMPORTED_MODULE_1__.createElement("option", { key: d, value: d }, d); })))),
@@ -1073,7 +1122,7 @@ var Accueil = function () {
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toute-equipe", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toute l'\u00E9quipe")),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "projets", className: "lg:col-span-5 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaDiagramProject, { className: "text-xs" }), title: "Projets en cours" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaDiagramProject, { className: "text-xs" }), title: "Projets en cours" }),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "overflow-x-auto" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("table", { className: "w-full text-left text-xs min-w-[360px]" },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("thead", null,
@@ -1093,90 +1142,126 @@ var Accueil = function () {
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "services", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-red-100 text-ikaRed", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCubes, { className: "text-xs" }), title: "Produits & Services" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-red-100 text-ikaRed", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaCubes, { className: "text-xs" }), title: "Produits & Services" }),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-2 gap-2" }, SERVICES.map(function (s, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: i, href: "#page-detail-produit&id=".concat(i + 1), className: "p-2.5 rounded-xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-blue-200 transition block cursor-pointer" },
                             s.icon,
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-[11px] font-bold text-slate-900 mt-1" }, s.title))); }))),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-tous-produits", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir tous les services")),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "annonces", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-amber-100 text-amber-600", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaBullhorn, { className: "text-xs" }), title: "Annonces" }),
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-wrap items-center gap-1 mb-3 text-[10px] font-bold" }, [['all', 'Tous'], ['anniversaire', 'Anniv.'], ['mariage', 'Mariage'], ['absence', 'Absence']].map(function (_a) {
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-amber-100 text-amber-600", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaBullhorn, { className: "text-xs" }), title: "Annonces" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-wrap items-center gap-1 mb-3 text-[11px] font-bold" }, [['all', 'Tous'], ['anniversaire', 'Anniv.'], ['mariage', 'Mariage'], ['absence', 'Absence']].map(function (_a) {
                             var type = _a[0], label = _a[1];
-                            return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { key: type, onClick: function () { return setAnnFilter(type); }, className: "px-2 py-0.5 rounded-full transition ".concat(annFilter === type ? 'bg-ikaBlue text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200') }, label));
+                            return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { key: type, onClick: function () { return setAnnFilter(type); }, className: "px-2.5 py-1 rounded-full transition ".concat(annFilter === type ? 'bg-ikaBlue text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200') }, label));
                         })),
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "space-y-2" }, filteredAnn.map(function (a, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: i, href: "#page-detail-annonce&id=".concat(i + 1), className: "flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 border border-slate-100 transition block cursor-pointer" },
-                            'avatars' in a ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex -space-x-2 shrink-0" }, a.avatars.map(function (av, j) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { key: j, src: av, className: "w-7 h-7 rounded-full object-cover border border-white", alt: "" })); }))) : (react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: a.avatar, alt: "", className: "w-8 h-8 rounded-full object-cover ".concat(a.badge, " shrink-0") })),
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex-1 min-w-0" },
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center justify-between text-[10px]" },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "font-bold text-slate-900" }, a.title),
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-slate-400 font-normal" }, a.time)),
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[11px] text-slate-600 mt-0.5 line-clamp-1" }, a.text)))); }))),
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-annonces", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toutes les annonces")),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "space-y-2" }, filteredAnn.map(function (a, i) {
+                            var annId = i + 1;
+                            var like = annLikes[annId] || { liked: false, count: 0 };
+                            return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: i, className: "rounded-xl border border-slate-100 bg-white hover:bg-slate-50 transition p-2" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-annonce&id=".concat(annId), className: "flex items-start gap-2.5 block cursor-pointer" },
+                                    'avatars' in a ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex -space-x-2 shrink-0" }, a.avatars.map(function (av, j) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { key: j, src: av, className: "w-7 h-7 rounded-full object-cover border border-white", alt: "" })); }))) : (react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: a.avatar, alt: "", className: "w-8 h-8 rounded-full object-cover ".concat(a.badge, " shrink-0") })),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex-1 min-w-0" },
+                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center justify-between text-xs" },
+                                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "font-bold text-slate-900" }, a.title),
+                                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-slate-400 font-normal" }, a.time)),
+                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-xs text-slate-600 mt-0.5 line-clamp-1" }, a.text))),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-2 mt-1.5 pl-10" },
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return toggleAnnLike(annId); }, className: "px-2.5 py-0.5 rounded-full border font-bold text-[11px] transition flex items-center gap-1 ".concat(like.liked ? 'bg-rose-500 text-white border-rose-500' : 'border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100') },
+                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaHeart, { className: "text-[10px]" }),
+                                        " ",
+                                        like.count),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setAnnonceCommentId(annId); }, className: "px-2.5 py-0.5 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-[11px] hover:bg-blue-100 transition flex items-center gap-1" },
+                                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaComment, { className: "text-[10px]" }),
+                                        " ",
+                                        annCommentCounts[annId] || 0))));
+                        }))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-annonces", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-sm text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toutes les annonces")),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "employe-mois", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-amber-100 text-amber-600", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaTrophy, { className: "text-xs" }), title: "Employ\u00E9 du mois" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-amber-100 text-amber-600", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaTrophy, { className: "text-xs" }), title: "Employ\u00E9 du mois" }),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "text-center py-2" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative inline-block" },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: IMG.avatarEmpMonth, alt: "Mouhamed TRAOR\u00C9", className: "w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover mx-auto border-4 border-amber-400 shadow-md" }),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "absolute bottom-0 right-0 p-1.5 rounded-full bg-amber-400 text-slate-950 text-xs font-black shadow", title: "Troph\u00E9e Ao\u00FBt" },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCrown, null))),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaCrown, null))),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-sm sm:text-base font-black text-slate-900 mt-2.5" }, "Mouhamed TRAOR\u00C9"),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-xs font-bold text-ikaBlue" }, "D\u00E9veloppeur Senior"),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[11px] text-slate-500 italic mt-1.5 px-1 leading-snug" }, "\"Pour son engagement exceptionnel et ses contributions remarquables ce mois-ci.\""),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center justify-center gap-3 mt-3 pt-3 border-t border-slate-100" },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: toggleLike, className: "px-3 py-1 rounded-full border font-bold text-xs transition flex items-center gap-1.5 ".concat(liked ? 'bg-rose-500 text-white border-rose-500' : 'border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100') },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaHeart, null),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaHeart, null),
                                     " ",
                                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, likeCount)),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setCommentModal(true); }, className: "px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5" },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaComment, null),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaComment, null),
                                     " ",
                                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, commentCount))))),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-employe-mois&id=1", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir son profil")),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "bilan", className: "lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaChartColumn, { className: "text-xs" }), title: "Bilan Hebdomadaire" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaChartColumn, { className: "text-xs" }), title: "Bilan Hebdomadaire" }),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "space-y-2" }, BILANS.map(function (b, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: i, href: "#page-detail-bilan&id=".concat(i + 1), className: "rounded-xl border border-slate-200 bg-slate-50 p-2.5 hover:bg-white hover:border-blue-200 transition block" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-700" },
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCalendarDay, { className: "text-ikaBlue shrink-0" }),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaCalendarDay, { className: "text-ikaBlue shrink-0" }),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "flex-1" }, b.period),
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCalendarDays, { className: "text-slate-400 shrink-0" })),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaCalendarDays, { className: "text-slate-400 shrink-0" })),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-2 flex items-center justify-between gap-2 border-t border-slate-200 pt-2" },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-2 min-w-0" },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaFilePdf, { className: "text-rose-600 text-lg shrink-0" }),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaFilePdf, { className: "text-rose-600 text-lg shrink-0" }),
                                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "min-w-0" },
                                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-[11px] font-bold text-slate-900 truncate" }, b.file),
                                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[9px] text-slate-500" }, b.size))),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "px-2.5 py-1 rounded-lg border border-slate-300 text-ikaBlue font-bold text-[10px] shrink-0 flex items-center gap-1" },
                                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "Voir"),
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaEye, { className: "text-[9px]" }))))); }))),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaEye, { className: "text-[9px]" }))))); }))),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-tous-bilans", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir les bilans"))),
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "galerie", className: "lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-purple-100 text-purple-600", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaImages, { className: "text-xs" }), title: "Galerie Moments d'\u00C9quipe" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-purple-100 text-purple-600", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaImages, { className: "text-xs" }), title: "Galerie Moments d'\u00C9quipe" }),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-2 sm:grid-cols-3 gap-3" }, GALLERY.map(function (g, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: i, onClick: function () { return setGalleryModal(i); }, className: "group relative rounded-xl overflow-hidden aspect-video bg-slate-900 cursor-pointer shadow" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: g.src, alt: g.caption, className: "w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" }),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-2 flex flex-col justify-end" },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] font-bold text-white" }, g.caption)),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition" },
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "bg-white/20 backdrop-blur-sm rounded-full p-2" },
-                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaExpand, { className: "text-white text-sm" }))))); }))),
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaExpand, { className: "text-white text-sm" }))))); }))),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toute-galerie", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toute la galerie")),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "documentation", className: "lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaFolder, { className: "text-xs" }), title: "Documentation & Dossiers Partag\u00E9s" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaFolder, { className: "text-xs" }), title: "Documentation & Dossiers Partag\u00E9s" }),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3" }, DOC_FOLDERS.map(function (f) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: f.id, href: "#".concat(f.id), className: "p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-amber-300 hover:shadow-sm transition text-center group" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "w-10 h-10 rounded-lg bg-amber-100 text-amber-500 flex items-center justify-center text-xl font-bold mx-auto mb-1" },
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaFolder, null)),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaFolder, null)),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-xs font-black text-slate-900 group-hover:text-ikaBlue transition" }, f.name),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[10px] text-slate-400" }, f.desc))); }))),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toute-documentation", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toute la documentation")))),
+        annonceCommentId !== null && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setAnnonceCommentId(null); }, className: "absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaXmark, null)),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-3" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-base" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaBullhorn, null)),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "font-black text-slate-900 text-sm" }, "Commenter l'annonce"),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-xs text-slate-500" },
+                            "Laissez votre avis sur ",
+                            ANNONCES[annonceCommentId - 1] ? ANNONCES[annonceCommentId - 1].title.toLowerCase() : 'cette annonce'))),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs" }, (annComments[annonceCommentId] || []).map(function (c, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: i, className: "p-2 rounded-lg border ".concat(c.mine ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100') },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "font-bold text-slate-900" }, c.user),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-slate-600" }, c.text))); })),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("form", { onSubmit: addAnnonceComment, className: "space-y-3" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("textarea", { value: annonceCommentInput, onChange: function (e) { return setAnnonceCommentInput(e.target.value); }, required: true, rows: 3, placeholder: "\u00C9crivez votre commentaire ici...", className: "w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue" }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center justify-end gap-2" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "button", onClick: function () { return setAnnonceCommentId(null); }, className: "px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50" }, "Annuler"),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "submit", className: "px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "Envoyer"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaPaperPlane, { className: "text-xs" }))))))),
         commentModal && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" },
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setCommentModal(false); }, className: "absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg" },
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaXmark, null)),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaXmark, null)),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-3" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: IMG.avatarEmpMonth, className: "w-12 h-12 rounded-full object-cover border-2 border-amber-400", alt: "" }),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
@@ -1191,13 +1276,13 @@ var Accueil = function () {
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "button", onClick: function () { return setCommentModal(false); }, className: "px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50" }, "Annuler"),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "submit", className: "px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "Envoyer"),
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaPaperPlane, { className: "text-xs" }))))))),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaPaperPlane, { className: "text-xs" }))))))),
         memberModal && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4", onClick: function (e) { if (e.target === e.currentTarget)
                 setMemberModal(null); } },
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl max-w-md w-full shadow-2xl border border-slate-200 overflow-hidden relative" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "h-24 bg-gradient-to-r from-ikaBlueDark to-ikaBlue relative" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setMemberModal(null); }, className: "absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition" },
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaXmark, { className: "text-sm" })),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaXmark, { className: "text-sm" })),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "absolute -bottom-10 left-6" },
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: memberModal.avatar, alt: memberModal.name, className: "w-20 h-20 rounded-2xl object-cover border-4 border-white shadow-lg" }))),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "pt-14 px-6 pb-6 space-y-4" },
@@ -1209,28 +1294,28 @@ var Accueil = function () {
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 gap-2 text-xs" },
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0" },
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaMobileScreen, { className: "text-xs" })),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaMobileScreen, { className: "text-xs" })),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[10px] text-slate-400 font-semibold uppercase tracking-wide" }, "T\u00E9l\u00E9phone Mobile"),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "tel:".concat(memberModal.phone.replace(/\s/g, '')), className: "font-bold text-slate-800 hover:text-ikaBlue transition" }, memberModal.phone))),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-7 h-7 rounded-lg bg-blue-100 text-ikaBlue flex items-center justify-center shrink-0" },
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaPhone, { className: "text-xs" })),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaPhone, { className: "text-xs" })),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[10px] text-slate-400 font-semibold uppercase tracking-wide" }, "Poste IP"),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "font-mono font-bold text-ikaBlue" }, memberModal.ip))),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-7 h-7 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center shrink-0" },
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaEnvelope, { className: "text-xs" })),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaEnvelope, { className: "text-xs" })),
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[10px] text-slate-400 font-semibold uppercase tracking-wide" }, "Email"),
                                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "mailto:".concat(memberModal.email), className: "font-semibold text-slate-700 hover:text-ikaBlue transition truncate block" }, memberModal.email)))),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex gap-2 pt-1" },
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "tel:".concat(memberModal.phone.replace(/\s/g, '')), className: "flex-1 py-2 rounded-xl bg-emerald-500 text-white text-xs font-bold text-center hover:bg-emerald-600 transition flex items-center justify-center gap-1.5 shadow" },
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaPhone, null),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaPhone, null),
                             " Appeler"),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "mailto:".concat(memberModal.email), className: "flex-1 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold text-center hover:bg-blue-600 transition flex items-center justify-center gap-1.5 shadow" },
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaEnvelope, null),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaEnvelope, null),
                             " Envoyer un e-mail")))))),
         galleryModal !== null && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-4", onClick: function (e) { if (e.target === e.currentTarget)
                 setGalleryModal(null); } },
@@ -1240,13 +1325,13 @@ var Accueil = function () {
                     " / ",
                     GALLERY.length),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setGalleryModal(null); }, className: "w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition border border-white/20" },
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaXmark, null))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaXmark, null))),
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative w-full max-w-4xl flex items-center justify-center" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setGalleryIndex((galleryIndex + GALLERY.length - 1) % GALLERY.length); }, className: "absolute left-0 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center transition -translate-x-2" },
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaChevronLeft, null)),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaChevronLeft, null)),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: GALLERY[galleryIndex].src, alt: "", className: "max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl" }),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setGalleryIndex((galleryIndex + 1) % GALLERY.length); }, className: "absolute right-0 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center transition translate-x-2" },
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaChevronRight, null))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_5__.FaChevronRight, null))),
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-4 text-center" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-white font-bold text-sm" }, GALLERY[galleryIndex].caption))))));
 };
@@ -1267,10 +1352,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   DetailActualite: () => (/* binding */ DetailActualite),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 5959);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa6 */ 251);
-/* harmony import */ var _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/actualites/data */ 1555);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ 5959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa6 */ 251);
+/* harmony import */ var _services_actualites_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/actualites/index */ 6191);
+/* harmony import */ var _services_shared_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/shared/index */ 8717);
+
+
 
 
 
@@ -1282,78 +1371,208 @@ var getActualiteIdFromHash = function () {
 };
 var ActualiteCard = function (props) {
     var actualite = props.actualite;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-detail-actualite&id=".concat(actualite.id), className: "group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "relative h-36 overflow-hidden" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: actualite.img, alt: actualite.title, className: "w-full h-full object-cover group-hover:scale-105 transition duration-500" }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaRed backdrop-blur-sm" }, actualite.category)),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "p-4" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: "text-sm font-bold text-slate-900 leading-snug group-hover:text-ikaBlue transition line-clamp-2" }, actualite.title),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex items-center gap-1.5 mt-2 text-[11px] font-semibold text-slate-400" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaClock, { className: "text-[10px]" }),
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-actualite&id=".concat(actualite.id), className: "group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block" },
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative h-36 overflow-hidden" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: actualite.img, alt: actualite.title, className: "w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" }),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaRed backdrop-blur-sm" }, actualite.category)),
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "p-4" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-sm font-bold text-slate-900 leading-snug group-hover:text-ikaBlue transition line-clamp-2" }, actualite.title),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-1.5 mt-2 text-[11px] font-semibold text-slate-400" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaClock, { className: "text-[10px]" }),
                 " ",
                 actualite.time))));
 };
-var DetailActualite = function () {
-    var _a = react__WEBPACK_IMPORTED_MODULE_0__.useState(getActualiteIdFromHash), actualiteId = _a[0], setActualiteId = _a[1];
-    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+var DetailActualite = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState(getActualiteIdFromHash), actualiteId = _b[0], setActualiteId = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), items = _c[0], setItems = _c[1];
+    var _d = react__WEBPACK_IMPORTED_MODULE_1__.useState(true), loading = _d[0], setLoading = _d[1];
+    var _e = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), likedBy = _e[0], setLikedBy = _e[1];
+    var _f = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), itemComments = _f[0], setItemComments = _f[1];
+    var _g = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), userEmail = _g[0], setUserEmail = _g[1];
+    var _h = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), userName = _h[0], setUserName = _h[1];
+    var _j = react__WEBPACK_IMPORTED_MODULE_1__.useState(false), commentModal = _j[0], setCommentModal = _j[1];
+    var _k = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), commentInput = _k[0], setCommentInput = _k[1];
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
         var onHash = function () { return setActualiteId(getActualiteIdFromHash()); };
         window.addEventListener('hashchange', onHash);
         return function () { return window.removeEventListener('hashchange', onHash); };
     }, []);
-    var actualite = _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__.ACTUALITES.find(function (a) { return a.id === actualiteId; }) || _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__.ACTUALITES[0];
-    var idx = _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__.ACTUALITES.findIndex(function (a) { return a.id === actualite.id; });
-    var prev = _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__.ACTUALITES[(idx - 1 + _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__.ACTUALITES.length) % _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__.ACTUALITES.length];
-    var next = _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__.ACTUALITES[(idx + 1) % _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__.ACTUALITES.length];
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-accueil", className: "hover:text-ikaBlue transition" }, "Accueil"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "/"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-toutes-actualites", className: "hover:text-ikaBlue transition" }, "Toutes les actualit\u00E9s"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "/"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-ikaRed" }, actualite.title)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-4" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "relative h-64 sm:h-80 lg:h-96 overflow-hidden" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: actualite.img, alt: actualite.title, className: "w-full h-full object-cover" }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-white/90 text-[11px] font-black uppercase tracking-wide text-ikaRed backdrop-blur-sm flex items-center gap-1.5" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaTag, { className: "text-[10px]" }),
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0,_services_actualites_index__WEBPACK_IMPORTED_MODULE_3__.loadActualites)(siteUrl)
+            .then(function (data) {
+            setItems(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0,_services_shared_index__WEBPACK_IMPORTED_MODULE_4__.getCurrentUserEmail)(siteUrl).then(setUserEmail);
+        (0,_services_shared_index__WEBPACK_IMPORTED_MODULE_4__.getCurrentUserName)(siteUrl).then(setUserName);
+    }, [siteUrl]);
+    var actualite = items.find(function (a) { return a.id === actualiteId; }) || items[0];
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (actualite) {
+            setLikedBy(actualite.likedBy || []);
+            setItemComments(actualite.comments || []);
+        }
+    }, [actualite]);
+    if (loading) {
+        return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "spinner-border text-ikaRed", role: "status" }),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-3 text-sm text-slate-500" }, "Chargement des actualit\u00E9s..."))));
+    }
+    if (!actualite) {
+        return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Aucune actualit\u00E9 trouv\u00E9e."),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-actualites", className: "inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" }, "Voir toutes les actualit\u00E9s"))));
+    }
+    var idx = items.findIndex(function (a) { return a.id === actualite.id; });
+    var prev = items[(idx - 1 + items.length) % items.length];
+    var next = items[(idx + 1) % items.length];
+    var isLiked = userEmail !== '' && likedBy.indexOf(userEmail) !== -1;
+    var toggleLike = function () { return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(void 0, void 0, void 0, function () {
+        var newLikedBy;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!siteUrl || !userEmail)
+                        return [2 /*return*/];
+                    newLikedBy = isLiked
+                        ? likedBy.filter(function (e) { return e !== userEmail; })
+                        : (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)([], likedBy, true), [userEmail], false);
+                    setLikedBy(newLikedBy);
+                    return [4 /*yield*/, (0,_services_actualites_index__WEBPACK_IMPORTED_MODULE_3__.updateActualiteLikedBy)(siteUrl, actualite.id, newLikedBy)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var addComment = function (e) { return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(void 0, void 0, void 0, function () {
+        var val, newComment, newComments;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    e.preventDefault();
+                    val = commentInput.trim();
+                    if (!val || !siteUrl || !userEmail)
+                        return [2 /*return*/];
+                    newComment = {
+                        user: userName || 'Utilisateur',
+                        email: userEmail,
+                        text: val,
+                        date: new Date().toISOString()
+                    };
+                    newComments = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)([], itemComments, true), [newComment], false);
+                    setItemComments(newComments);
+                    setCommentInput('');
+                    setCommentModal(false);
+                    return [4 /*yield*/, (0,_services_actualites_index__WEBPACK_IMPORTED_MODULE_3__.updateActualiteComments)(siteUrl, actualite.id, newComments)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-accueil", className: "hover:text-ikaBlue transition" }, "Accueil"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "/"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-actualites", className: "hover:text-ikaBlue transition" }, "Toutes les actualit\u00E9s"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "/"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-ikaRed" }, actualite.title)),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-4" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative h-64 sm:h-80 lg:h-96 overflow-hidden" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: actualite.img, alt: actualite.title, className: "w-full h-full object-cover object-top" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-white/90 text-[11px] font-black uppercase tracking-wide text-ikaRed backdrop-blur-sm flex items-center gap-1.5" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaTag, { className: "text-[10px]" }),
                             " ",
                             actualite.category)),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "p-5 sm:p-8" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", { className: "text-xl sm:text-2xl font-black text-ikaBlueDark leading-snug" }, actualite.title),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-xs font-semibold text-slate-600" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaClock, { className: "text-ikaRed" }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "p-5 sm:p-8" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", { className: "text-xl sm:text-2xl font-black text-ikaBlueDark leading-snug" }, actualite.title),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-xs font-semibold text-slate-600" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaClock, { className: "text-ikaRed" }),
                                 " ",
                                 actualite.time),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaUser, { className: "text-ikaBlue" }),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaUser, { className: "text-ikaBlue" }),
                                 " ",
                                 actualite.author)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mt-6" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "text-sm leading-relaxed text-slate-600" }, actualite.longText)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-toutes-actualites", className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaArrowLeft, null),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-6" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-sm leading-relaxed text-slate-600" }, actualite.longText)),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-6 flex items-center gap-2" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: toggleLike, className: "px-4 py-2 rounded-full border font-bold text-xs transition flex items-center gap-1.5 ".concat(isLiked ? 'bg-rose-500 text-white border-rose-500 shadow-sm' : 'border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100') },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaHeart, { className: isLiked ? '' : 'text-xs' }),
+                                " ",
+                                likedBy.length,
+                                " J'aime"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setCommentModal(true); }, className: "px-4 py-2 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaComment, { className: "text-xs" }),
+                                " ",
+                                itemComments.length,
+                                " Commentaires")),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-actualites", className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowLeft, null),
                                 " Voir toutes les actualit\u00E9s")))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("aside", { className: "space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-white rounded-2xl p-5 shadow-sm border border-slate-200" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900 pb-3 border-b border-slate-100 mb-4 flex items-center gap-1.5" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaNewspaper, { className: "text-ikaRed text-[11px]" }),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("aside", { className: "space-y-4" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-5 shadow-sm border border-slate-200" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900 pb-3 border-b border-slate-100 mb-4 flex items-center gap-1.5" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaNewspaper, { className: "text-ikaRed text-[11px]" }),
                             " Autres actualit\u00E9s"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-1 gap-4" }, _services_actualites_data__WEBPACK_IMPORTED_MODULE_2__.ACTUALITES.filter(function (a) { return a.id !== actualite.id; }).map(function (a) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(ActualiteCard, { key: a.id, actualite: a })); }))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-2 gap-3" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-detail-actualite&id=".concat(prev.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-ikaRed transition group" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Pr\u00E9c\u00E9dent"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-ikaRed line-clamp-2" }, prev.title)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-detail-actualite&id=".concat(next.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-ikaRed transition group text-right" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Suivant"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-ikaRed line-clamp-2" }, next.title),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaArrowRight, { className: "text-[10px] text-slate-300 group-hover:text-ikaRed ml-auto mt-1" }))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-toutes-actualites", className: "inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-ikaRed bg-red-50 text-ikaRed font-bold text-xs hover:bg-ikaRed hover:text-white transition" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaArrowRight, null),
-                        " Voir toutes les actualit\u00E9s"))))));
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 gap-4" }, items.filter(function (a) { return a.id !== actualite.id; }).map(function (a) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement(ActualiteCard, { key: a.id, actualite: a })); }))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-2 gap-3" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-actualite&id=".concat(prev.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-ikaRed transition group" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Pr\u00E9c\u00E9dent"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-ikaRed line-clamp-2" }, prev.title)),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-actualite&id=".concat(next.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-ikaRed transition group text-right" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Suivant"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-ikaRed line-clamp-2" }, next.title),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowRight, { className: "text-[10px] text-slate-300 group-hover:text-ikaRed ml-auto mt-1" }))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-actualites", className: "inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-ikaRed bg-red-50 text-ikaRed font-bold text-xs hover:bg-ikaRed hover:text-white transition" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowRight, null),
+                        " Voir toutes les actualit\u00E9s")))),
+        commentModal && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setCommentModal(false); }, className: "absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaXmark, null)),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-3" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-12 h-12 rounded-full bg-ikaRed bg-opacity-10 text-ikaRed flex items-center justify-center text-base" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaNewspaper, null)),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "font-black text-slate-900 text-sm" }, "Commenter"),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-xs text-slate-500" },
+                            "Laissez votre avis sur ",
+                            actualite.title.toLowerCase()))),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs" },
+                    itemComments.map(function (c, i) {
+                        var isMe = c.email === userEmail;
+                        return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: i, className: "p-2 rounded-lg border ".concat(isMe ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100') },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "font-bold text-slate-900" },
+                                c.user,
+                                " :"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-slate-600" },
+                                " ",
+                                c.text)));
+                    }),
+                    itemComments.length === 0 && react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-slate-400 text-center" }, "Aucun commentaire pour le moment.")),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("form", { onSubmit: addComment, className: "space-y-3" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("textarea", { value: commentInput, onChange: function (e) { return setCommentInput(e.target.value); }, required: true, rows: 3, placeholder: "\u00C9crivez votre commentaire ici...", className: "w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue" }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center justify-end gap-2" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "button", onClick: function () { return setCommentModal(false); }, className: "px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50" }, "Annuler"),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "submit", className: "px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "Envoyer"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaPaperPlane, { className: "text-xs" })))))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DetailActualite);
 
@@ -1376,16 +1595,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ 5959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa6 */ 251);
-/* harmony import */ var _services_actualites_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/actualites/data */ 1555);
+/* harmony import */ var _services_actualites_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/actualites/index */ 6191);
 
 
 
 
-var ToutesActualites = function () {
-    var _a = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), search = _a[0], setSearch = _a[1];
-    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), category = _b[0], setCategory = _b[1];
-    var categories = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)(['all'], Array.from(new Set(_services_actualites_data__WEBPACK_IMPORTED_MODULE_3__.ACTUALITES.map(function (a) { return a.category; }))), true);
-    var filtered = _services_actualites_data__WEBPACK_IMPORTED_MODULE_3__.ACTUALITES.filter(function (a) {
+var ToutesActualites = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), search = _b[0], setSearch = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), category = _c[0], setCategory = _c[1];
+    var _d = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), items = _d[0], setItems = _d[1];
+    var _e = react__WEBPACK_IMPORTED_MODULE_1__.useState(true), loading = _e[0], setLoading = _e[1];
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0,_services_actualites_index__WEBPACK_IMPORTED_MODULE_3__.loadActualites)(siteUrl)
+            .then(function (data) {
+            setItems(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    var categories = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)(['all'], Array.from(new Set(items.map(function (a) { return a.category; }))), true);
+    var filtered = items.filter(function (a) {
         var q = search.toLowerCase();
         var matchesSearch = a.title.toLowerCase().includes(q) || a.text.toLowerCase().includes(q);
         var matchesCat = category === 'all' || a.category === category;
@@ -1410,10 +1642,12 @@ var ToutesActualites = function () {
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[11px] font-semibold text-slate-400" },
                             filtered.length,
                             " actualit\u00E9(s)")))),
-            filtered.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
+            loading ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-16 shadow-sm border border-slate-200 text-center" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "spinner-border text-ikaRed", role: "status" }),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-3 text-sm text-slate-500" }, "Chargement des actualit\u00E9s..."))) : filtered.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Aucune actualit\u00E9 ne correspond \u00E0 votre recherche."))) : (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" }, filtered.map(function (a) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: a.id, href: "#page-detail-actualite&id=".concat(a.id), className: "group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative h-44 overflow-hidden" },
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: a.img, alt: a.title, className: "w-full h-full object-cover group-hover:scale-105 transition duration-500" }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: a.img, alt: a.title, className: "w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" }),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaRed backdrop-blur-sm" }, a.category)),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "p-4" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-sm font-bold text-slate-900 leading-snug group-hover:text-ikaBlue transition line-clamp-2" }, a.title),
@@ -1443,7 +1677,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 5959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa6 */ 251);
-/* harmony import */ var _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/agenda/data */ 1870);
+/* harmony import */ var _services_agenda_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/agenda/index */ 5160);
 
 
 
@@ -1468,17 +1702,42 @@ var AgendaCard = function (props) {
                     " ",
                     item.time)))));
 };
-var DetailAgenda = function () {
-    var _a = react__WEBPACK_IMPORTED_MODULE_0__.useState(getAgendaIdFromHash), agendaId = _a[0], setAgendaId = _a[1];
+var DetailAgenda = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = react__WEBPACK_IMPORTED_MODULE_0__.useState(getAgendaIdFromHash), agendaId = _b[0], setAgendaId = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_0__.useState([]), items = _c[0], setItems = _c[1];
+    var _d = react__WEBPACK_IMPORTED_MODULE_0__.useState(true), loading = _d[0], setLoading = _d[1];
     react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
         var onHash = function () { return setAgendaId(getAgendaIdFromHash()); };
         window.addEventListener('hashchange', onHash);
         return function () { return window.removeEventListener('hashchange', onHash); };
     }, []);
-    var item = _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__.AGENDA.find(function (a) { return a.id === agendaId; }) || _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__.AGENDA[0];
-    var idx = _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__.AGENDA.findIndex(function (a) { return a.id === item.id; });
-    var prev = _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__.AGENDA[(idx - 1 + _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__.AGENDA.length) % _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__.AGENDA.length];
-    var next = _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__.AGENDA[(idx + 1) % _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__.AGENDA.length];
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0,_services_agenda_index__WEBPACK_IMPORTED_MODULE_2__.loadAgendas)(siteUrl)
+            .then(function (data) {
+            setItems(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    if (loading) {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "spinner-border text-primary", role: "status" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-3 text-sm text-slate-500" }, "Chargement de l'agenda..."))));
+    }
+    var item = items.find(function (a) { return a.id === agendaId; }) || items[0];
+    if (!item) {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Aucun rendez-vous trouv\u00E9."),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-toutes-agenda", className: "inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" }, "Voir l'agenda complet"))));
+    }
+    var idx = items.findIndex(function (a) { return a.id === item.id; });
+    var prev = items[(idx - 1 + items.length) % items.length];
+    var next = items[(idx + 1) % items.length];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
@@ -1533,7 +1792,7 @@ var DetailAgenda = function () {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900 pb-3 border-b border-slate-100 mb-4 flex items-center gap-1.5" },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaCalendarDays, { className: "text-ikaBlue text-[11px]" }),
                             " Prochains rendez-vous"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-1 gap-4" }, _services_agenda_data__WEBPACK_IMPORTED_MODULE_2__.AGENDA.filter(function (a) { return a.id !== item.id; }).map(function (a) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(AgendaCard, { key: a.id, item: a })); }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-1 gap-4" }, items.filter(function (a) { return a.id !== item.id; }).map(function (a) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(AgendaCard, { key: a.id, item: a })); }))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-2 gap-3" },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-detail-agenda&id=".concat(prev.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-ikaBlue transition group" },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Pr\u00E9c\u00E9dent"),
@@ -1567,16 +1826,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ 5959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa6 */ 251);
-/* harmony import */ var _services_agenda_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/agenda/data */ 1870);
+/* harmony import */ var _services_agenda_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/agenda/index */ 5160);
 
 
 
 
-var ToutesAgenda = function () {
-    var _a = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), search = _a[0], setSearch = _a[1];
-    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), category = _b[0], setCategory = _b[1];
-    var categories = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)(['all'], Array.from(new Set(_services_agenda_data__WEBPACK_IMPORTED_MODULE_3__.AGENDA.map(function (a) { return a.category; }))), true);
-    var filtered = _services_agenda_data__WEBPACK_IMPORTED_MODULE_3__.AGENDA.filter(function (a) {
+var ToutesAgenda = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), search = _b[0], setSearch = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), category = _c[0], setCategory = _c[1];
+    var _d = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), items = _d[0], setItems = _d[1];
+    var _e = react__WEBPACK_IMPORTED_MODULE_1__.useState(true), loading = _e[0], setLoading = _e[1];
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0,_services_agenda_index__WEBPACK_IMPORTED_MODULE_3__.loadAgendas)(siteUrl)
+            .then(function (data) {
+            setItems(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    var categories = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)(['all'], Array.from(new Set(items.map(function (a) { return a.category; }))), true);
+    var filtered = items.filter(function (a) {
         var q = search.toLowerCase();
         var matchesSearch = a.title.toLowerCase().includes(q) || a.location.toLowerCase().includes(q) || a.text.toLowerCase().includes(q);
         var matchesCat = category === 'all' || a.category === category;
@@ -1637,10 +1909,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   DetailAnnonce: () => (/* binding */ DetailAnnonce),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 5959);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa6 */ 251);
-/* harmony import */ var _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/annonces/data */ 5687);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ 5959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa6 */ 251);
+/* harmony import */ var _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/annonces/data */ 5687);
+
 
 
 
@@ -1652,78 +1926,149 @@ var getAnnonceIdFromHash = function () {
 };
 var typeIcon = function (type) {
     switch (type) {
-        case 'anniversaire': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaCakeCandles, { className: "text-sm" }));
-        case 'mariage': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center shrink-0" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaHeart, { className: "text-sm" }));
-        case 'absence': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "w-10 h-10 rounded-xl bg-blue-100 text-ikaBlue flex items-center justify-center shrink-0" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaPlaneDeparture, { className: "text-sm" }));
-        default: return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaBullhorn, { className: "text-sm" }));
+        case 'anniversaire': return react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCakeCandles, { className: "text-sm" }));
+        case 'mariage': return react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center shrink-0" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaHeart, { className: "text-sm" }));
+        case 'absence': return react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-10 h-10 rounded-xl bg-blue-100 text-ikaBlue flex items-center justify-center shrink-0" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaPlaneDeparture, { className: "text-sm" }));
+        default: return react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaBullhorn, { className: "text-sm" }));
     }
 };
 var DetailAnnonce = function () {
-    var _a = react__WEBPACK_IMPORTED_MODULE_0__.useState(getAnnonceIdFromHash), annonceId = _a[0], setAnnonceId = _a[1];
-    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+    var _a = react__WEBPACK_IMPORTED_MODULE_1__.useState(getAnnonceIdFromHash), annonceId = _a[0], setAnnonceId = _a[1];
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
         var onHash = function () { return setAnnonceId(getAnnonceIdFromHash()); };
         window.addEventListener('hashchange', onHash);
         return function () { return window.removeEventListener('hashchange', onHash); };
     }, []);
-    var annonce = _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__.ANNONCES.find(function (a) { return a.id === annonceId; }) || _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__.ANNONCES[0];
-    var idx = _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__.ANNONCES.findIndex(function (a) { return a.id === annonce.id; });
-    var prev = _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__.ANNONCES[(idx - 1 + _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__.ANNONCES.length) % _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__.ANNONCES.length];
-    var next = _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__.ANNONCES[(idx + 1) % _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__.ANNONCES.length];
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-accueil", className: "hover:text-ikaBlue transition" }, "Accueil"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "/"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-toutes-annonces", className: "hover:text-ikaBlue transition" }, "Annonces"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "/"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-amber-600" }, annonce.title)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-4" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "p-6 sm:p-8" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex items-center gap-4" },
-                            annonce.avatars.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex -space-x-3 shrink-0" }, annonce.avatars.map(function (av, j) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { key: j, src: av, className: "w-12 h-12 rounded-full object-cover border-2 border-white", alt: "" })); }))) : (annonce.avatar ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: annonce.avatar, alt: "", className: "w-14 h-14 rounded-full object-cover ".concat(annonce.badge) })) : typeIcon(annonce.type)),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", { className: "text-xl sm:text-2xl font-black text-ikaBlueDark" }, annonce.title),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "text-xs font-semibold text-slate-400 mt-0.5" }, annonce.time))),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mt-6" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Message"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-2 text-sm leading-relaxed text-slate-600" }, annonce.text)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mt-6" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Cat\u00E9gorie"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-2 flex items-center gap-2 text-sm font-semibold text-slate-700" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaBullhorn, { className: "text-amber-600 text-xs" }),
+    var annonce = _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__.ANNONCES.find(function (a) { return a.id === annonceId; }) || _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__.ANNONCES[0];
+    var idx = _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__.ANNONCES.findIndex(function (a) { return a.id === annonce.id; });
+    var prev = _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__.ANNONCES[(idx - 1 + _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__.ANNONCES.length) % _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__.ANNONCES.length];
+    var next = _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__.ANNONCES[(idx + 1) % _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__.ANNONCES.length];
+    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState({}), likedIds = _b[0], setLikedIds = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_1__.useState({ 1: 12, 2: 8, 3: 5, 4: 9 }), likeCounts = _c[0], setLikeCounts = _c[1];
+    var _d = react__WEBPACK_IMPORTED_MODULE_1__.useState({
+        1: [
+            { user: 'Aïcha KABORÉ :', text: ' Bonne fête Kadiatou ! 🎉' },
+            { user: 'Jean OUEDRAOGO :', text: ' Tous mes vœux ! 👏' }
+        ]
+    }), comments = _d[0], setComments = _d[1];
+    var _e = react__WEBPACK_IMPORTED_MODULE_1__.useState({ 1: 12, 2: 7, 3: 4, 4: 6 }), commentCounts = _e[0], setCommentCounts = _e[1];
+    var _f = react__WEBPACK_IMPORTED_MODULE_1__.useState(false), commentModal = _f[0], setCommentModal = _f[1];
+    var _g = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), commentInput = _g[0], setCommentInput = _g[1];
+    var toggleLike = function () {
+        var liked = likedIds[annonce.id];
+        setLikedIds(function (p) {
+            var _a;
+            return ((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, p), (_a = {}, _a[annonce.id] = !liked, _a)));
+        });
+        setLikeCounts(function (p) {
+            var _a;
+            return ((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, p), (_a = {}, _a[annonce.id] = (p[annonce.id] || 0) + (liked ? -1 : 1), _a)));
+        });
+    };
+    var addComment = function (e) {
+        e.preventDefault();
+        var val = commentInput.trim();
+        if (!val)
+            return;
+        setComments(function (p) {
+            var _a;
+            return ((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, p), (_a = {}, _a[annonce.id] = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)([], (p[annonce.id] || []), true), [{ user: 'Vous :', text: " ".concat(val), mine: true }], false), _a)));
+        });
+        setCommentCounts(function (p) {
+            var _a;
+            return ((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, p), (_a = {}, _a[annonce.id] = (p[annonce.id] || 0) + 1, _a)));
+        });
+        setCommentInput('');
+        setCommentModal(false);
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-accueil", className: "hover:text-ikaBlue transition" }, "Accueil"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "/"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-annonces", className: "hover:text-ikaBlue transition" }, "Annonces"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "/"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-amber-600" }, annonce.title)),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-4" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "p-6 sm:p-8" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-4" },
+                            annonce.avatars.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex -space-x-3 shrink-0" }, annonce.avatars.map(function (av, j) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { key: j, src: av, className: "w-12 h-12 rounded-full object-cover border-2 border-white", alt: "" })); }))) : (annonce.avatar ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: annonce.avatar, alt: "", className: "w-14 h-14 rounded-full object-cover ".concat(annonce.badge) })) : typeIcon(annonce.type)),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", { className: "text-xl sm:text-2xl font-black text-ikaBlueDark" }, annonce.title),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-xs font-semibold text-slate-400 mt-0.5" }, annonce.time))),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-6" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Message"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-2 text-sm leading-relaxed text-slate-600" }, annonce.text)),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-6" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Cat\u00E9gorie"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-2 flex items-center gap-2 text-sm font-semibold text-slate-700" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaBullhorn, { className: "text-amber-600 text-xs" }),
                                 " ",
                                 annonce.type)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mt-8" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-toutes-annonces", className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaArrowLeft, null),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-6 flex items-center gap-2" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: toggleLike, className: "px-4 py-2 rounded-full border font-bold text-xs transition flex items-center gap-1.5 ".concat(likedIds[annonce.id] ? 'bg-rose-500 text-white border-rose-500 shadow-sm' : 'border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100') },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaHeart, { className: likedIds[annonce.id] ? '' : 'text-xs' }),
+                                " ",
+                                likeCounts[annonce.id] || 0,
+                                " J'aime"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setCommentModal(true); }, className: "px-4 py-2 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaComment, { className: "text-xs" }),
+                                " ",
+                                commentCounts[annonce.id] || 0,
+                                " Commentaires")),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-8" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-annonces", className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowLeft, null),
                                 " Voir toutes les annonces")))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("aside", { className: "space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-white rounded-2xl p-5 shadow-sm border border-slate-200" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900 pb-3 border-b border-slate-100 mb-4 flex items-center gap-1.5" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaUsers, { className: "text-amber-600 text-[11px]" }),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("aside", { className: "space-y-4" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-5 shadow-sm border border-slate-200" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900 pb-3 border-b border-slate-100 mb-4 flex items-center gap-1.5" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaUsers, { className: "text-amber-600 text-[11px]" }),
                             " Autres annonces"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-1 gap-3" }, _services_annonces_data__WEBPACK_IMPORTED_MODULE_2__.ANNONCES.filter(function (a) { return a.id !== annonce.id; }).map(function (a) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { key: a.id, href: "#page-detail-annonce&id=".concat(a.id), className: "flex items-center gap-3 p-3 rounded-xl border border-slate-100 hover:border-amber-300 hover:bg-amber-50/50 transition group" },
-                            a.avatars.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex -space-x-2 shrink-0" }, a.avatars.map(function (av, j) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { key: j, src: av, className: "w-8 h-8 rounded-full object-cover border border-white", alt: "" })); }))) : (a.avatar ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: a.avatar, alt: "", className: "w-9 h-9 rounded-full object-cover ".concat(a.badge, " shrink-0") })
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 gap-3" }, _services_annonces_data__WEBPACK_IMPORTED_MODULE_3__.ANNONCES.filter(function (a) { return a.id !== annonce.id; }).map(function (a) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: a.id, href: "#page-detail-annonce&id=".concat(a.id), className: "flex items-center gap-3 p-3 rounded-xl border border-slate-100 hover:border-amber-300 hover:bg-amber-50/50 transition group" },
+                            a.avatars.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex -space-x-2 shrink-0" }, a.avatars.map(function (av, j) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { key: j, src: av, className: "w-8 h-8 rounded-full object-cover border border-white", alt: "" })); }))) : (a.avatar ? react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: a.avatar, alt: "", className: "w-9 h-9 rounded-full object-cover ".concat(a.badge, " shrink-0") })
                                 : typeIcon(a.type)),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "min-w-0" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: "text-xs font-bold text-slate-900 group-hover:text-amber-600 transition" }, a.title),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "text-[10px] text-slate-400" }, a.time)))); }))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-2 gap-3" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-detail-annonce&id=".concat(prev.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-amber-300 transition group" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Pr\u00E9c\u00E9dent"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-amber-600 line-clamp-2" }, prev.title)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-detail-annonce&id=".concat(next.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-amber-300 transition group text-right" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Suivant"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-amber-600 line-clamp-2" }, next.title),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaArrowRight, { className: "text-[10px] text-slate-300 group-hover:text-amber-600 ml-auto mt-1" }))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-toutes-annonces", className: "inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-amber-300 bg-amber-50 text-amber-700 font-bold text-xs hover:bg-amber-600 hover:text-white transition" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaArrowRight, null),
-                        " Voir toutes les annonces"))))));
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "min-w-0" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-xs font-bold text-slate-900 group-hover:text-amber-600 transition" }, a.title),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[10px] text-slate-400" }, a.time)))); }))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-2 gap-3" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-annonce&id=".concat(prev.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-amber-300 transition group" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Pr\u00E9c\u00E9dent"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-amber-600 line-clamp-2" }, prev.title)),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-annonce&id=".concat(next.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-amber-300 transition group text-right" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Suivant"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-amber-600 line-clamp-2" }, next.title),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowRight, { className: "text-[10px] text-slate-300 group-hover:text-amber-600 ml-auto mt-1" }))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toutes-annonces", className: "inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-amber-300 bg-amber-50 text-amber-700 font-bold text-xs hover:bg-amber-600 hover:text-white transition" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowRight, null),
+                        " Voir toutes les annonces")))),
+        commentModal && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setCommentModal(false); }, className: "absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaXmark, null)),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-3" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-base" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaBullhorn, null)),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "font-black text-slate-900 text-sm" }, "Commenter"),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-xs text-slate-500" },
+                            "Laissez votre avis sur ",
+                            annonce.title.toLowerCase()))),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs" }, (comments[annonce.id] || []).map(function (c, i) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: i, className: "p-2 rounded-lg border ".concat(c.mine ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100') },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "font-bold text-slate-900" }, c.user),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-slate-600" }, c.text))); })),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("form", { onSubmit: addComment, className: "space-y-3" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("textarea", { value: commentInput, onChange: function (e) { return setCommentInput(e.target.value); }, required: true, rows: 3, placeholder: "\u00C9crivez votre commentaire ici...", className: "w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue" }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center justify-end gap-2" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "button", onClick: function () { return setCommentModal(false); }, className: "px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50" }, "Annuler"),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "submit", className: "px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "Envoyer"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaPaperPlane, { className: "text-xs" })))))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DetailAnnonce);
 
@@ -2432,10 +2777,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   DetailEvenement: () => (/* binding */ DetailEvenement),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 5959);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa6 */ 251);
-/* harmony import */ var _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/evenements/data */ 7250);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ 5959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa6 */ 251);
+/* harmony import */ var _services_evenements_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/evenements/index */ 3228);
+/* harmony import */ var _services_shared_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/shared/index */ 8717);
+
+
 
 
 
@@ -2447,98 +2796,228 @@ var getEventIdFromHash = function () {
 };
 var EventCard = function (props) {
     var event = props.event;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-detail-evenement&id=".concat(event.id), className: "group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "relative h-44 overflow-hidden" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: event.img, alt: event.title, className: "w-full h-full object-cover group-hover:scale-105 transition duration-500" }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaBlueDark backdrop-blur-sm" }, event.category)),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "p-4" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: "text-sm font-bold text-slate-900 leading-snug group-hover:text-ikaBlue transition line-clamp-2" }, event.title),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 text-[11px] font-semibold text-slate-500" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "flex items-center gap-1.5" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaCalendarDays, { className: event.dateIcon }),
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-evenement&id=".concat(event.id), className: "group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block" },
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative h-44 overflow-hidden" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: event.img, alt: event.title, className: "w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" }),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaBlueDark backdrop-blur-sm" }, event.category)),
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "p-4" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-sm font-bold text-slate-900 leading-snug group-hover:text-ikaBlue transition line-clamp-2" }, event.title),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 text-[11px] font-semibold text-slate-500" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "flex items-center gap-1.5" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCalendarDays, { className: event.dateIcon }),
                     " ",
                     event.date),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "flex items-center gap-1.5" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaLocationDot, { className: event.locationIcon }),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "flex items-center gap-1.5" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaLocationDot, { className: event.locationIcon }),
                     " ",
                     event.location)))));
 };
-var DetailEvenement = function () {
-    var _a = react__WEBPACK_IMPORTED_MODULE_0__.useState(getEventIdFromHash), eventId = _a[0], setEventId = _a[1];
-    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+var DetailEvenement = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState(getEventIdFromHash), eventId = _b[0], setEventId = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), items = _c[0], setItems = _c[1];
+    var _d = react__WEBPACK_IMPORTED_MODULE_1__.useState(true), loading = _d[0], setLoading = _d[1];
+    var _e = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), likedBy = _e[0], setLikedBy = _e[1];
+    var _f = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), itemComments = _f[0], setItemComments = _f[1];
+    var _g = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), userEmail = _g[0], setUserEmail = _g[1];
+    var _h = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), userName = _h[0], setUserName = _h[1];
+    var _j = react__WEBPACK_IMPORTED_MODULE_1__.useState(false), commentModal = _j[0], setCommentModal = _j[1];
+    var _k = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), commentInput = _k[0], setCommentInput = _k[1];
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
         var onHash = function () { return setEventId(getEventIdFromHash()); };
         window.addEventListener('hashchange', onHash);
         return function () { return window.removeEventListener('hashchange', onHash); };
     }, []);
-    var event = _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__.EVENEMENTS.find(function (e) { return e.id === eventId; }) || _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__.EVENEMENTS[0];
-    var idx = _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__.EVENEMENTS.findIndex(function (e) { return e.id === event.id; });
-    var prev = _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__.EVENEMENTS[(idx - 1 + _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__.EVENEMENTS.length) % _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__.EVENEMENTS.length];
-    var next = _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__.EVENEMENTS[(idx + 1) % _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__.EVENEMENTS.length];
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-accueil", className: "hover:text-ikaBlue transition" }, "Accueil"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "/"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-tous-evenements", className: "hover:text-ikaBlue transition" }, "Tous les \u00E9v\u00E9nements"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "/"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-ikaBlue" }, event.title)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-4" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "relative h-64 sm:h-80 lg:h-96 overflow-hidden" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: event.img, alt: event.title, className: "w-full h-full object-cover" }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-white/90 text-[11px] font-black uppercase tracking-wide text-ikaBlueDark backdrop-blur-sm flex items-center gap-1.5" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaTag, { className: "text-[10px]" }),
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0,_services_evenements_index__WEBPACK_IMPORTED_MODULE_3__.loadEvenements)(siteUrl)
+            .then(function (data) {
+            setItems(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0,_services_shared_index__WEBPACK_IMPORTED_MODULE_4__.getCurrentUserEmail)(siteUrl).then(setUserEmail);
+        (0,_services_shared_index__WEBPACK_IMPORTED_MODULE_4__.getCurrentUserName)(siteUrl).then(setUserName);
+    }, [siteUrl]);
+    var event = items.find(function (e) { return e.id === eventId; }) || items[0];
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (event) {
+            setLikedBy(event.likedBy || []);
+            setItemComments(event.comments || []);
+        }
+    }, [event]);
+    if (loading) {
+        return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "spinner-border text-ikaBlue", role: "status" }),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-3 text-sm text-slate-500" }, "Chargement des \u00E9v\u00E9nements..."))));
+    }
+    if (!event) {
+        return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Aucun \u00E9v\u00E9nement trouv\u00E9."),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-tous-evenements", className: "inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" }, "Voir tous les \u00E9v\u00E9nements"))));
+    }
+    var idx = items.findIndex(function (e) { return e.id === event.id; });
+    var prev = items[(idx - 1 + items.length) % items.length];
+    var next = items[(idx + 1) % items.length];
+    var isJoined = userEmail !== '' && likedBy.indexOf(userEmail) !== -1;
+    var toggleJoin = function () { return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(void 0, void 0, void 0, function () {
+        var newLikedBy;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!siteUrl || !userEmail)
+                        return [2 /*return*/];
+                    newLikedBy = isJoined
+                        ? likedBy.filter(function (e) { return e !== userEmail; })
+                        : (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)([], likedBy, true), [userEmail], false);
+                    setLikedBy(newLikedBy);
+                    return [4 /*yield*/, (0,_services_evenements_index__WEBPACK_IMPORTED_MODULE_3__.updateEvenementLikedBy)(siteUrl, event.id, newLikedBy)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var addComment = function (e) { return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(void 0, void 0, void 0, function () {
+        var val, newComment, newComments;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    e.preventDefault();
+                    val = commentInput.trim();
+                    if (!val || !siteUrl || !userEmail)
+                        return [2 /*return*/];
+                    newComment = {
+                        user: userName || 'Utilisateur',
+                        email: userEmail,
+                        text: val,
+                        date: new Date().toISOString()
+                    };
+                    newComments = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)([], itemComments, true), [newComment], false);
+                    setItemComments(newComments);
+                    setCommentInput('');
+                    setCommentModal(false);
+                    return [4 /*yield*/, (0,_services_evenements_index__WEBPACK_IMPORTED_MODULE_3__.updateEvenementComments)(siteUrl, event.id, newComments)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-accueil", className: "hover:text-ikaBlue transition" }, "Accueil"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "/"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-tous-evenements", className: "hover:text-ikaBlue transition" }, "Tous les \u00E9v\u00E9nements"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "/"),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-ikaBlue" }, event.title)),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-4" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative h-64 sm:h-80 lg:h-96 overflow-hidden" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: event.img, alt: event.title, className: "w-full h-full object-cover object-top" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-white/90 text-[11px] font-black uppercase tracking-wide text-ikaBlueDark backdrop-blur-sm flex items-center gap-1.5" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaTag, { className: "text-[10px]" }),
                             " ",
                             event.category)),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "p-5 sm:p-8" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", { className: "text-xl sm:text-2xl font-black text-ikaBlueDark leading-snug" }, event.title),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-xs font-semibold text-slate-600" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaCalendarDays, { className: event.dateIcon }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "p-5 sm:p-8" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", { className: "text-xl sm:text-2xl font-black text-ikaBlueDark leading-snug" }, event.title),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 text-xs font-semibold text-slate-600" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCalendarDays, { className: event.dateIcon }),
                                 " ",
                                 event.date),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaLocationDot, { className: event.locationIcon }),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaLocationDot, { className: event.locationIcon }),
                                 " ",
                                 event.location)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mt-6 space-y-5" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null,
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "\u00C0 propos de l'\u00E9v\u00E9nement"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-2 text-sm leading-relaxed text-slate-600" }, event.longText)),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null,
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Intervenant"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-2 flex items-center gap-2 text-sm font-semibold text-slate-700" },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaUser, { className: "text-ikaBlue text-xs" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-6 space-y-5" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", null,
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "\u00C0 propos de l'\u00E9v\u00E9nement"),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-2 text-sm leading-relaxed text-slate-600" }, event.longText)),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", null,
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Intervenant"),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-2 flex items-center gap-2 text-sm font-semibold text-slate-700" },
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaUser, { className: "text-ikaBlue text-xs" }),
                                     " ",
                                     event.speaker)),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null,
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Capacit\u00E9"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-2 flex items-center gap-2 text-sm font-semibold text-slate-700" },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaChair, { className: "text-emerald-600 text-xs" }),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", null,
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Capacit\u00E9"),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-2 flex items-center gap-2 text-sm font-semibold text-slate-700" },
+                                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaChair, { className: "text-emerald-600 text-xs" }),
                                     " ",
                                     event.seats))),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaRegCalendarPlus, null),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-6 flex items-center gap-2" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: toggleJoin, className: "px-4 py-2 rounded-full border font-bold text-xs transition flex items-center gap-1.5 ".concat(isJoined ? 'bg-emerald-500 text-white border-emerald-500 shadow-sm' : 'border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100') },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCircleCheck, { className: isJoined ? '' : 'text-xs' }),
+                                " Je participe (",
+                                likedBy.length,
+                                ")"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setCommentModal(true); }, className: "px-4 py-2 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaComment, { className: "text-xs" }),
+                                " ",
+                                itemComments.length,
+                                " Commentaires")),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaRegCalendarPlus, null),
                                 " S'inscrire \u00E0 l'\u00E9v\u00E9nement"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-tous-evenements", className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaArrowLeft, null),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-tous-evenements", className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowLeft, null),
                                 " Voir tous les \u00E9v\u00E9nements")))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("aside", { className: "space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-white rounded-2xl p-5 shadow-sm border border-slate-200" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900 pb-3 border-b border-slate-100 mb-4" }, "Autres \u00E9v\u00E9nements"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-1 gap-4" }, _services_evenements_data__WEBPACK_IMPORTED_MODULE_2__.EVENEMENTS.filter(function (e) { return e.id !== event.id; }).map(function (e) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(EventCard, { key: e.id, event: e })); }))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "grid grid-cols-2 gap-3" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-detail-evenement&id=".concat(prev.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-ikaBlue transition group" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Pr\u00E9c\u00E9dent"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-ikaBlue line-clamp-2" }, prev.title)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-detail-evenement&id=".concat(next.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-ikaBlue transition group text-right" },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Suivant"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-ikaBlue line-clamp-2" }, next.title),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaArrowRight, { className: "text-[10px] text-slate-300 group-hover:text-ikaBlue ml-auto mt-1" }))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "#page-tous-evenements", className: "inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-ikaBlue bg-ikaSoft text-ikaBlue font-bold text-xs hover:bg-ikaBlue hover:text-white transition" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_1__.FaArrowRight, null),
-                        " Voir tous les \u00E9v\u00E9nements"))))));
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("aside", { className: "space-y-4" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-5 shadow-sm border border-slate-200" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900 pb-3 border-b border-slate-100 mb-4" }, "Autres \u00E9v\u00E9nements"),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 gap-4" }, items.filter(function (e) { return e.id !== event.id; }).map(function (e) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement(EventCard, { key: e.id, event: e })); }))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-2 gap-3" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-evenement&id=".concat(prev.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-ikaBlue transition group" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Pr\u00E9c\u00E9dent"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-ikaBlue line-clamp-2" }, prev.title)),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-detail-evenement&id=".concat(next.id), className: "bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:border-ikaBlue transition group text-right" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] font-bold uppercase text-slate-400" }, "Suivant"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-1 text-[11px] font-bold text-slate-700 group-hover:text-ikaBlue line-clamp-2" }, next.title),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowRight, { className: "text-[10px] text-slate-300 group-hover:text-ikaBlue ml-auto mt-1" }))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-tous-evenements", className: "inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-ikaBlue bg-ikaSoft text-ikaBlue font-bold text-xs hover:bg-ikaBlue hover:text-white transition" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaArrowRight, null),
+                        " Voir tous les \u00E9v\u00E9nements")))),
+        commentModal && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setCommentModal(false); }, className: "absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaXmark, null)),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center gap-3" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "w-12 h-12 rounded-full bg-ikaBlue bg-opacity-10 text-ikaBlue flex items-center justify-center text-base" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCalendarDays, null)),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "font-black text-slate-900 text-sm" }, "Commenter"),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-xs text-slate-500" },
+                            "Laissez votre avis sur ",
+                            event.title.toLowerCase()))),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs" },
+                    itemComments.map(function (c, i) {
+                        var isMe = c.email === userEmail;
+                        return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: i, className: "p-2 rounded-lg border ".concat(isMe ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100') },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "font-bold text-slate-900" },
+                                c.user,
+                                " :"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-slate-600" },
+                                " ",
+                                c.text)));
+                    }),
+                    itemComments.length === 0 && react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-slate-400 text-center" }, "Aucun commentaire pour le moment.")),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("form", { onSubmit: addComment, className: "space-y-3" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("textarea", { value: commentInput, onChange: function (e) { return setCommentInput(e.target.value); }, required: true, rows: 3, placeholder: "\u00C9crivez votre commentaire ici...", className: "w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue" }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center justify-end gap-2" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "button", onClick: function () { return setCommentModal(false); }, className: "px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50" }, "Annuler"),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "submit", className: "px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "Envoyer"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaPaperPlane, { className: "text-xs" })))))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DetailEvenement);
 
@@ -2561,16 +3040,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ 5959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa6 */ 251);
-/* harmony import */ var _services_evenements_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/evenements/data */ 7250);
+/* harmony import */ var _services_evenements_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/evenements/index */ 3228);
 
 
 
 
-var TousEvenements = function () {
-    var _a = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), search = _a[0], setSearch = _a[1];
-    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), category = _b[0], setCategory = _b[1];
-    var categories = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)(['all'], Array.from(new Set(_services_evenements_data__WEBPACK_IMPORTED_MODULE_3__.EVENEMENTS.map(function (e) { return e.category; }))), true);
-    var filtered = _services_evenements_data__WEBPACK_IMPORTED_MODULE_3__.EVENEMENTS.filter(function (e) {
+var TousEvenements = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), search = _b[0], setSearch = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), category = _c[0], setCategory = _c[1];
+    var _d = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), items = _d[0], setItems = _d[1];
+    var _e = react__WEBPACK_IMPORTED_MODULE_1__.useState(true), loading = _e[0], setLoading = _e[1];
+    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0,_services_evenements_index__WEBPACK_IMPORTED_MODULE_3__.loadEvenements)(siteUrl)
+            .then(function (data) {
+            setItems(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    var categories = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)(['all'], Array.from(new Set(items.map(function (e) { return e.category; }))), true);
+    var filtered = items.filter(function (e) {
         var q = search.toLowerCase();
         var matchesSearch = e.title.toLowerCase().includes(q) || e.location.toLowerCase().includes(q) || e.text.toLowerCase().includes(q);
         var matchesCat = category === 'all' || e.category === category;
@@ -2595,10 +3087,12 @@ var TousEvenements = function () {
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[11px] font-semibold text-slate-400" },
                             filtered.length,
                             " \u00E9v\u00E9nement(s)")))),
-            filtered.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
+            loading ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-16 shadow-sm border border-slate-200 text-center" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "spinner-border text-ikaBlue", role: "status" }),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-3 text-sm text-slate-500" }, "Chargement des \u00E9v\u00E9nements..."))) : filtered.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Aucun \u00E9v\u00E9nement ne correspond \u00E0 votre recherche."))) : (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" }, filtered.map(function (e) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: e.id, href: "#page-detail-evenement&id=".concat(e.id), className: "group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative h-44 overflow-hidden" },
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: e.img, alt: e.title, className: "w-full h-full object-cover group-hover:scale-105 transition duration-500" }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: e.img, alt: e.title, className: "w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" }),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaBlueDark backdrop-blur-sm" }, e.category)),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "p-4" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-sm font-bold text-slate-900 leading-snug group-hover:text-ikaBlue transition line-clamp-2" }, e.title),
@@ -4735,142 +5229,584 @@ var ListeVacances = function () {
 
 /***/ },
 
-/***/ 1555
-/*!**************************************************************!*\
-  !*** ./lib/webparts/ikaIntranet/services/actualites/data.js ***!
-  \**************************************************************/
+/***/ 6191
+/*!***************************************************************!*\
+  !*** ./lib/webparts/ikaIntranet/services/actualites/index.js ***!
+  \***************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ACTUALITES: () => (/* binding */ ACTUALITES)
+/* harmony export */   loadActualites: () => (/* binding */ loadActualites),
+/* harmony export */   updateActualiteComments: () => (/* binding */ updateActualiteComments),
+/* harmony export */   updateActualiteLikedBy: () => (/* binding */ updateActualiteLikedBy)
 /* harmony export */ });
-var IMG = {
-    news1: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80',
-    news2: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80',
-    news3: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80',
-    news4: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=400&q=80'
-};
-var ACTUALITES = [
-    {
-        id: 1,
-        img: IMG.news1,
-        title: 'Nouvelle charte graphique IKA',
-        text: "Découvrez notre nouvelle identité visuelle qui reflète notre évolution.",
-        longText: "IKA SOLUTION a dévoilé sa nouvelle charte graphique. Cette identité visuelle modernisée traduit notre évolution, notre ambition et notre engagement en faveur de l'innovation. Le nouveau logo, les couleurs et les supports de communication ont été conçus pour renforcer la cohérence de notre image de marque auprès de nos clients et partenaires.",
-        category: 'Institution',
-        time: 'Il y a 2 heures',
-        author: 'Direction Communication'
-    },
-    {
-        id: 2,
-        img: IMG.news2,
-        title: 'Succès du projet IKAR',
-        text: 'Le projet IKAR a été livré avec succès au client.',
-        longText: "Le projet IKAR, porté par l'équipe développement d'IKA SOLUTION, a été livré avec succès dans les délais. Ce projet constitue une étape majeure dans le développement de nos solutions métiers. Toute l'équipe salue l'implication des collaborateurs et la qualité du travail réalisé.",
-        category: 'Projet',
-        time: 'Il y a 1 jour',
-        author: 'Direction des Projets'
-    },
-    {
-        id: 3,
-        img: IMG.news3,
-        title: "Afterwork de l'équipe",
-        text: 'Un moment de partage et de détente apprécié par tous !',
-        longText: "Les collaborateurs d'IKA SOLUTION se sont retrouvés autour d'un afterwork convivial. Au programme : échanges informels, jeux et cohésion d'équipe. Ces moments de partage renforcent les liens entre les différents départements et participent au bien-être au travail.",
-        category: 'Vie de l\'entreprise',
-        time: 'Il y a 2 jours',
-        author: 'Ressources Humaines'
-    },
-    {
-        id: 4,
-        img: IMG.news4,
-        title: 'Nouveaux arrivants',
-        text: 'Bienvenue aux nouveaux collaborateurs du département DEV.',
-        longText: "Le département Développement accueille de nouveaux talents. Bienvenue à eux ! Leur arrivée renforce les équipes techniques d'IKA SOLUTION et contribuera au développement de nos projets Cloud, ERP et applications métiers.",
-        category: 'Ressources Humaines',
-        time: 'Il y a 3 jours',
-        author: 'Ressources Humaines'
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 196);
+/* harmony import */ var _shared_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/index */ 8717);
+
+
+var LIST_NAME = 'Actualites';
+var LIST_NAME_ALT = 'Actualite';
+var CACHE_TTL = 5 * 60 * 1000;
+var PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='22' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EIKA SOLUTION%3C/text%3E%3C/svg%3E";
+var cache = null;
+function isActive(value) {
+    return value !== false && value !== 0;
+}
+function asString(value) {
+    return value === null || value === undefined ? '' : String(value).trim();
+}
+function getFieldMap(siteUrl, listName) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var res, fields, map_1, _a;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 1:
+                    res = _b.sent();
+                    if (!res.ok)
+                        return [2 /*return*/, {}];
+                    return [4 /*yield*/, res.json()];
+                case 2:
+                    fields = (_b.sent()).value;
+                    map_1 = {};
+                    (fields || []).forEach(function (f) {
+                        if (f.Title && f.InternalName)
+                            map_1[String(f.Title).toLowerCase()] = f.InternalName;
+                    });
+                    return [2 /*return*/, map_1];
+                case 3:
+                    _a = _b.sent();
+                    return [2 /*return*/, {}];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function getVal(item, map, display, fallbacks) {
+    if (fallbacks === void 0) { fallbacks = []; }
+    var key = map[display.toLowerCase()];
+    if (key && item[key] !== undefined)
+        return item[key];
+    for (var _i = 0, fallbacks_1 = fallbacks; _i < fallbacks_1.length; _i++) {
+        var f = fallbacks_1[_i];
+        if (item[f] !== undefined)
+            return item[f];
     }
-];
+    return undefined;
+}
+function getAuthor(item, map) {
+    var raw = getVal(item, map, 'Créé par', ['Author', 'CreatedBy', 'Editor']);
+    if (raw && typeof raw === 'object') {
+        var title = raw.Title;
+        if (title)
+            return title;
+    }
+    return asString(raw);
+}
+function sitePathOf(siteUrl) {
+    try {
+        return new URL(siteUrl).pathname;
+    }
+    catch (_a) {
+        return '';
+    }
+}
+function toSiteRelative(siteUrl, path) {
+    var sp = sitePathOf(siteUrl);
+    if (sp && path.startsWith(sp))
+        return path.slice(sp.length) || '/';
+    return path;
+}
+function normalizeUrl(value, siteUrl) {
+    var s = asString(value);
+    if (!s)
+        return '';
+    if (s.startsWith('http'))
+        return s;
+    var rel = toSiteRelative(siteUrl, s);
+    return rel.startsWith('/') ? "".concat(siteUrl).concat(rel) : s;
+}
+function parseImages(value, siteUrl) {
+    var candidates = [];
+    if (value && typeof value === 'object') {
+        var o_1 = value;
+        ['serverRelativeUrl', 'Url', 'url', 'src', 'imageUrl', 'thumbnailUrl', 'fileName'].forEach(function (k) {
+            if (o_1[k])
+                candidates.push(String(o_1[k]));
+        });
+        if (!candidates.length) {
+            var str = JSON.stringify(o_1);
+            var m = str.match(/https?:\/\/[^"'\s]+/);
+            if (m)
+                candidates.push(m[0].trim());
+        }
+    }
+    else {
+        var raw = asString(value);
+        if (!raw)
+            return [];
+        try {
+            var parsed = JSON.parse(raw);
+            var arr = Array.isArray(parsed) ? parsed : [parsed];
+            arr.forEach(function (o) {
+                if (o && typeof o === 'object') {
+                    if (o.nativeFile && o.nativeFile.url)
+                        candidates.push(o.nativeFile.url);
+                    if (o.serverRelativeUrl)
+                        candidates.push(o.serverRelativeUrl);
+                    if (o.Url)
+                        candidates.push(o.Url);
+                    if (o.url)
+                        candidates.push(o.url);
+                    if (o.src)
+                        candidates.push(o.src);
+                    if (o.imageUrl)
+                        candidates.push(o.imageUrl);
+                    if (o.thumbnailUrl)
+                        candidates.push(o.thumbnailUrl);
+                }
+                else if (typeof o === 'string') {
+                    candidates.push(o);
+                }
+            });
+        }
+        catch (_a) {
+            // pas du JSON : on traite comme du texte
+        }
+        if (!candidates.length) {
+            raw.split(/[\n,;]+/).forEach(function (s) {
+                var t = s.trim();
+                if (t)
+                    candidates.push(t);
+            });
+        }
+    }
+    return candidates
+        .map(function (c) { return normalizeUrl(c, siteUrl); })
+        .filter(function (c) { return c.startsWith('http') || c.startsWith('data:image'); });
+}
+function getImageFileName(value) {
+    if (value && typeof value === 'object') {
+        var o = value;
+        return asString(o.fileName) || asString(o.originalImageName);
+    }
+    var s = asString(value);
+    if (!s)
+        return '';
+    try {
+        var p = JSON.parse(s);
+        if (p && typeof p === 'object')
+            return asString(p.fileName) || asString(p.originalImageName);
+    }
+    catch (_a) {
+        // pas du JSON
+    }
+    return '';
+}
+function getListRootFolder(siteUrl, listName) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var res, data, sr, _a;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')?$select=RootFolder/ServerRelativeUrl&$expand=RootFolder"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 1:
+                    res = _b.sent();
+                    if (!res.ok)
+                        return [2 /*return*/, ''];
+                    return [4 /*yield*/, res.json()];
+                case 2:
+                    data = (_b.sent());
+                    sr = (data.RootFolder && data.RootFolder.ServerRelativeUrl) || '';
+                    return [2 /*return*/, toSiteRelative(siteUrl, sr)];
+                case 3:
+                    _a = _b.sent();
+                    return [2 /*return*/, ''];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function resolveImageUrl(siteUrl, listName, listNameAlt, rootFolder, itemId, fileName) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var candidates, res, files, f, _a, encoded_1, folders, seen, _i, candidates_1, c, r, ct, _b;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    candidates = [];
+                    _c.label = 1;
+                case 1:
+                    _c.trys.push([1, 5, , 6]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/items(").concat(itemId, ")/AttachmentFiles?$select=ServerRelativeUrl&$top=10"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
+                    res = _c.sent();
+                    if (!res.ok) return [3 /*break*/, 4];
+                    return [4 /*yield*/, res.json()];
+                case 3:
+                    files = ((_c.sent()).value || []);
+                    f = files[0];
+                    if (f && f.ServerRelativeUrl)
+                        candidates.push(normalizeUrl(f.ServerRelativeUrl, siteUrl));
+                    _c.label = 4;
+                case 4: return [3 /*break*/, 6];
+                case 5:
+                    _a = _c.sent();
+                    return [3 /*break*/, 6];
+                case 6:
+                    if (fileName) {
+                        encoded_1 = encodeURIComponent(fileName);
+                        folders = [rootFolder || "/Lists/".concat(listName), "/Lists/".concat(listName), "/Lists/".concat(listNameAlt)];
+                        folders.forEach(function (f) { return candidates.push("".concat(siteUrl).concat(f, "/Attachments/").concat(itemId, "/").concat(encoded_1)); });
+                    }
+                    seen = {};
+                    _i = 0, candidates_1 = candidates;
+                    _c.label = 7;
+                case 7:
+                    if (!(_i < candidates_1.length)) return [3 /*break*/, 12];
+                    c = candidates_1[_i];
+                    if (seen[c])
+                        return [3 /*break*/, 11];
+                    seen[c] = true;
+                    _c.label = 8;
+                case 8:
+                    _c.trys.push([8, 10, , 11]);
+                    return [4 /*yield*/, fetch(c, { method: 'HEAD' })];
+                case 9:
+                    r = _c.sent();
+                    ct = (r.headers.get('content-type') || '').toLowerCase();
+                    if (r.status === 200 && (ct.startsWith('image/') || ct.indexOf('octet-stream') !== -1)) {
+                        console.log('[actualites] Image item', itemId, '→', c);
+                        return [2 /*return*/, c];
+                    }
+                    return [3 /*break*/, 11];
+                case 10:
+                    _b = _c.sent();
+                    return [3 /*break*/, 11];
+                case 11:
+                    _i++;
+                    return [3 /*break*/, 7];
+                case 12:
+                    console.warn('[actualites] Image introuvable item', itemId, ':', fileName);
+                    return [2 /*return*/, ''];
+            }
+        });
+    });
+}
+function relativeTime(value) {
+    var iso = asString(value);
+    if (!iso)
+        return '';
+    var date = new Date(iso);
+    if (isNaN(date.getTime()))
+        return '';
+    var diffMs = Date.now() - date.getTime();
+    var minutes = Math.floor(diffMs / 60000);
+    if (minutes < 1)
+        return "À l'instant";
+    if (minutes < 60)
+        return "Il y a ".concat(minutes, " minute").concat(minutes > 1 ? 's' : '');
+    var hours = Math.floor(minutes / 60);
+    if (hours < 24)
+        return "Il y a ".concat(hours, " heure").concat(hours > 1 ? 's' : '');
+    var days = Math.floor(hours / 24);
+    if (days < 30)
+        return "Il y a ".concat(days, " jour").concat(days > 1 ? 's' : '');
+    return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+function loadActualites(siteUrl) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var fieldMap, listName_1, fieldMapFinal_1, _a, res, items, missingImages_1, actualites_1, rootFolder_1, err_1;
+        var _this = this;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    if (cache && Date.now() - cache.ts < CACHE_TTL)
+                        return [2 /*return*/, cache.data];
+                    _b.label = 1;
+                case 1:
+                    _b.trys.push([1, 11, , 12]);
+                    return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME)];
+                case 2:
+                    fieldMap = _b.sent();
+                    listName_1 = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
+                    if (!(Object.keys(fieldMap).length > 0)) return [3 /*break*/, 3];
+                    _a = fieldMap;
+                    return [3 /*break*/, 5];
+                case 3: return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME_ALT)];
+                case 4:
+                    _a = _b.sent();
+                    _b.label = 5;
+                case 5:
+                    fieldMapFinal_1 = _a;
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName_1, "')/items?$select=*,Author/Title&$expand=Author/Title&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 6:
+                    res = _b.sent();
+                    if (!res.ok)
+                        throw new Error("HTTP ".concat(res.status));
+                    return [4 /*yield*/, res.json()];
+                case 7:
+                    items = ((_b.sent()).value || []);
+                    missingImages_1 = [];
+                    actualites_1 = items
+                        .filter(function (it) { return isActive(getVal(it, fieldMapFinal_1, 'Active', ['Active'])); })
+                        .map(function (it) {
+                        var _a;
+                        var title = asString(getVal(it, fieldMapFinal_1, 'Titre', ['Title']));
+                        var longText = asString(getVal(it, fieldMapFinal_1, 'Description', ['Description']));
+                        var rawImg = getVal(it, fieldMapFinal_1, 'Image', ['Image', 'Images']);
+                        var id = Number((_a = getVal(it, fieldMapFinal_1, 'Id', ['Id'])) !== null && _a !== void 0 ? _a : 0);
+                        var images = parseImages(rawImg, siteUrl);
+                        if (!images.length) {
+                            var fileName = getImageFileName(rawImg);
+                            if (fileName)
+                                missingImages_1.push({ id: id, fileName: fileName });
+                        }
+                        var category = asString(getVal(it, fieldMapFinal_1, 'Catégorie', ['Categorie', 'Category']));
+                        var created = getVal(it, fieldMapFinal_1, 'Créé', ['Created']);
+                        return {
+                            id: id,
+                            img: images[0] || PLACEHOLDER_IMG,
+                            title: title,
+                            text: longText.slice(0, 140),
+                            longText: longText,
+                            category: category,
+                            time: relativeTime(created),
+                            author: getAuthor(it, fieldMapFinal_1),
+                            likedBy: (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.parseLikedBy)(getVal(it, fieldMapFinal_1, 'AimerPar', ['AimerPar'])),
+                            comments: (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.parseComments)(getVal(it, fieldMapFinal_1, 'CommenterPar', ['CommenterPar']))
+                        };
+                    })
+                        .filter(function (a) { return a.title !== ''; });
+                    if (!missingImages_1.length) return [3 /*break*/, 10];
+                    return [4 /*yield*/, getListRootFolder(siteUrl, listName_1)];
+                case 8:
+                    rootFolder_1 = _b.sent();
+                    return [4 /*yield*/, Promise.all(missingImages_1.map(function (_a) { return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(_this, [_a], void 0, function (_b) {
+                            var url, target;
+                            var id = _b.id, fileName = _b.fileName;
+                            return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_c) {
+                                switch (_c.label) {
+                                    case 0: return [4 /*yield*/, resolveImageUrl(siteUrl, listName_1, LIST_NAME_ALT, rootFolder_1, id, fileName)];
+                                    case 1:
+                                        url = _c.sent();
+                                        target = actualites_1.find(function (a) { return a.id === id; });
+                                        if (target && url)
+                                            target.img = url;
+                                        return [2 /*return*/];
+                                }
+                            });
+                        }); }))];
+                case 9:
+                    _b.sent();
+                    _b.label = 10;
+                case 10:
+                    if (actualites_1.length > 0) {
+                        cache = { data: actualites_1, ts: Date.now() };
+                    }
+                    return [2 /*return*/, actualites_1];
+                case 11:
+                    err_1 = _b.sent();
+                    console.error('[actualites] Erreur de chargement :', err_1);
+                    return [2 /*return*/, []];
+                case 12: return [2 /*return*/];
+            }
+        });
+    });
+}
+var resolvedListName = null;
+function resolveListName(siteUrl) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var fieldMap, fieldMapAlt;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (resolvedListName)
+                        return [2 /*return*/, resolvedListName];
+                    return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME)];
+                case 1:
+                    fieldMap = _a.sent();
+                    resolvedListName = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
+                    if (!(resolvedListName === LIST_NAME_ALT)) return [3 /*break*/, 3];
+                    return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME_ALT)];
+                case 2:
+                    fieldMapAlt = _a.sent();
+                    if (!fieldMapAlt || Object.keys(fieldMapAlt).length === 0)
+                        resolvedListName = LIST_NAME;
+                    _a.label = 3;
+                case 3: return [2 /*return*/, resolvedListName];
+            }
+        });
+    });
+}
+function updateActualiteLikedBy(siteUrl, itemId, likedBy) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var listName;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, resolveListName(siteUrl)];
+                case 1:
+                    listName = _a.sent();
+                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+            }
+        });
+    });
+}
+function updateActualiteComments(siteUrl, itemId, comments) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var listName;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, resolveListName(siteUrl)];
+                case 1:
+                    listName = _a.sent();
+                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+            }
+        });
+    });
+}
 
 
 /***/ },
 
-/***/ 1870
-/*!**********************************************************!*\
-  !*** ./lib/webparts/ikaIntranet/services/agenda/data.js ***!
-  \**********************************************************/
+/***/ 5160
+/*!***********************************************************!*\
+  !*** ./lib/webparts/ikaIntranet/services/agenda/index.js ***!
+  \***********************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AGENDA: () => (/* binding */ AGENDA)
+/* harmony export */   loadAgendas: () => (/* binding */ loadAgendas)
 /* harmony export */ });
-var AGENDA = [
-    {
-        id: 1,
-        month: 'JUL',
-        day: '17',
-        bg: 'bg-ikaBlueDark',
-        title: "Réunion d'équipe",
-        time: '10:00 - 11:00',
-        location: 'Salle de réunion 1',
-        category: 'Réunion',
-        organizer: 'Jean OUEDRAOGO',
-        text: "Point hebdomadaire d'équipe : suivi des projets en cours, des priorités de la semaine et des points bloquants."
-    },
-    {
-        id: 2,
-        month: 'JUL',
-        day: '18',
-        bg: 'bg-ikaRed',
-        title: 'Formation Leadership',
-        time: '09:00 - 16:00',
-        location: 'Espace Formation — Ouagadougou',
-        category: 'Formation',
-        organizer: 'Ressources Humaines',
-        text: "Session de formation dédiée aux managers : techniques de leadership, gestion d'équipe et prise de décision."
-    },
-    {
-        id: 3,
-        month: 'JUL',
-        day: '21',
-        bg: 'bg-ikaBlueDark',
-        title: 'Deadline Rapport',
-        time: 'Toute la journée',
-        location: 'Tous les départements',
-        category: 'Échéance',
-        organizer: 'Direction',
-        text: "Date limite de remise des rapports d'activité mensuels de tous les départements."
-    },
-    {
-        id: 4,
-        month: 'JUL',
-        day: '23',
-        bg: 'bg-emerald-600',
-        title: 'Soutenance Projet IKAVISITE',
-        time: '14:00 - 15:30',
-        location: 'Salle de réunion 2',
-        category: 'Projet',
-        organizer: 'Mouhamed TRAORÉ',
-        text: "Soutenance de clôture du projet IKAVISITE devant le comité de direction et le client."
-    },
-    {
-        id: 5,
-        month: 'JUL',
-        day: '25',
-        bg: 'bg-ikaRed',
-        title: 'Séminaire Innovation',
-        time: '08:30 - 17:00',
-        location: 'Ouagadougou, Burkina Faso',
-        category: 'Séminaire',
-        organizer: 'Direction Générale',
-        text: "Séminaire annuel sur l'innovation et la transformation digitale des entreprises."
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 196);
+
+var LIST_NAME = 'Agendas';
+var CACHE_TTL = 5 * 60 * 1000;
+var MONTHS_FR = ['JAN', 'FEV', 'MAR', 'AVR', 'MAI', 'JUN', 'JUL', 'AOU', 'SEP', 'OCT', 'NOV', 'DEC'];
+var BG_CLASSES = ['bg-ikaBlueDark', 'bg-ikaRed', 'bg-emerald-600', 'bg-purple-600', 'bg-amber-600', 'bg-rose-600'];
+var cache = null;
+function isActive(value) {
+    return value !== false && value !== 0;
+}
+function asString(value) {
+    return value === null || value === undefined ? '' : String(value).trim();
+}
+function getFieldMap(siteUrl, listName) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var res, fields, map_1, _a;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 1:
+                    res = _b.sent();
+                    if (!res.ok)
+                        return [2 /*return*/, {}];
+                    return [4 /*yield*/, res.json()];
+                case 2:
+                    fields = (_b.sent()).value;
+                    map_1 = {};
+                    (fields || []).forEach(function (f) {
+                        if (f.Title && f.InternalName)
+                            map_1[String(f.Title).toLowerCase()] = f.InternalName;
+                    });
+                    return [2 /*return*/, map_1];
+                case 3:
+                    _a = _b.sent();
+                    return [2 /*return*/, {}];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function getVal(item, map, display, fallbacks) {
+    if (fallbacks === void 0) { fallbacks = []; }
+    var key = map[display.toLowerCase()];
+    if (key && item[key] !== undefined)
+        return item[key];
+    for (var _i = 0, fallbacks_1 = fallbacks; _i < fallbacks_1.length; _i++) {
+        var f = fallbacks_1[_i];
+        if (item[f] !== undefined)
+            return item[f];
     }
-];
+    return undefined;
+}
+function formatTime(date) {
+    return date && !isNaN(date.getTime())
+        ? date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
+        : '';
+}
+function loadAgendas(siteUrl) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var fieldMap_1, res, items, agenda, err_1;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (cache && Date.now() - cache.ts < CACHE_TTL)
+                        return [2 /*return*/, cache.data];
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 5, , 6]);
+                    return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME)];
+                case 2:
+                    fieldMap_1 = _a.sent();
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(LIST_NAME, "')/items?$select=*&$top=500"), {
+                            headers: { Accept: 'application/json;odata=nometadata' }
+                        })];
+                case 3:
+                    res = _a.sent();
+                    if (!res.ok)
+                        throw new Error("HTTP ".concat(res.status));
+                    return [4 /*yield*/, res.json()];
+                case 4:
+                    items = ((_a.sent()).value || []);
+                    agenda = items
+                        .filter(function (it) { return isActive(getVal(it, fieldMap_1, 'Active', ['Active'])); })
+                        .map(function (it, i) {
+                        var _a;
+                        var startRaw = getVal(it, fieldMap_1, 'Date et heure de début', ['DateDebut', 'StartTime', 'EventDate', 'StartDateTime']);
+                        var endRaw = getVal(it, fieldMap_1, 'Date et heure de fin', ['DateFin', 'EndTime', 'EndDate', 'EndDateTime']);
+                        var start = startRaw ? new Date(String(startRaw)) : null;
+                        var end = endRaw ? new Date(String(endRaw)) : null;
+                        var startTime = formatTime(start);
+                        var endTime = formatTime(end);
+                        var time = start && end ? "".concat(startTime, " - ").concat(endTime) : startTime || 'Toute la journée';
+                        return {
+                            id: Number((_a = getVal(it, fieldMap_1, 'Id', ['Id'])) !== null && _a !== void 0 ? _a : i + 1),
+                            month: start && !isNaN(start.getTime()) ? MONTHS_FR[start.getMonth()] : '',
+                            day: start && !isNaN(start.getTime()) ? String(start.getDate()) : '',
+                            bg: BG_CLASSES[i % BG_CLASSES.length],
+                            title: asString(getVal(it, fieldMap_1, 'Titre', ['Title'])),
+                            time: time,
+                            location: asString(getVal(it, fieldMap_1, 'Localisation', ['Localisation', 'Location', 'Lieu'])),
+                            category: asString(getVal(it, fieldMap_1, 'Catégorie', ['Categorie', 'Category'])),
+                            organizer: asString(getVal(it, fieldMap_1, 'Organisateur', ['Organisateur', 'Organizer'])),
+                            text: asString(getVal(it, fieldMap_1, 'Description', ['Description'])),
+                            start: start && !isNaN(start.getTime()) ? start.toISOString() : undefined,
+                            end: end && !isNaN(end.getTime()) ? end.toISOString() : undefined
+                        };
+                    })
+                        .filter(function (a) { return a.title !== ''; });
+                    if (agenda.length > 0) {
+                        cache = { data: agenda, ts: Date.now() };
+                    }
+                    return [2 /*return*/, agenda];
+                case 5:
+                    err_1 = _a.sent();
+                    console.error('[agenda] Erreur de chargement :', err_1);
+                    return [2 /*return*/, []];
+                case 6: return [2 /*return*/];
+            }
+        });
+    });
+}
 
 
 /***/ },
@@ -5201,71 +6137,450 @@ var DEPT_COLORS = {
 
 /***/ },
 
-/***/ 7250
-/*!**************************************************************!*\
-  !*** ./lib/webparts/ikaIntranet/services/evenements/data.js ***!
-  \**************************************************************/
+/***/ 3228
+/*!***************************************************************!*\
+  !*** ./lib/webparts/ikaIntranet/services/evenements/index.js ***!
+  \***************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   EVENEMENTS: () => (/* binding */ EVENEMENTS)
+/* harmony export */   loadEvenements: () => (/* binding */ loadEvenements),
+/* harmony export */   updateEvenementComments: () => (/* binding */ updateEvenementComments),
+/* harmony export */   updateEvenementLikedBy: () => (/* binding */ updateEvenementLikedBy)
 /* harmony export */ });
-var IMG = {
-    seminar: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-    workshop: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80',
-    teambuilding: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80'
-};
-var EVENEMENTS = [
-    {
-        id: 1,
-        img: IMG.seminar,
-        title: 'Séminaire Innovation & Transformation Digitale',
-        dateIcon: 'text-amber-400',
-        date: '25 - 27 Juillet 2026',
-        locationIcon: 'text-amber-400',
-        location: 'Ouagadougou, Burkina Faso',
-        category: 'Séminaire',
-        text: "3 jours d'échanges et d'ateliers autour de l'innovation, des architectures Cloud et de la transformation digitale des entreprises.",
-        longText: "Le Séminaire Innovation & Transformation Digitale réunit chaque année les collaborateurs, partenaires et experts du numérique autour des grands enjeux de la transformation digitale. Au programme : conférences plénières, ateliers pratiques, démonstrations de solutions Cloud et retours d'expérience clients. Une occasion unique de découvrir les nouvelles tendances technologiques et de contribuer à la feuille de route digitale d'IKA SOLUTION.",
-        speaker: 'Jean OUEDRAOGO — Directeur Général',
-        seats: '120 places'
-    },
-    {
-        id: 2,
-        img: IMG.workshop,
-        title: 'Workshop SharePoint Framework (SPFx)',
-        dateIcon: 'text-emerald-400',
-        date: '12 Août 2026',
-        locationIcon: 'text-emerald-400',
-        location: 'Lab DEV IKA SOLUTION',
-        category: 'Workshop',
-        text: "Montée en compétences sur la création des composants WebPart sur-mesure et l'intégration API pour le portail intranet.",
-        longText: "Session de formation technique dédiée à l'équipe développement sur SharePoint Framework (SPFx) version 1.23. Les participants apprendront à scaffolder un projet, créer des WebParts sur-mesure, exploiter les API REST SharePoint, gérer le cache intelligent et déployer la solution dans le catalogue d'applications. La formation alterne théorie et pratique sur des cas concrets du portail intranet.",
-        speaker: 'Mouhamed TRAORÉ — Développeur Senior',
-        seats: '20 places'
-    },
-    {
-        id: 3,
-        img: IMG.teambuilding,
-        title: 'Afterwork de rentrée & Tech Outdoor Challenge',
-        dateIcon: 'text-purple-400',
-        date: '05 Septembre 2026',
-        locationIcon: 'text-purple-400',
-        location: 'Espace Plein Air — Bangr Weogo',
-        category: 'Team Building',
-        text: "Un moment de partage, d'activités de cohésion et de détente apprécié par l'ensemble des équipes d'IKA SOLUTION.",
-        longText: "L'Afterwork de rentrée est l'événement social phare de la rentrée. Au programme : activités de team building en plein air, challenges sportifs et techniques, repas convivial et remise des trophées. C'est l'occasion parfaite de renforcer les liens entre collaborateurs des différents départements dans un cadre détendu et festif.",
-        speaker: 'Kadiatou OUEDRAOGO — Chargée RH',
-        seats: '80 places'
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 196);
+/* harmony import */ var _shared_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/index */ 8717);
+
+
+var LIST_NAME = 'Evenement';
+var LIST_NAME_ALT = 'Evenements';
+var CACHE_TTL = 5 * 60 * 1000;
+var PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='22' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EIKA SOLUTION%3C/text%3E%3C/svg%3E";
+var ICON_COLORS = ['text-amber-400', 'text-emerald-400', 'text-purple-400', 'text-rose-400', 'text-blue-400'];
+var cache = null;
+function isActive(value) {
+    return value !== false && value !== 0;
+}
+function asString(value) {
+    return value === null || value === undefined ? '' : String(value).trim();
+}
+function sitePathOf(siteUrl) {
+    try {
+        return new URL(siteUrl).pathname;
     }
-];
+    catch (_a) {
+        return '';
+    }
+}
+function toSiteRelative(siteUrl, path) {
+    var sp = sitePathOf(siteUrl);
+    if (sp && path.startsWith(sp))
+        return path.slice(sp.length) || '/';
+    return path;
+}
+function normalizeUrl(value, siteUrl) {
+    var s = asString(value);
+    if (!s)
+        return '';
+    if (s.startsWith('http'))
+        return s;
+    var rel = toSiteRelative(siteUrl, s);
+    return rel.startsWith('/') ? "".concat(siteUrl).concat(rel) : s;
+}
+function getFieldMap(siteUrl, listName) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var res, fields, map_1, _a;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 1:
+                    res = _b.sent();
+                    if (!res.ok)
+                        return [2 /*return*/, {}];
+                    return [4 /*yield*/, res.json()];
+                case 2:
+                    fields = (_b.sent()).value;
+                    map_1 = {};
+                    (fields || []).forEach(function (f) {
+                        if (f.Title && f.InternalName)
+                            map_1[String(f.Title).toLowerCase()] = f.InternalName;
+                    });
+                    return [2 /*return*/, map_1];
+                case 3:
+                    _a = _b.sent();
+                    return [2 /*return*/, {}];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function getVal(item, map, display, fallbacks) {
+    if (fallbacks === void 0) { fallbacks = []; }
+    var key = map[display.toLowerCase()];
+    if (key && item[key] !== undefined)
+        return item[key];
+    for (var _i = 0, fallbacks_1 = fallbacks; _i < fallbacks_1.length; _i++) {
+        var f = fallbacks_1[_i];
+        if (item[f] !== undefined)
+            return item[f];
+    }
+    return undefined;
+}
+function getAuthor(item, map) {
+    var raw = getVal(item, map, 'Créé par', ['Author', 'CreatedBy', 'Editor']);
+    if (raw && typeof raw === 'object') {
+        var title = raw.Title;
+        if (title)
+            return title;
+    }
+    return asString(raw);
+}
+function parseImages(value, siteUrl) {
+    var candidates = [];
+    if (value && typeof value === 'object') {
+        var o_1 = value;
+        ['serverRelativeUrl', 'Url', 'url', 'src', 'imageUrl', 'thumbnailUrl', 'fileName'].forEach(function (k) {
+            if (o_1[k])
+                candidates.push(String(o_1[k]));
+        });
+        if (!candidates.length) {
+            var str = JSON.stringify(o_1);
+            var m = str.match(/https?:\/\/[^"'\s]+/);
+            if (m)
+                candidates.push(m[0].trim());
+        }
+    }
+    else {
+        var raw = asString(value);
+        if (!raw)
+            return [];
+        try {
+            var parsed = JSON.parse(raw);
+            var arr = Array.isArray(parsed) ? parsed : [parsed];
+            arr.forEach(function (o) {
+                if (o && typeof o === 'object') {
+                    if (o.nativeFile && o.nativeFile.url)
+                        candidates.push(o.nativeFile.url);
+                    if (o.serverRelativeUrl)
+                        candidates.push(o.serverRelativeUrl);
+                    if (o.Url)
+                        candidates.push(o.Url);
+                    if (o.url)
+                        candidates.push(o.url);
+                    if (o.src)
+                        candidates.push(o.src);
+                    if (o.imageUrl)
+                        candidates.push(o.imageUrl);
+                    if (o.thumbnailUrl)
+                        candidates.push(o.thumbnailUrl);
+                }
+                else if (typeof o === 'string') {
+                    candidates.push(o);
+                }
+            });
+        }
+        catch (_a) {
+            // pas du JSON : on traite comme du texte
+        }
+        if (!candidates.length) {
+            raw.split(/[\n,;]+/).forEach(function (s) {
+                var t = s.trim();
+                if (t)
+                    candidates.push(t);
+            });
+        }
+    }
+    return candidates
+        .map(function (c) { return normalizeUrl(c, siteUrl); })
+        .filter(function (c) { return c.startsWith('http') || c.startsWith('data:image'); });
+}
+function getImageFileName(value) {
+    if (value && typeof value === 'object') {
+        var o = value;
+        return asString(o.fileName) || asString(o.originalImageName);
+    }
+    var s = asString(value);
+    if (!s)
+        return '';
+    try {
+        var p = JSON.parse(s);
+        if (p && typeof p === 'object')
+            return asString(p.fileName) || asString(p.originalImageName);
+    }
+    catch (_a) {
+        // pas du JSON
+    }
+    return '';
+}
+function getListRootFolder(siteUrl, listName) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var res, data, sr, _a;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')?$select=RootFolder/ServerRelativeUrl&$expand=RootFolder"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 1:
+                    res = _b.sent();
+                    if (!res.ok)
+                        return [2 /*return*/, ''];
+                    return [4 /*yield*/, res.json()];
+                case 2:
+                    data = (_b.sent());
+                    sr = (data.RootFolder && data.RootFolder.ServerRelativeUrl) || '';
+                    return [2 /*return*/, toSiteRelative(siteUrl, sr)];
+                case 3:
+                    _a = _b.sent();
+                    return [2 /*return*/, ''];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function resolveImageUrl(siteUrl, listName, listNameAlt, rootFolder, itemId, fileName) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var candidates, res, files, f, _a, encoded_1, folders, seen, _i, candidates_1, c, r, ct, _b;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    candidates = [];
+                    _c.label = 1;
+                case 1:
+                    _c.trys.push([1, 5, , 6]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/items(").concat(itemId, ")/AttachmentFiles?$select=ServerRelativeUrl&$top=10"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
+                    res = _c.sent();
+                    if (!res.ok) return [3 /*break*/, 4];
+                    return [4 /*yield*/, res.json()];
+                case 3:
+                    files = ((_c.sent()).value || []);
+                    f = files[0];
+                    if (f && f.ServerRelativeUrl)
+                        candidates.push(normalizeUrl(f.ServerRelativeUrl, siteUrl));
+                    _c.label = 4;
+                case 4: return [3 /*break*/, 6];
+                case 5:
+                    _a = _c.sent();
+                    return [3 /*break*/, 6];
+                case 6:
+                    if (fileName) {
+                        encoded_1 = encodeURIComponent(fileName);
+                        folders = [rootFolder || "/Lists/".concat(listName), "/Lists/".concat(listName), "/Lists/".concat(listNameAlt)];
+                        folders.forEach(function (f) { return candidates.push("".concat(siteUrl).concat(f, "/Attachments/").concat(itemId, "/").concat(encoded_1)); });
+                    }
+                    seen = {};
+                    _i = 0, candidates_1 = candidates;
+                    _c.label = 7;
+                case 7:
+                    if (!(_i < candidates_1.length)) return [3 /*break*/, 12];
+                    c = candidates_1[_i];
+                    if (seen[c])
+                        return [3 /*break*/, 11];
+                    seen[c] = true;
+                    _c.label = 8;
+                case 8:
+                    _c.trys.push([8, 10, , 11]);
+                    return [4 /*yield*/, fetch(c, { method: 'HEAD' })];
+                case 9:
+                    r = _c.sent();
+                    ct = (r.headers.get('content-type') || '').toLowerCase();
+                    if (r.status === 200 && (ct.startsWith('image/') || ct.indexOf('octet-stream') !== -1)) {
+                        console.log('[evenements] Image item', itemId, '→', c);
+                        return [2 /*return*/, c];
+                    }
+                    return [3 /*break*/, 11];
+                case 10:
+                    _b = _c.sent();
+                    return [3 /*break*/, 11];
+                case 11:
+                    _i++;
+                    return [3 /*break*/, 7];
+                case 12:
+                    console.warn('[evenements] Image introuvable item', itemId, ':', fileName);
+                    return [2 /*return*/, ''];
+            }
+        });
+    });
+}
+function formatDateRange(start, end) {
+    if (!start)
+        return '';
+    var sameDay = end && start.toDateString() === end.toDateString();
+    if (sameDay) {
+        return start.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+    if (end) {
+        return "".concat(start.getDate(), " - ").concat(end.getDate(), " ").concat(end.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' }));
+    }
+    return start.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+function loadEvenements(siteUrl) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var fieldMap, listName_1, fieldMapFinal_1, _a, res, items, missingImages_1, evenements_1, rootFolder_1, err_1;
+        var _this = this;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    if (cache && Date.now() - cache.ts < CACHE_TTL)
+                        return [2 /*return*/, cache.data];
+                    _b.label = 1;
+                case 1:
+                    _b.trys.push([1, 11, , 12]);
+                    return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME)];
+                case 2:
+                    fieldMap = _b.sent();
+                    listName_1 = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
+                    if (!(Object.keys(fieldMap).length > 0)) return [3 /*break*/, 3];
+                    _a = fieldMap;
+                    return [3 /*break*/, 5];
+                case 3: return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME_ALT)];
+                case 4:
+                    _a = _b.sent();
+                    _b.label = 5;
+                case 5:
+                    fieldMapFinal_1 = _a;
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName_1, "')/items?$select=*,Author/Title&$expand=Author/Title&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 6:
+                    res = _b.sent();
+                    if (!res.ok)
+                        throw new Error("HTTP ".concat(res.status));
+                    return [4 /*yield*/, res.json()];
+                case 7:
+                    items = ((_b.sent()).value || []);
+                    missingImages_1 = [];
+                    evenements_1 = items
+                        .filter(function (it) { return isActive(getVal(it, fieldMapFinal_1, 'Active', ['Active'])); })
+                        .map(function (it, i) {
+                        var _a;
+                        var title = asString(getVal(it, fieldMapFinal_1, 'Titre', ['Title']));
+                        var longText = asString(getVal(it, fieldMapFinal_1, 'Description', ['Description']));
+                        var rawImg = getVal(it, fieldMapFinal_1, 'Image', ['Image', 'Images']);
+                        var id = Number((_a = getVal(it, fieldMapFinal_1, 'Id', ['Id'])) !== null && _a !== void 0 ? _a : 0);
+                        var images = parseImages(rawImg, siteUrl);
+                        if (!images.length) {
+                            var fileName = getImageFileName(rawImg);
+                            if (fileName)
+                                missingImages_1.push({ id: id, fileName: fileName });
+                        }
+                        var startRaw = getVal(it, fieldMapFinal_1, 'Date et heure de début', ['DateDebut', 'StartTime', 'EventDate', 'StartDateTime']);
+                        var endRaw = getVal(it, fieldMapFinal_1, 'Date et heure de fin', ['DateFin', 'EndTime', 'EndDate', 'EndDateTime']);
+                        var start = startRaw ? new Date(String(startRaw)) : null;
+                        var end = endRaw ? new Date(String(endRaw)) : null;
+                        var color = ICON_COLORS[i % ICON_COLORS.length];
+                        return {
+                            id: id,
+                            img: images[0] || PLACEHOLDER_IMG,
+                            title: title,
+                            dateIcon: color,
+                            date: formatDateRange(start, end),
+                            locationIcon: color,
+                            location: asString(getVal(it, fieldMapFinal_1, 'Localisation', ['Localisation', 'Location', 'Lieu'])),
+                            category: asString(getVal(it, fieldMapFinal_1, 'Catégorie', ['Categorie', 'Category'])),
+                            text: longText.slice(0, 140),
+                            longText: longText,
+                            speaker: getAuthor(it, fieldMapFinal_1),
+                            seats: '',
+                            likedBy: (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.parseLikedBy)(getVal(it, fieldMapFinal_1, 'AimerPar', ['AimerPar'])),
+                            comments: (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.parseComments)(getVal(it, fieldMapFinal_1, 'CommenterPar', ['CommenterPar']))
+                        };
+                    })
+                        .filter(function (e) { return e.title !== ''; });
+                    if (!missingImages_1.length) return [3 /*break*/, 10];
+                    return [4 /*yield*/, getListRootFolder(siteUrl, listName_1)];
+                case 8:
+                    rootFolder_1 = _b.sent();
+                    return [4 /*yield*/, Promise.all(missingImages_1.map(function (_a) { return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(_this, [_a], void 0, function (_b) {
+                            var url, target;
+                            var id = _b.id, fileName = _b.fileName;
+                            return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_c) {
+                                switch (_c.label) {
+                                    case 0: return [4 /*yield*/, resolveImageUrl(siteUrl, listName_1, LIST_NAME_ALT, rootFolder_1, id, fileName)];
+                                    case 1:
+                                        url = _c.sent();
+                                        target = evenements_1.find(function (e) { return e.id === id; });
+                                        if (target && url)
+                                            target.img = url;
+                                        return [2 /*return*/];
+                                }
+                            });
+                        }); }))];
+                case 9:
+                    _b.sent();
+                    _b.label = 10;
+                case 10:
+                    if (evenements_1.length > 0) {
+                        cache = { data: evenements_1, ts: Date.now() };
+                    }
+                    return [2 /*return*/, evenements_1];
+                case 11:
+                    err_1 = _b.sent();
+                    console.error('[evenements] Erreur de chargement :', err_1);
+                    return [2 /*return*/, []];
+                case 12: return [2 /*return*/];
+            }
+        });
+    });
+}
+var resolvedListName = null;
+function resolveListName(siteUrl) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var fieldMap, fieldMapAlt;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (resolvedListName)
+                        return [2 /*return*/, resolvedListName];
+                    return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME)];
+                case 1:
+                    fieldMap = _a.sent();
+                    resolvedListName = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
+                    if (!(resolvedListName === LIST_NAME_ALT)) return [3 /*break*/, 3];
+                    return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME_ALT)];
+                case 2:
+                    fieldMapAlt = _a.sent();
+                    if (!fieldMapAlt || Object.keys(fieldMapAlt).length === 0)
+                        resolvedListName = LIST_NAME;
+                    _a.label = 3;
+                case 3: return [2 /*return*/, resolvedListName];
+            }
+        });
+    });
+}
+function updateEvenementLikedBy(siteUrl, itemId, likedBy) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var listName;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, resolveListName(siteUrl)];
+                case 1:
+                    listName = _a.sent();
+                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+            }
+        });
+    });
+}
+function updateEvenementComments(siteUrl, itemId, comments) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var listName;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, resolveListName(siteUrl)];
+                case 1:
+                    listName = _a.sent();
+                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+            }
+        });
+    });
+}
 
 
 /***/ },
 
-/***/ 659
+/***/ 9040
 /*!*****************************************************!*\
   !*** ./lib/webparts/ikaIntranet/services/footer.js ***!
   \*****************************************************/
@@ -5724,6 +7039,222 @@ var PROJETS = [
         members: 'Kadiatou OUEDRAOGO, Mouhamed TRAORÉ, Salifou SAWADOGO'
     }
 ];
+
+
+/***/ },
+
+/***/ 8717
+/*!***********************************************************!*\
+  !*** ./lib/webparts/ikaIntranet/services/shared/index.js ***!
+  \***********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getCurrentUserEmail: () => (/* binding */ getCurrentUserEmail),
+/* harmony export */   getCurrentUserName: () => (/* binding */ getCurrentUserName),
+/* harmony export */   getRequestDigest: () => (/* binding */ getRequestDigest),
+/* harmony export */   parseComments: () => (/* binding */ parseComments),
+/* harmony export */   parseLikedBy: () => (/* binding */ parseLikedBy),
+/* harmony export */   patchField: () => (/* binding */ patchField)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 196);
+
+function getCurrentUserEmail(siteUrl) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var res, data, _a;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/currentuser?$select=Email,Title"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 1:
+                    res = _b.sent();
+                    if (!res.ok)
+                        return [2 /*return*/, ''];
+                    return [4 /*yield*/, res.json()];
+                case 2:
+                    data = _b.sent();
+                    return [2 /*return*/, data.Email || ''];
+                case 3:
+                    _a = _b.sent();
+                    return [2 /*return*/, ''];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function getCurrentUserName(siteUrl) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var res, data, _a;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/currentuser?$select=Title"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 1:
+                    res = _b.sent();
+                    if (!res.ok)
+                        return [2 /*return*/, ''];
+                    return [4 /*yield*/, res.json()];
+                case 2:
+                    data = _b.sent();
+                    return [2 /*return*/, data.Title || ''];
+                case 3:
+                    _a = _b.sent();
+                    return [2 /*return*/, ''];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function parseJsonArray(value) {
+    if (Array.isArray(value))
+        return value;
+    if (typeof value === 'string' && value.trim()) {
+        try {
+            var parsed = JSON.parse(value);
+            return Array.isArray(parsed) ? parsed : [];
+        }
+        catch (_a) {
+            return [];
+        }
+    }
+    return [];
+}
+function parseLikedBy(value) {
+    return parseJsonArray(value).filter(function (x) { return typeof x === 'string'; });
+}
+function parseComments(value) {
+    return parseJsonArray(value).filter(function (c) { return typeof c === 'object' && c !== null && 'text' in c; });
+}
+var digestCache = null;
+function digestFromPage() {
+    try {
+        var el = document.getElementById('__REQUESTDIGEST');
+        if (el && el.value)
+            return el.value;
+        var el2 = document.querySelector('input[name="__REQUESTDIGEST"]');
+        if (el2 && el2.value)
+            return el2.value;
+    }
+    catch (_a) {
+        // ignore
+    }
+    return '';
+}
+function getRequestDigest(siteUrl) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var pageDigest, attempts, _i, attempts_1, attempt, res, data, digest, err_1;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (digestCache && Date.now() - digestCache.ts < 20 * 60 * 1000)
+                        return [2 /*return*/, digestCache.value];
+                    pageDigest = digestFromPage();
+                    if (pageDigest) {
+                        digestCache = { value: pageDigest, ts: Date.now() };
+                        return [2 /*return*/, pageDigest];
+                    }
+                    attempts = [
+                        { accept: 'application/json;odata=nometadata', body: '{}' },
+                        { accept: 'application/json;odata=verbose', body: '{}' },
+                        { accept: 'application/json;odata=nometadata', body: '' }
+                    ];
+                    _i = 0, attempts_1 = attempts;
+                    _a.label = 1;
+                case 1:
+                    if (!(_i < attempts_1.length)) return [3 /*break*/, 7];
+                    attempt = attempts_1[_i];
+                    _a.label = 2;
+                case 2:
+                    _a.trys.push([2, 5, , 6]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/contextinfo"), {
+                            method: 'POST',
+                            headers: {
+                                Accept: attempt.accept,
+                                'Content-Type': attempt.accept
+                            },
+                            body: attempt.body
+                        })];
+                case 3:
+                    res = _a.sent();
+                    if (!res.ok) {
+                        console.error('[getRequestDigest] contextinfo HTTP', res.status, 'accept=', attempt.accept);
+                        return [3 /*break*/, 6];
+                    }
+                    return [4 /*yield*/, res.json()];
+                case 4:
+                    data = _a.sent();
+                    digest = '';
+                    if (data && data.GetContextWebInformation) {
+                        digest = data.GetContextWebInformation.FormDigestValue || '';
+                    }
+                    else if (data && data.d && data.d.GetContextWebInformation) {
+                        digest = data.d.GetContextWebInformation.FormDigestValue || '';
+                    }
+                    if (digest) {
+                        digestCache = { value: digest, ts: Date.now() };
+                        return [2 /*return*/, digest];
+                    }
+                    return [3 /*break*/, 6];
+                case 5:
+                    err_1 = _a.sent();
+                    console.error('[getRequestDigest] Erreur contextinfo (accept=', attempt.accept, ') :', err_1);
+                    return [3 /*break*/, 6];
+                case 6:
+                    _i++;
+                    return [3 /*break*/, 1];
+                case 7:
+                    console.error('[getRequestDigest] Aucun digest obtenu');
+                    return [2 /*return*/, ''];
+            }
+        });
+    });
+}
+function patchField(siteUrl, listName, itemId, fieldName, value) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var digest, body, res, err_2;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, getRequestDigest(siteUrl)];
+                case 1:
+                    digest = _a.sent();
+                    if (!digest) {
+                        console.error('[patchField] Impossible d’obtenir le digest pour', listName, itemId, fieldName);
+                        return [2 /*return*/, false];
+                    }
+                    body = {};
+                    body[fieldName] = typeof value === 'string' ? value : JSON.stringify(value);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/items(").concat(itemId, ")"), {
+                            method: 'POST',
+                            headers: {
+                                Accept: 'application/json;odata=nometadata',
+                                'Content-Type': 'application/json;odata=nometadata',
+                                'X-HTTP-Method': 'MERGE',
+                                'IF-MATCH': '*',
+                                'X-RequestDigest': digest
+                            },
+                            body: JSON.stringify(body)
+                        })];
+                case 2:
+                    res = _a.sent();
+                    if (!res.ok) {
+                        console.error('[patchField] Échec HTTP', res.status, listName, itemId, fieldName);
+                    }
+                    return [2 /*return*/, res.ok];
+                case 3:
+                    err_2 = _a.sent();
+                    console.error('[patchField] Erreur', err_2);
+                    return [2 /*return*/, false];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
 
 
 /***/ },
@@ -18831,7 +20362,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__8398__;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("f152a138c29f40cb49d8")
+/******/ 		__webpack_require__.h = () => ("bd3582ecc976d2a41e53")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

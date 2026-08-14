@@ -1,14 +1,26 @@
 import * as React from 'react';
 import { FaClock, FaMagnifyingGlass } from 'react-icons/fa6';
-import { ACTUALITES } from '../../services/actualites/data';
+import { loadActualites, IActualite } from '../../services/actualites/index';
 
-export const ToutesActualites: React.FC = () => {
+export const ToutesActualites: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [search, setSearch] = React.useState('');
   const [category, setCategory] = React.useState('all');
+  const [items, setItems] = React.useState<IActualite[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
 
-  const categories = ['all', ...Array.from(new Set(ACTUALITES.map((a) => a.category)))];
+  React.useEffect(() => {
+    if (!siteUrl) return;
+    loadActualites(siteUrl)
+      .then((data) => {
+        setItems(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
 
-  const filtered = ACTUALITES.filter((a) => {
+  const categories = ['all', ...Array.from(new Set(items.map((a) => a.category)))];
+
+  const filtered = items.filter((a) => {
     const q = search.toLowerCase();
     const matchesSearch = a.title.toLowerCase().includes(q) || a.text.toLowerCase().includes(q);
     const matchesCat = category === 'all' || a.category === category;
@@ -59,7 +71,12 @@ export const ToutesActualites: React.FC = () => {
         </div>
 
         {/* Grille d'actualités */}
-        {filtered.length === 0 ? (
+        {loading ? (
+          <div className="bg-white rounded-2xl p-16 shadow-sm border border-slate-200 text-center">
+            <div className="spinner-border text-ikaRed" role="status" />
+            <p className="mt-3 text-sm text-slate-500">Chargement des actualités...</p>
+          </div>
+        ) : filtered.length === 0 ? (
           <div className="bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center">
             <p className="text-sm text-slate-500 font-semibold">Aucune actualité ne correspond à votre recherche.</p>
           </div>
@@ -72,7 +89,7 @@ export const ToutesActualites: React.FC = () => {
                 className="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block"
               >
                 <div className="relative h-44 overflow-hidden">
-                  <img src={a.img} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                  <img src={a.img} alt={a.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaRed backdrop-blur-sm">
                     {a.category}
                   </span>

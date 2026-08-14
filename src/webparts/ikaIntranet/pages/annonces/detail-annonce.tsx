@@ -3,10 +3,13 @@ import {
   FaArrowLeft,
   FaArrowRight,
   FaCakeCandles,
+  FaComment,
   FaHeart,
+  FaPaperPlane,
   FaPlaneDeparture,
   FaUsers,
-  FaBullhorn
+  FaBullhorn,
+  FaXmark
 } from 'react-icons/fa6';
 import { ANNONCES } from '../../services/annonces/data';
 
@@ -39,6 +42,34 @@ export const DetailAnnonce: React.FC = () => {
   const idx = ANNONCES.findIndex((a) => a.id === annonce.id);
   const prev = ANNONCES[(idx - 1 + ANNONCES.length) % ANNONCES.length];
   const next = ANNONCES[(idx + 1) % ANNONCES.length];
+
+  const [likedIds, setLikedIds] = React.useState<Record<number, boolean>>({});
+  const [likeCounts, setLikeCounts] = React.useState<Record<number, number>>({ 1: 12, 2: 8, 3: 5, 4: 9 });
+  const [comments, setComments] = React.useState<Record<number, Array<{ user: string; text: string; mine?: boolean }>>>({
+    1: [
+      { user: 'Aïcha KABORÉ :', text: ' Bonne fête Kadiatou ! 🎉' },
+      { user: 'Jean OUEDRAOGO :', text: ' Tous mes vœux ! 👏' }
+    ]
+  });
+  const [commentCounts, setCommentCounts] = React.useState<Record<number, number>>({ 1: 12, 2: 7, 3: 4, 4: 6 });
+  const [commentModal, setCommentModal] = React.useState(false);
+  const [commentInput, setCommentInput] = React.useState('');
+
+  const toggleLike = (): void => {
+    const liked = likedIds[annonce.id];
+    setLikedIds((p) => ({ ...p, [annonce.id]: !liked }));
+    setLikeCounts((p) => ({ ...p, [annonce.id]: (p[annonce.id] || 0) + (liked ? -1 : 1) }));
+  };
+
+  const addComment = (e: React.FormEvent): void => {
+    e.preventDefault();
+    const val = commentInput.trim();
+    if (!val) return;
+    setComments((p) => ({ ...p, [annonce.id]: [...(p[annonce.id] || []), { user: 'Vous :', text: ` ${val}`, mine: true }] }));
+    setCommentCounts((p) => ({ ...p, [annonce.id]: (p[annonce.id] || 0) + 1 }));
+    setCommentInput('');
+    setCommentModal(false);
+  };
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -84,6 +115,21 @@ export const DetailAnnonce: React.FC = () => {
                 <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
                   <FaBullhorn className="text-amber-600 text-xs" /> {annonce.type}
                 </p>
+              </div>
+
+              <div className="mt-6 flex items-center gap-2">
+                <button
+                  onClick={toggleLike}
+                  className={`px-4 py-2 rounded-full border font-bold text-xs transition flex items-center gap-1.5 ${likedIds[annonce.id] ? 'bg-rose-500 text-white border-rose-500 shadow-sm' : 'border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100'}`}
+                >
+                  <FaHeart className={likedIds[annonce.id] ? '' : 'text-xs'} /> {likeCounts[annonce.id] || 0} J&apos;aime
+                </button>
+                <button
+                  onClick={() => setCommentModal(true)}
+                  className="px-4 py-2 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5"
+                >
+                  <FaComment className="text-xs" /> {commentCounts[annonce.id] || 0} Commentaires
+                </button>
               </div>
 
               <div className="mt-8">
@@ -144,6 +190,50 @@ export const DetailAnnonce: React.FC = () => {
           </aside>
         </div>
       </div>
+
+      {commentModal && (
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative">
+            <button onClick={() => setCommentModal(false)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg">
+              <FaXmark />
+            </button>
+            <div className="flex items-center gap-3">
+              <span className="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-base"><FaBullhorn /></span>
+              <div>
+                <h3 className="font-black text-slate-900 text-sm">Commenter</h3>
+                <p className="text-xs text-slate-500">Laissez votre avis sur {annonce.title.toLowerCase()}</p>
+              </div>
+            </div>
+            <div className="max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs">
+              {(comments[annonce.id] || []).map((c, i) => (
+                <div key={i} className={`p-2 rounded-lg border ${c.mine ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
+                  <span className="font-bold text-slate-900">{c.user}</span>
+                  <span className="text-slate-600">{c.text}</span>
+                </div>
+              ))}
+            </div>
+            <form onSubmit={addComment} className="space-y-3">
+              <textarea
+                value={commentInput}
+                onChange={(e) => setCommentInput(e.target.value)}
+                required
+                rows={3}
+                placeholder="Écrivez votre commentaire ici..."
+                className="w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue"
+              />
+              <div className="flex items-center justify-end gap-2">
+                <button type="button" onClick={() => setCommentModal(false)} className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50">
+                  Annuler
+                </button>
+                <button type="submit" className="px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5">
+                  <span>Envoyer</span>
+                  <FaPaperPlane className="text-xs" />
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </main>
   );
 };

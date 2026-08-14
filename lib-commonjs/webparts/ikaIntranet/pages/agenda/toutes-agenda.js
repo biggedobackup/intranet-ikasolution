@@ -4,12 +4,25 @@ exports.ToutesAgenda = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
 var fa6_1 = require("react-icons/fa6");
-var data_1 = require("../../services/agenda/data");
-var ToutesAgenda = function () {
-    var _a = React.useState(''), search = _a[0], setSearch = _a[1];
-    var _b = React.useState('all'), category = _b[0], setCategory = _b[1];
-    var categories = tslib_1.__spreadArray(['all'], Array.from(new Set(data_1.AGENDA.map(function (a) { return a.category; }))), true);
-    var filtered = data_1.AGENDA.filter(function (a) {
+var index_1 = require("../../services/agenda/index");
+var ToutesAgenda = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = React.useState(''), search = _b[0], setSearch = _b[1];
+    var _c = React.useState('all'), category = _c[0], setCategory = _c[1];
+    var _d = React.useState([]), items = _d[0], setItems = _d[1];
+    var _e = React.useState(true), loading = _e[0], setLoading = _e[1];
+    React.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0, index_1.loadAgendas)(siteUrl)
+            .then(function (data) {
+            setItems(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    var categories = tslib_1.__spreadArray(['all'], Array.from(new Set(items.map(function (a) { return a.category; }))), true);
+    var filtered = items.filter(function (a) {
         var q = search.toLowerCase();
         var matchesSearch = a.title.toLowerCase().includes(q) || a.location.toLowerCase().includes(q) || a.text.toLowerCase().includes(q);
         var matchesCat = category === 'all' || a.category === category;

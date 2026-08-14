@@ -4,12 +4,25 @@ exports.ToutesActualites = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
 var fa6_1 = require("react-icons/fa6");
-var data_1 = require("../../services/actualites/data");
-var ToutesActualites = function () {
-    var _a = React.useState(''), search = _a[0], setSearch = _a[1];
-    var _b = React.useState('all'), category = _b[0], setCategory = _b[1];
-    var categories = tslib_1.__spreadArray(['all'], Array.from(new Set(data_1.ACTUALITES.map(function (a) { return a.category; }))), true);
-    var filtered = data_1.ACTUALITES.filter(function (a) {
+var index_1 = require("../../services/actualites/index");
+var ToutesActualites = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = React.useState(''), search = _b[0], setSearch = _b[1];
+    var _c = React.useState('all'), category = _c[0], setCategory = _c[1];
+    var _d = React.useState([]), items = _d[0], setItems = _d[1];
+    var _e = React.useState(true), loading = _e[0], setLoading = _e[1];
+    React.useEffect(function () {
+        if (!siteUrl)
+            return;
+        (0, index_1.loadActualites)(siteUrl)
+            .then(function (data) {
+            setItems(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    var categories = tslib_1.__spreadArray(['all'], Array.from(new Set(items.map(function (a) { return a.category; }))), true);
+    var filtered = items.filter(function (a) {
         var q = search.toLowerCase();
         var matchesSearch = a.title.toLowerCase().includes(q) || a.text.toLowerCase().includes(q);
         var matchesCat = category === 'all' || a.category === category;
@@ -34,10 +47,12 @@ var ToutesActualites = function () {
                         React.createElement("span", { className: "text-[11px] font-semibold text-slate-400" },
                             filtered.length,
                             " actualit\u00E9(s)")))),
-            filtered.length === 0 ? (React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
+            loading ? (React.createElement("div", { className: "bg-white rounded-2xl p-16 shadow-sm border border-slate-200 text-center" },
+                React.createElement("div", { className: "spinner-border text-ikaRed", role: "status" }),
+                React.createElement("p", { className: "mt-3 text-sm text-slate-500" }, "Chargement des actualit\u00E9s..."))) : filtered.length === 0 ? (React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
                 React.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Aucune actualit\u00E9 ne correspond \u00E0 votre recherche."))) : (React.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" }, filtered.map(function (a) { return (React.createElement("a", { key: a.id, href: "#page-detail-actualite&id=".concat(a.id), className: "group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block" },
                 React.createElement("div", { className: "relative h-44 overflow-hidden" },
-                    React.createElement("img", { src: a.img, alt: a.title, className: "w-full h-full object-cover group-hover:scale-105 transition duration-500" }),
+                    React.createElement("img", { src: a.img, alt: a.title, className: "w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" }),
                     React.createElement("span", { className: "absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaRed backdrop-blur-sm" }, a.category)),
                 React.createElement("div", { className: "p-4" },
                     React.createElement("h3", { className: "text-sm font-bold text-slate-900 leading-snug group-hover:text-ikaBlue transition line-clamp-2" }, a.title),

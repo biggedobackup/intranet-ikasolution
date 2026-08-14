@@ -1,1 +1,1 @@
-{"version":3,"file":"detail-annonce.d.ts","sourceRoot":"","sources":["../../../../../src/webparts/ikaIntranet/pages/annonces/detail-annonce.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AA4B/B,eAAO,MAAM,aAAa,EAAE,KAAK,CAAC,EAwHjC,CAAC;AAEF,eAAe,aAAa,CAAC"}
+{"version":3,"file":"detail-annonce.d.ts","sourceRoot":"","sources":["../../../../../src/webparts/ikaIntranet/pages/annonces/detail-annonce.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AA+B/B,eAAO,MAAM,aAAa,EAAE,KAAK,CAAC,EA+MjC,CAAC;AAEF,eAAe,aAAa,CAAC"}

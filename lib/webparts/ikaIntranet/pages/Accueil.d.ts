@@ -9,6 +9,8 @@ export interface IMember {
     avatar: string;
     bio: string;
 }
-export declare const Accueil: React.FC;
+export declare const Accueil: React.FC<{
+    siteUrl?: string;
+}>;
 export default Accueil;
 //# sourceMappingURL=Accueil.d.ts.map

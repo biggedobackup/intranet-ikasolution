@@ -1,14 +1,26 @@
 import * as React from 'react';
 import { FaClock, FaLocationDot, FaMagnifyingGlass } from 'react-icons/fa6';
-import { AGENDA } from '../../services/agenda/data';
+import { loadAgendas, IAgendaItem } from '../../services/agenda/index';
 
-export const ToutesAgenda: React.FC = () => {
+export const ToutesAgenda: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [search, setSearch] = React.useState('');
   const [category, setCategory] = React.useState('all');
+  const [items, setItems] = React.useState<IAgendaItem[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
 
-  const categories = ['all', ...Array.from(new Set(AGENDA.map((a) => a.category)))];
+  React.useEffect(() => {
+    if (!siteUrl) return;
+    loadAgendas(siteUrl)
+      .then((data) => {
+        setItems(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
 
-  const filtered = AGENDA.filter((a) => {
+  const categories = ['all', ...Array.from(new Set(items.map((a) => a.category)))];
+
+  const filtered = items.filter((a) => {
     const q = search.toLowerCase();
     const matchesSearch = a.title.toLowerCase().includes(q) || a.location.toLowerCase().includes(q) || a.text.toLowerCase().includes(q);
     const matchesCat = category === 'all' || a.category === category;
