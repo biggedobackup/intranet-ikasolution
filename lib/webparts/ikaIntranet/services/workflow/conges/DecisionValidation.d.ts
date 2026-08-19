@@ -1,4 +1,4 @@
-import { IConge } from './data';
+import { IConge } from './index';
 export type DecisionAction = 'valider' | 'rejeter';
 export interface ICongeDecisionConfig {
     modalTitle: (action: DecisionAction) => string;
@@ -10,5 +10,4 @@ export interface ICongeDecisionConfig {
     decisionSectionTitle: string;
 }
 export declare const CONGE_DECISION_CONFIG: ICongeDecisionConfig;
-export declare function applyCongeDecision(item: IConge, action: DecisionAction, comment: string, date: string): IConge;
 //# sourceMappingURL=DecisionValidation.d.ts.map

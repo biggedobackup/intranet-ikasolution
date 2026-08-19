@@ -26,7 +26,6 @@ var detail_annonce_1 = require("./pages/annonces/detail-annonce");
 var toutes_annonces_1 = require("./pages/annonces/toutes-annonces");
 var detail_employe_mois_1 = require("./pages/employes-mois/detail-employe-mois");
 var tous_employes_mois_1 = require("./pages/employes-mois/tous-employes-mois");
-var detail_bilan_1 = require("./pages/bilans/detail-bilan");
 var tous_bilans_1 = require("./pages/bilans/tous-bilans");
 var toute_documentation_1 = require("./pages/documentation/toute-documentation");
 var toute_galerie_1 = require("./pages/galerie/toute-galerie");
@@ -42,18 +41,18 @@ var DetailAbsence_1 = require("./pages/workflow/absences/DetailAbsence");
 var ListeBesoin_1 = require("./pages/workflow/besoins/ListeBesoin");
 var AjouterBesoin_1 = require("./pages/workflow/besoins/AjouterBesoin");
 var DetailBesoin_1 = require("./pages/workflow/besoins/DetailBesoin");
+var normalizePage = function (name) {
+    if (/^(liste|ajouter|modifier|detail)-(conge|vacances|absence|besoin)$/.test(name)) {
+        return "workflow-".concat(name);
+    }
+    return name;
+};
 var getPageFromHash = function () {
     var hash = window.location.hash.replace('#', '');
     if (hash.startsWith('page-')) {
         return normalizePage(hash.replace('page-', '').split('&')[0]);
     }
     return 'accueil';
-};
-var normalizePage = function (name) {
-    if (/^(liste|ajouter|modifier|detail)-(conge|vacances|absence|besoin)$/.test(name)) {
-        return "workflow-".concat(name);
-    }
-    return name;
 };
 var getIdFromHash = function () {
     var hash = window.location.hash.replace('#', '');
@@ -96,37 +95,36 @@ var App = function (_a) {
         page === 'toutes-actualites' && React.createElement(toutes_les_actualites_1.ToutesActualites, { siteUrl: siteUrl }),
         page === 'detail-agenda' && React.createElement(detail_agenda_1.DetailAgenda, { siteUrl: siteUrl }),
         page === 'toutes-agenda' && React.createElement(toutes_agenda_1.ToutesAgenda, { siteUrl: siteUrl }),
-        page === 'detail-membre' && React.createElement(detail_membre_1.DetailMembre, null),
-        page === 'toute-equipe' && React.createElement(toute_equipe_1.TouteEquipe, null),
-        page === 'detail-projet' && React.createElement(detail_projet_1.DetailProjet, null),
-        page === 'tous-projets' && React.createElement(tous_projets_1.TousProjets, null),
-        page === 'detail-produit' && React.createElement(detail_produit_1.DetailProduit, null),
-        page === 'tous-produits' && React.createElement(tous_produits_1.TousProduits, null),
-        page === 'detail-annonce' && React.createElement(detail_annonce_1.DetailAnnonce, null),
-        page === 'toutes-annonces' && React.createElement(toutes_annonces_1.ToutesAnnonces, null),
-        page === 'detail-employe-mois' && React.createElement(detail_employe_mois_1.DetailEmployeMois, null),
-        page === 'tous-employes-mois' && React.createElement(tous_employes_mois_1.TousEmployesMois, null),
-        page === 'detail-bilan' && React.createElement(detail_bilan_1.DetailBilan, null),
-        page === 'tous-bilans' && React.createElement(tous_bilans_1.TousBilans, null),
+        page === 'detail-membre' && React.createElement(detail_membre_1.DetailMembre, { siteUrl: siteUrl }),
+        page === 'toute-equipe' && React.createElement(toute_equipe_1.TouteEquipe, { siteUrl: siteUrl }),
+        page === 'detail-projet' && React.createElement(detail_projet_1.DetailProjet, { siteUrl: siteUrl }),
+        page === 'tous-projets' && React.createElement(tous_projets_1.TousProjets, { siteUrl: siteUrl }),
+        page === 'detail-produit' && React.createElement(detail_produit_1.DetailProduit, { siteUrl: siteUrl }),
+        page === 'tous-produits' && React.createElement(tous_produits_1.TousProduits, { siteUrl: siteUrl }),
+        page === 'detail-annonce' && React.createElement(detail_annonce_1.DetailAnnonce, { siteUrl: siteUrl }),
+        page === 'toutes-annonces' && React.createElement(toutes_annonces_1.ToutesAnnonces, { siteUrl: siteUrl }),
+        page === 'detail-employe-mois' && React.createElement(detail_employe_mois_1.DetailEmployeMois, { siteUrl: siteUrl }),
+        page === 'tous-employes-mois' && React.createElement(tous_employes_mois_1.TousEmployesMois, { siteUrl: siteUrl }),
+        page === 'tous-bilans' && React.createElement(tous_bilans_1.TousBilans, { siteUrl: siteUrl }),
         page === 'toute-documentation' && React.createElement(toute_documentation_1.TouteDocumentation, null),
-        page === 'toute-galerie' && React.createElement(toute_galerie_1.TouteGalerie, null),
-        page === 'workflow-liste-conge' && React.createElement(ListeConge_1.ListeConge, null),
-        page === 'workflow-ajouter-conge' && React.createElement(AjouterConge_1.AjouterConge, { mode: "ajouter" }),
-        page === 'workflow-modifier-conge' && React.createElement(AjouterConge_1.AjouterConge, { mode: "modifier", id: getIdFromHash() }),
-        page === 'workflow-detail-conge' && React.createElement(DetailConge_1.DetailConge, null),
-        page === 'workflow-liste-vacances' && React.createElement(ListeVacances_1.ListeVacances, null),
-        page === 'workflow-ajouter-vacances' && React.createElement(AjouterVacances_1.AjouterVacances, { mode: "ajouter" }),
-        page === 'workflow-modifier-vacances' && React.createElement(AjouterVacances_1.AjouterVacances, { mode: "modifier", id: getIdFromHash() }),
-        page === 'workflow-detail-vacances' && React.createElement(DetailVacances_1.DetailVacances, null),
-        page === 'workflow-liste-absence' && React.createElement(ListeAbsence_1.ListeAbsence, null),
-        page === 'workflow-ajouter-absence' && React.createElement(AjouterAbsence_1.AjouterAbsence, { mode: "ajouter" }),
-        page === 'workflow-modifier-absence' && React.createElement(AjouterAbsence_1.AjouterAbsence, { mode: "modifier", id: getIdFromHash() }),
-        page === 'workflow-detail-absence' && React.createElement(DetailAbsence_1.DetailAbsence, null),
-        page === 'workflow-liste-besoin' && React.createElement(ListeBesoin_1.ListeBesoin, null),
-        page === 'workflow-ajouter-besoin' && React.createElement(AjouterBesoin_1.AjouterBesoin, { mode: "ajouter" }),
-        page === 'workflow-modifier-besoin' && React.createElement(AjouterBesoin_1.AjouterBesoin, { mode: "modifier", id: getIdFromHash() }),
-        page === 'workflow-detail-besoin' && React.createElement(DetailBesoin_1.DetailBesoin, null),
-        page !== 'accueil' && page !== 'detail-evenement' && page !== 'tous-evenements' && page !== 'detail-actualite' && page !== 'toutes-actualites' && page !== 'detail-agenda' && page !== 'toutes-agenda' && page !== 'detail-membre' && page !== 'toute-equipe' && page !== 'detail-projet' && page !== 'tous-projets' && page !== 'detail-produit' && page !== 'tous-produits' && page !== 'detail-annonce' && page !== 'toutes-annonces' && page !== 'detail-employe-mois' && page !== 'tous-employes-mois' && page !== 'detail-bilan' && page !== 'tous-bilans' && page !== 'toute-documentation' && page !== 'toute-galerie' && page !== 'workflow-liste-conge' && page !== 'workflow-ajouter-conge' && page !== 'workflow-modifier-conge' && page !== 'workflow-detail-conge' && page !== 'workflow-liste-vacances' && page !== 'workflow-ajouter-vacances' && page !== 'workflow-modifier-vacances' && page !== 'workflow-detail-vacances' && page !== 'workflow-liste-absence' && page !== 'workflow-ajouter-absence' && page !== 'workflow-modifier-absence' && page !== 'workflow-detail-absence' && page !== 'workflow-liste-besoin' && page !== 'workflow-ajouter-besoin' && page !== 'workflow-modifier-besoin' && page !== 'workflow-detail-besoin' && React.createElement(page_404_1.Page404, null),
+        page === 'toute-galerie' && React.createElement(toute_galerie_1.TouteGalerie, { siteUrl: siteUrl }),
+        page === 'workflow-liste-conge' && React.createElement(ListeConge_1.ListeConge, { siteUrl: siteUrl }),
+        page === 'workflow-ajouter-conge' && React.createElement(AjouterConge_1.AjouterConge, { mode: "ajouter", siteUrl: siteUrl }),
+        page === 'workflow-modifier-conge' && React.createElement(AjouterConge_1.AjouterConge, { mode: "modifier", id: getIdFromHash(), siteUrl: siteUrl }),
+        page === 'workflow-detail-conge' && React.createElement(DetailConge_1.DetailConge, { siteUrl: siteUrl }),
+        page === 'workflow-liste-vacances' && React.createElement(ListeVacances_1.ListeVacances, { siteUrl: siteUrl }),
+        page === 'workflow-ajouter-vacances' && React.createElement(AjouterVacances_1.AjouterVacances, { mode: "ajouter", siteUrl: siteUrl }),
+        page === 'workflow-modifier-vacances' && React.createElement(AjouterVacances_1.AjouterVacances, { mode: "modifier", id: getIdFromHash(), siteUrl: siteUrl }),
+        page === 'workflow-detail-vacances' && React.createElement(DetailVacances_1.DetailVacances, { siteUrl: siteUrl }),
+        page === 'workflow-liste-absence' && React.createElement(ListeAbsence_1.ListeAbsence, { siteUrl: siteUrl }),
+        page === 'workflow-ajouter-absence' && React.createElement(AjouterAbsence_1.AjouterAbsence, { mode: "ajouter", siteUrl: siteUrl }),
+        page === 'workflow-modifier-absence' && React.createElement(AjouterAbsence_1.AjouterAbsence, { mode: "modifier", id: getIdFromHash(), siteUrl: siteUrl }),
+        page === 'workflow-detail-absence' && React.createElement(DetailAbsence_1.DetailAbsence, { siteUrl: siteUrl }),
+        page === 'workflow-liste-besoin' && React.createElement(ListeBesoin_1.ListeBesoin, { siteUrl: siteUrl }),
+        page === 'workflow-ajouter-besoin' && React.createElement(AjouterBesoin_1.AjouterBesoin, { mode: "ajouter", siteUrl: siteUrl }),
+        page === 'workflow-modifier-besoin' && React.createElement(AjouterBesoin_1.AjouterBesoin, { mode: "modifier", id: getIdFromHash(), siteUrl: siteUrl }),
+        page === 'workflow-detail-besoin' && React.createElement(DetailBesoin_1.DetailBesoin, { siteUrl: siteUrl }),
+        page !== 'accueil' && page !== 'detail-evenement' && page !== 'tous-evenements' && page !== 'detail-actualite' && page !== 'toutes-actualites' && page !== 'detail-agenda' && page !== 'toutes-agenda' && page !== 'detail-membre' && page !== 'toute-equipe' && page !== 'detail-projet' && page !== 'tous-projets' && page !== 'detail-produit' && page !== 'tous-produits' && page !== 'detail-annonce' && page !== 'toutes-annonces' && page !== 'detail-employe-mois' && page !== 'tous-employes-mois' && page !== 'tous-bilans' && page !== 'toute-documentation' && page !== 'toute-galerie' && page !== 'workflow-liste-conge' && page !== 'workflow-ajouter-conge' && page !== 'workflow-modifier-conge' && page !== 'workflow-detail-conge' && page !== 'workflow-liste-vacances' && page !== 'workflow-ajouter-vacances' && page !== 'workflow-modifier-vacances' && page !== 'workflow-detail-vacances' && page !== 'workflow-liste-absence' && page !== 'workflow-ajouter-absence' && page !== 'workflow-modifier-absence' && page !== 'workflow-detail-absence' && page !== 'workflow-liste-besoin' && page !== 'workflow-ajouter-besoin' && page !== 'workflow-modifier-besoin' && page !== 'workflow-detail-besoin' && React.createElement(page_404_1.Page404, null),
         React.createElement(Footer_1.Footer, { columns: footerColumns })));
 };
 exports.App = App;

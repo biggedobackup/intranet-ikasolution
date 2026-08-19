@@ -1,4 +1,4 @@
-import { IBesoin } from './data';
+import { IBesoin } from './index';
 
 export type DecisionAction = 'valider' | 'rejeter';
 
@@ -14,7 +14,7 @@ export interface IBesoinDecisionConfig {
 
 export const BESOIN_DECISION_CONFIG: IBesoinDecisionConfig = {
   modalTitle: (action) =>
-    action === 'valider' ? 'Valider l&apos;expression de besoin' : 'Rejeter l&apos;expression de besoin',
+    action === 'valider' ? "Valider l'expression de besoin" : "Rejeter l'expression de besoin",
   modalMessage: (item, action) =>
     action === 'valider'
       ? `Vous allez approuver l'expression de besoin « ${item.titre} » de ${item.demandeur}.`
@@ -25,12 +25,3 @@ export const BESOIN_DECISION_CONFIG: IBesoinDecisionConfig = {
   rejectVerb: 'Rejetée',
   decisionSectionTitle: 'Décision de validation'
 };
-
-export function applyBesoinDecision(item: IBesoin, action: DecisionAction, comment: string, date: string): IBesoin {
-  return {
-    ...item,
-    statut: action === 'valider' ? 'Approuvé' : 'Refusé',
-    decisionComment: comment,
-    decisionDate: date
-  };
-}

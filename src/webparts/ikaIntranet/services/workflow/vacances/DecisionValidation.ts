@@ -1,4 +1,4 @@
-import { IVacance } from './data';
+import { IVacance } from './index';
 
 export type DecisionAction = 'valider' | 'rejeter';
 
@@ -25,12 +25,3 @@ export const VACANCE_DECISION_CONFIG: IVacanceDecisionConfig = {
   rejectVerb: 'Rejetée',
   decisionSectionTitle: 'Décision de validation'
 };
-
-export function applyVacanceDecision(item: IVacance, action: DecisionAction, comment: string, date: string): IVacance {
-  return {
-    ...item,
-    statut: action === 'valider' ? 'Approuvé' : 'Refusé',
-    decisionComment: comment,
-    decisionDate: date
-  };
-}

@@ -4,14 +4,16 @@ exports.DetailBesoin = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
 var fa6_1 = require("react-icons/fa6");
-var data_1 = require("../../../services/workflow/besoins/data");
+var index_1 = require("../../../services/workflow/besoins/index");
 var DecisionValidation_1 = require("../../../services/workflow/besoins/DecisionValidation");
+var index_2 = require("../../../services/shared/index");
 var DecisionModal_1 = require("../../../components/DecisionModal");
+var ConfirmDelete_1 = require("../../../components/ConfirmDelete");
 var getBesoinIdFromHash = function () {
     var hash = window.location.hash.replace('#', '');
     var params = hash.split('&');
     var idParam = params.find(function (p) { return p.startsWith('id='); });
-    return idParam ? Number(idParam.split('=')[1]) : 1;
+    return idParam ? Number(idParam.split('=')[1]) : 0;
 };
 var statusBadge = function (status) {
     switch (status) {
@@ -36,25 +38,90 @@ var prioriteBadge = function (priorite) {
         default: return React.createElement("span", { className: "px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-100 text-amber-700" }, priorite);
     }
 };
-var DetailBesoin = function () {
-    var _a = React.useState(function () { return data_1.BESOINS.find(function (b) { return b.id === getBesoinIdFromHash(); }) || data_1.BESOINS[0]; }), besoin = _a[0], setBesoin = _a[1];
-    var _b = React.useState(null), decision = _b[0], setDecision = _b[1];
+var DetailBesoin = function (props) {
+    var siteUrl = props.siteUrl;
+    var _a = React.useState(undefined), besoin = _a[0], setBesoin = _a[1];
+    var _b = React.useState(true), loading = _b[0], setLoading = _b[1];
+    var _c = React.useState(''), error = _c[0], setError = _c[1];
+    var _d = React.useState(null), decision = _d[0], setDecision = _d[1];
+    var _e = React.useState(false), deciding = _e[0], setDeciding = _e[1];
+    var _f = React.useState(false), confirmDelete = _f[0], setConfirmDelete = _f[1];
+    var _g = React.useState(false), deleting = _g[0], setDeleting = _g[1];
+    var _h = React.useState(''), currentUserEmail = _h[0], setCurrentUserEmail = _h[1];
+    var _j = React.useState(undefined), attachment = _j[0], setAttachment = _j[1];
     React.useEffect(function () {
-        var onHash = function () {
-            var id = getBesoinIdFromHash();
-            setBesoin(data_1.BESOINS.find(function (b) { return b.id === id; }) || data_1.BESOINS[0]);
-            setDecision(null);
-        };
+        if (!siteUrl)
+            return;
+        (0, index_2.getCurrentUserEmail)(siteUrl).then(setCurrentUserEmail).catch(function () { return undefined; });
+    }, [siteUrl]);
+    var fetchBesoin = React.useCallback(function () {
+        if (!siteUrl)
+            return;
+        setLoading(true);
+        var id = getBesoinIdFromHash();
+        (0, index_1.loadBesoin)(siteUrl, id)
+            .then(function (item) {
+            setBesoin(item);
+            setLoading(false);
+            if (item)
+                (0, index_1.loadBesoinAttachment)(siteUrl, item.id).then(setAttachment).catch(function () { return undefined; });
+        })
+            .catch(function () { setError('Impossible de charger l’expression de besoin.'); setLoading(false); });
+    }, [siteUrl]);
+    React.useEffect(function () {
+        fetchBesoin();
+        var onHash = function () { setDecision(null); fetchBesoin(); };
         window.addEventListener('hashchange', onHash);
         return function () { return window.removeEventListener('hashchange', onHash); };
-    }, []);
-    var isEnAttente = besoin.statut === 'En attente';
+    }, [fetchBesoin]);
+    var isEnAttente = besoin && besoin.statut === 'En attente';
+    var isValidateur = !!currentUserEmail && !!(besoin === null || besoin === void 0 ? void 0 : besoin.validateurEmail) && currentUserEmail.toLowerCase() === besoin.validateurEmail.toLowerCase();
     var handleDecision = function (comment, date) {
-        if (!decision)
+        if (!decision || !siteUrl || !besoin)
             return;
-        setBesoin(function (prev) { return (0, DecisionValidation_1.applyBesoinDecision)(prev, decision, comment, date); });
-        setDecision(null);
+        setDeciding(true);
+        (0, index_1.applyBesoinDecision)(siteUrl, besoin, decision, comment, date)
+            .then(function (ok) {
+            setDeciding(false);
+            if (ok) {
+                setDecision(null);
+                fetchBesoin();
+            }
+            else
+                setError('La décision n’a pas pu être enregistrée. Réessayez.');
+        })
+            .catch(function () { setDeciding(false); setError('La décision n’a pas pu être enregistrée. Réessayez.'); });
     };
+    var handleDelete = function () {
+        if (!siteUrl || !besoin)
+            return;
+        setDeleting(true);
+        (0, index_1.deleteBesoin)(siteUrl, besoin.id)
+            .then(function (ok) {
+            setDeleting(false);
+            if (ok)
+                window.location.hash = '#page-workflow-liste-besoin';
+            else {
+                setConfirmDelete(false);
+                setError('La suppression a échoué. Réessayez.');
+            }
+        })
+            .catch(function () { setDeleting(false); setConfirmDelete(false); setError('La suppression a échoué. Réessayez.'); });
+    };
+    if (loading) {
+        return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            React.createElement("div", { className: "mx-auto max-w-2xl px-4 sm:px-6 lg:px-8" },
+                React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center text-sm text-slate-500 font-semibold" }, "Chargement du besoin..."))));
+    }
+    if (!besoin) {
+        return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            React.createElement("div", { className: "mx-auto max-w-2xl px-4 sm:px-6 lg:px-8" },
+                React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
+                    React.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Expression de besoin introuvable."),
+                    React.createElement("a", { href: "#page-workflow-liste-besoin", className: "mt-4 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition" },
+                        React.createElement(fa6_1.FaArrowLeft, null),
+                        " Retour \u00E0 la liste")))));
+    }
     return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         React.createElement("div", { className: "mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 space-y-4" },
             React.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
@@ -63,6 +130,7 @@ var DetailBesoin = function () {
                 React.createElement("a", { href: "#page-workflow-liste-besoin", className: "hover:text-ikaBlue transition" }, "Expressions de besoin"),
                 React.createElement("span", null, "/"),
                 React.createElement("span", { className: "text-ikaBlue" }, besoin.titre)),
+            error ? (React.createElement("div", { className: "rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-semibold text-rose-600" }, error)) : null,
             React.createElement("div", { className: "bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" },
                 React.createElement("div", { className: "relative px-6 sm:px-8 py-7 border-b border-slate-100 overflow-hidden" },
                     React.createElement("div", { className: "absolute -right-10 -top-10 w-40 h-40 bg-ikaSoft rounded-full opacity-70" }),
@@ -80,24 +148,23 @@ var DetailBesoin = function () {
                             React.createElement("span", { className: "flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400" },
                                 React.createElement(fa6_1.FaUser, { className: "text-ikaBlue" }),
                                 " Demandeur"),
-                            React.createElement("p", { className: "mt-1.5 text-sm font-bold text-slate-800" }, besoin.demandeur)),
-                        React.createElement("div", { className: "rounded-xl border border-slate-100 p-4 bg-slate-50/60" },
-                            React.createElement("span", { className: "flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400" },
-                                React.createElement(fa6_1.FaClipboardList, { className: "text-ikaBlue" }),
-                                " Type de besoin"),
-                            React.createElement("p", { className: "mt-1.5 text-sm font-bold text-slate-800" }, besoin.type)),
+                            React.createElement("p", { className: "mt-1.5 text-sm font-bold text-slate-800" }, besoin.demandeur || '—')),
                         React.createElement("div", { className: "rounded-xl border border-slate-100 p-4 bg-slate-50/60" },
                             React.createElement("span", { className: "flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400" },
                                 React.createElement(fa6_1.FaCalendarDays, { className: "text-ikaBlue" }),
                                 " Date souhait\u00E9e"),
-                            React.createElement("p", { className: "mt-1.5 text-sm font-bold text-slate-800" }, besoin.dateSouhaitee)),
+                            React.createElement("p", { className: "mt-1.5 text-sm font-bold text-slate-800" }, (0, index_1.formatDateFR)(besoin.dateSouhaitee))),
                         React.createElement("div", { className: "rounded-xl border border-slate-100 p-4 bg-slate-50/60" },
                             React.createElement("span", { className: "flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400" }, "Priorit\u00E9"),
                             React.createElement("div", { className: "mt-1.5" }, prioriteBadge(besoin.priorite)))),
                     React.createElement("section", null,
                         React.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Description"),
                         React.createElement("p", { className: "mt-2 text-sm leading-relaxed text-slate-600" }, besoin.description)),
-                    isEnAttente ? (React.createElement("div", { className: "rounded-xl border border-amber-200 bg-amber-50/60 p-5 space-y-3" },
+                    attachment ? (React.createElement("a", { href: attachment.url, target: "_blank", rel: "noreferrer", className: "flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-xs font-semibold text-ikaBlue hover:underline w-fit max-w-full" },
+                        React.createElement(fa6_1.FaPaperclip, { className: "text-ikaBlue shrink-0" }),
+                        " ",
+                        React.createElement("span", { className: "truncate" }, attachment.fileName))) : null,
+                    isEnAttente && isValidateur ? (React.createElement("div", { className: "rounded-xl border border-amber-200 bg-amber-50/60 p-5 space-y-3" },
                         React.createElement("h2", { className: "flex items-center gap-2 text-sm font-black uppercase tracking-wider text-amber-800" },
                             React.createElement(fa6_1.FaGavel, { className: "text-xs" }),
                             " D\u00E9cision de validation"),
@@ -108,7 +175,14 @@ var DetailBesoin = function () {
                                 " Valider"),
                             React.createElement("button", { onClick: function () { return setDecision('rejeter'); }, className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-rose-500 text-white font-bold text-xs hover:bg-rose-600 shadow transition" },
                                 React.createElement(fa6_1.FaCircleXmark, null),
-                                " Rejeter")))) : besoin.decisionComment ? (React.createElement("div", { className: "rounded-xl border border-slate-100 bg-slate-50/60 p-5 space-y-2" },
+                                " Rejeter")))) : isEnAttente ? (React.createElement("div", { className: "rounded-xl border border-slate-100 bg-slate-50/60 p-5 space-y-2" },
+                        React.createElement("h2", { className: "flex items-center gap-2 text-sm font-black uppercase tracking-wider text-slate-900" },
+                            React.createElement(fa6_1.FaHourglassHalf, { className: "text-xs text-amber-500" }),
+                            " En attente de validation"),
+                        React.createElement("p", { className: "text-xs text-slate-600 leading-relaxed" },
+                            "Cette expression de besoin est en attente de validation par ",
+                            besoin.validateur || 'le validateur désigné',
+                            "."))) : besoin.commentaireDecision ? (React.createElement("div", { className: "rounded-xl border border-slate-100 bg-slate-50/60 p-5 space-y-2" },
                         React.createElement("h2", { className: "flex items-center gap-2 text-sm font-black uppercase tracking-wider text-slate-900" },
                             React.createElement(fa6_1.FaGavel, { className: "text-xs text-ikaBlue" }),
                             " D\u00E9cision"),
@@ -120,22 +194,26 @@ var DetailBesoin = function () {
                                 React.createElement(fa6_1.FaCircleXmark, null),
                                 " ",
                                 DecisionValidation_1.BESOIN_DECISION_CONFIG.rejectVerb)),
-                            besoin.decisionDate && React.createElement("span", { className: "text-slate-400 font-normal" },
+                            besoin.dateDecision ? React.createElement("span", { className: "text-slate-400 font-normal" },
                                 " \u2014 le ",
-                                besoin.decisionDate)),
-                        React.createElement("p", { className: "text-xs text-slate-600 leading-relaxed" }, besoin.decisionComment))) : null,
+                                (0, index_1.formatDateFR)(besoin.dateDecision)) : null),
+                        React.createElement("p", { className: "text-xs text-slate-600 leading-relaxed" }, besoin.commentaireDecision))) : null,
                     React.createElement("div", { className: "pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-slate-400" },
                         React.createElement("span", null,
                             "Cr\u00E9\u00E9e le ",
-                            besoin.createdAt)),
+                            (0, index_1.formatDateFR)(besoin.createdAt))),
                     React.createElement("div", { className: "pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3" },
                         React.createElement("a", { href: "#page-workflow-modifier-besoin&id=".concat(besoin.id), className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition" },
                             React.createElement(fa6_1.FaPen, null),
                             " Modifier le besoin"),
+                        React.createElement("button", { onClick: function () { return setConfirmDelete(true); }, className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-rose-200 bg-rose-50 text-rose-600 font-bold text-xs hover:bg-rose-100 transition" },
+                            React.createElement(fa6_1.FaTrashCan, null),
+                            " Supprimer"),
                         React.createElement("a", { href: "#page-workflow-liste-besoin", className: "inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" },
                             React.createElement(fa6_1.FaArrowLeft, null),
                             " Retour \u00E0 la liste"))))),
-        decision && (React.createElement(DecisionModal_1.DecisionModal, { title: DecisionValidation_1.BESOIN_DECISION_CONFIG.modalTitle(decision), message: DecisionValidation_1.BESOIN_DECISION_CONFIG.modalMessage(besoin, decision), actionLabel: decision === 'valider' ? DecisionValidation_1.BESOIN_DECISION_CONFIG.validateLabel : DecisionValidation_1.BESOIN_DECISION_CONFIG.rejectLabel, action: decision, onConfirm: handleDecision, onCancel: function () { return setDecision(null); } }))));
+        decision ? (React.createElement(DecisionModal_1.DecisionModal, { title: DecisionValidation_1.BESOIN_DECISION_CONFIG.modalTitle(decision), message: DecisionValidation_1.BESOIN_DECISION_CONFIG.modalMessage(besoin, decision), actionLabel: deciding ? 'Enregistrement...' : (decision === 'valider' ? DecisionValidation_1.BESOIN_DECISION_CONFIG.validateLabel : DecisionValidation_1.BESOIN_DECISION_CONFIG.rejectLabel), action: decision, onConfirm: handleDecision, onCancel: function () { return setDecision(null); } })) : null,
+        confirmDelete ? (React.createElement(ConfirmDelete_1.ConfirmDelete, { title: "Supprimer l'expression", message: "Voulez-vous vraiment supprimer l'expression de besoin \u00AB ".concat(besoin.titre, " \u00BB de ").concat(besoin.demandeur, " ? Cette action est irr\u00E9versible."), onConfirm: handleDelete, onCancel: function () { return !deleting && setConfirmDelete(false); } })) : null));
 };
 exports.DetailBesoin = DetailBesoin;
 exports.default = exports.DetailBesoin;

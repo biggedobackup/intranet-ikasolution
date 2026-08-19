@@ -1,4 +1,7 @@
 import * as React from 'react';
-export declare const DetailConge: React.FC;
+export interface IDetailCongeProps {
+    siteUrl?: string;
+}
+export declare const DetailConge: React.FC<IDetailCongeProps>;
 export default DetailConge;
 //# sourceMappingURL=DetailConge.d.ts.map

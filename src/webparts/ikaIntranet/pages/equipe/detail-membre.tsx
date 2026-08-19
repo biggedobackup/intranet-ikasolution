@@ -7,7 +7,7 @@ import {
   FaUsers,
   FaBriefcase
 } from 'react-icons/fa6';
-import { MEMBRES, DEPT_COLORS } from '../../services/equipe/data';
+import { loadMembres, IMembre, DEPT_COLORS } from '../../services/equipe/index';
 
 const getMembreIdFromHash = (): number => {
   const hash = window.location.hash.replace('#', '');
@@ -16,8 +16,10 @@ const getMembreIdFromHash = (): number => {
   return idParam ? Number(idParam.split('=')[1]) : 1;
 };
 
-export const DetailMembre: React.FC = () => {
+export const DetailMembre: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [membreId, setMembreId] = React.useState<number>(getMembreIdFromHash);
+  const [membres, setMembres] = React.useState<IMembre[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     const onHash = (): void => setMembreId(getMembreIdFromHash());
@@ -25,8 +27,44 @@ export const DetailMembre: React.FC = () => {
     return (): void => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  const membre = MEMBRES.find((m) => m.id === membreId) || MEMBRES[0];
-  const colleagues = MEMBRES.filter((m) => m.id !== membre.id && m.dept === membre.dept);
+  React.useEffect(() => {
+    if (!siteUrl) {
+      setLoading(false);
+      return;
+    }
+    loadMembres(siteUrl)
+      .then((data) => {
+        setMembres(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
+
+  if (loading) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <div className="spinner-border text-ikaBlue" role="status" />
+          <p className="mt-3 text-sm text-slate-500">Chargement de la fiche membre...</p>
+        </div>
+      </main>
+    );
+  }
+
+  const membre = membres.find((m) => m.id === membreId) || membres[0];
+  if (!membre) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <p className="text-sm text-slate-500 font-semibold">Membre introuvable.</p>
+          <a href="#page-toute-equipe" className="inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition">
+            Voir toute l&apos;équipe
+          </a>
+        </div>
+      </main>
+    );
+  }
+  const colleagues = membres.filter((m) => m.id !== membre.id && m.dept === membre.dept);
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -74,19 +112,12 @@ export const DetailMembre: React.FC = () => {
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{membre.bio}</p>
               </div>
 
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                 <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
                   <span className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0"><FaMobileScreen className="text-sm" /></span>
                   <div>
                     <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wide">Téléphone Mobile</p>
                     <a href={`tel:${membre.phone.replace(/\s/g, '')}`} className="font-bold text-slate-800 hover:text-ikaBlue transition">{membre.phone}</a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                  <span className="w-8 h-8 rounded-lg bg-blue-100 text-ikaBlue flex items-center justify-center shrink-0"><FaPhone className="text-sm" /></span>
-                  <div>
-                    <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wide">Poste IP</p>
-                    <span className="font-mono font-bold text-ikaBlue">{membre.ip}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100">

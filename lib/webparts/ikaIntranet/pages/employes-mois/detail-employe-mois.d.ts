@@ -1,4 +1,6 @@
 import * as React from 'react';
-export declare const DetailEmployeMois: React.FC;
+export declare const DetailEmployeMois: React.FC<{
+    siteUrl?: string;
+}>;
 export default DetailEmployeMois;
 //# sourceMappingURL=detail-employe-mois.d.ts.map

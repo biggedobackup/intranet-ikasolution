@@ -4,8 +4,26 @@ exports.TousEmployesMois = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
 var fa6_1 = require("react-icons/fa6");
-var data_1 = require("../../services/employes-mois/data");
-var TousEmployesMois = function () {
+var index_1 = require("../../services/employes-mois/index");
+var TousEmployesMois = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = React.useState([]), employes = _b[0], setEmployes = _b[1];
+    var _c = React.useState(true), loading = _c[0], setLoading = _c[1];
+    React.useEffect(function () {
+        if (!siteUrl) {
+            setLoading(false);
+            return;
+        }
+        (0, index_1.loadEmployesMois)(siteUrl)
+            .then(function (data) {
+            setEmployes(data);
+            setLoading(false);
+        })
+            .catch(function (err) {
+            console.error('[TousEmployesMois] Erreur :', err);
+            setLoading(false);
+        });
+    }, [siteUrl]);
     return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
             React.createElement("div", { className: "bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 relative overflow-hidden" },
@@ -19,8 +37,9 @@ var TousEmployesMois = function () {
                         React.createElement(fa6_1.FaTrophy, { className: "text-amber-500 text-2xl" }),
                         " Employ\u00E9s du mois"),
                     React.createElement("p", { className: "mt-2 text-sm text-slate-500 max-w-2xl" }, "Les collaborateurs d'IKA SOLUTION distingu\u00E9s chaque mois pour leur engagement et leurs contributions."))),
-            data_1.EMPLOYES_MOIS.length === 0 ? (React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
-                React.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Aucun laur\u00E9at pour le moment."))) : (React.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" }, data_1.EMPLOYES_MOIS.map(function (e) { return (React.createElement("a", { key: e.id, href: "#page-detail-employe-mois&id=".concat(e.id), className: "group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block" },
+            loading ? (React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
+                React.createElement("p", { className: "text-sm text-slate-400 font-semibold" }, "Chargement..."))) : employes.length === 0 ? (React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
+                React.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Aucun laur\u00E9at pour le moment."))) : (React.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" }, employes.map(function (e) { return (React.createElement("a", { key: e.id, href: "#page-detail-employe-mois&id=".concat(e.id), className: "group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block" },
                 React.createElement("div", { className: "relative h-14 bg-gradient-to-r from-amber-500 to-amber-400" },
                     React.createElement("span", { className: "absolute top-3 right-3 px-2 py-1 rounded-full bg-white/90 text-[9px] font-black uppercase tracking-wide text-amber-700 flex items-center gap-1" },
                         React.createElement(fa6_1.FaCrown, { className: "text-[9px]" }),
@@ -35,7 +54,7 @@ var TousEmployesMois = function () {
                         e.role,
                         " \u2014 ",
                         e.dept),
-                    React.createElement("p", { className: "mt-2 text-[11px] text-slate-500 italic line-clamp-2 leading-snug" },
+                    React.createElement("p", { className: "mt-2 text-[11px] text-slate-500 italic line-clamp-4 leading-snug" },
                         "\u00AB ",
                         e.quote,
                         " \u00BB"),
@@ -43,11 +62,11 @@ var TousEmployesMois = function () {
                         React.createElement("span", { className: "px-2.5 py-1 rounded-full border border-rose-200 bg-rose-50 text-rose-600 flex items-center gap-1" },
                             React.createElement(fa6_1.FaHeart, { className: "text-[10px]" }),
                             " ",
-                            e.likeCount),
+                            (e.likedBy || []).length),
                         React.createElement("span", { className: "px-2.5 py-1 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue flex items-center gap-1" },
                             React.createElement(fa6_1.FaComment, { className: "text-[10px]" }),
                             " ",
-                            e.commentCount))))); }))))));
+                            (e.comments || []).length))))); }))))));
 };
 exports.TousEmployesMois = TousEmployesMois;
 exports.default = exports.TousEmployesMois;

@@ -11,7 +11,8 @@ import {
   FaBullhorn,
   FaXmark
 } from 'react-icons/fa6';
-import { ANNONCES } from '../../services/annonces/data';
+import { loadAnnonces, updateAnnonceLikedBy, updateAnnonceComments, IAnnonce } from '../../services/annonces/index';
+import { getCurrentUserEmail, getCurrentUserName, IComment } from '../../services/shared/index';
 
 const getAnnonceIdFromHash = (): number => {
   const hash = window.location.hash.replace('#', '');
@@ -29,8 +30,16 @@ const typeIcon = (type: string): React.ReactNode => {
   }
 };
 
-export const DetailAnnonce: React.FC = () => {
+export const DetailAnnonce: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [annonceId, setAnnonceId] = React.useState<number>(getAnnonceIdFromHash);
+  const [items, setItems] = React.useState<IAnnonce[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [likedBy, setLikedBy] = React.useState<string[]>([]);
+  const [itemComments, setItemComments] = React.useState<IComment[]>([]);
+  const [userEmail, setUserEmail] = React.useState('');
+  const [userName, setUserName] = React.useState('');
+  const [commentModal, setCommentModal] = React.useState(false);
+  const [commentInput, setCommentInput] = React.useState('');
 
   React.useEffect(() => {
     const onHash = (): void => setAnnonceId(getAnnonceIdFromHash());
@@ -38,37 +47,95 @@ export const DetailAnnonce: React.FC = () => {
     return (): void => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  const annonce = ANNONCES.find((a) => a.id === annonceId) || ANNONCES[0];
-  const idx = ANNONCES.findIndex((a) => a.id === annonce.id);
-  const prev = ANNONCES[(idx - 1 + ANNONCES.length) % ANNONCES.length];
-  const next = ANNONCES[(idx + 1) % ANNONCES.length];
+  React.useEffect(() => {
+    if (!siteUrl) {
+      setLoading(false);
+      return;
+    }
+    loadAnnonces(siteUrl)
+      .then((data) => {
+        setItems(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
 
-  const [likedIds, setLikedIds] = React.useState<Record<number, boolean>>({});
-  const [likeCounts, setLikeCounts] = React.useState<Record<number, number>>({ 1: 12, 2: 8, 3: 5, 4: 9 });
-  const [comments, setComments] = React.useState<Record<number, Array<{ user: string; text: string; mine?: boolean }>>>({
-    1: [
-      { user: 'Aïcha KABORÉ :', text: ' Bonne fête Kadiatou ! 🎉' },
-      { user: 'Jean OUEDRAOGO :', text: ' Tous mes vœux ! 👏' }
-    ]
-  });
-  const [commentCounts, setCommentCounts] = React.useState<Record<number, number>>({ 1: 12, 2: 7, 3: 4, 4: 6 });
-  const [commentModal, setCommentModal] = React.useState(false);
-  const [commentInput, setCommentInput] = React.useState('');
+  React.useEffect(() => {
+    if (!siteUrl) return;
+    getCurrentUserEmail(siteUrl)
+      .then(setUserEmail)
+      .catch((err) => {
+        console.error('[DetailAnnonce] Email courant :', err);
+      });
+    getCurrentUserName(siteUrl)
+      .then(setUserName)
+      .catch((err) => {
+        console.error('[DetailAnnonce] Nom courant :', err);
+      });
+  }, [siteUrl]);
 
-  const toggleLike = (): void => {
-    const liked = likedIds[annonce.id];
-    setLikedIds((p) => ({ ...p, [annonce.id]: !liked }));
-    setLikeCounts((p) => ({ ...p, [annonce.id]: (p[annonce.id] || 0) + (liked ? -1 : 1) }));
+  const annonce = items.find((a) => a.id === annonceId) || items[0];
+
+  React.useEffect(() => {
+    if (annonce) {
+      setLikedBy(annonce.likedBy || []);
+      setItemComments(annonce.comments || []);
+    }
+  }, [annonce]);
+
+  if (loading) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <div className="spinner-border text-amber-600" role="status" />
+          <p className="mt-3 text-sm text-slate-500">Chargement de l&apos;annonce...</p>
+        </div>
+      </main>
+    );
+  }
+
+  if (!annonce) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <p className="text-sm text-slate-500 font-semibold">Annonce introuvable.</p>
+          <a href="#page-toutes-annonces" className="inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition">
+            Voir toutes les annonces
+          </a>
+        </div>
+      </main>
+    );
+  }
+
+  const idx = items.findIndex((a) => a.id === annonce.id);
+  const prev = items[(idx - 1 + items.length) % items.length];
+  const next = items[(idx + 1) % items.length];
+  const isLiked = userEmail !== '' && likedBy.indexOf(userEmail) !== -1;
+
+  const toggleLike = async (): Promise<void> => {
+    if (!siteUrl || !userEmail) return;
+    const newLikedBy = isLiked
+      ? likedBy.filter((e) => e !== userEmail)
+      : [...likedBy, userEmail];
+    setLikedBy(newLikedBy);
+    await updateAnnonceLikedBy(siteUrl, annonce.id, newLikedBy);
   };
 
-  const addComment = (e: React.FormEvent): void => {
+  const addComment = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
     const val = commentInput.trim();
-    if (!val) return;
-    setComments((p) => ({ ...p, [annonce.id]: [...(p[annonce.id] || []), { user: 'Vous :', text: ` ${val}`, mine: true }] }));
-    setCommentCounts((p) => ({ ...p, [annonce.id]: (p[annonce.id] || 0) + 1 }));
+    if (!val || !siteUrl || !userEmail) return;
+    const newComment: IComment = {
+      user: userName || 'Utilisateur',
+      email: userEmail,
+      text: val,
+      date: new Date().toISOString()
+    };
+    const newComments = [...itemComments, newComment];
+    setItemComments(newComments);
     setCommentInput('');
     setCommentModal(false);
+    await updateAnnonceComments(siteUrl, annonce.id, newComments);
   };
 
   return (
@@ -88,17 +155,9 @@ export const DetailAnnonce: React.FC = () => {
           <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6 sm:p-8">
               <div className="flex items-center gap-4">
-                {annonce.avatars.length > 0 ? (
-                  <div className="flex -space-x-3 shrink-0">
-                    {annonce.avatars.map((av, j) => (
-                      <img key={j} src={av} className="w-12 h-12 rounded-full object-cover border-2 border-white" alt="" />
-                    ))}
-                  </div>
-                ) : (
-                  annonce.avatar ? (
-                    <img src={annonce.avatar} alt="" className={`w-14 h-14 rounded-full object-cover ${annonce.badge}`} />
-                  ) : typeIcon(annonce.type)
-                )}
+                {annonce.avatar ? (
+                  <img src={annonce.avatar} alt="" className={`w-14 h-14 rounded-full object-cover ${annonce.badge}`} />
+                ) : typeIcon(annonce.type)}
                 <div>
                   <h1 className="text-xl sm:text-2xl font-black text-ikaBlueDark">{annonce.title}</h1>
                   <p className="text-xs font-semibold text-slate-400 mt-0.5">{annonce.time}</p>
@@ -120,15 +179,15 @@ export const DetailAnnonce: React.FC = () => {
               <div className="mt-6 flex items-center gap-2">
                 <button
                   onClick={toggleLike}
-                  className={`px-4 py-2 rounded-full border font-bold text-xs transition flex items-center gap-1.5 ${likedIds[annonce.id] ? 'bg-rose-500 text-white border-rose-500 shadow-sm' : 'border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100'}`}
+                  className={`px-4 py-2 rounded-full border font-bold text-xs transition flex items-center gap-1.5 ${isLiked ? 'bg-rose-500 text-white border-rose-500 shadow-sm' : 'border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100'}`}
                 >
-                  <FaHeart className={likedIds[annonce.id] ? '' : 'text-xs'} /> {likeCounts[annonce.id] || 0} J&apos;aime
+                  <FaHeart className={isLiked ? '' : 'text-xs'} /> {likedBy.length} J&apos;aime
                 </button>
                 <button
                   onClick={() => setCommentModal(true)}
                   className="px-4 py-2 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5"
                 >
-                  <FaComment className="text-xs" /> {commentCounts[annonce.id] || 0} Commentaires
+                  <FaComment className="text-xs" /> {itemComments.length} Commentaires
                 </button>
               </div>
 
@@ -147,22 +206,14 @@ export const DetailAnnonce: React.FC = () => {
                 <FaUsers className="text-amber-600 text-[11px]" /> Autres annonces
               </h2>
               <div className="grid grid-cols-1 gap-3">
-                {ANNONCES.filter((a) => a.id !== annonce.id).map((a) => (
+                {items.filter((a) => a.id !== annonce.id).map((a) => (
                   <a
                     key={a.id}
                     href={`#page-detail-annonce&id=${a.id}`}
                     className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 hover:border-amber-300 hover:bg-amber-50/50 transition group"
                   >
-                    {a.avatars.length > 0 ? (
-                      <div className="flex -space-x-2 shrink-0">
-                        {a.avatars.map((av, j) => (
-                          <img key={j} src={av} className="w-8 h-8 rounded-full object-cover border border-white" alt="" />
-                        ))}
-                      </div>
-                    ) : (
-                      a.avatar ? <img src={a.avatar} alt="" className={`w-9 h-9 rounded-full object-cover ${a.badge} shrink-0`} />
-                        : typeIcon(a.type)
-                    )}
+                    {a.avatar ? <img src={a.avatar} alt="" className={`w-9 h-9 rounded-full object-cover ${a.badge} shrink-0`} />
+                      : typeIcon(a.type)}
                     <div className="min-w-0">
                       <h3 className="text-xs font-bold text-slate-900 group-hover:text-amber-600 transition">{a.title}</h3>
                       <p className="text-[10px] text-slate-400">{a.time}</p>
@@ -205,12 +256,16 @@ export const DetailAnnonce: React.FC = () => {
               </div>
             </div>
             <div className="max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs">
-              {(comments[annonce.id] || []).map((c, i) => (
-                <div key={i} className={`p-2 rounded-lg border ${c.mine ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
-                  <span className="font-bold text-slate-900">{c.user}</span>
-                  <span className="text-slate-600">{c.text}</span>
-                </div>
-              ))}
+              {itemComments.map((c, i) => {
+                const isMe = c.email === userEmail;
+                return (
+                  <div key={i} className={`p-2 rounded-lg border ${isMe ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
+                    <span className="font-bold text-slate-900">{c.user} :</span>
+                    <span className="text-slate-600"> {c.text}</span>
+                  </div>
+                );
+              })}
+              {itemComments.length === 0 && <p className="text-slate-400 text-center">Aucun commentaire pour le moment.</p>}
             </div>
             <form onSubmit={addComment} className="space-y-3">
               <textarea

@@ -1,8 +1,27 @@
 import * as React from 'react';
 import { FaCrown, FaTrophy, FaHeart, FaComment } from 'react-icons/fa6';
-import { EMPLOYES_MOIS } from '../../services/employes-mois/data';
+import { loadEmployesMois, IEmployeMois } from '../../services/employes-mois/index';
 
-export const TousEmployesMois: React.FC = () => {
+export const TousEmployesMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
+  const [employes, setEmployes] = React.useState<IEmployeMois[]>([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    if (!siteUrl) {
+      setLoading(false);
+      return;
+    }
+    loadEmployesMois(siteUrl)
+      .then((data) => {
+        setEmployes(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('[TousEmployesMois] Erreur :', err);
+        setLoading(false);
+      });
+  }, [siteUrl]);
+
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
       <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4">
@@ -25,13 +44,17 @@ export const TousEmployesMois: React.FC = () => {
         </div>
 
         {/* Grille des lauréats */}
-        {EMPLOYES_MOIS.length === 0 ? (
+        {loading ? (
+          <div className="bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center">
+            <p className="text-sm text-slate-400 font-semibold">Chargement...</p>
+          </div>
+        ) : employes.length === 0 ? (
           <div className="bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center">
             <p className="text-sm text-slate-500 font-semibold">Aucun lauréat pour le moment.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {EMPLOYES_MOIS.map((e) => (
+            {employes.map((e) => (
               <a
                 key={e.id}
                 href={`#page-detail-employe-mois&id=${e.id}`}
@@ -46,10 +69,10 @@ export const TousEmployesMois: React.FC = () => {
                 <div className="pt-12 px-4 pb-4 text-center">
                   <h3 className="text-sm font-black text-slate-900 group-hover:text-amber-600 transition">{e.name}</h3>
                   <p className="text-[11px] font-bold text-ikaBlue mt-0.5">{e.role} — {e.dept}</p>
-                  <p className="mt-2 text-[11px] text-slate-500 italic line-clamp-2 leading-snug">« {e.quote} »</p>
+                  <p className="mt-2 text-[11px] text-slate-500 italic line-clamp-4 leading-snug">« {e.quote} »</p>
                   <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-center gap-3 text-[11px] font-bold">
-                    <span className="px-2.5 py-1 rounded-full border border-rose-200 bg-rose-50 text-rose-600 flex items-center gap-1"><FaHeart className="text-[10px]" /> {e.likeCount}</span>
-                    <span className="px-2.5 py-1 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue flex items-center gap-1"><FaComment className="text-[10px]" /> {e.commentCount}</span>
+                    <span className="px-2.5 py-1 rounded-full border border-rose-200 bg-rose-50 text-rose-600 flex items-center gap-1"><FaHeart className="text-[10px]" /> {(e.likedBy || []).length}</span>
+                    <span className="px-2.5 py-1 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue flex items-center gap-1"><FaComment className="text-[10px]" /> {(e.comments || []).length}</span>
                   </div>
                 </div>
               </a>

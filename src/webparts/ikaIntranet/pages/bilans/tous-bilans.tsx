@@ -1,11 +1,29 @@
 import * as React from 'react';
 import { FaCalendarDay, FaFilePdf, FaMagnifyingGlass } from 'react-icons/fa6';
-import { BILANS } from '../../services/bilans/data';
+import { loadBilans, IBilan } from '../../services/bilans/index';
 
-export const TousBilans: React.FC = () => {
+export const TousBilans: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [search, setSearch] = React.useState('');
+  const [bilans, setBilans] = React.useState<IBilan[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
-  const filtered = BILANS.filter((b) => {
+  React.useEffect(() => {
+    if (!siteUrl) {
+      setLoading(false);
+      return;
+    }
+    loadBilans(siteUrl)
+      .then((data) => {
+        setBilans(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('[TousBilans] Erreur :', err);
+        setLoading(false);
+      });
+  }, [siteUrl]);
+
+  const filtered = bilans.filter((b) => {
     const q = search.toLowerCase();
     return b.period.toLowerCase().includes(q) || b.file.toLowerCase().includes(q) || b.summary.toLowerCase().includes(q);
   });
@@ -42,16 +60,24 @@ export const TousBilans: React.FC = () => {
         </div>
 
         {/* Liste des bilans */}
-        {filtered.length === 0 ? (
+        {loading ? (
           <div className="bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center">
-            <p className="text-sm text-slate-500 font-semibold">Aucun bilan ne correspond à votre recherche.</p>
+            <p className="text-sm text-slate-400 font-semibold">Chargement...</p>
+          </div>
+        ) : filtered.length === 0 ? (
+          <div className="bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center">
+            <p className="text-sm text-slate-500 font-semibold">
+              {bilans.length === 0 ? 'Aucun bilan pour le moment.' : 'Aucun bilan ne correspond à votre recherche.'}
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((b) => (
               <a
                 key={b.id}
-                href={`#page-detail-bilan&id=${b.id}`}
+                href={b.fileUrl || '#'}
+                target={b.fileUrl ? '_blank' : undefined}
+                rel="noopener noreferrer"
                 className="group bg-white rounded-2xl shadow-sm border border-slate-200 p-5 hover:shadow-lg transition block"
               >
                 <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-700">

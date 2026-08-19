@@ -1,18 +1,10 @@
 import * as React from 'react';
 import {
-  FaCubes,
-  FaCloud,
-  FaChartLine,
-  FaMobileScreenButton,
-  FaHeadset,
-  FaGraduationCap,
   FaArrowLeft,
   FaArrowRight,
-  FaCircleCheck,
-  FaTag,
   FaLayerGroup
 } from 'react-icons/fa6';
-import { PRODUITS } from '../../services/produits/data';
+import { loadProduits, IProduit } from '../../services/produits/index';
 
 const getProduitIdFromHash = (): number => {
   const hash = window.location.hash.replace('#', '');
@@ -21,20 +13,10 @@ const getProduitIdFromHash = (): number => {
   return idParam ? Number(idParam.split('=')[1]) : 1;
 };
 
-const produitIcon = (name: string): React.ReactNode => {
-  switch (name) {
-    case 'cubes': return <FaCubes />;
-    case 'cloud': return <FaCloud />;
-    case 'chart-line': return <FaChartLine />;
-    case 'mobile-screen-button': return <FaMobileScreenButton />;
-    case 'headset': return <FaHeadset />;
-    case 'graduation-cap': return <FaGraduationCap />;
-    default: return <FaCubes />;
-  }
-};
-
-export const DetailProduit: React.FC = () => {
+export const DetailProduit: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [produitId, setProduitId] = React.useState<number>(getProduitIdFromHash);
+  const [produits, setProduits] = React.useState<IProduit[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     const onHash = (): void => setProduitId(getProduitIdFromHash());
@@ -42,10 +24,46 @@ export const DetailProduit: React.FC = () => {
     return (): void => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  const produit = PRODUITS.find((p) => p.id === produitId) || PRODUITS[0];
-  const idx = PRODUITS.findIndex((p) => p.id === produit.id);
-  const prev = PRODUITS[(idx - 1 + PRODUITS.length) % PRODUITS.length];
-  const next = PRODUITS[(idx + 1) % PRODUITS.length];
+  React.useEffect(() => {
+    if (!siteUrl) {
+      setLoading(false);
+      return;
+    }
+    loadProduits(siteUrl)
+      .then((data) => {
+        setProduits(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
+
+  if (loading) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <div className="spinner-border text-ikaBlue" role="status" />
+          <p className="mt-3 text-sm text-slate-500">Chargement du produit...</p>
+        </div>
+      </main>
+    );
+  }
+
+  const produit = produits.find((p) => p.id === produitId) || produits[0];
+  if (!produit) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <p className="text-sm text-slate-500 font-semibold">Produit introuvable.</p>
+          <a href="#page-tous-produits" className="inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition">
+            Voir tous les produits
+          </a>
+        </div>
+      </main>
+    );
+  }
+  const idx = produits.findIndex((p) => p.id === produit.id);
+  const prev = produits[(idx - 1 + produits.length) % produits.length];
+  const next = produits[(idx + 1) % produits.length];
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -63,13 +81,10 @@ export const DetailProduit: React.FC = () => {
           {/* Colonne principale */}
           <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="relative h-40 sm:h-48 overflow-hidden bg-gradient-to-r from-ikaBlueDark to-ikaBlue flex flex-col items-center justify-center text-white p-6">
-              <div className="w-20 h-20 rounded-2xl bg-white/15 border border-white/20 flex items-center justify-center text-3xl">
-                <span className={produit.iconCls}>{produitIcon(produit.icon)}</span>
+              <div className="w-20 h-20 rounded-2xl bg-white/15 border border-white/20 flex items-center justify-center overflow-hidden">
+                <img src={produit.logo} alt={produit.name} className="w-full h-full object-cover" />
               </div>
               <h1 className="mt-3 text-xl sm:text-2xl font-black">{produit.name}</h1>
-              <span className="mt-2 px-3 py-1 rounded-full bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaBlueDark flex items-center gap-1.5">
-                <FaTag className="text-[10px]" /> {produit.category}
-              </span>
             </div>
             <div className="p-5 sm:p-8">
               <div className="mt-2">
@@ -77,21 +92,9 @@ export const DetailProduit: React.FC = () => {
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{produit.description}</p>
               </div>
 
-              <div className="mt-6">
-                <h2 className="text-sm font-black uppercase tracking-wider text-slate-900">Points forts</h2>
-                <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {produit.features.map((f, i) => (
-                    <div key={i} className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                      <FaCircleCheck className="text-emerald-500 text-sm shrink-0" />
-                      <span className="text-xs font-semibold text-slate-700">{f}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               <div className="mt-8">
                 <a href="#page-tous-produits" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition">
-                  <FaArrowLeft /> Voir tous les services
+                  <FaArrowLeft /> Voir tous les produits
                 </a>
               </div>
             </div>
@@ -101,21 +104,20 @@ export const DetailProduit: React.FC = () => {
           <aside className="space-y-4">
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
               <h2 className="text-xs font-black uppercase tracking-wider text-slate-900 pb-3 border-b border-slate-100 mb-4 flex items-center gap-1.5">
-                <FaLayerGroup className="text-ikaBlue text-[11px]" /> Autres services
+                <FaLayerGroup className="text-ikaBlue text-[11px]" /> Autres produits
               </h2>
               <div className="grid grid-cols-1 gap-3">
-                {PRODUITS.filter((p) => p.id !== produit.id).map((p) => (
+                {produits.filter((p) => p.id !== produit.id).map((p) => (
                   <a
                     key={p.id}
                     href={`#page-detail-produit&id=${p.id}`}
                     className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 hover:border-ikaBlue hover:bg-slate-50 transition group"
                   >
-                    <span className={`w-9 h-9 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center ${p.iconCls}`}>
-                      {produitIcon(p.icon)}
+                    <span className="w-9 h-9 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden shrink-0">
+                      <img src={p.logo} alt={p.name} className="w-full h-full object-cover" />
                     </span>
                     <div className="min-w-0">
                       <h3 className="text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition">{p.name}</h3>
-                      <p className="text-[10px] text-slate-400">{p.category}</p>
                     </div>
                   </a>
                 ))}
@@ -135,7 +137,7 @@ export const DetailProduit: React.FC = () => {
             </div>
 
             <a href="#page-tous-produits" className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-ikaBlue bg-ikaSoft text-ikaBlue font-bold text-xs hover:bg-ikaBlue hover:text-white transition">
-              <FaArrowRight /> Voir tous les services
+              <FaArrowRight /> Voir tous les produits
             </a>
           </aside>
         </div>

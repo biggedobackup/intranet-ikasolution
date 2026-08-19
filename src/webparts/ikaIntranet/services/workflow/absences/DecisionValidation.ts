@@ -1,4 +1,4 @@
-import { IAbsence } from './data';
+import { IAbsence } from './index';
 
 export type DecisionAction = 'valider' | 'rejeter';
 
@@ -14,7 +14,7 @@ export interface IAbsenceDecisionConfig {
 
 export const ABSENCE_DECISION_CONFIG: IAbsenceDecisionConfig = {
   modalTitle: (action) =>
-    action === 'valider' ? 'Valider le signalement d&apos;absence' : 'Rejeter le signalement d&apos;absence',
+    action === 'valider' ? "Valider le signalement d'absence" : "Rejeter le signalement d'absence",
   modalMessage: (item, action) =>
     action === 'valider'
       ? `Vous allez approuver le signalement d'absence « ${item.titre} » de ${item.demandeur}.`
@@ -25,12 +25,3 @@ export const ABSENCE_DECISION_CONFIG: IAbsenceDecisionConfig = {
   rejectVerb: 'Rejeté',
   decisionSectionTitle: 'Décision de validation'
 };
-
-export function applyAbsenceDecision(item: IAbsence, action: DecisionAction, comment: string, date: string): IAbsence {
-  return {
-    ...item,
-    statut: action === 'valider' ? 'Approuvé' : 'Refusé',
-    decisionComment: comment,
-    decisionDate: date
-  };
-}

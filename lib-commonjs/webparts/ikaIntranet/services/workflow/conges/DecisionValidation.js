@@ -1,8 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CONGE_DECISION_CONFIG = void 0;
-exports.applyCongeDecision = applyCongeDecision;
-var tslib_1 = require("tslib");
 exports.CONGE_DECISION_CONFIG = {
     modalTitle: function (action) {
         return action === 'valider' ? 'Valider la demande de congé' : 'Rejeter la demande de congé';
@@ -18,7 +16,4 @@ exports.CONGE_DECISION_CONFIG = {
     rejectVerb: 'Rejetée',
     decisionSectionTitle: 'Décision de validation'
 };
-function applyCongeDecision(item, action, comment, date) {
-    return tslib_1.__assign(tslib_1.__assign({}, item), { statut: action === 'valider' ? 'Approuvé' : 'Refusé', decisionComment: comment, decisionDate: date });
-}
 //# sourceMappingURL=DecisionValidation.js.map

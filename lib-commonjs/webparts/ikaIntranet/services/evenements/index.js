@@ -11,6 +11,11 @@ var CACHE_TTL = 5 * 60 * 1000;
 var PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='22' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EIKA SOLUTION%3C/text%3E%3C/svg%3E";
 var ICON_COLORS = ['text-amber-400', 'text-emerald-400', 'text-purple-400', 'text-rose-400', 'text-blue-400'];
 var cache = null;
+function readCache() {
+    if (cache && Date.now() - cache.ts < CACHE_TTL)
+        return cache.data;
+    return undefined;
+}
 function isActive(value) {
     return value !== false && value !== 0;
 }
@@ -271,13 +276,14 @@ function formatDateRange(start, end) {
 }
 function loadEvenements(siteUrl) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
-        var fieldMap, listName_1, fieldMapFinal_1, _a, res, items, missingImages_1, evenements_1, rootFolder_1, err_1;
+        var cached, fieldMap, listName_1, fieldMapFinal_1, _a, res, items, missingImages_1, evenements_1, rootFolder_1, err_1;
         var _this = this;
         return tslib_1.__generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    if (cache && Date.now() - cache.ts < CACHE_TTL)
-                        return [2 /*return*/, cache.data];
+                    cached = readCache();
+                    if (cached)
+                        return [2 /*return*/, cached];
                     _b.label = 1;
                 case 1:
                     _b.trys.push([1, 11, , 12]);
@@ -377,26 +383,32 @@ function loadEvenements(siteUrl) {
     });
 }
 var resolvedListName = null;
+function readResolvedListName() {
+    return resolvedListName;
+}
 function resolveListName(siteUrl) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
-        var fieldMap, fieldMapAlt;
+        var cached, fieldMap, resolved, fieldMapAlt;
         return tslib_1.__generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    if (resolvedListName)
-                        return [2 /*return*/, resolvedListName];
+                    cached = readResolvedListName();
+                    if (cached)
+                        return [2 /*return*/, cached];
                     return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME)];
                 case 1:
                     fieldMap = _a.sent();
-                    resolvedListName = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
-                    if (!(resolvedListName === LIST_NAME_ALT)) return [3 /*break*/, 3];
+                    resolved = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
+                    if (!(resolved === LIST_NAME_ALT)) return [3 /*break*/, 3];
                     return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME_ALT)];
                 case 2:
                     fieldMapAlt = _a.sent();
                     if (!fieldMapAlt || Object.keys(fieldMapAlt).length === 0)
-                        resolvedListName = LIST_NAME;
+                        resolved = LIST_NAME;
                     _a.label = 3;
-                case 3: return [2 /*return*/, resolvedListName];
+                case 3:
+                    resolvedListName = resolved;
+                    return [2 /*return*/, resolved];
             }
         });
     });

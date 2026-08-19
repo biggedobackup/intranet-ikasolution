@@ -59,14 +59,20 @@ function formatTime(date) {
         ? date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
         : '';
 }
+function readCache() {
+    if (cache && Date.now() - cache.ts < CACHE_TTL)
+        return cache.data;
+    return undefined;
+}
 function loadAgendas(siteUrl) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
-        var fieldMap_1, res, items, agenda, err_1;
+        var cached, fieldMap_1, res, items, agenda, err_1;
         return tslib_1.__generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    if (cache && Date.now() - cache.ts < CACHE_TTL)
-                        return [2 /*return*/, cache.data];
+                    cached = readCache();
+                    if (cached)
+                        return [2 /*return*/, cached];
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 5, , 6]);

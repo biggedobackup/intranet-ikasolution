@@ -4,24 +4,51 @@ exports.DetailProjet = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
 var fa6_1 = require("react-icons/fa6");
-var data_1 = require("../../services/projets/data");
+var index_1 = require("../../services/projets/index");
 var getProjetIdFromHash = function () {
     var hash = window.location.hash.replace('#', '');
     var params = hash.split('&');
     var idParam = params.find(function (p) { return p.startsWith('id='); });
     return idParam ? Number(idParam.split('=')[1]) : 1;
 };
-var DetailProjet = function () {
-    var _a = React.useState(getProjetIdFromHash), projetId = _a[0], setProjetId = _a[1];
+var DetailProjet = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = React.useState(getProjetIdFromHash), projetId = _b[0], setProjetId = _b[1];
+    var _c = React.useState([]), projets = _c[0], setProjets = _c[1];
+    var _d = React.useState(true), loading = _d[0], setLoading = _d[1];
     React.useEffect(function () {
         var onHash = function () { return setProjetId(getProjetIdFromHash()); };
         window.addEventListener('hashchange', onHash);
         return function () { return window.removeEventListener('hashchange', onHash); };
     }, []);
-    var projet = data_1.PROJETS.find(function (p) { return p.id === projetId; }) || data_1.PROJETS[0];
-    var idx = data_1.PROJETS.findIndex(function (p) { return p.id === projet.id; });
-    var prev = data_1.PROJETS[(idx - 1 + data_1.PROJETS.length) % data_1.PROJETS.length];
-    var next = data_1.PROJETS[(idx + 1) % data_1.PROJETS.length];
+    React.useEffect(function () {
+        if (!siteUrl) {
+            setLoading(false);
+            return;
+        }
+        (0, index_1.loadProjets)(siteUrl)
+            .then(function (data) {
+            setProjets(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    if (loading) {
+        return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                React.createElement("div", { className: "spinner-border text-ikaBlue", role: "status" }),
+                React.createElement("p", { className: "mt-3 text-sm text-slate-500" }, "Chargement du projet..."))));
+    }
+    var projet = projets.find(function (p) { return p.id === projetId; }) || projets[0];
+    if (!projet) {
+        return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                React.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Projet introuvable."),
+                React.createElement("a", { href: "#page-tous-projets", className: "inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" }, "Voir tous les projets"))));
+    }
+    var idx = projets.findIndex(function (p) { return p.id === projet.id; });
+    var prev = projets[(idx - 1 + projets.length) % projets.length];
+    var next = projets[(idx + 1) % projets.length];
     return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
             React.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
@@ -72,7 +99,7 @@ var DetailProjet = function () {
                         React.createElement("h2", { className: "text-xs font-black uppercase tracking-wider text-slate-900 pb-3 border-b border-slate-100 mb-4 flex items-center gap-1.5" },
                             React.createElement(fa6_1.FaDiagramProject, { className: "text-ikaBlue text-[11px]" }),
                             " Autres projets"),
-                        React.createElement("div", { className: "grid grid-cols-1 gap-3" }, data_1.PROJETS.filter(function (p) { return p.id !== projet.id; }).map(function (p) { return (React.createElement("a", { key: p.id, href: "#page-detail-projet&id=".concat(p.id), className: "p-3 rounded-xl border border-slate-100 hover:border-ikaBlue hover:bg-slate-50 transition group block" },
+                        React.createElement("div", { className: "grid grid-cols-1 gap-3" }, projets.filter(function (p) { return p.id !== projet.id; }).map(function (p) { return (React.createElement("a", { key: p.id, href: "#page-detail-projet&id=".concat(p.id), className: "p-3 rounded-xl border border-slate-100 hover:border-ikaBlue hover:bg-slate-50 transition group block" },
                             React.createElement("div", { className: "flex items-center justify-between gap-2" },
                                 React.createElement("h3", { className: "text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition" }, p.name),
                                 React.createElement("span", { className: "px-2 py-0.5 rounded-full text-[9px] font-bold ".concat(p.cls) }, p.status)),

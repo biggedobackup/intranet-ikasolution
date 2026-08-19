@@ -7,7 +7,7 @@ import {
   FaUsers,
   FaDiagramProject
 } from 'react-icons/fa6';
-import { PROJETS } from '../../services/projets/data';
+import { loadProjets, IProjet } from '../../services/projets/index';
 
 const getProjetIdFromHash = (): number => {
   const hash = window.location.hash.replace('#', '');
@@ -16,8 +16,10 @@ const getProjetIdFromHash = (): number => {
   return idParam ? Number(idParam.split('=')[1]) : 1;
 };
 
-export const DetailProjet: React.FC = () => {
+export const DetailProjet: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [projetId, setProjetId] = React.useState<number>(getProjetIdFromHash);
+  const [projets, setProjets] = React.useState<IProjet[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     const onHash = (): void => setProjetId(getProjetIdFromHash());
@@ -25,10 +27,46 @@ export const DetailProjet: React.FC = () => {
     return (): void => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  const projet = PROJETS.find((p) => p.id === projetId) || PROJETS[0];
-  const idx = PROJETS.findIndex((p) => p.id === projet.id);
-  const prev = PROJETS[(idx - 1 + PROJETS.length) % PROJETS.length];
-  const next = PROJETS[(idx + 1) % PROJETS.length];
+  React.useEffect(() => {
+    if (!siteUrl) {
+      setLoading(false);
+      return;
+    }
+    loadProjets(siteUrl)
+      .then((data) => {
+        setProjets(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
+
+  if (loading) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <div className="spinner-border text-ikaBlue" role="status" />
+          <p className="mt-3 text-sm text-slate-500">Chargement du projet...</p>
+        </div>
+      </main>
+    );
+  }
+
+  const projet = projets.find((p) => p.id === projetId) || projets[0];
+  if (!projet) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <p className="text-sm text-slate-500 font-semibold">Projet introuvable.</p>
+          <a href="#page-tous-projets" className="inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition">
+            Voir tous les projets
+          </a>
+        </div>
+      </main>
+    );
+  }
+  const idx = projets.findIndex((p) => p.id === projet.id);
+  const prev = projets[(idx - 1 + projets.length) % projets.length];
+  const next = projets[(idx + 1) % projets.length];
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -96,7 +134,7 @@ export const DetailProjet: React.FC = () => {
                 <FaDiagramProject className="text-ikaBlue text-[11px]" /> Autres projets
               </h2>
               <div className="grid grid-cols-1 gap-3">
-                {PROJETS.filter((p) => p.id !== projet.id).map((p) => (
+                {projets.filter((p) => p.id !== projet.id).map((p) => (
                   <a
                     key={p.id}
                     href={`#page-detail-projet&id=${p.id}`}

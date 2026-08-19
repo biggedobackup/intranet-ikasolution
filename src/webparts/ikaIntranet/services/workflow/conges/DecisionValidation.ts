@@ -1,4 +1,4 @@
-import { IConge } from './data';
+import { IConge } from './index';
 
 export type DecisionAction = 'valider' | 'rejeter';
 
@@ -25,12 +25,3 @@ export const CONGE_DECISION_CONFIG: ICongeDecisionConfig = {
   rejectVerb: 'Rejetée',
   decisionSectionTitle: 'Décision de validation'
 };
-
-export function applyCongeDecision(item: IConge, action: DecisionAction, comment: string, date: string): IConge {
-  return {
-    ...item,
-    statut: action === 'valider' ? 'Approuvé' : 'Refusé',
-    decisionComment: comment,
-    decisionDate: date
-  };
-}

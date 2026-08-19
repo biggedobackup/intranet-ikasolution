@@ -1,19 +1,45 @@
 import * as React from 'react';
 import { FaMagnifyingGlass, FaPhone, FaEnvelope } from 'react-icons/fa6';
-import { MEMBRES, DEPT_COLORS } from '../../services/equipe/data';
+import { loadMembres, IMembre, DEPT_COLORS } from '../../services/equipe/index';
 
-export const TouteEquipe: React.FC = () => {
+export const TouteEquipe: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [search, setSearch] = React.useState('');
   const [dept, setDept] = React.useState('all');
+  const [membres, setMembres] = React.useState<IMembre[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
-  const departments = ['all', ...Array.from(new Set(MEMBRES.map((m) => m.dept)))];
+  React.useEffect(() => {
+    if (!siteUrl) {
+      setLoading(false);
+      return;
+    }
+    loadMembres(siteUrl)
+      .then((data) => {
+        setMembres(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
 
-  const filtered = MEMBRES.filter((m) => {
+  const departments = ['all', ...Array.from(new Set(membres.map((m) => m.dept)))];
+
+  const filtered = membres.filter((m) => {
     const q = search.toLowerCase();
-    const matchesSearch = m.name.toLowerCase().includes(q) || m.phone.toLowerCase().includes(q) || m.ip.includes(q);
+    const matchesSearch = m.name.toLowerCase().includes(q) || m.phone.toLowerCase().includes(q);
     const matchesDept = dept === 'all' || m.dept === dept;
     return matchesSearch && matchesDept;
   });
+
+  if (loading) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <div className="spinner-border text-ikaBlue" role="status" />
+          <p className="mt-3 text-sm text-slate-500">Chargement de l&apos;équipe...</p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -39,7 +65,7 @@ export const TouteEquipe: React.FC = () => {
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Nom, Téléphone ou IP..."
+                  placeholder="Nom ou Téléphone..."
                   className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-ikaBlue bg-white shadow-sm"
                 />
                 <FaMagnifyingGlass className="absolute left-3 top-3.5 text-slate-400 text-xs" />

@@ -54,8 +54,16 @@ var DetailActualite = function (_a) {
     React.useEffect(function () {
         if (!siteUrl)
             return;
-        (0, index_2.getCurrentUserEmail)(siteUrl).then(setUserEmail);
-        (0, index_2.getCurrentUserName)(siteUrl).then(setUserName);
+        (0, index_2.getCurrentUserEmail)(siteUrl)
+            .then(setUserEmail)
+            .catch(function (err) {
+            console.error('[DetailActualite] Email courant :', err);
+        });
+        (0, index_2.getCurrentUserName)(siteUrl)
+            .then(setUserName)
+            .catch(function (err) {
+            console.error('[DetailActualite] Nom courant :', err);
+        });
     }, [siteUrl]);
     var actualite = items.find(function (a) { return a.id === actualiteId; }) || items[0];
     React.useEffect(function () {

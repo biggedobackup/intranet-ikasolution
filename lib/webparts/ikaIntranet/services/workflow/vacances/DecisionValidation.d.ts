@@ -1,4 +1,4 @@
-import { IVacance } from './data';
+import { IVacance } from './index';
 export type DecisionAction = 'valider' | 'rejeter';
 export interface IVacanceDecisionConfig {
     modalTitle: (action: DecisionAction) => string;
@@ -10,5 +10,4 @@ export interface IVacanceDecisionConfig {
     decisionSectionTitle: string;
 }
 export declare const VACANCE_DECISION_CONFIG: IVacanceDecisionConfig;
-export declare function applyVacanceDecision(item: IVacance, action: DecisionAction, comment: string, date: string): IVacance;
 //# sourceMappingURL=DecisionValidation.d.ts.map

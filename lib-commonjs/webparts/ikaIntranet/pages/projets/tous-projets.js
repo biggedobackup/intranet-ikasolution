@@ -4,17 +4,38 @@ exports.TousProjets = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
 var fa6_1 = require("react-icons/fa6");
-var data_1 = require("../../services/projets/data");
-var TousProjets = function () {
-    var _a = React.useState(''), search = _a[0], setSearch = _a[1];
-    var _b = React.useState('all'), status = _b[0], setStatus = _b[1];
-    var statuses = tslib_1.__spreadArray(['all'], Array.from(new Set(data_1.PROJETS.map(function (p) { return p.status; }))), true);
-    var filtered = data_1.PROJETS.filter(function (p) {
+var index_1 = require("../../services/projets/index");
+var TousProjets = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = React.useState(''), search = _b[0], setSearch = _b[1];
+    var _c = React.useState('all'), status = _c[0], setStatus = _c[1];
+    var _d = React.useState([]), projets = _d[0], setProjets = _d[1];
+    var _e = React.useState(true), loading = _e[0], setLoading = _e[1];
+    React.useEffect(function () {
+        if (!siteUrl) {
+            setLoading(false);
+            return;
+        }
+        (0, index_1.loadProjets)(siteUrl)
+            .then(function (data) {
+            setProjets(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    var statuses = tslib_1.__spreadArray(['all'], Array.from(new Set(projets.map(function (p) { return p.status; }))), true);
+    var filtered = projets.filter(function (p) {
         var q = search.toLowerCase();
         var matchesSearch = p.name.toLowerCase().includes(q) || p.client.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
         var matchesStatus = status === 'all' || p.status === status;
         return matchesSearch && matchesStatus;
     });
+    if (loading) {
+        return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                React.createElement("div", { className: "spinner-border text-ikaBlue", role: "status" }),
+                React.createElement("p", { className: "mt-3 text-sm text-slate-500" }, "Chargement des projets..."))));
+    }
     return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
             React.createElement("div", { className: "bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 relative overflow-hidden" },

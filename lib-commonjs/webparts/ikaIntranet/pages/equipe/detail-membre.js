@@ -4,22 +4,49 @@ exports.DetailMembre = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
 var fa6_1 = require("react-icons/fa6");
-var data_1 = require("../../services/equipe/data");
+var index_1 = require("../../services/equipe/index");
 var getMembreIdFromHash = function () {
     var hash = window.location.hash.replace('#', '');
     var params = hash.split('&');
     var idParam = params.find(function (p) { return p.startsWith('id='); });
     return idParam ? Number(idParam.split('=')[1]) : 1;
 };
-var DetailMembre = function () {
-    var _a = React.useState(getMembreIdFromHash), membreId = _a[0], setMembreId = _a[1];
+var DetailMembre = function (_a) {
+    var siteUrl = _a.siteUrl;
+    var _b = React.useState(getMembreIdFromHash), membreId = _b[0], setMembreId = _b[1];
+    var _c = React.useState([]), membres = _c[0], setMembres = _c[1];
+    var _d = React.useState(true), loading = _d[0], setLoading = _d[1];
     React.useEffect(function () {
         var onHash = function () { return setMembreId(getMembreIdFromHash()); };
         window.addEventListener('hashchange', onHash);
         return function () { return window.removeEventListener('hashchange', onHash); };
     }, []);
-    var membre = data_1.MEMBRES.find(function (m) { return m.id === membreId; }) || data_1.MEMBRES[0];
-    var colleagues = data_1.MEMBRES.filter(function (m) { return m.id !== membre.id && m.dept === membre.dept; });
+    React.useEffect(function () {
+        if (!siteUrl) {
+            setLoading(false);
+            return;
+        }
+        (0, index_1.loadMembres)(siteUrl)
+            .then(function (data) {
+            setMembres(data);
+            setLoading(false);
+        })
+            .catch(function () { return setLoading(false); });
+    }, [siteUrl]);
+    if (loading) {
+        return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                React.createElement("div", { className: "spinner-border text-ikaBlue", role: "status" }),
+                React.createElement("p", { className: "mt-3 text-sm text-slate-500" }, "Chargement de la fiche membre..."))));
+    }
+    var membre = membres.find(function (m) { return m.id === membreId; }) || membres[0];
+    if (!membre) {
+        return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
+            React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16" },
+                React.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Membre introuvable."),
+                React.createElement("a", { href: "#page-toute-equipe", className: "inline-block mt-4 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition" }, "Voir toute l'\u00E9quipe"))));
+    }
+    var colleagues = membres.filter(function (m) { return m.id !== membre.id && m.dept === membre.dept; });
     return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
             React.createElement("nav", { className: "flex items-center gap-2 text-[11px] font-semibold text-slate-500 flex-wrap" },
@@ -41,7 +68,7 @@ var DetailMembre = function () {
                                     React.createElement(fa6_1.FaBriefcase, { className: "text-xs" }),
                                     " ",
                                     membre.role),
-                                React.createElement("span", { className: "inline-block mt-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ".concat(data_1.DEPT_COLORS[membre.dept] || 'bg-slate-100 text-slate-700') }, membre.dept)),
+                                React.createElement("span", { className: "inline-block mt-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ".concat(index_1.DEPT_COLORS[membre.dept] || 'bg-slate-100 text-slate-700') }, membre.dept)),
                             React.createElement("div", { className: "flex gap-2" },
                                 React.createElement("a", { href: "tel:".concat(membre.phone.replace(/\s/g, '')), className: "py-2 px-3 rounded-xl bg-emerald-500 text-white text-xs font-bold hover:bg-emerald-600 transition flex items-center gap-1.5 shadow" },
                                     React.createElement(fa6_1.FaPhone, null),
@@ -52,19 +79,13 @@ var DetailMembre = function () {
                         React.createElement("div", { className: "mt-6" },
                             React.createElement("h2", { className: "text-sm font-black uppercase tracking-wider text-slate-900" }, "Biographie"),
                             React.createElement("p", { className: "mt-2 text-sm leading-relaxed text-slate-600" }, membre.bio)),
-                        React.createElement("div", { className: "mt-6 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs" },
+                        React.createElement("div", { className: "mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs" },
                             React.createElement("div", { className: "flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100" },
                                 React.createElement("span", { className: "w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0" },
                                     React.createElement(fa6_1.FaMobileScreen, { className: "text-sm" })),
                                 React.createElement("div", null,
                                     React.createElement("p", { className: "text-[10px] text-slate-400 font-semibold uppercase tracking-wide" }, "T\u00E9l\u00E9phone Mobile"),
                                     React.createElement("a", { href: "tel:".concat(membre.phone.replace(/\s/g, '')), className: "font-bold text-slate-800 hover:text-ikaBlue transition" }, membre.phone))),
-                            React.createElement("div", { className: "flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100" },
-                                React.createElement("span", { className: "w-8 h-8 rounded-lg bg-blue-100 text-ikaBlue flex items-center justify-center shrink-0" },
-                                    React.createElement(fa6_1.FaPhone, { className: "text-sm" })),
-                                React.createElement("div", null,
-                                    React.createElement("p", { className: "text-[10px] text-slate-400 font-semibold uppercase tracking-wide" }, "Poste IP"),
-                                    React.createElement("span", { className: "font-mono font-bold text-ikaBlue" }, membre.ip))),
                             React.createElement("div", { className: "flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100" },
                                 React.createElement("span", { className: "w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center shrink-0" },
                                     React.createElement(fa6_1.FaEnvelope, { className: "text-sm" })),

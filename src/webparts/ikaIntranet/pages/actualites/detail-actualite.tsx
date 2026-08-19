@@ -73,8 +73,16 @@ export const DetailActualite: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => 
 
   React.useEffect(() => {
     if (!siteUrl) return;
-    getCurrentUserEmail(siteUrl).then(setUserEmail);
-    getCurrentUserName(siteUrl).then(setUserName);
+    getCurrentUserEmail(siteUrl)
+      .then(setUserEmail)
+      .catch((err) => {
+        console.error('[DetailActualite] Email courant :', err);
+      });
+    getCurrentUserName(siteUrl)
+      .then(setUserName)
+      .catch((err) => {
+        console.error('[DetailActualite] Nom courant :', err);
+      });
   }, [siteUrl]);
 
   const actualite = items.find((a) => a.id === actualiteId) || items[0];

@@ -62,8 +62,14 @@ function formatTime(date: Date | null): string {
     : '';
 }
 
-export async function loadAgendas(siteUrl: string): Promise<IAgendaItem[]> {
+function readCache(): IAgendaItem[] | undefined {
   if (cache && Date.now() - cache.ts < CACHE_TTL) return cache.data;
+  return undefined;
+}
+
+export async function loadAgendas(siteUrl: string): Promise<IAgendaItem[]> {
+  const cached = readCache();
+  if (cached) return cached;
   try {
     const fieldMap = await getFieldMap(siteUrl, LIST_NAME);
     const res = await fetch(`${siteUrl}/_api/web/lists/getbytitle('${LIST_NAME}')/items?$select=*&$top=500`, {

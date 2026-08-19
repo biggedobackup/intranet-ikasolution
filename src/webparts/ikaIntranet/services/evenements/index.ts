@@ -28,6 +28,11 @@ const ICON_COLORS = ['text-amber-400', 'text-emerald-400', 'text-purple-400', 't
 
 let cache: { data: IEvenement[]; ts: number } | null = null;
 
+function readCache(): IEvenement[] | undefined {
+  if (cache && Date.now() - cache.ts < CACHE_TTL) return cache.data;
+  return undefined;
+}
+
 function isActive(value: unknown): boolean {
   return value !== false && value !== 0;
 }
@@ -238,7 +243,8 @@ function formatDateRange(start: Date | null, end: Date | null): string {
 }
 
 export async function loadEvenements(siteUrl: string): Promise<IEvenement[]> {
-  if (cache && Date.now() - cache.ts < CACHE_TTL) return cache.data;
+  const cached = readCache();
+  if (cached) return cached;
   try {
     const fieldMap = await getFieldMap(siteUrl, LIST_NAME);
     const listName = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
@@ -311,15 +317,21 @@ export async function loadEvenements(siteUrl: string): Promise<IEvenement[]> {
 
 let resolvedListName: string | null = null;
 
-async function resolveListName(siteUrl: string): Promise<string> {
-  if (resolvedListName) return resolvedListName;
-  const fieldMap = await getFieldMap(siteUrl, LIST_NAME);
-  resolvedListName = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
-  if (resolvedListName === LIST_NAME_ALT) {
-    const fieldMapAlt = await getFieldMap(siteUrl, LIST_NAME_ALT);
-    if (!fieldMapAlt || Object.keys(fieldMapAlt).length === 0) resolvedListName = LIST_NAME;
-  }
+function readResolvedListName(): string | null {
   return resolvedListName;
+}
+
+async function resolveListName(siteUrl: string): Promise<string> {
+  const cached = readResolvedListName();
+  if (cached) return cached;
+  const fieldMap = await getFieldMap(siteUrl, LIST_NAME);
+  let resolved = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
+  if (resolved === LIST_NAME_ALT) {
+    const fieldMapAlt = await getFieldMap(siteUrl, LIST_NAME_ALT);
+    if (!fieldMapAlt || Object.keys(fieldMapAlt).length === 0) resolved = LIST_NAME;
+  }
+  resolvedListName = resolved;
+  return resolved;
 }
 
 export async function updateEvenementLikedBy(siteUrl: string, itemId: number, likedBy: string[]): Promise<boolean> {

@@ -1,8 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VACANCE_DECISION_CONFIG = void 0;
-exports.applyVacanceDecision = applyVacanceDecision;
-var tslib_1 = require("tslib");
 exports.VACANCE_DECISION_CONFIG = {
     modalTitle: function (action) {
         return action === 'valider' ? 'Valider la demande de vacances' : 'Rejeter la demande de vacances';
@@ -18,7 +16,4 @@ exports.VACANCE_DECISION_CONFIG = {
     rejectVerb: 'Rejetée',
     decisionSectionTitle: 'Décision de validation'
 };
-function applyVacanceDecision(item, action, comment, date) {
-    return tslib_1.__assign(tslib_1.__assign({}, item), { statut: action === 'valider' ? 'Approuvé' : 'Refusé', decisionComment: comment, decisionDate: date });
-}
 //# sourceMappingURL=DecisionValidation.js.map

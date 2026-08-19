@@ -1,4 +1,4 @@
-import { IBesoin } from './data';
+import { IBesoin } from './index';
 export type DecisionAction = 'valider' | 'rejeter';
 export interface IBesoinDecisionConfig {
     modalTitle: (action: DecisionAction) => string;
@@ -10,5 +10,4 @@ export interface IBesoinDecisionConfig {
     decisionSectionTitle: string;
 }
 export declare const BESOIN_DECISION_CONFIG: IBesoinDecisionConfig;
-export declare function applyBesoinDecision(item: IBesoin, action: DecisionAction, comment: string, date: string): IBesoin;
 //# sourceMappingURL=DecisionValidation.d.ts.map

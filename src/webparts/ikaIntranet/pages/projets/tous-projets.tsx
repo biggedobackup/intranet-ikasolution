@@ -1,19 +1,45 @@
 import * as React from 'react';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
-import { PROJETS } from '../../services/projets/data';
+import { loadProjets, IProjet } from '../../services/projets/index';
 
-export const TousProjets: React.FC = () => {
+export const TousProjets: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [search, setSearch] = React.useState('');
   const [status, setStatus] = React.useState('all');
+  const [projets, setProjets] = React.useState<IProjet[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
-  const statuses = ['all', ...Array.from(new Set(PROJETS.map((p) => p.status)))];
+  React.useEffect(() => {
+    if (!siteUrl) {
+      setLoading(false);
+      return;
+    }
+    loadProjets(siteUrl)
+      .then((data) => {
+        setProjets(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
 
-  const filtered = PROJETS.filter((p) => {
+  const statuses = ['all', ...Array.from(new Set(projets.map((p) => p.status)))];
+
+  const filtered = projets.filter((p) => {
     const q = search.toLowerCase();
     const matchesSearch = p.name.toLowerCase().includes(q) || p.client.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
     const matchesStatus = status === 'all' || p.status === status;
     return matchesSearch && matchesStatus;
   });
+
+  if (loading) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <div className="spinner-border text-ikaBlue" role="status" />
+          <p className="mt-3 text-sm text-slate-500">Chargement des projets...</p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">

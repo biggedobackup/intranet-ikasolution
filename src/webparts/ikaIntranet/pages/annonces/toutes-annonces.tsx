@@ -5,14 +5,7 @@ import {
   FaPlaneDeparture,
   FaBullhorn
 } from 'react-icons/fa6';
-import { ANNONCES } from '../../services/annonces/data';
-
-const TYPE_FILTERS: Array<[string, string]> = [
-  ['all', 'Tous'],
-  ['anniversaire', 'Anniversaire'],
-  ['mariage', 'Mariage'],
-  ['absence', 'Absence']
-];
+import { loadAnnonces, IAnnonce } from '../../services/annonces/index';
 
 const typeBadge = (type: string): React.ReactElement => {
   switch (type) {
@@ -23,10 +16,41 @@ const typeBadge = (type: string): React.ReactElement => {
   }
 };
 
-export const ToutesAnnonces: React.FC = () => {
+export const ToutesAnnonces: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [filter, setFilter] = React.useState('all');
+  const [annonces, setAnnonces] = React.useState<IAnnonce[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
-  const filtered = ANNONCES.filter((a) => filter === 'all' || a.type === filter);
+  React.useEffect(() => {
+    if (!siteUrl) {
+      setLoading(false);
+      return;
+    }
+    loadAnnonces(siteUrl)
+      .then((data) => {
+        setAnnonces(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [siteUrl]);
+
+  const typeFilters: Array<[string, string]> = [['all', 'Tous']];
+  Array.from(new Set(annonces.map((a) => a.type))).forEach((t) => {
+    if (t) typeFilters.push([t, t.charAt(0).toUpperCase() + t.slice(1)]);
+  });
+
+  const filtered = annonces.filter((a) => filter === 'all' || a.type === filter);
+
+  if (loading) {
+    return (
+      <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
+        <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 text-center py-16">
+          <div className="spinner-border text-amber-600" role="status" />
+          <p className="mt-3 text-sm text-slate-500">Chargement des annonces...</p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -47,7 +71,7 @@ export const ToutesAnnonces: React.FC = () => {
 
             {/* Filtres */}
             <div className="mt-6 flex flex-wrap items-center gap-2 text-[11px] font-bold">
-              {TYPE_FILTERS.map(([type, label]) => (
+              {typeFilters.map(([type, label]) => (
                 <button
                   key={type}
                   onClick={() => setFilter(type)}
@@ -75,16 +99,8 @@ export const ToutesAnnonces: React.FC = () => {
                 className="group bg-white rounded-2xl shadow-sm border border-slate-200 p-5 hover:shadow-lg transition block"
               >
                 <div className="flex items-center justify-between">
-                  {a.avatars.length > 0 ? (
-                    <div className="flex -space-x-2.5 shrink-0">
-                      {a.avatars.map((av, j) => (
-                        <img key={j} src={av} className="w-9 h-9 rounded-full object-cover border-2 border-white" alt="" />
-                      ))}
-                    </div>
-                  ) : (
-                    a.avatar ? <img src={a.avatar} alt="" className={`w-10 h-10 rounded-full object-cover ${a.badge}`} />
-                      : <span className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400"><FaBullhorn /></span>
-                  )}
+                  {a.avatar ? <img src={a.avatar} alt="" className={`w-10 h-10 rounded-full object-cover ${a.badge}`} />
+                    : <span className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400"><FaBullhorn /></span>}
                   {typeBadge(a.type)}
                 </div>
                 <h3 className="mt-3 text-sm font-black text-slate-900 group-hover:text-amber-600 transition">{a.title}</h3>

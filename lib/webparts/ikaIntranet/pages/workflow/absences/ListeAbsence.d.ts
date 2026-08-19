@@ -1,4 +1,7 @@
 import * as React from 'react';
-export declare const ListeAbsence: React.FC;
+export interface IListeAbsenceProps {
+    siteUrl?: string;
+}
+export declare const ListeAbsence: React.FC<IListeAbsenceProps>;
 export default ListeAbsence;
 //# sourceMappingURL=ListeAbsence.d.ts.map

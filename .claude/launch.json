@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ika-intranet-serve",
+      "port": 4321,
+      "url": "https://ikasolution.sharepoint.com/sites/ikaintranet-serge/SitePages/Home.aspx?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fbuild%2Fmanifests.js&debug=true&noredir=true#page-workflow-ajouter-conge"
+    }
+  ]
+}

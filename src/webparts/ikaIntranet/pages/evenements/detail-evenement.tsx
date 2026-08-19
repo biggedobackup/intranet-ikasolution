@@ -76,8 +76,16 @@ export const DetailEvenement: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => 
 
   React.useEffect(() => {
     if (!siteUrl) return;
-    getCurrentUserEmail(siteUrl).then(setUserEmail);
-    getCurrentUserName(siteUrl).then(setUserName);
+    getCurrentUserEmail(siteUrl)
+      .then(setUserEmail)
+      .catch((err) => {
+        console.error('[DetailEvenement] Email courant :', err);
+      });
+    getCurrentUserName(siteUrl)
+      .then(setUserName)
+      .catch((err) => {
+        console.error('[DetailEvenement] Nom courant :', err);
+      });
   }, [siteUrl]);
 
   const event = items.find((e) => e.id === eventId) || items[0];

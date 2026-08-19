@@ -59,8 +59,16 @@ var DetailEvenement = function (_a) {
     React.useEffect(function () {
         if (!siteUrl)
             return;
-        (0, index_2.getCurrentUserEmail)(siteUrl).then(setUserEmail);
-        (0, index_2.getCurrentUserName)(siteUrl).then(setUserName);
+        (0, index_2.getCurrentUserEmail)(siteUrl)
+            .then(setUserEmail)
+            .catch(function (err) {
+            console.error('[DetailEvenement] Email courant :', err);
+        });
+        (0, index_2.getCurrentUserName)(siteUrl)
+            .then(setUserName)
+            .catch(function (err) {
+            console.error('[DetailEvenement] Nom courant :', err);
+        });
     }, [siteUrl]);
     var event = items.find(function (e) { return e.id === eventId; }) || items[0];
     React.useEffect(function () {

@@ -11,9 +11,13 @@ import {
   FaEye,
   FaTrashCan
 } from 'react-icons/fa6';
-import { VACANCES, VacanceStatus, IVacance } from '../../../services/workflow/vacances/data';
+import { VacanceStatus, IVacance, loadVacances, deleteVacance, formatDateFR } from '../../../services/workflow/vacances/index';
 import { Pagination } from '../../../components/Pagination';
 import { ConfirmDelete } from '../../../components/ConfirmDelete';
+
+export interface IListeVacancesProps {
+  siteUrl?: string;
+}
 
 const statusBadge = (status: VacanceStatus): React.ReactElement => {
   switch (status) {
@@ -24,18 +28,32 @@ const statusBadge = (status: VacanceStatus): React.ReactElement => {
   }
 };
 
-export const ListeVacances: React.FC = () => {
+export const ListeVacances: React.FC<IListeVacancesProps> = (props) => {
+  const { siteUrl } = props;
   const [search, setSearch] = React.useState('');
   const [status, setStatus] = React.useState('all');
   const [page, setPage] = React.useState(1);
-  const [items, setItems] = React.useState<IVacance[]>(VACANCES);
+  const [items, setItems] = React.useState<IVacance[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
+  const [error, setError] = React.useState<string>('');
   const [deleteItem, setDeleteItem] = React.useState<IVacance | null>(null);
+  const [deleting, setDeleting] = React.useState<boolean>(false);
 
-  const statuses = ['all', ...Array.from(new Set(items.map((i) => i.statut)))];
+  const fetchItems = React.useCallback((force?: boolean): void => {
+    if (!siteUrl) { setLoading(false); return; }
+    setLoading(true);
+    loadVacances(siteUrl, force)
+      .then((data) => { setItems(data); setLoading(false); })
+      .catch(() => { setError('Impossible de charger les demandes de vacances.'); setLoading(false); });
+  }, [siteUrl]);
+
+  React.useEffect(() => { fetchItems(); }, [fetchItems]);
+
+  const statuses = ['all'].concat(Array.from(new Set(items.map((i) => i.statut))));
 
   const filtered = items.filter((i) => {
     const q = search.toLowerCase();
-    const matchesSearch = i.titre.toLowerCase().includes(q) || i.demandeur.toLowerCase().includes(q) || i.destination.toLowerCase().includes(q);
+    const matchesSearch = i.titre.toLowerCase().indexOf(q) !== -1 || i.demandeur.toLowerCase().indexOf(q) !== -1 || i.destination.toLowerCase().indexOf(q) !== -1;
     const matchesStatus = status === 'all' || i.statut === status;
     return matchesSearch && matchesStatus;
   });
@@ -45,10 +63,27 @@ export const ListeVacances: React.FC = () => {
   const safePage = Math.min(page, totalPages);
   const paginated = filtered.slice((safePage - 1) * pageSize, safePage * pageSize);
 
+  const handleConfirmDelete = (): void => {
+    if (!siteUrl || !deleteItem) return;
+    setDeleting(true);
+    deleteVacance(siteUrl, deleteItem.id)
+      .then((ok) => {
+        setDeleting(false);
+        if (ok) {
+          setItems((prev) => prev.filter((x) => x.id !== deleteItem.id));
+          setDeleteItem(null);
+          setPage(1);
+        } else {
+          setError('La suppression a échoué. Réessayez.');
+          setDeleteItem(null);
+        }
+      })
+      .catch(() => { setDeleting(false); setDeleteItem(null); setError('La suppression a échoué. Réessayez.'); });
+  };
+
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
       <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4">
-        {/* En-tête */}
         <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 relative overflow-hidden">
           <div className="absolute -right-10 -top-10 w-48 h-48 bg-ikaSoft rounded-full opacity-70" />
           <div className="relative">
@@ -72,7 +107,6 @@ export const ListeVacances: React.FC = () => {
               </a>
             </div>
 
-            {/* Filtres */}
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <div className="relative flex-1 max-w-md">
                 <input
@@ -98,8 +132,15 @@ export const ListeVacances: React.FC = () => {
           </div>
         </div>
 
-        {/* Tableau */}
-        {filtered.length === 0 ? (
+        {error ? (
+          <div className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-semibold text-rose-600">{error}</div>
+        ) : null}
+
+        {loading ? (
+          <div className="bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center">
+            <p className="text-sm text-slate-500 font-semibold">Chargement des demandes...</p>
+          </div>
+        ) : filtered.length === 0 ? (
           <div className="bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center">
             <p className="text-sm text-slate-500 font-semibold">Aucune demande ne correspond à votre recherche.</p>
           </div>
@@ -123,11 +164,11 @@ export const ListeVacances: React.FC = () => {
                     <tr key={i.id} className="hover:bg-slate-50 transition">
                       <td className="py-3 px-4 font-black text-slate-900">{i.titre}</td>
                       <td className="py-3 px-4">
-                        <span className="flex items-center gap-1.5 text-slate-500"><FaUser className="text-[10px]" /> {i.demandeur}</span>
+                        <span className="flex items-center gap-1.5 text-slate-500"><FaUser className="text-[10px]" /> {i.demandeur || '—'}</span>
                       </td>
                       <td className="py-3 px-4 text-slate-500">{i.destination}</td>
                       <td className="py-3 px-4">
-                        <span className="flex items-center gap-1.5 text-slate-500"><FaCalendarDays className="text-[10px]" /> {i.dateDebut} → {i.dateFin}</span>
+                        <span className="flex items-center gap-1.5 text-slate-500"><FaCalendarDays className="text-[10px]" /> {formatDateFR(i.dateDebut)} → {formatDateFR(i.dateFin)}</span>
                       </td>
                       <td className="py-3 px-4 font-bold text-slate-800">{i.jours} j</td>
                       <td className="py-3 px-4">{statusBadge(i.statut)}</td>
@@ -165,15 +206,14 @@ export const ListeVacances: React.FC = () => {
         )}
       </div>
 
-      {/* Modal confirmation suppression */}
-      {deleteItem && (
+      {deleteItem ? (
         <ConfirmDelete
           title="Supprimer la demande"
           message={`Voulez-vous vraiment supprimer la demande de vacances « ${deleteItem.titre} » de ${deleteItem.demandeur} ? Cette action est irréversible.`}
-          onConfirm={() => { setItems((prev) => prev.filter((x) => x.id !== deleteItem.id)); setDeleteItem(null); setPage(1); }}
-          onCancel={() => setDeleteItem(null)}
+          onConfirm={handleConfirmDelete}
+          onCancel={() => !deleting && setDeleteItem(null)}
         />
-      )}
+      ) : null}
     </main>
   );
 };

@@ -23,7 +23,6 @@ import { DetailAnnonce } from './pages/annonces/detail-annonce';
 import { ToutesAnnonces } from './pages/annonces/toutes-annonces';
 import { DetailEmployeMois } from './pages/employes-mois/detail-employe-mois';
 import { TousEmployesMois } from './pages/employes-mois/tous-employes-mois';
-import { DetailBilan } from './pages/bilans/detail-bilan';
 import { TousBilans } from './pages/bilans/tous-bilans';
 import { TouteDocumentation } from './pages/documentation/toute-documentation';
 import { TouteGalerie } from './pages/galerie/toute-galerie';
@@ -44,19 +43,19 @@ export interface IAppProps {
   siteUrl?: string;
 }
 
+const normalizePage = (name: string): string => {
+  if (/^(liste|ajouter|modifier|detail)-(conge|vacances|absence|besoin)$/.test(name)) {
+    return `workflow-${name}`;
+  }
+  return name;
+};
+
 const getPageFromHash = (): string => {
   const hash = window.location.hash.replace('#', '');
   if (hash.startsWith('page-')) {
     return normalizePage(hash.replace('page-', '').split('&')[0]);
   }
   return 'accueil';
-};
-
-const normalizePage = (name: string): string => {
-  if (/^(liste|ajouter|modifier|detail)-(conge|vacances|absence|besoin)$/.test(name)) {
-    return `workflow-${name}`;
-  }
-  return name;
 };
 
 const getIdFromHash = (): number => {
@@ -103,37 +102,36 @@ export const App: React.FC<IAppProps> = ({ siteUrl }) => {
       {page === 'toutes-actualites' && <ToutesActualites siteUrl={siteUrl} />}
       {page === 'detail-agenda' && <DetailAgenda siteUrl={siteUrl} />}
       {page === 'toutes-agenda' && <ToutesAgenda siteUrl={siteUrl} />}
-      {page === 'detail-membre' && <DetailMembre />}
-      {page === 'toute-equipe' && <TouteEquipe />}
-      {page === 'detail-projet' && <DetailProjet />}
-      {page === 'tous-projets' && <TousProjets />}
-      {page === 'detail-produit' && <DetailProduit />}
-      {page === 'tous-produits' && <TousProduits />}
-      {page === 'detail-annonce' && <DetailAnnonce />}
-      {page === 'toutes-annonces' && <ToutesAnnonces />}
-      {page === 'detail-employe-mois' && <DetailEmployeMois />}
-      {page === 'tous-employes-mois' && <TousEmployesMois />}
-      {page === 'detail-bilan' && <DetailBilan />}
-      {page === 'tous-bilans' && <TousBilans />}
+      {page === 'detail-membre' && <DetailMembre siteUrl={siteUrl} />}
+      {page === 'toute-equipe' && <TouteEquipe siteUrl={siteUrl} />}
+      {page === 'detail-projet' && <DetailProjet siteUrl={siteUrl} />}
+      {page === 'tous-projets' && <TousProjets siteUrl={siteUrl} />}
+      {page === 'detail-produit' && <DetailProduit siteUrl={siteUrl} />}
+      {page === 'tous-produits' && <TousProduits siteUrl={siteUrl} />}
+      {page === 'detail-annonce' && <DetailAnnonce siteUrl={siteUrl} />}
+      {page === 'toutes-annonces' && <ToutesAnnonces siteUrl={siteUrl} />}
+      {page === 'detail-employe-mois' && <DetailEmployeMois siteUrl={siteUrl} />}
+      {page === 'tous-employes-mois' && <TousEmployesMois siteUrl={siteUrl} />}
+      {page === 'tous-bilans' && <TousBilans siteUrl={siteUrl} />}
       {page === 'toute-documentation' && <TouteDocumentation />}
-      {page === 'toute-galerie' && <TouteGalerie />}
-      {page === 'workflow-liste-conge' && <ListeConge />}
-      {page === 'workflow-ajouter-conge' && <AjouterConge mode="ajouter" />}
-      {page === 'workflow-modifier-conge' && <AjouterConge mode="modifier" id={getIdFromHash()} />}
-      {page === 'workflow-detail-conge' && <DetailConge />}
-      {page === 'workflow-liste-vacances' && <ListeVacances />}
-      {page === 'workflow-ajouter-vacances' && <AjouterVacances mode="ajouter" />}
-      {page === 'workflow-modifier-vacances' && <AjouterVacances mode="modifier" id={getIdFromHash()} />}
-      {page === 'workflow-detail-vacances' && <DetailVacances />}
-      {page === 'workflow-liste-absence' && <ListeAbsence />}
-      {page === 'workflow-ajouter-absence' && <AjouterAbsence mode="ajouter" />}
-      {page === 'workflow-modifier-absence' && <AjouterAbsence mode="modifier" id={getIdFromHash()} />}
-      {page === 'workflow-detail-absence' && <DetailAbsence />}
-      {page === 'workflow-liste-besoin' && <ListeBesoin />}
-      {page === 'workflow-ajouter-besoin' && <AjouterBesoin mode="ajouter" />}
-      {page === 'workflow-modifier-besoin' && <AjouterBesoin mode="modifier" id={getIdFromHash()} />}
-      {page === 'workflow-detail-besoin' && <DetailBesoin />}
-      {page !== 'accueil' && page !== 'detail-evenement' && page !== 'tous-evenements' && page !== 'detail-actualite' && page !== 'toutes-actualites' && page !== 'detail-agenda' && page !== 'toutes-agenda' && page !== 'detail-membre' && page !== 'toute-equipe' && page !== 'detail-projet' && page !== 'tous-projets' && page !== 'detail-produit' && page !== 'tous-produits' && page !== 'detail-annonce' && page !== 'toutes-annonces' && page !== 'detail-employe-mois' && page !== 'tous-employes-mois' && page !== 'detail-bilan' && page !== 'tous-bilans' && page !== 'toute-documentation' && page !== 'toute-galerie' && page !== 'workflow-liste-conge' && page !== 'workflow-ajouter-conge' && page !== 'workflow-modifier-conge' && page !== 'workflow-detail-conge' && page !== 'workflow-liste-vacances' && page !== 'workflow-ajouter-vacances' && page !== 'workflow-modifier-vacances' && page !== 'workflow-detail-vacances' && page !== 'workflow-liste-absence' && page !== 'workflow-ajouter-absence' && page !== 'workflow-modifier-absence' && page !== 'workflow-detail-absence' && page !== 'workflow-liste-besoin' && page !== 'workflow-ajouter-besoin' && page !== 'workflow-modifier-besoin' && page !== 'workflow-detail-besoin' && <Page404 />}
+      {page === 'toute-galerie' && <TouteGalerie siteUrl={siteUrl} />}
+      {page === 'workflow-liste-conge' && <ListeConge siteUrl={siteUrl} />}
+      {page === 'workflow-ajouter-conge' && <AjouterConge mode="ajouter" siteUrl={siteUrl} />}
+      {page === 'workflow-modifier-conge' && <AjouterConge mode="modifier" id={getIdFromHash()} siteUrl={siteUrl} />}
+      {page === 'workflow-detail-conge' && <DetailConge siteUrl={siteUrl} />}
+      {page === 'workflow-liste-vacances' && <ListeVacances siteUrl={siteUrl} />}
+      {page === 'workflow-ajouter-vacances' && <AjouterVacances mode="ajouter" siteUrl={siteUrl} />}
+      {page === 'workflow-modifier-vacances' && <AjouterVacances mode="modifier" id={getIdFromHash()} siteUrl={siteUrl} />}
+      {page === 'workflow-detail-vacances' && <DetailVacances siteUrl={siteUrl} />}
+      {page === 'workflow-liste-absence' && <ListeAbsence siteUrl={siteUrl} />}
+      {page === 'workflow-ajouter-absence' && <AjouterAbsence mode="ajouter" siteUrl={siteUrl} />}
+      {page === 'workflow-modifier-absence' && <AjouterAbsence mode="modifier" id={getIdFromHash()} siteUrl={siteUrl} />}
+      {page === 'workflow-detail-absence' && <DetailAbsence siteUrl={siteUrl} />}
+      {page === 'workflow-liste-besoin' && <ListeBesoin siteUrl={siteUrl} />}
+      {page === 'workflow-ajouter-besoin' && <AjouterBesoin mode="ajouter" siteUrl={siteUrl} />}
+      {page === 'workflow-modifier-besoin' && <AjouterBesoin mode="modifier" id={getIdFromHash()} siteUrl={siteUrl} />}
+      {page === 'workflow-detail-besoin' && <DetailBesoin siteUrl={siteUrl} />}
+      {page !== 'accueil' && page !== 'detail-evenement' && page !== 'tous-evenements' && page !== 'detail-actualite' && page !== 'toutes-actualites' && page !== 'detail-agenda' && page !== 'toutes-agenda' && page !== 'detail-membre' && page !== 'toute-equipe' && page !== 'detail-projet' && page !== 'tous-projets' && page !== 'detail-produit' && page !== 'tous-produits' && page !== 'detail-annonce' && page !== 'toutes-annonces' && page !== 'detail-employe-mois' && page !== 'tous-employes-mois' && page !== 'tous-bilans' && page !== 'toute-documentation' && page !== 'toute-galerie' && page !== 'workflow-liste-conge' && page !== 'workflow-ajouter-conge' && page !== 'workflow-modifier-conge' && page !== 'workflow-detail-conge' && page !== 'workflow-liste-vacances' && page !== 'workflow-ajouter-vacances' && page !== 'workflow-modifier-vacances' && page !== 'workflow-detail-vacances' && page !== 'workflow-liste-absence' && page !== 'workflow-ajouter-absence' && page !== 'workflow-modifier-absence' && page !== 'workflow-detail-absence' && page !== 'workflow-liste-besoin' && page !== 'workflow-ajouter-besoin' && page !== 'workflow-modifier-besoin' && page !== 'workflow-detail-besoin' && <Page404 />}
       <Footer columns={footerColumns} />
     </div>
   );

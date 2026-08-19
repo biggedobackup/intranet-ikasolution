@@ -6,16 +6,14 @@ export const ToutesAgenda: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [search, setSearch] = React.useState('');
   const [category, setCategory] = React.useState('all');
   const [items, setItems] = React.useState<IAgendaItem[]>([]);
-  const [loading, setLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     if (!siteUrl) return;
     loadAgendas(siteUrl)
       .then((data) => {
         setItems(data);
-        setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch(() => undefined);
   }, [siteUrl]);
 
   const categories = ['all', ...Array.from(new Set(items.map((a) => a.category)))];

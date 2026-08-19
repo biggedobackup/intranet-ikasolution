@@ -1,4 +1,7 @@
 import * as React from 'react';
-export declare const DetailBesoin: React.FC;
+export interface IDetailBesoinProps {
+    siteUrl?: string;
+}
+export declare const DetailBesoin: React.FC<IDetailBesoinProps>;
 export default DetailBesoin;
 //# sourceMappingURL=DetailBesoin.d.ts.map

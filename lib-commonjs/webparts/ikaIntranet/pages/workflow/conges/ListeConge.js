@@ -4,7 +4,7 @@ exports.ListeConge = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
 var fa6_1 = require("react-icons/fa6");
-var data_1 = require("../../../services/workflow/conges/data");
+var index_1 = require("../../../services/workflow/conges/index");
 var Pagination_1 = require("../../../components/Pagination");
 var ConfirmDelete_1 = require("../../../components/ConfirmDelete");
 var statusBadge = function (status) {
@@ -23,16 +23,31 @@ var statusBadge = function (status) {
             " En attente");
     }
 };
-var ListeConge = function () {
+var ListeConge = function (props) {
+    var siteUrl = props.siteUrl;
     var _a = React.useState(''), search = _a[0], setSearch = _a[1];
     var _b = React.useState('all'), status = _b[0], setStatus = _b[1];
     var _c = React.useState(1), page = _c[0], setPage = _c[1];
-    var _d = React.useState(data_1.CONGES), items = _d[0], setItems = _d[1];
-    var _e = React.useState(null), deleteItem = _e[0], setDeleteItem = _e[1];
-    var statuses = tslib_1.__spreadArray(['all'], Array.from(new Set(items.map(function (i) { return i.statut; }))), true);
+    var _d = React.useState([]), items = _d[0], setItems = _d[1];
+    var _e = React.useState(true), loading = _e[0], setLoading = _e[1];
+    var _f = React.useState(''), error = _f[0], setError = _f[1];
+    var _g = React.useState(null), deleteItem = _g[0], setDeleteItem = _g[1];
+    var _h = React.useState(false), deleting = _h[0], setDeleting = _h[1];
+    var fetchItems = React.useCallback(function (force) {
+        if (!siteUrl) {
+            setLoading(false);
+            return;
+        }
+        setLoading(true);
+        (0, index_1.loadConges)(siteUrl, force)
+            .then(function (data) { setItems(data); setLoading(false); })
+            .catch(function () { setError('Impossible de charger les demandes de congé.'); setLoading(false); });
+    }, [siteUrl]);
+    React.useEffect(function () { fetchItems(); }, [fetchItems]);
+    var statuses = ['all'].concat(Array.from(new Set(items.map(function (i) { return i.statut; }))));
     var filtered = items.filter(function (i) {
         var q = search.toLowerCase();
-        var matchesSearch = i.titre.toLowerCase().includes(q) || i.demandeur.toLowerCase().includes(q) || i.motif.toLowerCase().includes(q);
+        var matchesSearch = i.titre.toLowerCase().indexOf(q) !== -1 || i.demandeur.toLowerCase().indexOf(q) !== -1 || i.motif.toLowerCase().indexOf(q) !== -1;
         var matchesStatus = status === 'all' || i.statut === status;
         return matchesSearch && matchesStatus;
     });
@@ -40,6 +55,25 @@ var ListeConge = function () {
     var totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
     var safePage = Math.min(page, totalPages);
     var paginated = filtered.slice((safePage - 1) * pageSize, safePage * pageSize);
+    var handleConfirmDelete = function () {
+        if (!siteUrl || !deleteItem)
+            return;
+        setDeleting(true);
+        (0, index_1.deleteConge)(siteUrl, deleteItem.id)
+            .then(function (ok) {
+            setDeleting(false);
+            if (ok) {
+                setItems(function (prev) { return prev.filter(function (x) { return x.id !== deleteItem.id; }); });
+                setDeleteItem(null);
+                setPage(1);
+            }
+            else {
+                setError('La suppression a échoué. Réessayez.');
+                setDeleteItem(null);
+            }
+        })
+            .catch(function () { setDeleting(false); setDeleteItem(null); setError('La suppression a échoué. Réessayez.'); });
+    };
     return (React.createElement("main", { className: "pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         React.createElement("div", { className: "mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8 space-y-4" },
             React.createElement("div", { className: "bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 relative overflow-hidden" },
@@ -64,7 +98,9 @@ var ListeConge = function () {
                         React.createElement("span", { className: "text-[11px] font-semibold text-slate-400" },
                             filtered.length,
                             " demande(s)")))),
-            filtered.length === 0 ? (React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
+            error ? (React.createElement("div", { className: "rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-semibold text-rose-600" }, error)) : null,
+            loading ? (React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
+                React.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Chargement des demandes..."))) : filtered.length === 0 ? (React.createElement("div", { className: "bg-white rounded-2xl p-10 shadow-sm border border-slate-200 text-center" },
                 React.createElement("p", { className: "text-sm text-slate-500 font-semibold" }, "Aucune demande ne correspond \u00E0 votre recherche."))) : (React.createElement("div", { className: "bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" },
                 React.createElement("div", { className: "overflow-x-auto" },
                     React.createElement("table", { className: "w-full text-left text-xs min-w-[900px]" },
@@ -84,15 +120,15 @@ var ListeConge = function () {
                                 React.createElement("span", { className: "flex items-center gap-1.5 text-slate-500" },
                                     React.createElement(fa6_1.FaUser, { className: "text-[10px]" }),
                                     " ",
-                                    i.demandeur)),
+                                    i.demandeur || '—')),
                             React.createElement("td", { className: "py-3 px-4 text-slate-500" }, i.type),
                             React.createElement("td", { className: "py-3 px-4" },
                                 React.createElement("span", { className: "flex items-center gap-1.5 text-slate-500" },
                                     React.createElement(fa6_1.FaCalendarDays, { className: "text-[10px]" }),
                                     " ",
-                                    i.dateDebut,
+                                    (0, index_1.formatDateFR)(i.dateDebut),
                                     " \u2192 ",
-                                    i.dateFin)),
+                                    (0, index_1.formatDateFR)(i.dateFin))),
                             React.createElement("td", { className: "py-3 px-4 font-bold text-slate-800" },
                                 i.jours,
                                 " j"),
@@ -111,7 +147,7 @@ var ListeConge = function () {
                                         " Supprimer"))))); })))),
                 React.createElement("div", { className: "px-4" },
                     React.createElement(Pagination_1.Pagination, { total: filtered.length, page: safePage, pageSize: pageSize, labelSingular: "demande", labelPlural: "demandes", onPageChange: setPage }))))),
-        deleteItem && (React.createElement(ConfirmDelete_1.ConfirmDelete, { title: "Supprimer la demande", message: "Voulez-vous vraiment supprimer la demande de cong\u00E9 \u00AB ".concat(deleteItem.titre, " \u00BB de ").concat(deleteItem.demandeur, " ? Cette action est irr\u00E9versible."), onConfirm: function () { setItems(function (prev) { return prev.filter(function (x) { return x.id !== deleteItem.id; }); }); setDeleteItem(null); setPage(1); }, onCancel: function () { return setDeleteItem(null); } }))));
+        deleteItem ? (React.createElement(ConfirmDelete_1.ConfirmDelete, { title: "Supprimer la demande", message: "Voulez-vous vraiment supprimer la demande de cong\u00E9 \u00AB ".concat(deleteItem.titre, " \u00BB de ").concat(deleteItem.demandeur, " ? Cette action est irr\u00E9versible."), onConfirm: handleConfirmDelete, onCancel: function () { return !deleting && setDeleteItem(null); } })) : null));
 };
 exports.ListeConge = ListeConge;
 exports.default = exports.ListeConge;

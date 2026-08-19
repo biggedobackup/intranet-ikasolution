@@ -1,4 +1,4 @@
-import { IAbsence } from './data';
+import { IAbsence } from './index';
 export type DecisionAction = 'valider' | 'rejeter';
 export interface IAbsenceDecisionConfig {
     modalTitle: (action: DecisionAction) => string;
@@ -10,5 +10,4 @@ export interface IAbsenceDecisionConfig {
     decisionSectionTitle: string;
 }
 export declare const ABSENCE_DECISION_CONFIG: IAbsenceDecisionConfig;
-export declare function applyAbsenceDecision(item: IAbsence, action: DecisionAction, comment: string, date: string): IAbsence;
 //# sourceMappingURL=DecisionValidation.d.ts.map
