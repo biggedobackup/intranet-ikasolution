@@ -4,6 +4,7 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import '@microsoft/sp-http';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as strings from 'IkaIntranetWebPartStrings';
@@ -32,7 +33,8 @@ export default class IkaIntranetWebPart extends BaseClientSideWebPart<IIkaIntran
 
   public render(): void {
     const element: React.ReactElement = React.createElement(App, {
-      siteUrl: this.context.pageContext.web.absoluteUrl
+      siteUrl: this.context.pageContext.web.absoluteUrl,
+      msGraphClientFactory: this.context.msGraphClientFactory
     });
 
     ReactDOM.render(element, this.domElement);

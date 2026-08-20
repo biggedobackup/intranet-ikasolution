@@ -213,21 +213,32 @@ export async function searchUsers(siteUrl: string, query: string): Promise<ISear
   }
 }
 
+const fieldMapCache: Record<string, { value: Record<string, string>; ts: number }> = {};
+const FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+
+function setCachedFieldMap(cacheKey: string, value: Record<string, string>): void {
+  fieldMapCache[cacheKey] = { value, ts: Date.now() };
+}
+
 export async function getFieldMap(siteUrl: string, listName: string): Promise<Record<string, string>> {
+  const cacheKey = `${siteUrl}::${listName}`;
+  const cached = fieldMapCache[cacheKey];
+  if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL) return cached.value;
   try {
     const res = await fetch(
       `${siteUrl}/_api/web/lists/getbytitle('${listName}')/fields?$select=Title,InternalName&$top=500`,
       { headers: { Accept: 'application/json;odata=nometadata' } }
     );
-    if (!res.ok) return {};
+    if (!res.ok) return cached ? cached.value : {};
     const fields = (await res.json()).value as Array<{ Title?: string; InternalName?: string }> | undefined;
     const map: Record<string, string> = {};
     (fields || []).forEach((f) => {
       if (f.Title && f.InternalName) map[String(f.Title).toLowerCase()] = f.InternalName;
     });
+    setCachedFieldMap(cacheKey, map);
     return map;
   } catch {
-    return {};
+    return cached ? cached.value : {};
   }
 }
 

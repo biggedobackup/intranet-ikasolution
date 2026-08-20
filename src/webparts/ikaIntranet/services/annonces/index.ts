@@ -25,6 +25,10 @@ function readCache(): IAnnonce[] | undefined {
   return undefined;
 }
 
+function invalidateCache(): void {
+  cache = null;
+}
+
 function isActive(value: unknown): boolean {
   return value !== false && value !== 0;
 }
@@ -41,21 +45,32 @@ function badgeFor(type: string): string {
   return 'border border-slate-300';
 }
 
+const fieldMapCache: Record<string, { value: Record<string, string>; ts: number }> = {};
+const FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+
+function setCachedFieldMap(cacheKey: string, value: Record<string, string>): void {
+  fieldMapCache[cacheKey] = { value, ts: Date.now() };
+}
+
 async function getFieldMap(siteUrl: string, listName: string): Promise<Record<string, string>> {
+  const cacheKey = `${siteUrl}::${listName}`;
+  const cached = fieldMapCache[cacheKey];
+  if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL) return cached.value;
   try {
     const res = await fetch(
       `${siteUrl}/_api/web/lists/getbytitle('${listName}')/fields?$select=Title,InternalName&$top=500`,
       { headers: { Accept: 'application/json;odata=nometadata' } }
     );
-    if (!res.ok) return {};
+    if (!res.ok) return cached ? cached.value : {};
     const fields = (await res.json()).value as Array<{ Title?: string; InternalName?: string }> | undefined;
     const map: Record<string, string> = {};
     (fields || []).forEach((f) => {
       if (f.Title && f.InternalName) map[String(f.Title).toLowerCase()] = f.InternalName;
     });
+    setCachedFieldMap(cacheKey, map);
     return map;
   } catch {
-    return {};
+    return cached ? cached.value : {};
   }
 }
 
@@ -298,9 +313,13 @@ export async function loadAnnonces(siteUrl: string): Promise<IAnnonce[]> {
 }
 
 export async function updateAnnonceLikedBy(siteUrl: string, itemId: number, likedBy: string[]): Promise<boolean> {
-  return patchField(siteUrl, LIST_NAME, itemId, 'AimePar', likedBy);
+  const ok = await patchField(siteUrl, LIST_NAME, itemId, 'AimePar', likedBy);
+  if (ok) invalidateCache();
+  return ok;
 }
 
 export async function updateAnnonceComments(siteUrl: string, itemId: number, comments: IComment[]): Promise<boolean> {
-  return patchField(siteUrl, LIST_NAME, itemId, 'CommenterPar', comments);
+  const ok = await patchField(siteUrl, LIST_NAME, itemId, 'CommenterPar', comments);
+  if (ok) invalidateCache();
+  return ok;
 }

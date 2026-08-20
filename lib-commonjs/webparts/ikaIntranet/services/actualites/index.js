@@ -15,37 +15,52 @@ function readCache() {
         return cache.data;
     return undefined;
 }
+function invalidateCache() {
+    cache = null;
+}
 function isActive(value) {
     return value !== false && value !== 0;
 }
 function asString(value) {
     return value === null || value === undefined ? '' : String(value).trim();
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return tslib_1.__generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -416,26 +431,36 @@ function resolveListName(siteUrl) {
 }
 function updateActualiteLikedBy(siteUrl, itemId, likedBy) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
-        var listName;
+        var listName, ok;
         return tslib_1.__generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, resolveListName(siteUrl)];
                 case 1:
                     listName = _a.sent();
-                    return [2 /*return*/, (0, index_1.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+                    return [4 /*yield*/, (0, index_1.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+                case 2:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
             }
         });
     });
 }
 function updateActualiteComments(siteUrl, itemId, comments) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
-        var listName;
+        var listName, ok;
         return tslib_1.__generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, resolveListName(siteUrl)];
                 case 1:
                     listName = _a.sent();
-                    return [2 /*return*/, (0, index_1.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+                    return [4 /*yield*/, (0, index_1.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+                case 2:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
             }
         });
     });

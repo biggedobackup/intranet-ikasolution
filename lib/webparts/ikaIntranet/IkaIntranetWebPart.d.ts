@@ -1,6 +1,7 @@
 import { Version } from '@microsoft/sp-core-library';
 import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import '@microsoft/sp-http';
 import './assets/css/tailwind.css';
 import './assets/css/style.css';
 export interface IIkaIntranetWebPartProps {

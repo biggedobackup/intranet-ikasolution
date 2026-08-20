@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { MSGraphClientFactory } from '@microsoft/sp-http';
 import { Header } from './components/Header';
 import { loadHeaderMenu, IHeaderMenuItem } from './services/headerMenu';
 import { loadFooter } from './services/footer';
@@ -41,6 +42,7 @@ import { DetailBesoin } from './pages/workflow/besoins/DetailBesoin';
 
 export interface IAppProps {
   siteUrl?: string;
+  msGraphClientFactory?: MSGraphClientFactory;
 }
 
 const normalizePage = (name: string): string => {
@@ -65,7 +67,7 @@ const getIdFromHash = (): number => {
   return idParam ? Number(idParam.split('=')[1]) : 1;
 };
 
-export const App: React.FC<IAppProps> = ({ siteUrl }) => {
+export const App: React.FC<IAppProps> = ({ siteUrl, msGraphClientFactory }) => {
   const [page, setPage] = React.useState<string>(getPageFromHash);
   const [hash, setHash] = React.useState<string>(window.location.hash);
   const [menuItems, setMenuItems] = React.useState<IHeaderMenuItem[]>([]);
@@ -103,7 +105,7 @@ export const App: React.FC<IAppProps> = ({ siteUrl }) => {
       {page === 'detail-agenda' && <DetailAgenda siteUrl={siteUrl} />}
       {page === 'toutes-agenda' && <ToutesAgenda siteUrl={siteUrl} />}
       {page === 'detail-membre' && <DetailMembre siteUrl={siteUrl} />}
-      {page === 'toute-equipe' && <TouteEquipe siteUrl={siteUrl} />}
+      {page === 'toute-equipe' && <TouteEquipe siteUrl={siteUrl} msGraphClientFactory={msGraphClientFactory} />}
       {page === 'detail-projet' && <DetailProjet siteUrl={siteUrl} />}
       {page === 'tous-projets' && <TousProjets siteUrl={siteUrl} />}
       {page === 'detail-produit' && <DetailProduit siteUrl={siteUrl} />}

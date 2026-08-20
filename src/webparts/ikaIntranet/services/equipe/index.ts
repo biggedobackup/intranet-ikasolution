@@ -1,3 +1,6 @@
+import { MSGraphClientV3 } from '@microsoft/sp-http';
+import { createListItem, updateListItemFields } from '../shared/index';
+
 export interface IMembre {
   id: number;
   name: string;
@@ -31,6 +34,10 @@ function readCache(): IMembre[] | undefined {
   return undefined;
 }
 
+function invalidateCache(): void {
+  cache = null;
+}
+
 function isActive(value: unknown): boolean {
   return value !== false && value !== 0;
 }
@@ -61,21 +68,32 @@ function normalizeUrl(value: unknown, siteUrl: string): string {
   return rel.startsWith('/') ? `${siteUrl}${rel}` : s;
 }
 
+const fieldMapCache: Record<string, { value: Record<string, string>; ts: number }> = {};
+const FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+
+function setCachedFieldMap(cacheKey: string, value: Record<string, string>): void {
+  fieldMapCache[cacheKey] = { value, ts: Date.now() };
+}
+
 async function getFieldMap(siteUrl: string, listName: string): Promise<Record<string, string>> {
+  const cacheKey = `${siteUrl}::${listName}`;
+  const cached = fieldMapCache[cacheKey];
+  if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL) return cached.value;
   try {
     const res = await fetch(
       `${siteUrl}/_api/web/lists/getbytitle('${listName}')/fields?$select=Title,InternalName&$top=500`,
       { headers: { Accept: 'application/json;odata=nometadata' } }
     );
-    if (!res.ok) return {};
+    if (!res.ok) return cached ? cached.value : {};
     const fields = (await res.json()).value as Array<{ Title?: string; InternalName?: string }> | undefined;
     const map: Record<string, string> = {};
     (fields || []).forEach((f) => {
       if (f.Title && f.InternalName) map[String(f.Title).toLowerCase()] = f.InternalName;
     });
+    setCachedFieldMap(cacheKey, map);
     return map;
   } catch {
-    return {};
+    return cached ? cached.value : {};
   }
 }
 
@@ -219,13 +237,20 @@ async function resolveImageUrl(
   return '';
 }
 
-export async function loadMembres(siteUrl: string): Promise<IMembre[]> {
-  const cached = readCache();
-  if (cached) return cached;
+async function resolveEquipeList(siteUrl: string): Promise<{ listName: string; fieldMap: Record<string, string> }> {
+  const fieldMap = await getFieldMap(siteUrl, LIST_NAME);
+  if (Object.keys(fieldMap).length > 0) return { listName: LIST_NAME, fieldMap };
+  const fieldMapAlt = await getFieldMap(siteUrl, LIST_NAME_ALT);
+  return { listName: LIST_NAME_ALT, fieldMap: fieldMapAlt };
+}
+
+export async function loadMembres(siteUrl: string, force?: boolean): Promise<IMembre[]> {
+  if (!force) {
+    const cached = readCache();
+    if (cached) return cached;
+  }
   try {
-    const fieldMap = await getFieldMap(siteUrl, LIST_NAME);
-    const listName = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
-    const fieldMapFinal = Object.keys(fieldMap).length > 0 ? fieldMap : await getFieldMap(siteUrl, LIST_NAME_ALT);
+    const { listName, fieldMap: fieldMapFinal } = await resolveEquipeList(siteUrl);
     const res = await fetch(
       `${siteUrl}/_api/web/lists/getbytitle('${listName}')/items?$select=*,Author/Title&$expand=Author/Title&$top=500`,
       { headers: { Accept: 'application/json;odata=nometadata' } }
@@ -280,4 +305,107 @@ export async function loadMembres(siteUrl: string): Promise<IMembre[]> {
     console.error('[equipe] Erreur de chargement :', err);
     return [];
   }
+}
+
+export interface IAadUser {
+  displayName: string;
+  email: string;
+  jobTitle: string;
+  department: string;
+  phone: string;
+}
+
+const GRAPH_BASE_URL = 'https://graph.microsoft.com/v1.0';
+
+export async function fetchAadUsers(graphClient: MSGraphClientV3): Promise<IAadUser[]> {
+  const users: IAadUser[] = [];
+  let path =
+    "/users?$select=displayName,mail,userPrincipalName,jobTitle,department,mobilePhone,businessPhones,accountEnabled,userType&$filter=accountEnabled eq true and userType eq 'Member'&$top=999";
+
+  while (path) {
+    const res = await graphClient.api(path).version('v1.0').get();
+    const batch = (res && res.value) || [];
+    (batch as Array<Record<string, unknown>>).forEach((u) => {
+      const email = asString(u.mail) || asString(u.userPrincipalName);
+      const displayName = asString(u.displayName);
+      if (!email || !displayName) return;
+      const businessPhones = Array.isArray(u.businessPhones)
+        ? (u.businessPhones as unknown[]).map((p) => asString(p)).filter(Boolean)
+        : [];
+      users.push({
+        displayName,
+        email,
+        jobTitle: asString(u.jobTitle),
+        department: asString(u.department),
+        phone: asString(u.mobilePhone) || businessPhones[0] || ''
+      });
+    });
+    const next = res && typeof res['@odata.nextLink'] === 'string' ? String(res['@odata.nextLink']) : '';
+    path = next ? next.replace(GRAPH_BASE_URL, '') : '';
+  }
+
+  return users;
+}
+
+export interface IImportAadResult {
+  created: number;
+  updated: number;
+  errors: number;
+  total: number;
+}
+
+export async function importMembresFromAad(siteUrl: string, graphClient: MSGraphClientV3): Promise<IImportAadResult> {
+  const result: IImportAadResult = { created: 0, updated: 0, errors: 0, total: 0 };
+  const aadUsers = await fetchAadUsers(graphClient);
+  result.total = aadUsers.length;
+  if (!aadUsers.length) return result;
+
+  const { listName, fieldMap } = await resolveEquipeList(siteUrl);
+  const titreKey = fieldMap['titre'] || 'Title';
+  const posteKey = fieldMap['poste'] || 'Poste';
+  const deptKey = fieldMap['département'] || 'Departement';
+  const phoneKey = fieldMap['téléphone mobile'] || 'TelephoneMobile';
+  const posteIpKey = fieldMap['poste ip'] || 'PosteIP';
+  const emailKey = fieldMap['email'] || 'Email';
+  const activeKey = fieldMap['active'] || 'Active';
+
+  const existing = await loadMembres(siteUrl, true);
+  const existingByEmail = new Map<string, IMembre>();
+  existing.forEach((m) => {
+    if (m.email) existingByEmail.set(m.email.toLowerCase(), m);
+  });
+
+  for (const user of aadUsers) {
+    const match = existingByEmail.get(user.email.toLowerCase());
+    try {
+      if (match) {
+        const fields: Record<string, unknown> = {
+          [titreKey]: user.displayName,
+          [phoneKey]: user.phone
+        };
+        if (user.jobTitle) fields[posteKey] = user.jobTitle;
+        if (user.department) fields[deptKey] = user.department;
+        const ok = await updateListItemFields(siteUrl, listName, match.id, fields);
+        if (ok) result.updated += 1; else result.errors += 1;
+      } else {
+        const fields: Record<string, unknown> = {
+          [titreKey]: user.displayName,
+          [posteKey]: user.jobTitle || 'À définir',
+          [deptKey]: user.department || 'Non classé',
+          [phoneKey]: user.phone,
+          [posteIpKey]: 0,
+          [emailKey]: user.email,
+          [activeKey]: true
+        };
+        const id = await createListItem(siteUrl, listName, fields);
+        if (id) result.created += 1; else result.errors += 1;
+      }
+    } catch (err) {
+      console.error('[equipe] Erreur import AAD pour', user.email, err);
+      result.errors += 1;
+    }
+  }
+
+  invalidateCache();
+  return result;
 }

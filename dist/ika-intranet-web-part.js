@@ -1,4 +1,4 @@
-(()=>{ var __RUSHSTACK_CURRENT_SCRIPT__ = document.currentScript; define("75e4b5d4-d962-489b-a3d6-4d96675cb3b4_0.0.1", ["@microsoft/sp-core-library","@microsoft/sp-property-pane","@microsoft/sp-webpart-base","react","react-dom","IkaIntranetWebPartStrings"], (__WEBPACK_EXTERNAL_MODULE__9676__, __WEBPACK_EXTERNAL_MODULE__9877__, __WEBPACK_EXTERNAL_MODULE__6642__, __WEBPACK_EXTERNAL_MODULE__5959__, __WEBPACK_EXTERNAL_MODULE__8398__, __WEBPACK_EXTERNAL_MODULE__79__) => { return /******/ (() => { // webpackBootstrap
+(()=>{ var __RUSHSTACK_CURRENT_SCRIPT__ = document.currentScript; define("75e4b5d4-d962-489b-a3d6-4d96675cb3b4_0.0.1", ["@microsoft/sp-core-library","@microsoft/sp-property-pane","@microsoft/sp-webpart-base","@microsoft/sp-http","react","react-dom","IkaIntranetWebPartStrings"], (__WEBPACK_EXTERNAL_MODULE__9676__, __WEBPACK_EXTERNAL_MODULE__9877__, __WEBPACK_EXTERNAL_MODULE__6642__, __WEBPACK_EXTERNAL_MODULE__1909__, __WEBPACK_EXTERNAL_MODULE__5959__, __WEBPACK_EXTERNAL_MODULE__8398__, __WEBPACK_EXTERNAL_MODULE__79__) => { return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 4175
@@ -30,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles("*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::-ms-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*\n! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com\n*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial;font-variation-settings:normal;line-height:1.5;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input:-ms-input-placeholder, textarea:-ms-input-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0}.-bottom-10{bottom:-2.5rem}.-bottom-12{bottom:-3rem}.-bottom-8{bottom:-2rem}.-bottom-9{bottom:-2.25rem}.-right-10{right:-2.5rem}.-top-10{top:-2.5rem}.bottom-0{bottom:0}.left-0{left:0}.left-1\\/2{left:50%}.left-2\\.5{left:.625rem}.left-3{left:.75rem}.left-4{left:1rem}.left-6{left:1.5rem}.right-0{right:0}.right-2\\.5{right:.625rem}.right-3{right:.75rem}.right-4{right:1rem}.top-0{top:0}.top-1\\/2{top:50%}.top-2\\.5{top:.625rem}.top-3{top:.75rem}.top-3\\.5{top:.875rem}.top-4{top:1rem}.top-full{top:100%}.-z-10{z-index:-10}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.col-span-2{grid-column:span 2/span 2}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.ml-2{margin-left:.5rem}.ml-auto{margin-left:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mt-2\\.5{margin-top:.625rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.line-clamp-1{-webkit-line-clamp:1}.line-clamp-1,.line-clamp-2{-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden}.line-clamp-2{-webkit-line-clamp:2}.line-clamp-4{-webkit-box-orient:vertical;-webkit-line-clamp:4;display:-webkit-box;overflow:hidden}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.table{display:table}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16/9}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:.5rem}.h-20{height:5rem}.h-24{height:6rem}.h-28{height:7rem}.h-36{height:9rem}.h-4{height:1rem}.h-40{height:10rem}.h-44{height:11rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.h-px{height:1px}.max-h-40{max-height:10rem}.max-h-56{max-height:14rem}.max-h-\\[300px\\]{max-height:300px}.max-h-\\[75vh\\]{max-height:75vh}.min-h-\\[320px\\]{min-height:320px}.min-h-\\[50vh\\]{min-height:50vh}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-2{width:.5rem}.w-20{width:5rem}.w-24{width:6rem}.w-28{width:7rem}.w-4{width:1rem}.w-40{width:10rem}.w-48{width:12rem}.w-5{width:1.25rem}.w-56{width:14rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-auto{width:auto}.w-fit{width:fit-content}.w-full{width:100%}.min-w-0{min-width:0}.min-w-\\[1000px\\]{min-width:1000px}.min-w-\\[360px\\]{min-width:360px}.min-w-\\[620px\\]{min-width:620px}.min-w-\\[720px\\]{min-width:720px}.min-w-\\[900px\\]{min-width:900px}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-\\[1600px\\]{max-width:1600px}.max-w-\\[1650px\\]{max-width:1650px}.max-w-\\[180px\\]{max-width:180px}.max-w-\\[1900px\\]{max-width:1900px}.max-w-\\[200px\\]{max-width:200px}.max-w-full{max-width:100%}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\\/2{--tw-translate-x:-50%}.-translate-x-1\\/2,.-translate-x-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-x-2{--tw-translate-x:-0.5rem}.-translate-y-1\\/2{--tw-translate-y:-50%}.-translate-y-1\\/2,.translate-x-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-2{--tw-translate-x:0.5rem}@keyframes spin{to{transform:rotate(1turn)}}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-\\[1fr_auto_1fr\\]{grid-template-columns:1fr auto 1fr}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-10{gap:2.5rem}.gap-2{gap:.5rem}.gap-2\\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-x-3{column-gap:.75rem}.gap-x-4{column-gap:1rem}.gap-y-1{row-gap:.25rem}.gap-y-2{row-gap:.5rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.25rem*var(--tw-space-y-reverse));margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.5rem*var(--tw-space-y-reverse));margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.75rem*var(--tw-space-y-reverse));margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)))}.space-y-3\\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.875rem*var(--tw-space-y-reverse));margin-top:calc(.875rem*(1 - var(--tw-space-y-reverse)))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(1rem*var(--tw-space-y-reverse));margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(1.25rem*var(--tw-space-y-reverse));margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-bottom-width:calc(1px*var(--tw-divide-y-reverse));border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)))}.divide-slate-100>:not([hidden])~:not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249/var(--tw-divide-opacity,1))}.justify-self-start{justify-self:start}.justify-self-end{justify-self:end}.justify-self-center{justify-self:center}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.rounded-b-2xl{border-bottom-left-radius:1rem;border-bottom-right-radius:1rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138/var(--tw-border-opacity,1))}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36/var(--tw-border-opacity,1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254/var(--tw-border-opacity,1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254/var(--tw-border-opacity,1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208/var(--tw-border-opacity,1))}.border-emerald-400{--tw-border-opacity:1;border-color:rgb(52 211 153/var(--tw-border-opacity,1))}.border-emerald-500{--tw-border-opacity:1;border-color:rgb(16 185 129/var(--tw-border-opacity,1))}.border-ikaBlue{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.border-ikaBlue\\/30{border-color:rgba(18,112,184,.3)}.border-ikaRed{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.border-rose-200{--tw-border-opacity:1;border-color:rgb(254 205 211/var(--tw-border-opacity,1))}.border-rose-300{--tw-border-opacity:1;border-color:rgb(253 164 175/var(--tw-border-opacity,1))}.border-rose-400{--tw-border-opacity:1;border-color:rgb(251 113 133/var(--tw-border-opacity,1))}.border-rose-500{--tw-border-opacity:1;border-color:rgb(244 63 94/var(--tw-border-opacity,1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249/var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225/var(--tw-border-opacity,1))}.border-slate-50{--tw-border-opacity:1;border-color:rgb(248 250 252/var(--tw-border-opacity,1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59/var(--tw-border-opacity,1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255/var(--tw-border-opacity,1))}.border-white\\/10{border-color:hsla(0,0%,100%,.1)}.border-white\\/15{border-color:hsla(0,0%,100%,.15)}.border-white\\/20{border-color:hsla(0,0%,100%,.2)}.border-white\\/30{border-color:hsla(0,0%,100%,.3)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199/var(--tw-bg-opacity,1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36/var(--tw-bg-opacity,1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235/var(--tw-bg-opacity,1))}.bg-amber-50\\/60{background-color:rgba(255,251,235,.6)}.bg-amber-600{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.bg-black\\/40{background-color:rgba(0,0,0,.4)}.bg-black\\/90{background-color:rgba(0,0,0,.9)}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254/var(--tw-bg-opacity,1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255/var(--tw-bg-opacity,1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245/var(--tw-bg-opacity,1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129/var(--tw-bg-opacity,1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.bg-ikaBlue{--tw-bg-opacity:1;background-color:rgb(18 112 184/var(--tw-bg-opacity,1))}.bg-ikaBlue\\/10{background-color:rgba(18,112,184,.1)}.bg-ikaBlueDark{--tw-bg-opacity:1;background-color:rgb(13 74 126/var(--tw-bg-opacity,1))}.bg-ikaRed{--tw-bg-opacity:1;background-color:rgb(229 26 55/var(--tw-bg-opacity,1))}.bg-ikaSoft{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255/var(--tw-bg-opacity,1))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255/var(--tw-bg-opacity,1))}.bg-purple-600{--tw-bg-opacity:1;background-color:rgb(147 51 234/var(--tw-bg-opacity,1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226/var(--tw-bg-opacity,1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242/var(--tw-bg-opacity,1))}.bg-rose-100{--tw-bg-opacity:1;background-color:rgb(255 228 230/var(--tw-bg-opacity,1))}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242/var(--tw-bg-opacity,1))}.bg-rose-500{--tw-bg-opacity:1;background-color:rgb(244 63 94/var(--tw-bg-opacity,1))}.bg-rose-600{--tw-bg-opacity:1;background-color:rgb(225 29 72/var(--tw-bg-opacity,1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.bg-slate-50\\/60{background-color:rgba(248,250,252,.6)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42/var(--tw-bg-opacity,1))}.bg-slate-900\\/60{background-color:rgba(15,23,42,.6)}.bg-slate-900\\/70{background-color:rgba(15,23,42,.7)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23/var(--tw-bg-opacity,1))}.bg-slate-950\\/70{background-color:rgba(2,6,23,.7)}.bg-slate-950\\/75{background-color:rgba(2,6,23,.75)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\\/10{background-color:hsla(0,0%,100%,.1)}.bg-white\\/15{background-color:hsla(0,0%,100%,.15)}.bg-white\\/20{background-color:hsla(0,0%,100%,.2)}.bg-white\\/40{background-color:hsla(0,0%,100%,.4)}.bg-white\\/90{background-color:hsla(0,0%,100%,.9)}.bg-white\\/95{background-color:hsla(0,0%,100%,.95)}.bg-opacity-10{--tw-bg-opacity:0.1}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-amber-500{--tw-gradient-from:#f59e0b var(--tw-gradient-from-position);--tw-gradient-to:rgba(245,158,11,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-ikaBlueDark{--tw-gradient-from:#0d4a7e var(--tw-gradient-from-position);--tw-gradient-to:rgba(13,74,126,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-slate-950{--tw-gradient-from:#020617 var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-slate-950\\/80{--tw-gradient-from:rgba(2,6,23,.8) var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-slate-950\\/85{--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(2,6,23,.85) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),transparent var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-amber-400{--tw-gradient-to:#fbbf24 var(--tw-gradient-to-position)}.to-ikaBlue{--tw-gradient-to:#1270b8 var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.object-top{object-position:top}.p-1{padding:.25rem}.p-1\\.5{padding:.375rem}.p-10{padding:2.5rem}.p-16{padding:4rem}.p-2{padding:.5rem}.p-2\\.5{padding:.625rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-1\\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\\.5{padding-bottom:.125rem;padding-top:.125rem}.py-1{padding-bottom:.25rem;padding-top:.25rem}.py-1\\.5{padding-bottom:.375rem;padding-top:.375rem}.py-12{padding-bottom:3rem;padding-top:3rem}.py-16{padding-bottom:4rem;padding-top:4rem}.py-2{padding-bottom:.5rem;padding-top:.5rem}.py-2\\.5{padding-bottom:.625rem;padding-top:.625rem}.py-3{padding-bottom:.75rem;padding-top:.75rem}.py-4{padding-bottom:1rem;padding-top:1rem}.py-5{padding-bottom:1.25rem;padding-top:1.25rem}.py-6{padding-bottom:1.5rem;padding-top:1.5rem}.py-7{padding-bottom:1.75rem;padding-top:1.75rem}.pb-14{padding-bottom:3.5rem}.pb-16{padding-bottom:4rem}.pb-3{padding-bottom:.75rem}.pb-4{padding-bottom:1rem}.pb-5{padding-bottom:1.25rem}.pb-6{padding-bottom:1.5rem}.pb-8{padding-bottom:2rem}.pl-10{padding-left:2.5rem}.pl-2{padding-left:.5rem}.pl-3{padding-left:.75rem}.pl-8{padding-left:2rem}.pl-9{padding-left:2.25rem}.pr-10{padding-right:2.5rem}.pr-3{padding-right:.75rem}.pr-8{padding-right:2rem}.pt-1{padding-top:.25rem}.pt-11{padding-top:2.75rem}.pt-12{padding-top:3rem}.pt-14{padding-top:3.5rem}.pt-16{padding-top:4rem}.pt-2{padding-top:.5rem}.pt-3{padding-top:.75rem}.pt-32{padding-top:8rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-\\[10px\\]{font-size:10px}.text-\\[11px\\]{font-size:11px}.text-\\[9px\\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-\\[0\\.18em\\]{letter-spacing:.18em}.tracking-wide{letter-spacing:.025em}.tracking-wider{letter-spacing:.05em}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36/var(--tw-text-opacity,1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11/var(--tw-text-opacity,1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9/var(--tw-text-opacity,1))}.text-amber-700\\/80{color:rgba(180,83,9,.8)}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14/var(--tw-text-opacity,1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250/var(--tw-text-opacity,1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235/var(--tw-text-opacity,1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216/var(--tw-text-opacity,1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153/var(--tw-text-opacity,1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129/var(--tw-text-opacity,1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105/var(--tw-text-opacity,1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87/var(--tw-text-opacity,1))}.text-ikaBlue{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.text-ikaBlueDark{--tw-text-opacity:1;color:rgb(13 74 126/var(--tw-text-opacity,1))}.text-ikaInk{--tw-text-opacity:1;color:rgb(17 24 39/var(--tw-text-opacity,1))}.text-ikaRed{--tw-text-opacity:1;color:rgb(229 26 55/var(--tw-text-opacity,1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252/var(--tw-text-opacity,1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247/var(--tw-text-opacity,1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234/var(--tw-text-opacity,1))}.text-purple-700{--tw-text-opacity:1;color:rgb(126 34 206/var(--tw-text-opacity,1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133/var(--tw-text-opacity,1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94/var(--tw-text-opacity,1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72/var(--tw-text-opacity,1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60/var(--tw-text-opacity,1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249/var(--tw-text-opacity,1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240/var(--tw-text-opacity,1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\\/60{color:hsla(0,0%,100%,.6)}.text-white\\/70{color:hsla(0,0%,100%,.7)}.text-white\\/90{color:hsla(0,0%,100%,.9)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-90{opacity:.9}.mix-blend-overlay{mix-blend-mode:overlay}.shadow{--tw-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)}.shadow,.shadow-2xl{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-lg,.shadow-md{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)}.shadow-premium{--tw-shadow:0 24px 70px rgba(4,31,77,.14);--tw-shadow-colored:0 24px 70px var(--tw-shadow-color)}.shadow-premium,.shadow-sm{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.drop-shadow-md{--tw-drop-shadow:drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06))}.drop-shadow-md,.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px)}.backdrop-blur,.backdrop-blur-md{backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-all{transition-duration:.15s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-transform{transition-duration:.15s;transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1)}.duration-200{transition-duration:.2s}.duration-500{transition-duration:.5s}.last\\:border-0:last-child{border-width:0}.hover\\:border-amber-300:hover{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.hover\\:border-blue-200:hover{--tw-border-opacity:1;border-color:rgb(191 219 254/var(--tw-border-opacity,1))}.hover\\:border-ikaBlue:hover{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.hover\\:border-ikaRed:hover{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.hover\\:border-purple-300:hover{--tw-border-opacity:1;border-color:rgb(216 180 254/var(--tw-border-opacity,1))}.hover\\:bg-amber-50\\/50:hover{background-color:rgba(255,251,235,.5)}.hover\\:bg-amber-600:hover{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.hover\\:bg-blue-100:hover{--tw-bg-opacity:1;background-color:rgb(219 234 254/var(--tw-bg-opacity,1))}.hover\\:bg-blue-600:hover{--tw-bg-opacity:1;background-color:rgb(37 99 235/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-100:hover{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-700:hover{--tw-bg-opacity:1;background-color:rgb(4 120 87/var(--tw-bg-opacity,1))}.hover\\:bg-ikaBlue:hover{--tw-bg-opacity:1;background-color:rgb(18 112 184/var(--tw-bg-opacity,1))}.hover\\:bg-ikaRed:hover{--tw-bg-opacity:1;background-color:rgb(229 26 55/var(--tw-bg-opacity,1))}.hover\\:bg-ikaSoft:hover{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.hover\\:bg-rose-100:hover{--tw-bg-opacity:1;background-color:rgb(255 228 230/var(--tw-bg-opacity,1))}.hover\\:bg-rose-600:hover{--tw-bg-opacity:1;background-color:rgb(225 29 72/var(--tw-bg-opacity,1))}.hover\\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.hover\\:bg-slate-100\\/80:hover{background-color:rgba(241,245,249,.8)}.hover\\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity,1))}.hover\\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.hover\\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.hover\\:bg-white\\/20:hover{background-color:hsla(0,0%,100%,.2)}.hover\\:bg-white\\/25:hover{background-color:hsla(0,0%,100%,.25)}.hover\\:bg-white\\/30:hover{background-color:hsla(0,0%,100%,.3)}.hover\\:text-ikaBlue:hover{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.hover\\:text-rose-600:hover{--tw-text-opacity:1;color:rgb(225 29 72/var(--tw-text-opacity,1))}.hover\\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.hover\\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\\:underline:hover{text-decoration-line:underline}.hover\\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.hover\\:shadow-lg:hover,.hover\\:shadow-sm:hover{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.hover\\:shadow-sm:hover{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.focus\\:border-ikaBlue:focus{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.focus\\:border-ikaRed:focus{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.focus\\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.disabled\\:cursor-not-allowed:disabled{cursor:not-allowed}.disabled\\:opacity-40:disabled{opacity:.4}.disabled\\:opacity-60:disabled{opacity:.6}.group:hover .group-hover\\:block{display:block}.group:hover .group-hover\\:rotate-180{--tw-rotate:180deg}.group:hover .group-hover\\:rotate-180,.group:hover .group-hover\\:scale-105{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05}.group:hover .group-hover\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-ikaBlue{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-ikaRed{--tw-text-opacity:1;color:rgb(229 26 55/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234/var(--tw-text-opacity,1))}.group:hover .group-hover\\:opacity-100{opacity:1}@media (min-width:640px){.sm\\:left-8{left:2rem}.sm\\:order-1{order:1}.sm\\:order-2{order:2}.sm\\:col-span-3{grid-column:span 3/span 3}.sm\\:h-28{height:7rem}.sm\\:h-48{height:12rem}.sm\\:h-56{height:14rem}.sm\\:h-80{height:20rem}.sm\\:min-h-\\[350px\\]{min-height:350px}.sm\\:w-28{width:7rem}.sm\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\\:flex-row{flex-direction:row}.sm\\:items-center{align-items:center}.sm\\:justify-between{justify-content:space-between}.sm\\:p-5{padding:1.25rem}.sm\\:p-7{padding:1.75rem}.sm\\:p-8{padding:2rem}.sm\\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:px-8{padding-left:2rem;padding-right:2rem}.sm\\:pt-36{padding-top:9rem}.sm\\:pt-5{padding-top:1.25rem}.sm\\:pt-8{padding-top:2rem}.sm\\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\\:text-base{font-size:1rem;line-height:1.5rem}.sm\\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:768px){.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:col-span-2{grid-column:span 2/span 2}.lg\\:col-span-3{grid-column:span 3/span 3}.lg\\:col-span-5{grid-column:span 5/span 5}.lg\\:col-span-6{grid-column:span 6/span 6}.lg\\:col-span-7{grid-column:span 7/span 7}.lg\\:flex{display:flex}.lg\\:hidden{display:none}.lg\\:h-96{height:24rem}.lg\\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (min-width:1280px){.xl\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.xl\\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.xl\\:grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))}.xl\\:gap-4{gap:1rem}}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles("*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::-ms-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*\n! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com\n*/*,:after,:before{border:0 solid #e5e7eb;box-sizing:border-box}:after,:before{--tw-content:\"\"}:host,html{-webkit-text-size-adjust:100%;font-feature-settings:normal;-webkit-tap-highlight-color:transparent;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial;font-variation-settings:normal;line-height:1.5;tab-size:4}body{line-height:inherit;margin:0}hr{border-top-width:1px;color:inherit;height:0}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-feature-settings:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em;font-variation-settings:normal}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-collapse:collapse;border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-feature-settings:inherit;color:inherit;font-family:inherit;font-size:100%;font-variation-settings:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input:-ms-input-placeholder, textarea:-ms-input-placeholder{color:#9ca3af;opacity:1}input::placeholder,textarea::placeholder{color:#9ca3af;opacity:1}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0}.-bottom-10{bottom:-2.5rem}.-bottom-12{bottom:-3rem}.-bottom-8{bottom:-2rem}.-bottom-9{bottom:-2.25rem}.-right-10{right:-2.5rem}.-top-10{top:-2.5rem}.bottom-0{bottom:0}.left-0{left:0}.left-1\\/2{left:50%}.left-2\\.5{left:.625rem}.left-3{left:.75rem}.left-4{left:1rem}.left-6{left:1.5rem}.right-0{right:0}.right-2\\.5{right:.625rem}.right-3{right:.75rem}.right-4{right:1rem}.top-0{top:0}.top-1\\/2{top:50%}.top-2\\.5{top:.625rem}.top-3{top:.75rem}.top-3\\.5{top:.875rem}.top-4{top:1rem}.top-full{top:100%}.-z-10{z-index:-10}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.col-span-2{grid-column:span 2/span 2}.col-span-3{grid-column:span 3/span 3}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-1\\.5{margin-bottom:.375rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.ml-2{margin-left:.5rem}.ml-auto{margin-left:auto}.mt-0\\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mt-2\\.5{margin-top:.625rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.line-clamp-1{-webkit-line-clamp:1}.line-clamp-1,.line-clamp-2{-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden}.line-clamp-2{-webkit-line-clamp:2}.line-clamp-4{-webkit-box-orient:vertical;-webkit-line-clamp:4;display:-webkit-box;overflow:hidden}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.table{display:table}.grid{display:grid}.hidden{display:none}.aspect-square{aspect-ratio:1/1}.aspect-video{aspect-ratio:16/9}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:.5rem}.h-20{height:5rem}.h-24{height:6rem}.h-28{height:7rem}.h-36{height:9rem}.h-4{height:1rem}.h-40{height:10rem}.h-44{height:11rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.h-px{height:1px}.max-h-40{max-height:10rem}.max-h-56{max-height:14rem}.max-h-\\[300px\\]{max-height:300px}.max-h-\\[75vh\\]{max-height:75vh}.min-h-\\[320px\\]{min-height:320px}.min-h-\\[50vh\\]{min-height:50vh}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-2{width:.5rem}.w-20{width:5rem}.w-24{width:6rem}.w-28{width:7rem}.w-4{width:1rem}.w-40{width:10rem}.w-48{width:12rem}.w-5{width:1.25rem}.w-56{width:14rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-auto{width:auto}.w-fit{width:fit-content}.w-full{width:100%}.min-w-0{min-width:0}.min-w-\\[1000px\\]{min-width:1000px}.min-w-\\[360px\\]{min-width:360px}.min-w-\\[620px\\]{min-width:620px}.min-w-\\[720px\\]{min-width:720px}.min-w-\\[900px\\]{min-width:900px}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-\\[1600px\\]{max-width:1600px}.max-w-\\[1650px\\]{max-width:1650px}.max-w-\\[180px\\]{max-width:180px}.max-w-\\[1900px\\]{max-width:1900px}.max-w-\\[200px\\]{max-width:200px}.max-w-full{max-width:100%}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\\/2{--tw-translate-x:-50%}.-translate-x-1\\/2,.-translate-x-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-x-2{--tw-translate-x:-0.5rem}.-translate-y-1\\/2{--tw-translate-y:-50%}.-translate-y-1\\/2,.translate-x-2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-2{--tw-translate-x:0.5rem}@keyframes spin{to{transform:rotate(1turn)}}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-cols-\\[1fr_auto_1fr\\]{grid-template-columns:1fr auto 1fr}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\\.5{gap:.375rem}.gap-10{gap:2.5rem}.gap-2{gap:.5rem}.gap-2\\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-x-3{column-gap:.75rem}.gap-x-4{column-gap:1rem}.gap-y-1{row-gap:.25rem}.gap-y-2{row-gap:.5rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.25rem*var(--tw-space-y-reverse));margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.5rem*var(--tw-space-y-reverse));margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.75rem*var(--tw-space-y-reverse));margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)))}.space-y-3\\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(.875rem*var(--tw-space-y-reverse));margin-top:calc(.875rem*(1 - var(--tw-space-y-reverse)))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(1rem*var(--tw-space-y-reverse));margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-bottom:calc(1.25rem*var(--tw-space-y-reverse));margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-bottom-width:calc(1px*var(--tw-divide-y-reverse));border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)))}.divide-slate-100>:not([hidden])~:not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249/var(--tw-divide-opacity,1))}.justify-self-start{justify-self:start}.justify-self-end{justify-self:end}.justify-self-center{justify-self:center}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.rounded-b-2xl{border-bottom-left-radius:1rem;border-bottom-right-radius:1rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138/var(--tw-border-opacity,1))}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36/var(--tw-border-opacity,1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254/var(--tw-border-opacity,1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254/var(--tw-border-opacity,1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208/var(--tw-border-opacity,1))}.border-emerald-400{--tw-border-opacity:1;border-color:rgb(52 211 153/var(--tw-border-opacity,1))}.border-emerald-500{--tw-border-opacity:1;border-color:rgb(16 185 129/var(--tw-border-opacity,1))}.border-ikaBlue{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.border-ikaBlue\\/30{border-color:rgba(18,112,184,.3)}.border-ikaRed{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.border-rose-200{--tw-border-opacity:1;border-color:rgb(254 205 211/var(--tw-border-opacity,1))}.border-rose-300{--tw-border-opacity:1;border-color:rgb(253 164 175/var(--tw-border-opacity,1))}.border-rose-400{--tw-border-opacity:1;border-color:rgb(251 113 133/var(--tw-border-opacity,1))}.border-rose-500{--tw-border-opacity:1;border-color:rgb(244 63 94/var(--tw-border-opacity,1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249/var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225/var(--tw-border-opacity,1))}.border-slate-50{--tw-border-opacity:1;border-color:rgb(248 250 252/var(--tw-border-opacity,1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59/var(--tw-border-opacity,1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255/var(--tw-border-opacity,1))}.border-white\\/10{border-color:hsla(0,0%,100%,.1)}.border-white\\/15{border-color:hsla(0,0%,100%,.15)}.border-white\\/20{border-color:hsla(0,0%,100%,.2)}.border-white\\/30{border-color:hsla(0,0%,100%,.3)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199/var(--tw-bg-opacity,1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36/var(--tw-bg-opacity,1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235/var(--tw-bg-opacity,1))}.bg-amber-50\\/60{background-color:rgba(255,251,235,.6)}.bg-amber-600{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.bg-black\\/40{background-color:rgba(0,0,0,.4)}.bg-black\\/90{background-color:rgba(0,0,0,.9)}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254/var(--tw-bg-opacity,1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255/var(--tw-bg-opacity,1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245/var(--tw-bg-opacity,1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129/var(--tw-bg-opacity,1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.bg-ikaBlue{--tw-bg-opacity:1;background-color:rgb(18 112 184/var(--tw-bg-opacity,1))}.bg-ikaBlue\\/10{background-color:rgba(18,112,184,.1)}.bg-ikaBlueDark{--tw-bg-opacity:1;background-color:rgb(13 74 126/var(--tw-bg-opacity,1))}.bg-ikaRed{--tw-bg-opacity:1;background-color:rgb(229 26 55/var(--tw-bg-opacity,1))}.bg-ikaSoft{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255/var(--tw-bg-opacity,1))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255/var(--tw-bg-opacity,1))}.bg-purple-600{--tw-bg-opacity:1;background-color:rgb(147 51 234/var(--tw-bg-opacity,1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226/var(--tw-bg-opacity,1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242/var(--tw-bg-opacity,1))}.bg-rose-100{--tw-bg-opacity:1;background-color:rgb(255 228 230/var(--tw-bg-opacity,1))}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242/var(--tw-bg-opacity,1))}.bg-rose-500{--tw-bg-opacity:1;background-color:rgb(244 63 94/var(--tw-bg-opacity,1))}.bg-rose-600{--tw-bg-opacity:1;background-color:rgb(225 29 72/var(--tw-bg-opacity,1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.bg-slate-50\\/60{background-color:rgba(248,250,252,.6)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42/var(--tw-bg-opacity,1))}.bg-slate-900\\/60{background-color:rgba(15,23,42,.6)}.bg-slate-900\\/70{background-color:rgba(15,23,42,.7)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23/var(--tw-bg-opacity,1))}.bg-slate-950\\/70{background-color:rgba(2,6,23,.7)}.bg-slate-950\\/75{background-color:rgba(2,6,23,.75)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\\/10{background-color:hsla(0,0%,100%,.1)}.bg-white\\/15{background-color:hsla(0,0%,100%,.15)}.bg-white\\/20{background-color:hsla(0,0%,100%,.2)}.bg-white\\/40{background-color:hsla(0,0%,100%,.4)}.bg-white\\/90{background-color:hsla(0,0%,100%,.9)}.bg-white\\/95{background-color:hsla(0,0%,100%,.95)}.bg-opacity-10{--tw-bg-opacity:0.1}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-amber-500{--tw-gradient-from:#f59e0b var(--tw-gradient-from-position);--tw-gradient-to:rgba(245,158,11,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-ikaBlueDark{--tw-gradient-from:#0d4a7e var(--tw-gradient-from-position);--tw-gradient-to:rgba(13,74,126,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-slate-950{--tw-gradient-from:#020617 var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-slate-950\\/80{--tw-gradient-from:rgba(2,6,23,.8) var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-slate-950\\/90{--tw-gradient-from:rgba(2,6,23,.9) var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-slate-950\\/10{--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(2,6,23,.1) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-slate-950\\/85{--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(2,6,23,.85) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),transparent var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-amber-400{--tw-gradient-to:#fbbf24 var(--tw-gradient-to-position)}.to-ikaBlue{--tw-gradient-to:#1270b8 var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.object-top{object-position:top}.p-1{padding:.25rem}.p-1\\.5{padding:.375rem}.p-10{padding:2.5rem}.p-16{padding:4rem}.p-2{padding:.5rem}.p-2\\.5{padding:.625rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-1\\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\\.5{padding-bottom:.125rem;padding-top:.125rem}.py-1{padding-bottom:.25rem;padding-top:.25rem}.py-1\\.5{padding-bottom:.375rem;padding-top:.375rem}.py-12{padding-bottom:3rem;padding-top:3rem}.py-16{padding-bottom:4rem;padding-top:4rem}.py-2{padding-bottom:.5rem;padding-top:.5rem}.py-2\\.5{padding-bottom:.625rem;padding-top:.625rem}.py-3{padding-bottom:.75rem;padding-top:.75rem}.py-4{padding-bottom:1rem;padding-top:1rem}.py-5{padding-bottom:1.25rem;padding-top:1.25rem}.py-6{padding-bottom:1.5rem;padding-top:1.5rem}.py-7{padding-bottom:1.75rem;padding-top:1.75rem}.pb-14{padding-bottom:3.5rem}.pb-16{padding-bottom:4rem}.pb-3{padding-bottom:.75rem}.pb-4{padding-bottom:1rem}.pb-5{padding-bottom:1.25rem}.pb-6{padding-bottom:1.5rem}.pb-8{padding-bottom:2rem}.pl-10{padding-left:2.5rem}.pl-2{padding-left:.5rem}.pl-3{padding-left:.75rem}.pl-8{padding-left:2rem}.pl-9{padding-left:2.25rem}.pr-10{padding-right:2.5rem}.pr-3{padding-right:.75rem}.pr-8{padding-right:2rem}.pt-1{padding-top:.25rem}.pt-11{padding-top:2.75rem}.pt-12{padding-top:3rem}.pt-14{padding-top:3.5rem}.pt-16{padding-top:4rem}.pt-2{padding-top:.5rem}.pt-3{padding-top:.75rem}.pt-32{padding-top:8rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-\\[10px\\]{font-size:10px}.text-\\[11px\\]{font-size:11px}.text-\\[9px\\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-\\[0\\.18em\\]{letter-spacing:.18em}.tracking-wide{letter-spacing:.025em}.tracking-wider{letter-spacing:.05em}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36/var(--tw-text-opacity,1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11/var(--tw-text-opacity,1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9/var(--tw-text-opacity,1))}.text-amber-700\\/80{color:rgba(180,83,9,.8)}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14/var(--tw-text-opacity,1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250/var(--tw-text-opacity,1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235/var(--tw-text-opacity,1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216/var(--tw-text-opacity,1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153/var(--tw-text-opacity,1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129/var(--tw-text-opacity,1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105/var(--tw-text-opacity,1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87/var(--tw-text-opacity,1))}.text-ikaBlue{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.text-ikaBlueDark{--tw-text-opacity:1;color:rgb(13 74 126/var(--tw-text-opacity,1))}.text-ikaInk{--tw-text-opacity:1;color:rgb(17 24 39/var(--tw-text-opacity,1))}.text-ikaRed{--tw-text-opacity:1;color:rgb(229 26 55/var(--tw-text-opacity,1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252/var(--tw-text-opacity,1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247/var(--tw-text-opacity,1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234/var(--tw-text-opacity,1))}.text-purple-700{--tw-text-opacity:1;color:rgb(126 34 206/var(--tw-text-opacity,1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133/var(--tw-text-opacity,1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94/var(--tw-text-opacity,1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72/var(--tw-text-opacity,1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60/var(--tw-text-opacity,1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249/var(--tw-text-opacity,1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240/var(--tw-text-opacity,1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\\/60{color:hsla(0,0%,100%,.6)}.text-white\\/70{color:hsla(0,0%,100%,.7)}.text-white\\/90{color:hsla(0,0%,100%,.9)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-50{opacity:.5}.opacity-70{opacity:.7}.opacity-90{opacity:.9}.mix-blend-overlay{mix-blend-mode:overlay}.shadow{--tw-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)}.shadow,.shadow-2xl{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-lg,.shadow-md{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)}.shadow-premium{--tw-shadow:0 24px 70px rgba(4,31,77,.14);--tw-shadow-colored:0 24px 70px var(--tw-shadow-color)}.shadow-premium,.shadow-sm{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.drop-shadow-md{--tw-drop-shadow:drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06))}.drop-shadow-md,.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px)}.backdrop-blur,.backdrop-blur-md{backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-all{transition-duration:.15s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-transform{transition-duration:.15s;transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1)}.duration-200{transition-duration:.2s}.duration-500{transition-duration:.5s}.last\\:border-0:last-child{border-width:0}.hover\\:border-amber-300:hover{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.hover\\:border-blue-200:hover{--tw-border-opacity:1;border-color:rgb(191 219 254/var(--tw-border-opacity,1))}.hover\\:border-ikaBlue:hover{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.hover\\:border-ikaRed:hover{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.hover\\:border-purple-300:hover{--tw-border-opacity:1;border-color:rgb(216 180 254/var(--tw-border-opacity,1))}.hover\\:bg-amber-50\\/50:hover{background-color:rgba(255,251,235,.5)}.hover\\:bg-amber-600:hover{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.hover\\:bg-blue-100:hover{--tw-bg-opacity:1;background-color:rgb(219 234 254/var(--tw-bg-opacity,1))}.hover\\:bg-blue-600:hover{--tw-bg-opacity:1;background-color:rgb(37 99 235/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-100:hover{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.hover\\:bg-emerald-700:hover{--tw-bg-opacity:1;background-color:rgb(4 120 87/var(--tw-bg-opacity,1))}.hover\\:bg-ikaBlue:hover{--tw-bg-opacity:1;background-color:rgb(18 112 184/var(--tw-bg-opacity,1))}.hover\\:bg-ikaRed:hover{--tw-bg-opacity:1;background-color:rgb(229 26 55/var(--tw-bg-opacity,1))}.hover\\:bg-ikaSoft:hover{--tw-bg-opacity:1;background-color:rgb(244 247 251/var(--tw-bg-opacity,1))}.hover\\:bg-rose-100:hover{--tw-bg-opacity:1;background-color:rgb(255 228 230/var(--tw-bg-opacity,1))}.hover\\:bg-rose-600:hover{--tw-bg-opacity:1;background-color:rgb(225 29 72/var(--tw-bg-opacity,1))}.hover\\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.hover\\:bg-slate-100\\/80:hover{background-color:rgba(241,245,249,.8)}.hover\\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity,1))}.hover\\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.hover\\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.hover\\:bg-white\\/20:hover{background-color:hsla(0,0%,100%,.2)}.hover\\:bg-white\\/25:hover{background-color:hsla(0,0%,100%,.25)}.hover\\:bg-white\\/30:hover{background-color:hsla(0,0%,100%,.3)}.hover\\:text-ikaBlue:hover{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.hover\\:text-rose-600:hover{--tw-text-opacity:1;color:rgb(225 29 72/var(--tw-text-opacity,1))}.hover\\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.hover\\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\\:underline:hover{text-decoration-line:underline}.hover\\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.hover\\:shadow-lg:hover,.hover\\:shadow-sm:hover{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.hover\\:shadow-sm:hover{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.focus\\:border-ikaBlue:focus{--tw-border-opacity:1;border-color:rgb(18 112 184/var(--tw-border-opacity,1))}.focus\\:border-ikaRed:focus{--tw-border-opacity:1;border-color:rgb(229 26 55/var(--tw-border-opacity,1))}.focus\\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.disabled\\:cursor-not-allowed:disabled{cursor:not-allowed}.disabled\\:opacity-40:disabled{opacity:.4}.disabled\\:opacity-60:disabled{opacity:.6}.group:hover .group-hover\\:block{display:block}.group:hover .group-hover\\:rotate-180{--tw-rotate:180deg}.group:hover .group-hover\\:rotate-180,.group:hover .group-hover\\:scale-105{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05}.group:hover .group-hover\\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\\:text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-ikaBlue{--tw-text-opacity:1;color:rgb(18 112 184/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-ikaRed{--tw-text-opacity:1;color:rgb(229 26 55/var(--tw-text-opacity,1))}.group:hover .group-hover\\:text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234/var(--tw-text-opacity,1))}.group:hover .group-hover\\:opacity-100{opacity:1}@media (min-width:640px){.sm\\:left-8{left:2rem}.sm\\:order-1{order:1}.sm\\:order-2{order:2}.sm\\:col-span-3{grid-column:span 3/span 3}.sm\\:h-28{height:7rem}.sm\\:h-48{height:12rem}.sm\\:h-56{height:14rem}.sm\\:h-80{height:20rem}.sm\\:min-h-\\[350px\\]{min-height:350px}.sm\\:w-28{width:7rem}.sm\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\\:flex-row{flex-direction:row}.sm\\:items-center{align-items:center}.sm\\:justify-between{justify-content:space-between}.sm\\:p-5{padding:1.25rem}.sm\\:p-7{padding:1.75rem}.sm\\:p-8{padding:2rem}.sm\\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:px-8{padding-left:2rem;padding-right:2rem}.sm\\:pt-36{padding-top:9rem}.sm\\:pt-5{padding-top:1.25rem}.sm\\:pt-8{padding-top:2rem}.sm\\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\\:text-base{font-size:1rem;line-height:1.5rem}.sm\\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:768px){.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:col-span-2{grid-column:span 2/span 2}.lg\\:col-span-3{grid-column:span 3/span 3}.lg\\:col-span-5{grid-column:span 5/span 5}.lg\\:col-span-6{grid-column:span 6/span 6}.lg\\:col-span-7{grid-column:span 7/span 7}.lg\\:flex{display:flex}.lg\\:hidden{display:none}.lg\\:h-96{height:24rem}.lg\\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (min-width:1280px){.xl\\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.xl\\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.xl\\:grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))}.xl\\:gap-4{gap:1rem}}", true);
 
 
 /***/ },
@@ -146,7 +146,7 @@ var getIdFromHash = function () {
     return idParam ? Number(idParam.split('=')[1]) : 1;
 };
 var App = function (_a) {
-    var siteUrl = _a.siteUrl;
+    var siteUrl = _a.siteUrl, msGraphClientFactory = _a.msGraphClientFactory;
     var _b = react__WEBPACK_IMPORTED_MODULE_0__.useState(getPageFromHash), page = _b[0], setPage = _b[1];
     var _c = react__WEBPACK_IMPORTED_MODULE_0__.useState(window.location.hash), hash = _c[0], setHash = _c[1];
     var _d = react__WEBPACK_IMPORTED_MODULE_0__.useState([]), menuItems = _d[0], setMenuItems = _d[1];
@@ -181,7 +181,7 @@ var App = function (_a) {
         page === 'detail-agenda' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_agenda_detail_agenda__WEBPACK_IMPORTED_MODULE_12__.DetailAgenda, { siteUrl: siteUrl }),
         page === 'toutes-agenda' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_agenda_toutes_agenda__WEBPACK_IMPORTED_MODULE_13__.ToutesAgenda, { siteUrl: siteUrl }),
         page === 'detail-membre' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_equipe_detail_membre__WEBPACK_IMPORTED_MODULE_14__.DetailMembre, { siteUrl: siteUrl }),
-        page === 'toute-equipe' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_equipe_toute_equipe__WEBPACK_IMPORTED_MODULE_15__.TouteEquipe, { siteUrl: siteUrl }),
+        page === 'toute-equipe' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_equipe_toute_equipe__WEBPACK_IMPORTED_MODULE_15__.TouteEquipe, { siteUrl: siteUrl, msGraphClientFactory: msGraphClientFactory }),
         page === 'detail-projet' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_projets_detail_projet__WEBPACK_IMPORTED_MODULE_16__.DetailProjet, { siteUrl: siteUrl }),
         page === 'tous-projets' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_projets_tous_projets__WEBPACK_IMPORTED_MODULE_17__.TousProjets, { siteUrl: siteUrl }),
         page === 'detail-produit' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_produits_detail_produit__WEBPACK_IMPORTED_MODULE_18__.DetailProduit, { siteUrl: siteUrl }),
@@ -235,15 +235,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _microsoft_sp_webpart_base__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @microsoft/sp-webpart-base */ 6642);
 /* harmony import */ var _microsoft_sp_webpart_base__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_microsoft_sp_webpart_base__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ 5959);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-dom */ 8398);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! IkaIntranetWebPartStrings */ 79);
-/* harmony import */ var IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _assets_css_tailwind_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/css/tailwind.css */ 3904);
-/* harmony import */ var _assets_css_style_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/css/style.css */ 4175);
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./App */ 545);
+/* harmony import */ var _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @microsoft/sp-http */ 1909);
+/* harmony import */ var _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_microsoft_sp_http__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ 5959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-dom */ 8398);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! IkaIntranetWebPartStrings */ 79);
+/* harmony import */ var IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _assets_css_tailwind_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/css/tailwind.css */ 3904);
+/* harmony import */ var _assets_css_style_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/css/style.css */ 4175);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./App */ 545);
+
 
 
 
@@ -271,10 +274,11 @@ var IkaIntranetWebPart = /** @class */ (function (_super) {
         return _super.prototype.onInit.call(this);
     };
     IkaIntranetWebPart.prototype.render = function () {
-        var element = react__WEBPACK_IMPORTED_MODULE_4__.createElement(_App__WEBPACK_IMPORTED_MODULE_9__.App, {
-            siteUrl: this.context.pageContext.web.absoluteUrl
+        var element = react__WEBPACK_IMPORTED_MODULE_5__.createElement(_App__WEBPACK_IMPORTED_MODULE_10__.App, {
+            siteUrl: this.context.pageContext.web.absoluteUrl,
+            msGraphClientFactory: this.context.msGraphClientFactory
         });
-        react_dom__WEBPACK_IMPORTED_MODULE_5__.render(element, this.domElement);
+        react_dom__WEBPACK_IMPORTED_MODULE_6__.render(element, this.domElement);
         this._removeSharePointConstraints();
         this._injectHideStyles();
     };
@@ -335,7 +339,7 @@ var IkaIntranetWebPart = /** @class */ (function (_super) {
         }
     };
     IkaIntranetWebPart.prototype.onDispose = function () {
-        react_dom__WEBPACK_IMPORTED_MODULE_5__.unmountComponentAtNode(this.domElement);
+        react_dom__WEBPACK_IMPORTED_MODULE_6__.unmountComponentAtNode(this.domElement);
     };
     Object.defineProperty(IkaIntranetWebPart.prototype, "dataVersion", {
         get: function () {
@@ -348,12 +352,12 @@ var IkaIntranetWebPart = /** @class */ (function (_super) {
         return {
             pages: [
                 {
-                    header: { description: IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.PropertyPaneDescription },
+                    header: { description: IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_7__.PropertyPaneDescription },
                     groups: [
                         {
-                            groupName: IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.BasicGroupName,
+                            groupName: IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_7__.BasicGroupName,
                             groupFields: [
-                                (0,_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_2__.PropertyPaneTextField)('description', { label: IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.DescriptionFieldLabel })
+                                (0,_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_2__.PropertyPaneTextField)('description', { label: IkaIntranetWebPartStrings__WEBPACK_IMPORTED_MODULE_7__.DescriptionFieldLabel })
                             ]
                         }
                     ]
@@ -889,13 +893,6 @@ var IMG = {
     avatarKadiatou: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=200&q=80',
     avatarMamadou: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
 };
-var DOC_FOLDERS = [
-    { id: 'ikar', name: 'IKAR', desc: 'Dossier partagé' },
-    { id: 'dev', name: 'DEV', desc: 'Espace dev' },
-    { id: 'sp', name: 'SP', desc: 'Service Prod' },
-    { id: 'compta', name: 'COMPTA', desc: 'Finances' },
-    { id: 'gcibtc', name: 'GCIBTC', desc: 'Projet GCIBTC' }
-];
 /* ============================== SOUS-COMPOSANTS ============================== */
 function SectionHeader(props) {
     return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-center justify-between pb-3 border-b border-slate-100 mb-4" },
@@ -1227,6 +1224,7 @@ var Accueil = function (_a) {
         });
     }); };
     var event = evenements.length ? evenements[eventIndex % evenements.length] : null;
+    var derniersEvenements = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)([], evenements, true).sort(function (a, b) { return b.id - a.id; }).slice(0, 3);
     return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", { id: "page-accueil", className: "pt-4 sm:pt-5 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mx-auto max-w-[1900px] px-3 sm:px-5 lg:px-6 space-y-3" },
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch" },
@@ -1466,15 +1464,15 @@ var Accueil = function (_a) {
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] font-bold text-slate-700 group-hover:text-purple-600 text-center line-clamp-2" }, f.name),
                             f.itemCount > 0 && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "px-1.5 py-0.5 rounded-full bg-slate-100 text-[9px] font-bold text-slate-500" }, f.itemCount)))); })))),
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toute-galerie", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toute la galerie")),
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "documentation", className: "lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("section", { id: "derniers-evenements", className: "lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_13__.FaFolder, { className: "text-xs" }), title: "Documentation & Dossiers Partag\u00E9s" }),
-                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3" }, DOC_FOLDERS.map(function (f) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: f.id, href: "#".concat(f.id), className: "p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-amber-300 hover:shadow-sm transition text-center group" },
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "w-10 h-10 rounded-lg bg-amber-100 text-amber-500 flex items-center justify-center text-xl font-bold mx-auto mb-1" },
-                                react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_13__.FaFolder, null)),
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h3", { className: "text-xs font-black text-slate-900 group-hover:text-ikaBlue transition" }, f.name),
-                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "text-[10px] text-slate-400" }, f.desc))); }))),
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-toute-documentation", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toute la documentation")))),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_13__.FaCalendarDays, { className: "text-xs" }), title: "Derniers \u00C9v\u00E9nements" }),
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "grid grid-cols-3 gap-3" }, evenementsLoading ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4" }, "Chargement...")) : derniersEvenements.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4" }, "Aucun \u00E9v\u00E9nement pour le moment.")) : (derniersEvenements.map(function (e) { return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { key: e.id, href: "#page-detail-evenement&id=".concat(e.id), className: "group relative block rounded-xl overflow-hidden aspect-square bg-slate-900 shadow" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: e.img, alt: e.title, className: "w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" }),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent flex flex-col justify-end p-2.5" },
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[11px] font-bold text-white leading-snug line-clamp-2" }, e.title),
+                                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-[10px] text-white/70 font-medium mt-0.5" }, e.date)))); })))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-tous-evenements", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir tous les \u00E9v\u00E9nements")))),
         annonceCommentId !== null && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" },
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative" },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { onClick: function () { return setAnnonceCommentId(null); }, className: "absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg" },
@@ -3137,11 +3135,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var TouteEquipe = function (_a) {
-    var siteUrl = _a.siteUrl;
+    var siteUrl = _a.siteUrl, msGraphClientFactory = _a.msGraphClientFactory;
     var _b = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), search = _b[0], setSearch = _b[1];
     var _c = react__WEBPACK_IMPORTED_MODULE_1__.useState('all'), dept = _c[0], setDept = _c[1];
     var _d = react__WEBPACK_IMPORTED_MODULE_1__.useState([]), membres = _d[0], setMembres = _d[1];
     var _e = react__WEBPACK_IMPORTED_MODULE_1__.useState(true), loading = _e[0], setLoading = _e[1];
+    var _f = react__WEBPACK_IMPORTED_MODULE_1__.useState(false), importing = _f[0], setImporting = _f[1];
+    var _g = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), importError = _g[0], setImportError = _g[1];
+    var _h = react__WEBPACK_IMPORTED_MODULE_1__.useState(''), importMessage = _h[0], setImportMessage = _h[1];
     react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function () {
         if (!siteUrl) {
             setLoading(false);
@@ -3154,6 +3155,29 @@ var TouteEquipe = function (_a) {
         })
             .catch(function () { return setLoading(false); });
     }, [siteUrl]);
+    var handleImportAad = function () {
+        if (!siteUrl || !msGraphClientFactory || importing)
+            return;
+        setImporting(true);
+        setImportError('');
+        setImportMessage('');
+        msGraphClientFactory
+            .getClient('3')
+            .then(function (client) { return (0,_services_equipe_index__WEBPACK_IMPORTED_MODULE_3__.importMembresFromAad)(siteUrl, client); })
+            .then(function (result) {
+            setImporting(false);
+            if (result.total === 0) {
+                setImportMessage('Aucun compte actif trouvé dans l’annuaire.');
+                return;
+            }
+            setImportMessage("".concat(result.created, " ajout\u00E9(s), ").concat(result.updated, " mis \u00E0 jour").concat(result.errors ? ", ".concat(result.errors, " \u00E9chec(s)") : '', "."));
+            return (0,_services_equipe_index__WEBPACK_IMPORTED_MODULE_3__.loadMembres)(siteUrl, true).then(setMembres);
+        })
+            .catch(function () {
+            setImporting(false);
+            setImportError("Impossible de contacter l'annuaire Azure AD. Cette fonctionnalité nécessite l'autorisation Microsoft Graph « User.Read.All », à valider par un administrateur dans le centre d'administration SharePoint (Paramètres avancés > Accès API).");
+        });
+    };
     var departments = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)(['all'], Array.from(new Set(membres.map(function (m) { return m.dept; }))), true);
     var filtered = membres.filter(function (m) {
         var q = search.toLowerCase();
@@ -3176,8 +3200,22 @@ var TouteEquipe = function (_a) {
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", { href: "#page-accueil", className: "hover:text-ikaBlue transition" }, "Accueil"),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, "/"),
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "text-ikaBlue" }, "Notre \u00E9quipe")),
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", { className: "mt-3 text-2xl sm:text-3xl font-black text-ikaBlueDark" }, "Notre \u00C9quipe"),
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-2 text-sm text-slate-500 max-w-2xl" }, "D\u00E9couvrez les collaborateurs d'IKA SOLUTION, r\u00E9partis par d\u00E9partement."),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "flex items-start justify-between gap-4 flex-wrap" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", { className: "mt-3 text-2xl sm:text-3xl font-black text-ikaBlueDark" }, "Notre \u00C9quipe"),
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", { className: "mt-2 text-sm text-slate-500 max-w-2xl" }, "D\u00E9couvrez les collaborateurs d'IKA SOLUTION, r\u00E9partis par d\u00E9partement.")),
+                        msGraphClientFactory ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", { type: "button", onClick: handleImportAad, disabled: importing, className: "mt-3 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition disabled:opacity-60 disabled:cursor-not-allowed shrink-0" },
+                            react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaUserGroup, { className: "text-xs" }),
+                            " ",
+                            importing ? 'Récupération en cours...' : "Récupérer toute l'équipe depuis l'AD")) : null),
+                    importError ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-4 flex items-start gap-2 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-semibold text-rose-600" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaTriangleExclamation, { className: "mt-0.5 shrink-0" }),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, importError))) : null,
+                    importMessage ? (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-4 flex items-start gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-semibold text-emerald-700" },
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_icons_fa6__WEBPACK_IMPORTED_MODULE_2__.FaCircleCheck, { className: "mt-0.5 shrink-0" }),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, importMessage))) : null,
                     react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3" },
                         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "relative flex-1 max-w-md" },
                             react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { type: "text", value: search, onChange: function (e) { return setSearch(e.target.value); }, placeholder: "Nom ou T\u00E9l\u00E9phone...", className: "w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-ikaBlue bg-white shadow-sm" }),
@@ -7057,37 +7095,52 @@ function readCache() {
         return cache.data;
     return undefined;
 }
+function invalidateCache() {
+    cache = null;
+}
 function isActive(value) {
     return value !== false && value !== 0;
 }
 function asString(value) {
     return value === null || value === undefined ? '' : String(value).trim();
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -7458,26 +7511,36 @@ function resolveListName(siteUrl) {
 }
 function updateActualiteLikedBy(siteUrl, itemId, likedBy) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var listName;
+        var listName, ok;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, resolveListName(siteUrl)];
                 case 1:
                     listName = _a.sent();
-                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+                    return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+                case 2:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
             }
         });
     });
 }
 function updateActualiteComments(siteUrl, itemId, comments) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var listName;
+        var listName, ok;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, resolveListName(siteUrl)];
                 case 1:
                     listName = _a.sent();
-                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+                    return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+                case 2:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
             }
         });
     });
@@ -7510,31 +7573,43 @@ function isActive(value) {
 function asString(value) {
     return value === null || value === undefined ? '' : String(value).trim();
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -7656,6 +7731,9 @@ function readCache() {
         return cache.data;
     return undefined;
 }
+function invalidateCache() {
+    cache = null;
+}
 function isActive(value) {
     return value !== false && value !== 0;
 }
@@ -7672,31 +7750,43 @@ function badgeFor(type) {
         return 'border-2 border-emerald-400';
     return 'border border-slate-300';
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -8014,15 +8104,31 @@ function loadAnnonces(siteUrl) {
 }
 function updateAnnonceLikedBy(siteUrl, itemId, likedBy) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var ok;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
-            return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, LIST_NAME, itemId, 'AimePar', likedBy)];
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, LIST_NAME, itemId, 'AimePar', likedBy)];
+                case 1:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
+            }
         });
     });
 }
 function updateAnnonceComments(siteUrl, itemId, comments) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var ok;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
-            return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, LIST_NAME, itemId, 'CommenterPar', comments)];
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, LIST_NAME, itemId, 'CommenterPar', comments)];
+                case 1:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
+            }
         });
     });
 }
@@ -8089,31 +8195,43 @@ function formatSize(bytes) {
         return "".concat(Math.round(bytes / 1024), " Ko - PDF");
     return "".concat((bytes / (1024 * 1024)).toFixed(1), " Mo - PDF");
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -8250,37 +8368,52 @@ function readCache() {
         return cache.data;
     return undefined;
 }
+function invalidateCache() {
+    cache = null;
+}
 function isActive(value) {
     return value !== false && value !== 0;
 }
 function asString(value) {
     return value === null || value === undefined ? '' : String(value).trim();
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -8603,26 +8736,36 @@ function resolveListName(siteUrl) {
 }
 function updateEmployeMoisLikedBy(siteUrl, itemId, likedBy) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var listName;
+        var listName, ok;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, resolveListName(siteUrl)];
                 case 1:
                     listName = _a.sent();
-                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+                    return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+                case 2:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
             }
         });
     });
 }
 function updateEmployeMoisComments(siteUrl, itemId, comments) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var listName;
+        var listName, ok;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, resolveListName(siteUrl)];
                 case 1:
                     listName = _a.sent();
-                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+                    return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+                case 2:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
             }
         });
     });
@@ -8641,9 +8784,13 @@ function updateEmployeMoisComments(siteUrl, itemId, comments) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DEPT_COLORS: () => (/* binding */ DEPT_COLORS),
+/* harmony export */   fetchAadUsers: () => (/* binding */ fetchAadUsers),
+/* harmony export */   importMembresFromAad: () => (/* binding */ importMembresFromAad),
 /* harmony export */   loadMembres: () => (/* binding */ loadMembres)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 196);
+/* harmony import */ var _shared_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/index */ 8717);
+
 
 var LIST_NAME = 'Equipes';
 var LIST_NAME_ALT = 'Equipe';
@@ -8661,6 +8808,9 @@ function readCache() {
     if (cache && Date.now() - cache.ts < CACHE_TTL)
         return cache.data;
     return undefined;
+}
+function invalidateCache() {
+    cache = null;
 }
 function isActive(value) {
     return value !== false && value !== 0;
@@ -8691,31 +8841,43 @@ function normalizeUrl(value, siteUrl) {
     var rel = toSiteRelative(siteUrl, s);
     return rel.startsWith('/') ? "".concat(siteUrl).concat(rel) : s;
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -8899,39 +9061,49 @@ function resolveImageUrl(siteUrl, listName, listNameAlt, rootFolder, itemId, fil
         });
     });
 }
-function loadMembres(siteUrl) {
+function resolveEquipeList(siteUrl) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var cached, fieldMap, listName_1, fieldMapFinal_1, _a, res, items, missingImages_1, membres_1, rootFolder_1, err_1;
+        var fieldMap, fieldMapAlt;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME)];
+                case 1:
+                    fieldMap = _a.sent();
+                    if (Object.keys(fieldMap).length > 0)
+                        return [2 /*return*/, { listName: LIST_NAME, fieldMap: fieldMap }];
+                    return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME_ALT)];
+                case 2:
+                    fieldMapAlt = _a.sent();
+                    return [2 /*return*/, { listName: LIST_NAME_ALT, fieldMap: fieldMapAlt }];
+            }
+        });
+    });
+}
+function loadMembres(siteUrl, force) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var cached, _a, listName_1, fieldMapFinal_1, res, items, missingImages_1, membres_1, rootFolder_1, err_1;
         var _this = this;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    cached = readCache();
-                    if (cached)
-                        return [2 /*return*/, cached];
+                    if (!force) {
+                        cached = readCache();
+                        if (cached)
+                            return [2 /*return*/, cached];
+                    }
                     _b.label = 1;
                 case 1:
-                    _b.trys.push([1, 11, , 12]);
-                    return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME)];
+                    _b.trys.push([1, 8, , 9]);
+                    return [4 /*yield*/, resolveEquipeList(siteUrl)];
                 case 2:
-                    fieldMap = _b.sent();
-                    listName_1 = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
-                    if (!(Object.keys(fieldMap).length > 0)) return [3 /*break*/, 3];
-                    _a = fieldMap;
-                    return [3 /*break*/, 5];
-                case 3: return [4 /*yield*/, getFieldMap(siteUrl, LIST_NAME_ALT)];
-                case 4:
-                    _a = _b.sent();
-                    _b.label = 5;
-                case 5:
-                    fieldMapFinal_1 = _a;
+                    _a = _b.sent(), listName_1 = _a.listName, fieldMapFinal_1 = _a.fieldMap;
                     return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName_1, "')/items?$select=*,Author/Title&$expand=Author/Title&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
-                case 6:
+                case 3:
                     res = _b.sent();
                     if (!res.ok)
                         throw new Error("HTTP ".concat(res.status));
                     return [4 /*yield*/, res.json()];
-                case 7:
+                case 4:
                     items = ((_b.sent()).value || []);
                     missingImages_1 = [];
                     membres_1 = items
@@ -8961,9 +9133,9 @@ function loadMembres(siteUrl) {
                         };
                     })
                         .filter(function (m) { return m.name !== ''; });
-                    if (!missingImages_1.length) return [3 /*break*/, 10];
+                    if (!missingImages_1.length) return [3 /*break*/, 7];
                     return [4 /*yield*/, getListRootFolder(siteUrl, listName_1)];
-                case 8:
+                case 5:
                     rootFolder_1 = _b.sent();
                     return [4 /*yield*/, Promise.all(missingImages_1.map(function (_a) { return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(_this, [_a], void 0, function (_b) {
                             var url, target;
@@ -8980,19 +9152,151 @@ function loadMembres(siteUrl) {
                                 }
                             });
                         }); }))];
-                case 9:
+                case 6:
                     _b.sent();
-                    _b.label = 10;
-                case 10:
+                    _b.label = 7;
+                case 7:
                     if (membres_1.length > 0) {
                         cache = { data: membres_1, ts: Date.now() };
                     }
                     return [2 /*return*/, membres_1];
-                case 11:
+                case 8:
                     err_1 = _b.sent();
                     console.error('[equipe] Erreur de chargement :', err_1);
                     return [2 /*return*/, []];
-                case 12: return [2 /*return*/];
+                case 9: return [2 /*return*/];
+            }
+        });
+    });
+}
+var GRAPH_BASE_URL = 'https://graph.microsoft.com/v1.0';
+function fetchAadUsers(graphClient) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var users, path, res, batch, next;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    users = [];
+                    path = "/users?$select=displayName,mail,userPrincipalName,jobTitle,department,mobilePhone,businessPhones,accountEnabled,userType&$filter=accountEnabled eq true and userType eq 'Member'&$top=999";
+                    _a.label = 1;
+                case 1:
+                    if (!path) return [3 /*break*/, 3];
+                    return [4 /*yield*/, graphClient.api(path).version('v1.0').get()];
+                case 2:
+                    res = _a.sent();
+                    batch = (res && res.value) || [];
+                    batch.forEach(function (u) {
+                        var email = asString(u.mail) || asString(u.userPrincipalName);
+                        var displayName = asString(u.displayName);
+                        if (!email || !displayName)
+                            return;
+                        var businessPhones = Array.isArray(u.businessPhones)
+                            ? u.businessPhones.map(function (p) { return asString(p); }).filter(Boolean)
+                            : [];
+                        users.push({
+                            displayName: displayName,
+                            email: email,
+                            jobTitle: asString(u.jobTitle),
+                            department: asString(u.department),
+                            phone: asString(u.mobilePhone) || businessPhones[0] || ''
+                        });
+                    });
+                    next = res && typeof res['@odata.nextLink'] === 'string' ? String(res['@odata.nextLink']) : '';
+                    path = next ? next.replace(GRAPH_BASE_URL, '') : '';
+                    return [3 /*break*/, 1];
+                case 3: return [2 /*return*/, users];
+            }
+        });
+    });
+}
+function importMembresFromAad(siteUrl, graphClient) {
+    return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
+        var result, aadUsers, _a, listName, fieldMap, titreKey, posteKey, deptKey, phoneKey, posteIpKey, emailKey, activeKey, existing, existingByEmail, _i, aadUsers_1, user, match, fields, ok, fields, id, err_2;
+        var _b, _c;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_d) {
+            switch (_d.label) {
+                case 0:
+                    result = { created: 0, updated: 0, errors: 0, total: 0 };
+                    return [4 /*yield*/, fetchAadUsers(graphClient)];
+                case 1:
+                    aadUsers = _d.sent();
+                    result.total = aadUsers.length;
+                    if (!aadUsers.length)
+                        return [2 /*return*/, result];
+                    return [4 /*yield*/, resolveEquipeList(siteUrl)];
+                case 2:
+                    _a = _d.sent(), listName = _a.listName, fieldMap = _a.fieldMap;
+                    titreKey = fieldMap['titre'] || 'Title';
+                    posteKey = fieldMap['poste'] || 'Poste';
+                    deptKey = fieldMap['département'] || 'Departement';
+                    phoneKey = fieldMap['téléphone mobile'] || 'TelephoneMobile';
+                    posteIpKey = fieldMap['poste ip'] || 'PosteIP';
+                    emailKey = fieldMap['email'] || 'Email';
+                    activeKey = fieldMap['active'] || 'Active';
+                    return [4 /*yield*/, loadMembres(siteUrl, true)];
+                case 3:
+                    existing = _d.sent();
+                    existingByEmail = new Map();
+                    existing.forEach(function (m) {
+                        if (m.email)
+                            existingByEmail.set(m.email.toLowerCase(), m);
+                    });
+                    _i = 0, aadUsers_1 = aadUsers;
+                    _d.label = 4;
+                case 4:
+                    if (!(_i < aadUsers_1.length)) return [3 /*break*/, 12];
+                    user = aadUsers_1[_i];
+                    match = existingByEmail.get(user.email.toLowerCase());
+                    _d.label = 5;
+                case 5:
+                    _d.trys.push([5, 10, , 11]);
+                    if (!match) return [3 /*break*/, 7];
+                    fields = (_b = {},
+                        _b[titreKey] = user.displayName,
+                        _b[phoneKey] = user.phone,
+                        _b);
+                    if (user.jobTitle)
+                        fields[posteKey] = user.jobTitle;
+                    if (user.department)
+                        fields[deptKey] = user.department;
+                    return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.updateListItemFields)(siteUrl, listName, match.id, fields)];
+                case 6:
+                    ok = _d.sent();
+                    if (ok)
+                        result.updated += 1;
+                    else
+                        result.errors += 1;
+                    return [3 /*break*/, 9];
+                case 7:
+                    fields = (_c = {},
+                        _c[titreKey] = user.displayName,
+                        _c[posteKey] = user.jobTitle || 'À définir',
+                        _c[deptKey] = user.department || 'Non classé',
+                        _c[phoneKey] = user.phone,
+                        _c[posteIpKey] = 0,
+                        _c[emailKey] = user.email,
+                        _c[activeKey] = true,
+                        _c);
+                    return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.createListItem)(siteUrl, listName, fields)];
+                case 8:
+                    id = _d.sent();
+                    if (id)
+                        result.created += 1;
+                    else
+                        result.errors += 1;
+                    _d.label = 9;
+                case 9: return [3 /*break*/, 11];
+                case 10:
+                    err_2 = _d.sent();
+                    console.error('[equipe] Erreur import AAD pour', user.email, err_2);
+                    result.errors += 1;
+                    return [3 /*break*/, 11];
+                case 11:
+                    _i++;
+                    return [3 /*break*/, 4];
+                case 12:
+                    invalidateCache();
+                    return [2 /*return*/, result];
             }
         });
     });
@@ -9029,6 +9333,9 @@ function readCache() {
         return cache.data;
     return undefined;
 }
+function invalidateCache() {
+    cache = null;
+}
 function isActive(value) {
     return value !== false && value !== 0;
 }
@@ -9058,31 +9365,43 @@ function normalizeUrl(value, siteUrl) {
     var rel = toSiteRelative(siteUrl, s);
     return rel.startsWith('/') ? "".concat(siteUrl).concat(rel) : s;
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -9428,26 +9747,36 @@ function resolveListName(siteUrl) {
 }
 function updateEvenementLikedBy(siteUrl, itemId, likedBy) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var listName;
+        var listName, ok;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, resolveListName(siteUrl)];
                 case 1:
                     listName = _a.sent();
-                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+                    return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'AimerPar', likedBy)];
+                case 2:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
             }
         });
     });
 }
 function updateEvenementComments(siteUrl, itemId, comments) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var listName;
+        var listName, ok;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, resolveListName(siteUrl)];
                 case 1:
                     listName = _a.sent();
-                    return [2 /*return*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+                    return [4 /*yield*/, (0,_shared_index__WEBPACK_IMPORTED_MODULE_1__.patchField)(siteUrl, listName, itemId, 'CommenterPar', comments)];
+                case 2:
+                    ok = _a.sent();
+                    if (ok)
+                        invalidateCache();
+                    return [2 /*return*/, ok];
             }
         });
     });
@@ -10009,31 +10338,43 @@ function normalizeUrl(value, siteUrl) {
     var rel = toSiteRelative(siteUrl, s);
     return rel.startsWith('/') ? "".concat(siteUrl).concat(rel) : s;
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -10347,31 +10688,43 @@ function statusCls(status) {
 function isActive(value) {
     return value !== false && value !== 0;
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -10772,31 +11125,43 @@ function searchUsers(siteUrl, query) {
         });
     });
 }
+var fieldMapCache = {};
+var FIELD_MAP_CACHE_TTL = 20 * 60 * 1000;
+function setCachedFieldMap(cacheKey, value) {
+    fieldMapCache[cacheKey] = { value: value, ts: Date.now() };
+}
 function getFieldMap(siteUrl, listName) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function () {
-        var res, fields, map_1, _a;
+        var cacheKey, cached, res, fields, map_1, _a;
         return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__generator)(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                    cacheKey = "".concat(siteUrl, "::").concat(listName);
+                    cached = fieldMapCache[cacheKey];
+                    if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL)
+                        return [2 /*return*/, cached.value];
+                    _b.label = 1;
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch("".concat(siteUrl, "/_api/web/lists/getbytitle('").concat(listName, "')/fields?$select=Title,InternalName&$top=500"), { headers: { Accept: 'application/json;odata=nometadata' } })];
+                case 2:
                     res = _b.sent();
                     if (!res.ok)
-                        return [2 /*return*/, {}];
+                        return [2 /*return*/, cached ? cached.value : {}];
                     return [4 /*yield*/, res.json()];
-                case 2:
+                case 3:
                     fields = (_b.sent()).value;
                     map_1 = {};
                     (fields || []).forEach(function (f) {
                         if (f.Title && f.InternalName)
                             map_1[String(f.Title).toLowerCase()] = f.InternalName;
                     });
+                    setCachedFieldMap(cacheKey, map_1);
                     return [2 /*return*/, map_1];
-                case 3:
+                case 4:
                     _a = _b.sent();
-                    return [2 /*return*/, {}];
-                case 4: return [2 /*return*/];
+                    return [2 /*return*/, cached ? cached.value : {}];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -25617,6 +25982,17 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__9676__;
 
 /***/ },
 
+/***/ 1909
+/*!*************************************!*\
+  !*** external "@microsoft/sp-http" ***!
+  \*************************************/
+(module) {
+
+"use strict";
+module.exports = __WEBPACK_EXTERNAL_MODULE__1909__;
+
+/***/ },
+
 /***/ 9877
 /*!**********************************************!*\
   !*** external "@microsoft/sp-property-pane" ***!
@@ -25757,7 +26133,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__8398__;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("933bdd8fc3a24a71aeb7")
+/******/ 		__webpack_require__.h = () => ("5fac92f02effac371842")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

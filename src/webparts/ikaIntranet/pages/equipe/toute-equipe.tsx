@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { FaMagnifyingGlass, FaPhone, FaEnvelope } from 'react-icons/fa6';
-import { loadMembres, IMembre, DEPT_COLORS } from '../../services/equipe/index';
+import { MSGraphClientFactory } from '@microsoft/sp-http';
+import { FaMagnifyingGlass, FaPhone, FaEnvelope, FaUserGroup, FaTriangleExclamation, FaCircleCheck } from 'react-icons/fa6';
+import { loadMembres, importMembresFromAad, IMembre, DEPT_COLORS } from '../../services/equipe/index';
 
-export const TouteEquipe: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
+export const TouteEquipe: React.FC<{ siteUrl?: string; msGraphClientFactory?: MSGraphClientFactory }> = ({ siteUrl, msGraphClientFactory }) => {
   const [search, setSearch] = React.useState('');
   const [dept, setDept] = React.useState('all');
   const [membres, setMembres] = React.useState<IMembre[]>([]);
   const [loading, setLoading] = React.useState(true);
+  const [importing, setImporting] = React.useState(false);
+  const [importError, setImportError] = React.useState('');
+  const [importMessage, setImportMessage] = React.useState('');
 
   React.useEffect(() => {
     if (!siteUrl) {
@@ -20,6 +24,33 @@ export const TouteEquipe: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
       })
       .catch(() => setLoading(false));
   }, [siteUrl]);
+
+  const handleImportAad = (): void => {
+    if (!siteUrl || !msGraphClientFactory || importing) return;
+    setImporting(true);
+    setImportError('');
+    setImportMessage('');
+    msGraphClientFactory
+      .getClient('3')
+      .then((client) => importMembresFromAad(siteUrl, client))
+      .then((result) => {
+        setImporting(false);
+        if (result.total === 0) {
+          setImportMessage('Aucun compte actif trouvé dans l’annuaire.');
+          return;
+        }
+        setImportMessage(
+          `${result.created} ajouté(s), ${result.updated} mis à jour${result.errors ? `, ${result.errors} échec(s)` : ''}.`
+        );
+        return loadMembres(siteUrl, true).then(setMembres);
+      })
+      .catch(() => {
+        setImporting(false);
+        setImportError(
+          "Impossible de contacter l'annuaire Azure AD. Cette fonctionnalité nécessite l'autorisation Microsoft Graph « User.Read.All », à valider par un administrateur dans le centre d'administration SharePoint (Paramètres avancés > Accès API)."
+        );
+      });
+  };
 
   const departments = ['all', ...Array.from(new Set(membres.map((m) => m.dept)))];
 
@@ -53,10 +84,35 @@ export const TouteEquipe: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
               <span>/</span>
               <span className="text-ikaBlue">Notre équipe</span>
             </nav>
-            <h1 className="mt-3 text-2xl sm:text-3xl font-black text-ikaBlueDark">Notre Équipe</h1>
-            <p className="mt-2 text-sm text-slate-500 max-w-2xl">
-              Découvrez les collaborateurs d&apos;IKA SOLUTION, répartis par département.
-            </p>
+            <div className="flex items-start justify-between gap-4 flex-wrap">
+              <div>
+                <h1 className="mt-3 text-2xl sm:text-3xl font-black text-ikaBlueDark">Notre Équipe</h1>
+                <p className="mt-2 text-sm text-slate-500 max-w-2xl">
+                  Découvrez les collaborateurs d&apos;IKA SOLUTION, répartis par département.
+                </p>
+              </div>
+              {msGraphClientFactory ? (
+                <button
+                  type="button"
+                  onClick={handleImportAad}
+                  disabled={importing}
+                  className="mt-3 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition disabled:opacity-60 disabled:cursor-not-allowed shrink-0"
+                >
+                  <FaUserGroup className="text-xs" /> {importing ? 'Récupération en cours...' : "Récupérer toute l'équipe depuis l'AD"}
+                </button>
+              ) : null}
+            </div>
+
+            {importError ? (
+              <div className="mt-4 flex items-start gap-2 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-semibold text-rose-600">
+                <FaTriangleExclamation className="mt-0.5 shrink-0" /> <span>{importError}</span>
+              </div>
+            ) : null}
+            {importMessage ? (
+              <div className="mt-4 flex items-start gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-semibold text-emerald-700">
+                <FaCircleCheck className="mt-0.5 shrink-0" /> <span>{importMessage}</span>
+              </div>
+            ) : null}
 
             {/* Filtres */}
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">

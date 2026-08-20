@@ -63,14 +63,6 @@ const IMG = {
   avatarMamadou: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
 };
 
-const DOC_FOLDERS = [
-  { id: 'ikar', name: 'IKAR', desc: 'Dossier partagé' },
-  { id: 'dev', name: 'DEV', desc: 'Espace dev' },
-  { id: 'sp', name: 'SP', desc: 'Service Prod' },
-  { id: 'compta', name: 'COMPTA', desc: 'Finances' },
-  { id: 'gcibtc', name: 'GCIBTC', desc: 'Projet GCIBTC' }
-];
-
 /* ============================== SOUS-COMPOSANTS ============================== */
 
 function SectionHeader(props: { iconCls: string; icon: React.ReactNode; title: string; link?: string }): React.ReactElement {
@@ -381,6 +373,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   };
 
   const event = evenements.length ? evenements[eventIndex % evenements.length] : null;
+  const derniersEvenements = [...evenements].sort((a, b) => b.id - a.id).slice(0, 3);
 
   return (
     <main id="page-accueil" className="pt-4 sm:pt-5 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -896,24 +889,34 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
             </a>
           </section>
 
-          {/* SECTION 8: DOCUMENTATION (6 COLS) */}
-          <section id="documentation" className="lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between">
+          {/* SECTION 8: DERNIERS ÉVÉNEMENTS (6 COLS) */}
+          <section id="derniers-evenements" className="lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between">
             <div>
-              <SectionHeader iconCls="bg-blue-100 text-ikaBlue" icon={<FaFolder className="text-xs" />} title="Documentation & Dossiers Partagés" />
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-                {DOC_FOLDERS.map((f) => (
-                  <a key={f.id} href={`#${f.id}`} className="p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-amber-300 hover:shadow-sm transition text-center group">
-                    <div className="w-10 h-10 rounded-lg bg-amber-100 text-amber-500 flex items-center justify-center text-xl font-bold mx-auto mb-1">
-                      <FaFolder />
-                    </div>
-                    <h3 className="text-xs font-black text-slate-900 group-hover:text-ikaBlue transition">{f.name}</h3>
-                    <p className="text-[10px] text-slate-400">{f.desc}</p>
-                  </a>
-                ))}
+              <SectionHeader iconCls="bg-blue-100 text-ikaBlue" icon={<FaCalendarDays className="text-xs" />} title="Derniers Événements" />
+              <div className="grid grid-cols-3 gap-3">
+                {evenementsLoading ? (
+                  <p className="col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4">Chargement...</p>
+                ) : derniersEvenements.length === 0 ? (
+                  <p className="col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4">Aucun événement pour le moment.</p>
+                ) : (
+                  derniersEvenements.map((e) => (
+                    <a
+                      key={e.id}
+                      href={`#page-detail-evenement&id=${e.id}`}
+                      className="group relative block rounded-xl overflow-hidden aspect-square bg-slate-900 shadow"
+                    >
+                      <img src={e.img} alt={e.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent flex flex-col justify-end p-2.5">
+                        <span className="text-[11px] font-bold text-white leading-snug line-clamp-2">{e.title}</span>
+                        <span className="text-[10px] text-white/70 font-medium mt-0.5">{e.date}</span>
+                      </div>
+                    </a>
+                  ))
+                )}
               </div>
             </div>
-            <a href="#page-toute-documentation" className="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm">
-              Voir toute la documentation
+            <a href="#page-tous-evenements" className="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm">
+              Voir tous les événements
             </a>
           </section>
         </div>

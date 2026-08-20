@@ -33,13 +33,6 @@ var IMG = {
     avatarKadiatou: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=200&q=80',
     avatarMamadou: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80'
 };
-var DOC_FOLDERS = [
-    { id: 'ikar', name: 'IKAR', desc: 'Dossier partagé' },
-    { id: 'dev', name: 'DEV', desc: 'Espace dev' },
-    { id: 'sp', name: 'SP', desc: 'Service Prod' },
-    { id: 'compta', name: 'COMPTA', desc: 'Finances' },
-    { id: 'gcibtc', name: 'GCIBTC', desc: 'Projet GCIBTC' }
-];
 /* ============================== SOUS-COMPOSANTS ============================== */
 function SectionHeader(props) {
     return (React.createElement("div", { className: "flex items-center justify-between pb-3 border-b border-slate-100 mb-4" },
@@ -371,6 +364,7 @@ var Accueil = function (_a) {
         });
     }); };
     var event = evenements.length ? evenements[eventIndex % evenements.length] : null;
+    var derniersEvenements = tslib_1.__spreadArray([], evenements, true).sort(function (a, b) { return b.id - a.id; }).slice(0, 3);
     return (React.createElement("main", { id: "page-accueil", className: "pt-4 sm:pt-5 pb-14 min-h-screen bg-slate-100 text-slate-800" },
         React.createElement("div", { className: "mx-auto max-w-[1900px] px-3 sm:px-5 lg:px-6 space-y-3" },
             React.createElement("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch" },
@@ -610,15 +604,15 @@ var Accueil = function (_a) {
                             React.createElement("span", { className: "text-[10px] font-bold text-slate-700 group-hover:text-purple-600 text-center line-clamp-2" }, f.name),
                             f.itemCount > 0 && (React.createElement("span", { className: "px-1.5 py-0.5 rounded-full bg-slate-100 text-[9px] font-bold text-slate-500" }, f.itemCount)))); })))),
                     React.createElement("a", { href: "#page-toute-galerie", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toute la galerie")),
-                React.createElement("section", { id: "documentation", className: "lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
+                React.createElement("section", { id: "derniers-evenements", className: "lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between" },
                     React.createElement("div", null,
-                        React.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: React.createElement(fa6_1.FaFolder, { className: "text-xs" }), title: "Documentation & Dossiers Partag\u00E9s" }),
-                        React.createElement("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3" }, DOC_FOLDERS.map(function (f) { return (React.createElement("a", { key: f.id, href: "#".concat(f.id), className: "p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-amber-300 hover:shadow-sm transition text-center group" },
-                            React.createElement("div", { className: "w-10 h-10 rounded-lg bg-amber-100 text-amber-500 flex items-center justify-center text-xl font-bold mx-auto mb-1" },
-                                React.createElement(fa6_1.FaFolder, null)),
-                            React.createElement("h3", { className: "text-xs font-black text-slate-900 group-hover:text-ikaBlue transition" }, f.name),
-                            React.createElement("p", { className: "text-[10px] text-slate-400" }, f.desc))); }))),
-                    React.createElement("a", { href: "#page-toute-documentation", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir toute la documentation")))),
+                        React.createElement(SectionHeader, { iconCls: "bg-blue-100 text-ikaBlue", icon: React.createElement(fa6_1.FaCalendarDays, { className: "text-xs" }), title: "Derniers \u00C9v\u00E9nements" }),
+                        React.createElement("div", { className: "grid grid-cols-3 gap-3" }, evenementsLoading ? (React.createElement("p", { className: "col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4" }, "Chargement...")) : derniersEvenements.length === 0 ? (React.createElement("p", { className: "col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4" }, "Aucun \u00E9v\u00E9nement pour le moment.")) : (derniersEvenements.map(function (e) { return (React.createElement("a", { key: e.id, href: "#page-detail-evenement&id=".concat(e.id), className: "group relative block rounded-xl overflow-hidden aspect-square bg-slate-900 shadow" },
+                            React.createElement("img", { src: e.img, alt: e.title, className: "w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" }),
+                            React.createElement("div", { className: "absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent flex flex-col justify-end p-2.5" },
+                                React.createElement("span", { className: "text-[11px] font-bold text-white leading-snug line-clamp-2" }, e.title),
+                                React.createElement("span", { className: "text-[10px] text-white/70 font-medium mt-0.5" }, e.date)))); })))),
+                    React.createElement("a", { href: "#page-tous-evenements", className: "mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-700 hover:bg-slate-50 hover:text-ikaBlue transition block shadow-sm" }, "Voir tous les \u00E9v\u00E9nements")))),
         annonceCommentId !== null && (React.createElement("div", { className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4" },
             React.createElement("div", { className: "bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative" },
                 React.createElement("button", { onClick: function () { return setAnnonceCommentId(null); }, className: "absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg" },

@@ -4,6 +4,7 @@ var tslib_1 = require("tslib");
 var sp_core_library_1 = require("@microsoft/sp-core-library");
 var sp_property_pane_1 = require("@microsoft/sp-property-pane");
 var sp_webpart_base_1 = require("@microsoft/sp-webpart-base");
+require("@microsoft/sp-http");
 var React = tslib_1.__importStar(require("react"));
 var ReactDOM = tslib_1.__importStar(require("react-dom"));
 var strings = tslib_1.__importStar(require("IkaIntranetWebPartStrings"));
@@ -28,7 +29,8 @@ var IkaIntranetWebPart = /** @class */ (function (_super) {
     };
     IkaIntranetWebPart.prototype.render = function () {
         var element = React.createElement(App_1.App, {
-            siteUrl: this.context.pageContext.web.absoluteUrl
+            siteUrl: this.context.pageContext.web.absoluteUrl,
+            msGraphClientFactory: this.context.msGraphClientFactory
         });
         ReactDOM.render(element, this.domElement);
         this._removeSharePointConstraints();

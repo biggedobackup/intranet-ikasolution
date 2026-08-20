@@ -61,7 +61,7 @@ var getIdFromHash = function () {
     return idParam ? Number(idParam.split('=')[1]) : 1;
 };
 var App = function (_a) {
-    var siteUrl = _a.siteUrl;
+    var siteUrl = _a.siteUrl, msGraphClientFactory = _a.msGraphClientFactory;
     var _b = React.useState(getPageFromHash), page = _b[0], setPage = _b[1];
     var _c = React.useState(window.location.hash), hash = _c[0], setHash = _c[1];
     var _d = React.useState([]), menuItems = _d[0], setMenuItems = _d[1];
@@ -96,7 +96,7 @@ var App = function (_a) {
         page === 'detail-agenda' && React.createElement(detail_agenda_1.DetailAgenda, { siteUrl: siteUrl }),
         page === 'toutes-agenda' && React.createElement(toutes_agenda_1.ToutesAgenda, { siteUrl: siteUrl }),
         page === 'detail-membre' && React.createElement(detail_membre_1.DetailMembre, { siteUrl: siteUrl }),
-        page === 'toute-equipe' && React.createElement(toute_equipe_1.TouteEquipe, { siteUrl: siteUrl }),
+        page === 'toute-equipe' && React.createElement(toute_equipe_1.TouteEquipe, { siteUrl: siteUrl, msGraphClientFactory: msGraphClientFactory }),
         page === 'detail-projet' && React.createElement(detail_projet_1.DetailProjet, { siteUrl: siteUrl }),
         page === 'tous-projets' && React.createElement(tous_projets_1.TousProjets, { siteUrl: siteUrl }),
         page === 'detail-produit' && React.createElement(detail_produit_1.DetailProduit, { siteUrl: siteUrl }),

@@ -56,6 +56,11 @@
         "id": "974a7777-0990-4136-8fa6-95d80114c2e0",
         "version": "1.23.0"
       },
+      "@microsoft/sp-http": {
+        "type": "component",
+        "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6",
+        "version": "1.23.0"
+      },
       "react": {
         "type": "component",
         "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",

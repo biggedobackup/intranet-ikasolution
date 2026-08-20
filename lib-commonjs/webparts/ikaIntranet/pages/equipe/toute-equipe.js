@@ -6,11 +6,14 @@ var React = tslib_1.__importStar(require("react"));
 var fa6_1 = require("react-icons/fa6");
 var index_1 = require("../../services/equipe/index");
 var TouteEquipe = function (_a) {
-    var siteUrl = _a.siteUrl;
+    var siteUrl = _a.siteUrl, msGraphClientFactory = _a.msGraphClientFactory;
     var _b = React.useState(''), search = _b[0], setSearch = _b[1];
     var _c = React.useState('all'), dept = _c[0], setDept = _c[1];
     var _d = React.useState([]), membres = _d[0], setMembres = _d[1];
     var _e = React.useState(true), loading = _e[0], setLoading = _e[1];
+    var _f = React.useState(false), importing = _f[0], setImporting = _f[1];
+    var _g = React.useState(''), importError = _g[0], setImportError = _g[1];
+    var _h = React.useState(''), importMessage = _h[0], setImportMessage = _h[1];
     React.useEffect(function () {
         if (!siteUrl) {
             setLoading(false);
@@ -23,6 +26,29 @@ var TouteEquipe = function (_a) {
         })
             .catch(function () { return setLoading(false); });
     }, [siteUrl]);
+    var handleImportAad = function () {
+        if (!siteUrl || !msGraphClientFactory || importing)
+            return;
+        setImporting(true);
+        setImportError('');
+        setImportMessage('');
+        msGraphClientFactory
+            .getClient('3')
+            .then(function (client) { return (0, index_1.importMembresFromAad)(siteUrl, client); })
+            .then(function (result) {
+            setImporting(false);
+            if (result.total === 0) {
+                setImportMessage('Aucun compte actif trouvé dans l’annuaire.');
+                return;
+            }
+            setImportMessage("".concat(result.created, " ajout\u00E9(s), ").concat(result.updated, " mis \u00E0 jour").concat(result.errors ? ", ".concat(result.errors, " \u00E9chec(s)") : '', "."));
+            return (0, index_1.loadMembres)(siteUrl, true).then(setMembres);
+        })
+            .catch(function () {
+            setImporting(false);
+            setImportError("Impossible de contacter l'annuaire Azure AD. Cette fonctionnalité nécessite l'autorisation Microsoft Graph « User.Read.All », à valider par un administrateur dans le centre d'administration SharePoint (Paramètres avancés > Accès API).");
+        });
+    };
     var departments = tslib_1.__spreadArray(['all'], Array.from(new Set(membres.map(function (m) { return m.dept; }))), true);
     var filtered = membres.filter(function (m) {
         var q = search.toLowerCase();
@@ -45,8 +71,22 @@ var TouteEquipe = function (_a) {
                         React.createElement("a", { href: "#page-accueil", className: "hover:text-ikaBlue transition" }, "Accueil"),
                         React.createElement("span", null, "/"),
                         React.createElement("span", { className: "text-ikaBlue" }, "Notre \u00E9quipe")),
-                    React.createElement("h1", { className: "mt-3 text-2xl sm:text-3xl font-black text-ikaBlueDark" }, "Notre \u00C9quipe"),
-                    React.createElement("p", { className: "mt-2 text-sm text-slate-500 max-w-2xl" }, "D\u00E9couvrez les collaborateurs d'IKA SOLUTION, r\u00E9partis par d\u00E9partement."),
+                    React.createElement("div", { className: "flex items-start justify-between gap-4 flex-wrap" },
+                        React.createElement("div", null,
+                            React.createElement("h1", { className: "mt-3 text-2xl sm:text-3xl font-black text-ikaBlueDark" }, "Notre \u00C9quipe"),
+                            React.createElement("p", { className: "mt-2 text-sm text-slate-500 max-w-2xl" }, "D\u00E9couvrez les collaborateurs d'IKA SOLUTION, r\u00E9partis par d\u00E9partement.")),
+                        msGraphClientFactory ? (React.createElement("button", { type: "button", onClick: handleImportAad, disabled: importing, className: "mt-3 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition disabled:opacity-60 disabled:cursor-not-allowed shrink-0" },
+                            React.createElement(fa6_1.FaUserGroup, { className: "text-xs" }),
+                            " ",
+                            importing ? 'Récupération en cours...' : "Récupérer toute l'équipe depuis l'AD")) : null),
+                    importError ? (React.createElement("div", { className: "mt-4 flex items-start gap-2 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-semibold text-rose-600" },
+                        React.createElement(fa6_1.FaTriangleExclamation, { className: "mt-0.5 shrink-0" }),
+                        " ",
+                        React.createElement("span", null, importError))) : null,
+                    importMessage ? (React.createElement("div", { className: "mt-4 flex items-start gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-semibold text-emerald-700" },
+                        React.createElement(fa6_1.FaCircleCheck, { className: "mt-0.5 shrink-0" }),
+                        " ",
+                        React.createElement("span", null, importMessage))) : null,
                     React.createElement("div", { className: "mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3" },
                         React.createElement("div", { className: "relative flex-1 max-w-md" },
                             React.createElement("input", { type: "text", value: search, onChange: function (e) { return setSearch(e.target.value); }, placeholder: "Nom ou T\u00E9l\u00E9phone...", className: "w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-ikaBlue bg-white shadow-sm" }),
