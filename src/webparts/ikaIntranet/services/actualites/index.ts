@@ -219,21 +219,20 @@ async function resolveImageUrl(
     folders.forEach((f) => candidates.push(`${siteUrl}${f}/Attachments/${itemId}/${encoded}`));
   }
 
-  const seen: Record<string, boolean> = {};
-  for (const c of candidates) {
-    if (seen[c]) continue;
-    seen[c] = true;
-    try {
-      const r = await fetch(c, { method: 'HEAD' });
-      const ct = (r.headers.get('content-type') || '').toLowerCase();
-      if (r.status === 200 && (ct.startsWith('image/') || ct.indexOf('octet-stream') !== -1)) {
-        console.log('[actualites] Image item', itemId, '→', c);
-        return c;
+  const uniqueCandidates = Array.from(new Set(candidates));
+  const checks = await Promise.all(
+    uniqueCandidates.map(async (c) => {
+      try {
+        const r = await fetch(c, { method: 'HEAD' });
+        const ct = (r.headers.get('content-type') || '').toLowerCase();
+        return r.status === 200 && (ct.startsWith('image/') || ct.indexOf('octet-stream') !== -1) ? c : undefined;
+      } catch {
+        return undefined;
       }
-    } catch {
-      // candidat suivant
-    }
-  }
+    })
+  );
+  const found = checks.find((c) => !!c);
+  if (found) return found;
 
   console.warn('[actualites] Image introuvable item', itemId, ':', fileName);
   return '';

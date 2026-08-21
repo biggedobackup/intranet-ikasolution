@@ -64,7 +64,7 @@ export const TousEmployesMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =>
                   <span className="absolute top-3 right-3 px-2 py-1 rounded-full bg-white/90 text-[9px] font-black uppercase tracking-wide text-amber-700 flex items-center gap-1">
                     <FaCrown className="text-[9px]" /> {e.month} {e.year}
                   </span>
-                  <img src={e.photo} alt={e.name} className="absolute -bottom-9 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full object-cover border-4 border-white shadow" />
+                  <img src={e.photo} alt={e.name} className="absolute -bottom-9 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full object-cover border-4 border-white shadow" loading="lazy" />
                 </div>
                 <div className="pt-12 px-4 pb-4 text-center">
                   <h3 className="text-sm font-black text-slate-900 group-hover:text-amber-600 transition">{e.name}</h3>

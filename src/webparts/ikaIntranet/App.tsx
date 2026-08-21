@@ -1,44 +1,50 @@
 import * as React from 'react';
 import { MSGraphClientFactory } from '@microsoft/sp-http';
 import { Header } from './components/Header';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { loadHeaderMenu, IHeaderMenuItem } from './services/headerMenu';
 import { loadFooter } from './services/footer';
 import { IFooterColumn } from './components/Footer';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Accueil } from './pages/Accueil';
-import { Page404 } from './pages/page-404';
-import { DetailEvenement } from './pages/evenements/detail-evenement';
-import { TousEvenements } from './pages/evenements/tous-evenements';
-import { DetailActualite } from './pages/actualites/detail-actualite';
-import { ToutesActualites } from './pages/actualites/toutes-les-actualites';
-import { DetailAgenda } from './pages/agenda/detail-agenda';
-import { ToutesAgenda } from './pages/agenda/toutes-agenda';
-import { DetailMembre } from './pages/equipe/detail-membre';
-import { TouteEquipe } from './pages/equipe/toute-equipe';
-import { DetailProjet } from './pages/projets/detail-projet';
-import { TousProjets } from './pages/projets/tous-projets';
-import { DetailProduit } from './pages/produits/detail-produit';
-import { TousProduits } from './pages/produits/tous-produits';
-import { DetailAnnonce } from './pages/annonces/detail-annonce';
-import { ToutesAnnonces } from './pages/annonces/toutes-annonces';
-import { DetailEmployeMois } from './pages/employes-mois/detail-employe-mois';
-import { TousEmployesMois } from './pages/employes-mois/tous-employes-mois';
-import { TousBilans } from './pages/bilans/tous-bilans';
-import { TouteDocumentation } from './pages/documentation/toute-documentation';
-import { TouteGalerie } from './pages/galerie/toute-galerie';
-import { ListeConge } from './pages/workflow/conges/ListeConge';
-import { AjouterConge } from './pages/workflow/conges/AjouterConge';
-import { DetailConge } from './pages/workflow/conges/DetailConge';
-import { ListeVacances } from './pages/workflow/vacances/ListeVacances';
-import { AjouterVacances } from './pages/workflow/vacances/AjouterVacances';
-import { DetailVacances } from './pages/workflow/vacances/DetailVacances';
-import { ListeAbsence } from './pages/workflow/absences/ListeAbsence';
-import { AjouterAbsence } from './pages/workflow/absences/AjouterAbsence';
-import { DetailAbsence } from './pages/workflow/absences/DetailAbsence';
-import { ListeBesoin } from './pages/workflow/besoins/ListeBesoin';
-import { AjouterBesoin } from './pages/workflow/besoins/AjouterBesoin';
-import { DetailBesoin } from './pages/workflow/besoins/DetailBesoin';
+
+// Chargées à la demande (code-splitting) : seule la page réellement visitée
+// est téléchargée, au lieu d'embarquer les 30 pages dans le bundle initial.
+// Accueil reste en import statique ci-dessus car c'est la page vue par
+// quasiment toutes les visites.
+const Page404 = React.lazy(() => import(/* webpackChunkName: 'page-404' */ './pages/page-404'));
+const DetailEvenement = React.lazy(() => import(/* webpackChunkName: 'detail-evenement' */ './pages/evenements/detail-evenement'));
+const TousEvenements = React.lazy(() => import(/* webpackChunkName: 'tous-evenements' */ './pages/evenements/tous-evenements'));
+const DetailActualite = React.lazy(() => import(/* webpackChunkName: 'detail-actualite' */ './pages/actualites/detail-actualite'));
+const ToutesActualites = React.lazy(() => import(/* webpackChunkName: 'toutes-actualites' */ './pages/actualites/toutes-les-actualites'));
+const DetailAgenda = React.lazy(() => import(/* webpackChunkName: 'detail-agenda' */ './pages/agenda/detail-agenda'));
+const ToutesAgenda = React.lazy(() => import(/* webpackChunkName: 'toutes-agenda' */ './pages/agenda/toutes-agenda'));
+const DetailMembre = React.lazy(() => import(/* webpackChunkName: 'detail-membre' */ './pages/equipe/detail-membre'));
+const TouteEquipe = React.lazy(() => import(/* webpackChunkName: 'toute-equipe' */ './pages/equipe/toute-equipe'));
+const DetailProjet = React.lazy(() => import(/* webpackChunkName: 'detail-projet' */ './pages/projets/detail-projet'));
+const TousProjets = React.lazy(() => import(/* webpackChunkName: 'tous-projets' */ './pages/projets/tous-projets'));
+const DetailProduit = React.lazy(() => import(/* webpackChunkName: 'detail-produit' */ './pages/produits/detail-produit'));
+const TousProduits = React.lazy(() => import(/* webpackChunkName: 'tous-produits' */ './pages/produits/tous-produits'));
+const DetailAnnonce = React.lazy(() => import(/* webpackChunkName: 'detail-annonce' */ './pages/annonces/detail-annonce'));
+const ToutesAnnonces = React.lazy(() => import(/* webpackChunkName: 'toutes-annonces' */ './pages/annonces/toutes-annonces'));
+const DetailEmployeMois = React.lazy(() => import(/* webpackChunkName: 'detail-employe-mois' */ './pages/employes-mois/detail-employe-mois'));
+const TousEmployesMois = React.lazy(() => import(/* webpackChunkName: 'tous-employes-mois' */ './pages/employes-mois/tous-employes-mois'));
+const TousBilans = React.lazy(() => import(/* webpackChunkName: 'tous-bilans' */ './pages/bilans/tous-bilans'));
+const TouteDocumentation = React.lazy(() => import(/* webpackChunkName: 'toute-documentation' */ './pages/documentation/toute-documentation'));
+const TouteGalerie = React.lazy(() => import(/* webpackChunkName: 'toute-galerie' */ './pages/galerie/toute-galerie'));
+const ListeConge = React.lazy(() => import(/* webpackChunkName: 'workflow-conge' */ './pages/workflow/conges/ListeConge'));
+const AjouterConge = React.lazy(() => import(/* webpackChunkName: 'workflow-conge' */ './pages/workflow/conges/AjouterConge'));
+const DetailConge = React.lazy(() => import(/* webpackChunkName: 'workflow-conge' */ './pages/workflow/conges/DetailConge'));
+const ListeVacances = React.lazy(() => import(/* webpackChunkName: 'workflow-vacances' */ './pages/workflow/vacances/ListeVacances'));
+const AjouterVacances = React.lazy(() => import(/* webpackChunkName: 'workflow-vacances' */ './pages/workflow/vacances/AjouterVacances'));
+const DetailVacances = React.lazy(() => import(/* webpackChunkName: 'workflow-vacances' */ './pages/workflow/vacances/DetailVacances'));
+const ListeAbsence = React.lazy(() => import(/* webpackChunkName: 'workflow-absence' */ './pages/workflow/absences/ListeAbsence'));
+const AjouterAbsence = React.lazy(() => import(/* webpackChunkName: 'workflow-absence' */ './pages/workflow/absences/AjouterAbsence'));
+const DetailAbsence = React.lazy(() => import(/* webpackChunkName: 'workflow-absence' */ './pages/workflow/absences/DetailAbsence'));
+const ListeBesoin = React.lazy(() => import(/* webpackChunkName: 'workflow-besoin' */ './pages/workflow/besoins/ListeBesoin'));
+const AjouterBesoin = React.lazy(() => import(/* webpackChunkName: 'workflow-besoin' */ './pages/workflow/besoins/AjouterBesoin'));
+const DetailBesoin = React.lazy(() => import(/* webpackChunkName: 'workflow-besoin' */ './pages/workflow/besoins/DetailBesoin'));
 
 export interface IAppProps {
   siteUrl?: string;
@@ -97,6 +103,8 @@ export const App: React.FC<IAppProps> = ({ siteUrl, msGraphClientFactory }) => {
     <div ref={rootRef} className="min-h-screen flex flex-col bg-slate-100 text-ikaInk antialiased">
       <Header menuItems={menuItems} />
       <ScrollToTop hash={hash} rootRef={rootRef} />
+      <ErrorBoundary resetKey={hash}>
+      <React.Suspense fallback={<div className="py-24 text-center text-sm font-semibold text-slate-400">Chargement...</div>}>
       {page === 'accueil' && <Accueil siteUrl={siteUrl} />}
       {page === 'detail-evenement' && <DetailEvenement siteUrl={siteUrl} />}
       {page === 'tous-evenements' && <TousEvenements siteUrl={siteUrl} />}
@@ -134,6 +142,8 @@ export const App: React.FC<IAppProps> = ({ siteUrl, msGraphClientFactory }) => {
       {page === 'workflow-modifier-besoin' && <AjouterBesoin mode="modifier" id={getIdFromHash()} siteUrl={siteUrl} />}
       {page === 'workflow-detail-besoin' && <DetailBesoin siteUrl={siteUrl} />}
       {page !== 'accueil' && page !== 'detail-evenement' && page !== 'tous-evenements' && page !== 'detail-actualite' && page !== 'toutes-actualites' && page !== 'detail-agenda' && page !== 'toutes-agenda' && page !== 'detail-membre' && page !== 'toute-equipe' && page !== 'detail-projet' && page !== 'tous-projets' && page !== 'detail-produit' && page !== 'tous-produits' && page !== 'detail-annonce' && page !== 'toutes-annonces' && page !== 'detail-employe-mois' && page !== 'tous-employes-mois' && page !== 'tous-bilans' && page !== 'toute-documentation' && page !== 'toute-galerie' && page !== 'workflow-liste-conge' && page !== 'workflow-ajouter-conge' && page !== 'workflow-modifier-conge' && page !== 'workflow-detail-conge' && page !== 'workflow-liste-vacances' && page !== 'workflow-ajouter-vacances' && page !== 'workflow-modifier-vacances' && page !== 'workflow-detail-vacances' && page !== 'workflow-liste-absence' && page !== 'workflow-ajouter-absence' && page !== 'workflow-modifier-absence' && page !== 'workflow-detail-absence' && page !== 'workflow-liste-besoin' && page !== 'workflow-ajouter-besoin' && page !== 'workflow-modifier-besoin' && page !== 'workflow-detail-besoin' && <Page404 />}
+      </React.Suspense>
+      </ErrorBoundary>
       <Footer columns={footerColumns} />
     </div>
   );

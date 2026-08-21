@@ -3,3 +3,21 @@ node_modules
 
 # Système macOS
 .DS_Store
+
+# Sorties de build (heft/webpack) — régénérées par `npm run build` / `npm run start`
+dist
+lib
+lib-commonjs
+temp
+
+# Package solution SPFx et artefacts de release — ne pas versionner le .sppkg,
+# il doit toujours être régénéré à partir du code source pour être fiable
+release
+sharepoint/solution
+
+# Logs npm / install
+*.log
+npm-debug.log*
+
+# Sorties de tests
+jest-output

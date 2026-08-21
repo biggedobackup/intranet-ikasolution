@@ -156,7 +156,7 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
               </span>
             </div>
             <div className="p-6 sm:p-8 text-center">
-              <img src={employe.photo} alt={employe.name} className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-amber-400 shadow-md" />
+              <img src={employe.photo} alt={employe.name} className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-amber-400 shadow-md" loading="lazy" />
               <h2 className="mt-4 text-lg font-black text-ikaBlueDark">{employe.name}</h2>
               <p className="text-sm font-bold text-ikaBlue mt-0.5">{employe.role} — {employe.dept}</p>
 
@@ -203,7 +203,7 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
                     href={`#page-detail-employe-mois&id=${e.id}`}
                     className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 hover:border-amber-300 hover:bg-amber-50/50 transition group"
                   >
-                    <img src={e.photo} alt={e.name} className="w-11 h-11 rounded-full object-cover border border-amber-300 shrink-0" />
+                    <img src={e.photo} alt={e.name} className="w-11 h-11 rounded-full object-cover border border-amber-300 shrink-0" loading="lazy" />
                     <div className="min-w-0">
                       <h3 className="text-xs font-bold text-slate-900 group-hover:text-amber-600 transition">{e.name}</h3>
                       <p className="text-[10px] text-slate-400 flex items-center gap-1">
@@ -245,7 +245,7 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
               <FaXmark />
             </button>
             <div className="flex items-center gap-3">
-              <img src={employe.photo} className="w-12 h-12 rounded-full object-cover border-2 border-amber-400" alt="" />
+              <img src={employe.photo} className="w-12 h-12 rounded-full object-cover border-2 border-amber-400" alt="" loading="lazy" />
               <div>
                 <h3 className="font-black text-slate-900 text-sm">Féliciter {employe.name}</h3>
                 <p className="text-xs text-slate-500">Laissez un message d&apos;encouragement</p>

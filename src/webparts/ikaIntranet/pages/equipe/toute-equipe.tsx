@@ -2,6 +2,7 @@ import * as React from 'react';
 import { MSGraphClientFactory } from '@microsoft/sp-http';
 import { FaMagnifyingGlass, FaPhone, FaEnvelope, FaUserGroup, FaTriangleExclamation, FaCircleCheck } from 'react-icons/fa6';
 import { loadMembres, importMembresFromAad, IMembre, DEPT_COLORS } from '../../services/equipe/index';
+import { isSiteAdmin } from '../../services/shared/index';
 
 export const TouteEquipe: React.FC<{ siteUrl?: string; msGraphClientFactory?: MSGraphClientFactory }> = ({ siteUrl, msGraphClientFactory }) => {
   const [search, setSearch] = React.useState('');
@@ -11,6 +12,12 @@ export const TouteEquipe: React.FC<{ siteUrl?: string; msGraphClientFactory?: MS
   const [importing, setImporting] = React.useState(false);
   const [importError, setImportError] = React.useState('');
   const [importMessage, setImportMessage] = React.useState('');
+  const [canImport, setCanImport] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!siteUrl) return;
+    isSiteAdmin(siteUrl).then(setCanImport).catch(() => undefined);
+  }, [siteUrl]);
 
   React.useEffect(() => {
     if (!siteUrl) {
@@ -35,6 +42,10 @@ export const TouteEquipe: React.FC<{ siteUrl?: string; msGraphClientFactory?: MS
       .then((client) => importMembresFromAad(siteUrl, client))
       .then((result) => {
         setImporting(false);
+        if (result.unauthorized) {
+          setImportError("Vous n'êtes plus autorisé à importer l'annuaire (droits administrateur du site requis). Rechargez la page et réessayez.");
+          return;
+        }
         if (result.total === 0) {
           setImportMessage('Aucun compte actif trouvé dans l’annuaire.');
           return;
@@ -91,7 +102,7 @@ export const TouteEquipe: React.FC<{ siteUrl?: string; msGraphClientFactory?: MS
                   Découvrez les collaborateurs d&apos;IKA SOLUTION, répartis par département.
                 </p>
               </div>
-              {msGraphClientFactory ? (
+              {msGraphClientFactory && canImport ? (
                 <button
                   type="button"
                   onClick={handleImportAad}
@@ -154,7 +165,7 @@ export const TouteEquipe: React.FC<{ siteUrl?: string; msGraphClientFactory?: MS
                 className="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block"
               >
                 <div className="h-16 bg-gradient-to-r from-ikaBlueDark to-ikaBlue relative">
-                  <img src={m.avatar} alt={m.name} className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-2xl object-cover border-4 border-white shadow" />
+                  <img src={m.avatar} alt={m.name} className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-2xl object-cover border-4 border-white shadow" loading="lazy" />
                 </div>
                 <div className="pt-11 px-4 pb-4 text-center">
                   <h3 className="text-sm font-black text-slate-900 group-hover:text-ikaBlue transition">{m.name}</h3>

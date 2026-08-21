@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { FaFilePdf, FaFileWord, FaFileImage, FaFileLines, FaTrashCan, FaXmark } from 'react-icons/fa6';
+import { ALLOWED_ATTACHMENT_EXTENSIONS } from '../services/shared/index';
 
 export interface IExistingAttachment {
   fileName: string;
@@ -15,8 +16,14 @@ export interface IFileAttachmentFieldProps {
   className?: string;
 }
 
+const ALLOWED_EXTENSIONS = ALLOWED_ATTACHMENT_EXTENSIONS;
+
+function extensionOf(fileName: string): string {
+  return (fileName.split('.').pop() || '').toLowerCase();
+}
+
 function fileIcon(fileName: string): React.ReactElement {
-  const ext = (fileName.split('.').pop() || '').toLowerCase();
+  const ext = extensionOf(fileName);
   if (ext === 'pdf') return <FaFilePdf className="text-rose-500" />;
   if (ext === 'doc' || ext === 'docx') return <FaFileWord className="text-ikaBlue" />;
   if (['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'].indexOf(ext) !== -1) return <FaFileImage className="text-emerald-500" />;
@@ -33,6 +40,12 @@ export const FileAttachmentField: React.FC<IFileAttachmentFieldProps> = (props) 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const picked = e.target.files && e.target.files[0] ? e.target.files[0] : undefined;
+    if (picked && ALLOWED_EXTENSIONS.indexOf(extensionOf(picked.name)) === -1) {
+      setLocalError(`Type de fichier non autorisé. Formats acceptés : ${ALLOWED_EXTENSIONS.join(', ')}.`);
+      onFileChange(undefined);
+      if (inputRef.current) inputRef.current.value = '';
+      return;
+    }
     if (picked && picked.size > limitMB * 1024 * 1024) {
       setLocalError(`Le fichier dépasse la taille maximale autorisée (${limitMB} Mo).`);
       onFileChange(undefined);

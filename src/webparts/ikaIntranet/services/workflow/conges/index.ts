@@ -1,4 +1,4 @@
-import { getFieldMap, getVal, getCurrentUser, ensureUser, createListItem, updateListItemFields, deleteListItem, sendEmail, escapeHtml, getAppPageUrl, getAttachments, addAttachment, deleteAttachment, IAttachment } from '../../shared/index';
+import { getFieldMap, getVal, getCurrentUser, getCurrentUserEmail, isSiteAdmin, ensureUser, createListItem, updateListItemFields, deleteListItem, sendEmail, escapeHtml, getAppPageUrl, getAttachments, addAttachment, deleteAttachment, IAttachment } from '../../shared/index';
 
 export type CongeStatus = 'En attente' | 'Approuvé' | 'Refusé' | 'Annulé';
 export type TypeConge = 'Congé annuel' | 'Congé exceptionnel' | 'Congé de maladie' | 'Congé de maternité' | 'Congé de paternité';
@@ -160,7 +160,7 @@ function mapItem(it: Record<string, unknown>, keys: IKeys): IConge {
   };
 }
 
-export async function loadConges(siteUrl: string, force?: boolean): Promise<IConge[]> {
+async function fetchAllConges(siteUrl: string, force?: boolean): Promise<IConge[]> {
   if (!force) {
     const cached = readCache();
     if (cached) return cached;
@@ -185,7 +185,30 @@ export async function loadConges(siteUrl: string, force?: boolean): Promise<ICon
   }
 }
 
-export async function loadConge(siteUrl: string, id: number): Promise<IConge | undefined> {
+function canSee(item: IConge, email: string): boolean {
+  const e = email.toLowerCase();
+  return item.demandeurEmail.toLowerCase() === e || item.validateurEmail.toLowerCase() === e;
+}
+
+/**
+ * Liste des demandes de congé visibles par l'utilisateur courant : les
+ * siennes en tant que demandeur, celles qu'il doit valider, ou tout si
+ * administrateur du site. Ce filtrage empêche un utilisateur standard de
+ * voir les motifs de congé (données RH sensibles) de collègues qui ne le
+ * concernent pas.
+ */
+export async function loadConges(siteUrl: string, force?: boolean): Promise<IConge[]> {
+  const [all, currentEmail, admin] = await Promise.all([
+    fetchAllConges(siteUrl, force),
+    getCurrentUserEmail(siteUrl),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (admin) return all;
+  if (!currentEmail) return [];
+  return all.filter((c) => canSee(c, currentEmail));
+}
+
+async function fetchCongeRaw(siteUrl: string, id: number): Promise<IConge | undefined> {
   try {
     const keys = await resolveKeys(siteUrl);
     const expand = expandClause(keys);
@@ -202,12 +225,33 @@ export async function loadConge(siteUrl: string, id: number): Promise<IConge | u
   }
 }
 
+/**
+ * Chargement d'une demande pour affichage : renvoie undefined si
+ * l'utilisateur courant n'est ni le demandeur, ni le validateur désigné, ni
+ * administrateur du site — empêche la consultation d'une demande d'un tiers
+ * en changeant simplement l'id dans l'URL.
+ */
+export async function loadConge(siteUrl: string, id: number): Promise<IConge | undefined> {
+  const [item, currentEmail, admin] = await Promise.all([
+    fetchCongeRaw(siteUrl, id),
+    getCurrentUserEmail(siteUrl),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (!item) return undefined;
+  if (admin || (currentEmail && canSee(item, currentEmail))) return item;
+  return undefined;
+}
+
 export async function createConge(siteUrl: string, payload: ICongePayload): Promise<number | undefined> {
   try {
     const keys = await resolveKeys(siteUrl);
     const currentUser = await getCurrentUser(siteUrl);
     if (!currentUser) {
       console.error('[conges] Utilisateur courant introuvable');
+      return undefined;
+    }
+    if (payload.validateurEmail && currentUser.email && payload.validateurEmail.toLowerCase() === currentUser.email.toLowerCase()) {
+      console.error('[conges] Création refusée : le validateur ne peut pas être le demandeur');
       return undefined;
     }
     const fields: Record<string, unknown> = {
@@ -250,6 +294,23 @@ export async function createConge(siteUrl: string, payload: ICongePayload): Prom
 
 export async function updateConge(siteUrl: string, id: number, payload: ICongePayload): Promise<boolean> {
   try {
+    const [currentEmail, fresh, admin] = await Promise.all([
+      getCurrentUserEmail(siteUrl),
+      fetchCongeRaw(siteUrl, id),
+      isSiteAdmin(siteUrl)
+    ]);
+    if (!fresh || (!admin && fresh.statut !== 'En attente')) {
+      console.error('[conges] Modification refusée : demande introuvable ou déjà traitée', id);
+      return false;
+    }
+    if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.demandeurEmail.toLowerCase())) {
+      console.error('[conges] Modification refusée : utilisateur non autorisé', id);
+      return false;
+    }
+    if (payload.validateurEmail && fresh.demandeurEmail && payload.validateurEmail.toLowerCase() === fresh.demandeurEmail.toLowerCase()) {
+      console.error('[conges] Modification refusée : le validateur ne peut pas être le demandeur', id);
+      return false;
+    }
     const keys = await resolveKeys(siteUrl);
     const fields: Record<string, unknown> = {
       Title: payload.titre,
@@ -275,6 +336,20 @@ export async function updateConge(siteUrl: string, id: number, payload: ICongePa
 }
 
 export async function deleteConge(siteUrl: string, id: number): Promise<boolean> {
+  const [currentEmail, fresh, admin] = await Promise.all([
+    getCurrentUserEmail(siteUrl),
+    fetchCongeRaw(siteUrl, id),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (!fresh) return false;
+  if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.demandeurEmail.toLowerCase())) {
+    console.error('[conges] Suppression refusée : utilisateur non autorisé', id);
+    return false;
+  }
+  if (!admin && fresh.statut !== 'En attente') {
+    console.error('[conges] Suppression refusée : demande déjà traitée', id);
+    return false;
+  }
   const ok = await deleteListItem(siteUrl, LIST_NAME, id);
   if (ok) invalidateCache();
   return ok;
@@ -297,24 +372,37 @@ export type DecisionAction = 'valider' | 'rejeter';
 
 export async function applyCongeDecision(siteUrl: string, conge: IConge, action: DecisionAction, comment: string, date: string): Promise<boolean> {
   try {
+    const [currentEmail, fresh, admin] = await Promise.all([
+      getCurrentUserEmail(siteUrl),
+      fetchCongeRaw(siteUrl, conge.id),
+      isSiteAdmin(siteUrl)
+    ]);
+    if (!fresh || (!admin && fresh.statut !== 'En attente')) {
+      console.error('[conges] Décision refusée : demande introuvable ou déjà traitée', conge.id);
+      return false;
+    }
+    if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.validateurEmail.toLowerCase())) {
+      console.error('[conges] Décision refusée : utilisateur non autorisé', conge.id);
+      return false;
+    }
     const keys = await resolveKeys(siteUrl);
     const fields: Record<string, unknown> = {
       [keys.statutKey]: action === 'valider' ? 'Approuvé' : 'Refusé',
       [keys.commentaireKey]: comment,
       [keys.dateDecisionKey]: date ? new Date(date).toISOString() : new Date().toISOString()
     };
-    const ok = await updateListItemFields(siteUrl, LIST_NAME, conge.id, fields);
+    const ok = await updateListItemFields(siteUrl, LIST_NAME, fresh.id, fields);
     if (ok) {
       invalidateCache();
-      if (conge.demandeurEmail) {
+      if (fresh.demandeurEmail) {
         const approved = action === 'valider';
-        const link = `${getAppPageUrl()}#page-workflow-detail-conge&id=${conge.id}`;
+        const link = `${getAppPageUrl()}#page-workflow-detail-conge&id=${fresh.id}`;
         const subject = approved ? `Votre demande de congé a été approuvée` : `Votre demande de congé a été refusée`;
-        const body = `<p>Bonjour ${escapeHtml(conge.demandeur)},</p>
-<p>Votre demande de congé <strong>${escapeHtml(conge.titre)}</strong> a été ${approved ? 'approuvée' : 'refusée'}.</p>
+        const body = `<p>Bonjour ${escapeHtml(fresh.demandeur)},</p>
+<p>Votre demande de congé <strong>${escapeHtml(fresh.titre)}</strong> a été ${approved ? 'approuvée' : 'refusée'}.</p>
 ${comment ? `<p>Commentaire : ${escapeHtml(comment)}</p>` : ''}
 <p><a href="${link}">Voir la demande</a></p>`;
-        sendEmail(siteUrl, [conge.demandeurEmail], subject, body).catch(() => undefined);
+        sendEmail(siteUrl, [fresh.demandeurEmail], subject, body).catch(() => undefined);
       }
     }
     return ok;

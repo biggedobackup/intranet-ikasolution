@@ -13,6 +13,7 @@ import './assets/css/tailwind.css';
 import './assets/css/style.css';
 
 import { App } from './App';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 export interface IIkaIntranetWebPartProps {
   description: string;
@@ -32,10 +33,14 @@ export default class IkaIntranetWebPart extends BaseClientSideWebPart<IIkaIntran
   }
 
   public render(): void {
-    const element: React.ReactElement = React.createElement(App, {
-      siteUrl: this.context.pageContext.web.absoluteUrl,
-      msGraphClientFactory: this.context.msGraphClientFactory
-    });
+    const element: React.ReactElement = React.createElement(
+      ErrorBoundary,
+      null,
+      React.createElement(App, {
+        siteUrl: this.context.pageContext.web.absoluteUrl,
+        msGraphClientFactory: this.context.msGraphClientFactory
+      })
+    );
 
     ReactDOM.render(element, this.domElement);
     this._removeSharePointConstraints();

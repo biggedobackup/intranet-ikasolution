@@ -1,4 +1,4 @@
-import { getFieldMap, getVal, getCurrentUser, ensureUser, createListItem, updateListItemFields, deleteListItem, sendEmail, escapeHtml, getAppPageUrl, getAttachments, addAttachment, deleteAttachment, IAttachment } from '../../shared/index';
+import { getFieldMap, getVal, getCurrentUser, getCurrentUserEmail, isSiteAdmin, ensureUser, createListItem, updateListItemFields, deleteListItem, sendEmail, escapeHtml, getAppPageUrl, getAttachments, addAttachment, deleteAttachment, IAttachment } from '../../shared/index';
 
 export type AbsenceStatus = 'En attente' | 'Approuvé' | 'Refusé' | 'Annulé';
 export type TypeAbsence = 'Maladie' | 'Autorisée' | 'Imprévue' | 'Rendez-vous';
@@ -160,7 +160,7 @@ function mapItem(it: Record<string, unknown>, keys: IKeys): IAbsence {
   };
 }
 
-export async function loadAbsences(siteUrl: string, force?: boolean): Promise<IAbsence[]> {
+async function fetchAllAbsences(siteUrl: string, force?: boolean): Promise<IAbsence[]> {
   if (!force) {
     const cached = readCache();
     if (cached) return cached;
@@ -185,7 +185,29 @@ export async function loadAbsences(siteUrl: string, force?: boolean): Promise<IA
   }
 }
 
-export async function loadAbsence(siteUrl: string, id: number): Promise<IAbsence | undefined> {
+function canSee(item: IAbsence, email: string): boolean {
+  const e = email.toLowerCase();
+  return item.demandeurEmail.toLowerCase() === e || item.validateurEmail.toLowerCase() === e;
+}
+
+/**
+ * Liste des signalements visibles par l'utilisateur courant : les siens en
+ * tant que demandeur, ceux qu'il doit valider, ou tout si administrateur du
+ * site. Ce filtrage empêche un utilisateur standard de voir les motifs
+ * d'absence (données RH sensibles) de collègues qui ne le concernent pas.
+ */
+export async function loadAbsences(siteUrl: string, force?: boolean): Promise<IAbsence[]> {
+  const [all, currentEmail, admin] = await Promise.all([
+    fetchAllAbsences(siteUrl, force),
+    getCurrentUserEmail(siteUrl),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (admin) return all;
+  if (!currentEmail) return [];
+  return all.filter((a) => canSee(a, currentEmail));
+}
+
+async function fetchAbsenceRaw(siteUrl: string, id: number): Promise<IAbsence | undefined> {
   try {
     const keys = await resolveKeys(siteUrl);
     const expand = expandClause(keys);
@@ -202,12 +224,33 @@ export async function loadAbsence(siteUrl: string, id: number): Promise<IAbsence
   }
 }
 
+/**
+ * Chargement d'un signalement pour affichage : renvoie undefined si
+ * l'utilisateur courant n'est ni le demandeur, ni le validateur désigné, ni
+ * administrateur du site — empêche la consultation d'un signalement d'un
+ * tiers en changeant simplement l'id dans l'URL.
+ */
+export async function loadAbsence(siteUrl: string, id: number): Promise<IAbsence | undefined> {
+  const [item, currentEmail, admin] = await Promise.all([
+    fetchAbsenceRaw(siteUrl, id),
+    getCurrentUserEmail(siteUrl),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (!item) return undefined;
+  if (admin || (currentEmail && canSee(item, currentEmail))) return item;
+  return undefined;
+}
+
 export async function createAbsence(siteUrl: string, payload: IAbsencePayload): Promise<number | undefined> {
   try {
     const keys = await resolveKeys(siteUrl);
     const currentUser = await getCurrentUser(siteUrl);
     if (!currentUser) {
       console.error('[absences] Utilisateur courant introuvable');
+      return undefined;
+    }
+    if (payload.validateurEmail && currentUser.email && payload.validateurEmail.toLowerCase() === currentUser.email.toLowerCase()) {
+      console.error('[absences] Création refusée : le validateur ne peut pas être le demandeur');
       return undefined;
     }
     const fields: Record<string, unknown> = {
@@ -250,6 +293,23 @@ export async function createAbsence(siteUrl: string, payload: IAbsencePayload): 
 
 export async function updateAbsence(siteUrl: string, id: number, payload: IAbsencePayload): Promise<boolean> {
   try {
+    const [currentEmail, fresh, admin] = await Promise.all([
+      getCurrentUserEmail(siteUrl),
+      fetchAbsenceRaw(siteUrl, id),
+      isSiteAdmin(siteUrl)
+    ]);
+    if (!fresh || (!admin && fresh.statut !== 'En attente')) {
+      console.error('[absences] Modification refusée : signalement introuvable ou déjà traité', id);
+      return false;
+    }
+    if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.demandeurEmail.toLowerCase())) {
+      console.error('[absences] Modification refusée : utilisateur non autorisé', id);
+      return false;
+    }
+    if (payload.validateurEmail && fresh.demandeurEmail && payload.validateurEmail.toLowerCase() === fresh.demandeurEmail.toLowerCase()) {
+      console.error('[absences] Modification refusée : le validateur ne peut pas être le demandeur', id);
+      return false;
+    }
     const keys = await resolveKeys(siteUrl);
     const fields: Record<string, unknown> = {
       Title: payload.titre,
@@ -275,6 +335,20 @@ export async function updateAbsence(siteUrl: string, id: number, payload: IAbsen
 }
 
 export async function deleteAbsence(siteUrl: string, id: number): Promise<boolean> {
+  const [currentEmail, fresh, admin] = await Promise.all([
+    getCurrentUserEmail(siteUrl),
+    fetchAbsenceRaw(siteUrl, id),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (!fresh) return false;
+  if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.demandeurEmail.toLowerCase())) {
+    console.error('[absences] Suppression refusée : utilisateur non autorisé', id);
+    return false;
+  }
+  if (!admin && fresh.statut !== 'En attente') {
+    console.error('[absences] Suppression refusée : signalement déjà traité', id);
+    return false;
+  }
   const ok = await deleteListItem(siteUrl, LIST_NAME, id);
   if (ok) invalidateCache();
   return ok;
@@ -297,24 +371,37 @@ export type DecisionAction = 'valider' | 'rejeter';
 
 export async function applyAbsenceDecision(siteUrl: string, absence: IAbsence, action: DecisionAction, comment: string, date: string): Promise<boolean> {
   try {
+    const [currentEmail, fresh, admin] = await Promise.all([
+      getCurrentUserEmail(siteUrl),
+      fetchAbsenceRaw(siteUrl, absence.id),
+      isSiteAdmin(siteUrl)
+    ]);
+    if (!fresh || (!admin && fresh.statut !== 'En attente')) {
+      console.error('[absences] Décision refusée : signalement introuvable ou déjà traité', absence.id);
+      return false;
+    }
+    if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.validateurEmail.toLowerCase())) {
+      console.error('[absences] Décision refusée : utilisateur non autorisé', absence.id);
+      return false;
+    }
     const keys = await resolveKeys(siteUrl);
     const fields: Record<string, unknown> = {
       [keys.statutKey]: action === 'valider' ? 'Approuvé' : 'Refusé',
       [keys.commentaireKey]: comment,
       [keys.dateDecisionKey]: date ? new Date(date).toISOString() : new Date().toISOString()
     };
-    const ok = await updateListItemFields(siteUrl, LIST_NAME, absence.id, fields);
+    const ok = await updateListItemFields(siteUrl, LIST_NAME, fresh.id, fields);
     if (ok) {
       invalidateCache();
-      if (absence.demandeurEmail) {
+      if (fresh.demandeurEmail) {
         const approved = action === 'valider';
-        const link = `${getAppPageUrl()}#page-workflow-detail-absence&id=${absence.id}`;
+        const link = `${getAppPageUrl()}#page-workflow-detail-absence&id=${fresh.id}`;
         const subject = approved ? `Votre signalement d'absence a été approuvé` : `Votre signalement d'absence a été refusé`;
-        const body = `<p>Bonjour ${escapeHtml(absence.demandeur)},</p>
-<p>Votre signalement d'absence <strong>${escapeHtml(absence.titre)}</strong> a été ${approved ? 'approuvé' : 'refusé'}.</p>
+        const body = `<p>Bonjour ${escapeHtml(fresh.demandeur)},</p>
+<p>Votre signalement d'absence <strong>${escapeHtml(fresh.titre)}</strong> a été ${approved ? 'approuvé' : 'refusé'}.</p>
 ${comment ? `<p>Commentaire : ${escapeHtml(comment)}</p>` : ''}
 <p><a href="${link}">Voir le signalement</a></p>`;
-        sendEmail(siteUrl, [absence.demandeurEmail], subject, body).catch(() => undefined);
+        sendEmail(siteUrl, [fresh.demandeurEmail], subject, body).catch(() => undefined);
       }
     }
     return ok;

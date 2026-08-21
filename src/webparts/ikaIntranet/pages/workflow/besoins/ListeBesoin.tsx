@@ -12,6 +12,7 @@ import {
   FaTrashCan
 } from 'react-icons/fa6';
 import { BesoinStatus, IBesoin, loadBesoins, deleteBesoin, formatDateFR } from '../../../services/workflow/besoins/index';
+import { getCurrentUserEmail } from '../../../services/shared/index';
 import { Pagination } from '../../../components/Pagination';
 import { ConfirmDelete } from '../../../components/ConfirmDelete';
 
@@ -43,6 +44,12 @@ export const ListeBesoin: React.FC<IListeBesoinProps> = (props) => {
   const [error, setError] = React.useState<string>('');
   const [deleteItem, setDeleteItem] = React.useState<IBesoin | null>(null);
   const [deleting, setDeleting] = React.useState<boolean>(false);
+  const [currentUserEmail, setCurrentUserEmail] = React.useState<string>('');
+
+  React.useEffect(() => {
+    if (!siteUrl) return;
+    getCurrentUserEmail(siteUrl).then(setCurrentUserEmail).catch(() => undefined);
+  }, [siteUrl]);
 
   const fetchItems = React.useCallback((force?: boolean): void => {
     if (!siteUrl) { setLoading(false); return; }
@@ -185,18 +192,22 @@ export const ListeBesoin: React.FC<IListeBesoinProps> = (props) => {
                           >
                             <FaEye className="text-[9px]" /> Détail
                           </a>
-                          <a
-                            href={`#page-workflow-modifier-besoin&id=${i.id}`}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-ikaBlue font-bold text-[10px] hover:bg-ikaSoft transition"
-                          >
-                            <FaPen className="text-[9px]" /> Modifier
-                          </a>
-                          <button
-                            onClick={() => setDeleteItem(i)}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-rose-200 bg-rose-50 text-rose-600 font-bold text-[10px] hover:bg-rose-100 transition"
-                          >
-                            <FaTrashCan className="text-[9px]" /> Supprimer
-                          </button>
+                          {!!currentUserEmail && i.demandeurEmail.toLowerCase() === currentUserEmail.toLowerCase() && i.statut === 'En attente' ? (
+                            <a
+                              href={`#page-workflow-modifier-besoin&id=${i.id}`}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-ikaBlue font-bold text-[10px] hover:bg-ikaSoft transition"
+                            >
+                              <FaPen className="text-[9px]" /> Modifier
+                            </a>
+                          ) : null}
+                          {!!currentUserEmail && i.demandeurEmail.toLowerCase() === currentUserEmail.toLowerCase() ? (
+                            <button
+                              onClick={() => setDeleteItem(i)}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-rose-200 bg-rose-50 text-rose-600 font-bold text-[10px] hover:bg-rose-100 transition"
+                            >
+                              <FaTrashCan className="text-[9px]" /> Supprimer
+                            </button>
+                          ) : null}
                         </div>
                       </td>
                     </tr>

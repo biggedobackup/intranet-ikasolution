@@ -23,6 +23,18 @@ interface IMappedItem {
 
 const LIST_NAME = 'HeaderMenu';
 const PARENT_FIELD_CANDIDATES = ['MenuParent', 'Menu_x0020_parent', 'MenuPrincipale', 'Menu_x0020_principale', 'Menu'];
+const CACHE_TTL = 10 * 60 * 1000;
+
+let menuCache: { data: IHeaderMenuItem[]; ts: number } | null = null;
+let resolvedFieldCache: { value: string | null; ts: number } | null = null;
+
+function setResolvedFieldCache(value: string | null): void {
+  resolvedFieldCache = { value, ts: Date.now() };
+}
+
+function setMenuCache(data: IHeaderMenuItem[]): void {
+  menuCache = { data, ts: Date.now() };
+}
 
 function isActive(value: unknown): boolean {
   return value === true || value === 1;
@@ -73,6 +85,7 @@ function readParentValue(item: IRawItem, field?: string): IParentRef | null {
 }
 
 async function findParentField(siteUrl: string): Promise<string | null> {
+  if (resolvedFieldCache && Date.now() - resolvedFieldCache.ts < CACHE_TTL) return resolvedFieldCache.value;
   try {
     const res = await fetch(
       `${siteUrl}/_api/web/lists/getbytitle('${LIST_NAME}')/fields?$select=Title,InternalName,TypeAsString,ReadOnlyField&$top=500`,
@@ -97,13 +110,16 @@ async function findParentField(siteUrl: string): Promise<string | null> {
       lookups.find((f) => asString(f.Title).toLowerCase().indexOf('parent') !== -1) ||
       lookups.find((f) => asString(f.Title).toLowerCase().indexOf('principale') !== -1) ||
       lookups.find((f) => asString(f.InternalName).toLowerCase().indexOf('menu') !== -1);
-    return match ? asString(match.InternalName) || null : null;
+    const value = match ? asString(match.InternalName) || null : null;
+    setResolvedFieldCache(value);
+    return value;
   } catch {
     return null;
   }
 }
 
 export async function loadHeaderMenu(siteUrl: string): Promise<IHeaderMenuItem[]> {
+  if (menuCache && Date.now() - menuCache.ts < CACHE_TTL) return menuCache.data;
   try {
     const base = `${siteUrl}/_api/web/lists/getbytitle('${LIST_NAME}')/items`;
     const resolvedField = await findParentField(siteUrl);
@@ -194,7 +210,9 @@ export async function loadHeaderMenu(siteUrl: string): Promise<IHeaderMenuItem[]
       if (root.children) root.children = sortByPosition(root.children);
     });
 
-    return sortByPosition(roots);
+    const result = sortByPosition(roots);
+    setMenuCache(result);
+    return result;
   } catch (err) {
     console.error('[headerMenu] Erreur de chargement du menu :', err);
     return [];

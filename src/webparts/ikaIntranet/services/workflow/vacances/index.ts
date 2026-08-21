@@ -1,4 +1,4 @@
-import { getFieldMap, getVal, getCurrentUser, ensureUser, createListItem, updateListItemFields, deleteListItem, sendEmail, escapeHtml, getAppPageUrl, getAttachments, addAttachment, deleteAttachment, IAttachment } from '../../shared/index';
+import { getFieldMap, getVal, getCurrentUser, getCurrentUserEmail, isSiteAdmin, ensureUser, createListItem, updateListItemFields, deleteListItem, sendEmail, escapeHtml, getAppPageUrl, getAttachments, addAttachment, deleteAttachment, IAttachment } from '../../shared/index';
 
 export type VacanceStatus = 'En attente' | 'Approuvé' | 'Refusé' | 'Annulé';
 
@@ -158,7 +158,7 @@ function mapItem(it: Record<string, unknown>, keys: IKeys): IVacance {
   };
 }
 
-export async function loadVacances(siteUrl: string, force?: boolean): Promise<IVacance[]> {
+async function fetchAllVacances(siteUrl: string, force?: boolean): Promise<IVacance[]> {
   if (!force) {
     const cached = readCache();
     if (cached) return cached;
@@ -183,7 +183,30 @@ export async function loadVacances(siteUrl: string, force?: boolean): Promise<IV
   }
 }
 
-export async function loadVacance(siteUrl: string, id: number): Promise<IVacance | undefined> {
+function canSee(item: IVacance, email: string): boolean {
+  const e = email.toLowerCase();
+  return item.demandeurEmail.toLowerCase() === e || item.validateurEmail.toLowerCase() === e;
+}
+
+/**
+ * Liste des demandes de vacances visibles par l'utilisateur courant : les
+ * siennes en tant que demandeur, celles qu'il doit valider, ou toutes si
+ * administrateur du site. Ce filtrage empêche un utilisateur standard de voir
+ * les demandes de vacances (données RH sensibles) de collègues qui ne le
+ * concernent pas.
+ */
+export async function loadVacances(siteUrl: string, force?: boolean): Promise<IVacance[]> {
+  const [all, currentEmail, admin] = await Promise.all([
+    fetchAllVacances(siteUrl, force),
+    getCurrentUserEmail(siteUrl),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (admin) return all;
+  if (!currentEmail) return [];
+  return all.filter((v) => canSee(v, currentEmail));
+}
+
+async function fetchVacanceRaw(siteUrl: string, id: number): Promise<IVacance | undefined> {
   try {
     const keys = await resolveKeys(siteUrl);
     const expand = expandClause(keys);
@@ -200,12 +223,33 @@ export async function loadVacance(siteUrl: string, id: number): Promise<IVacance
   }
 }
 
+/**
+ * Chargement d'une demande de vacances pour affichage : renvoie undefined si
+ * l'utilisateur courant n'est ni le demandeur, ni le validateur désigné, ni
+ * administrateur du site — empêche la consultation d'une demande d'un tiers
+ * en changeant simplement l'id dans l'URL.
+ */
+export async function loadVacance(siteUrl: string, id: number): Promise<IVacance | undefined> {
+  const [item, currentEmail, admin] = await Promise.all([
+    fetchVacanceRaw(siteUrl, id),
+    getCurrentUserEmail(siteUrl),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (!item) return undefined;
+  if (admin || (currentEmail && canSee(item, currentEmail))) return item;
+  return undefined;
+}
+
 export async function createVacance(siteUrl: string, payload: IVacancePayload): Promise<number | undefined> {
   try {
     const keys = await resolveKeys(siteUrl);
     const currentUser = await getCurrentUser(siteUrl);
     if (!currentUser) {
       console.error('[vacances] Utilisateur courant introuvable');
+      return undefined;
+    }
+    if (payload.validateurEmail && currentUser.email && payload.validateurEmail.toLowerCase() === currentUser.email.toLowerCase()) {
+      console.error('[vacances] Création refusée : le validateur ne peut pas être le demandeur');
       return undefined;
     }
     const fields: Record<string, unknown> = {
@@ -248,6 +292,23 @@ export async function createVacance(siteUrl: string, payload: IVacancePayload): 
 
 export async function updateVacance(siteUrl: string, id: number, payload: IVacancePayload): Promise<boolean> {
   try {
+    const [currentEmail, fresh, admin] = await Promise.all([
+      getCurrentUserEmail(siteUrl),
+      fetchVacanceRaw(siteUrl, id),
+      isSiteAdmin(siteUrl)
+    ]);
+    if (!fresh || (!admin && fresh.statut !== 'En attente')) {
+      console.error('[vacances] Modification refusée : demande introuvable ou déjà traitée', id);
+      return false;
+    }
+    if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.demandeurEmail.toLowerCase())) {
+      console.error('[vacances] Modification refusée : utilisateur non autorisé', id);
+      return false;
+    }
+    if (payload.validateurEmail && fresh.demandeurEmail && payload.validateurEmail.toLowerCase() === fresh.demandeurEmail.toLowerCase()) {
+      console.error('[vacances] Modification refusée : le validateur ne peut pas être le demandeur', id);
+      return false;
+    }
     const keys = await resolveKeys(siteUrl);
     const fields: Record<string, unknown> = {
       Title: payload.titre,
@@ -273,6 +334,20 @@ export async function updateVacance(siteUrl: string, id: number, payload: IVacan
 }
 
 export async function deleteVacance(siteUrl: string, id: number): Promise<boolean> {
+  const [currentEmail, fresh, admin] = await Promise.all([
+    getCurrentUserEmail(siteUrl),
+    fetchVacanceRaw(siteUrl, id),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (!fresh) return false;
+  if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.demandeurEmail.toLowerCase())) {
+    console.error('[vacances] Suppression refusée : utilisateur non autorisé', id);
+    return false;
+  }
+  if (!admin && fresh.statut !== 'En attente') {
+    console.error('[vacances] Suppression refusée : demande déjà traitée', id);
+    return false;
+  }
   const ok = await deleteListItem(siteUrl, LIST_NAME, id);
   if (ok) invalidateCache();
   return ok;
@@ -295,24 +370,37 @@ export type DecisionAction = 'valider' | 'rejeter';
 
 export async function applyVacanceDecision(siteUrl: string, vacance: IVacance, action: DecisionAction, comment: string, date: string): Promise<boolean> {
   try {
+    const [currentEmail, fresh, admin] = await Promise.all([
+      getCurrentUserEmail(siteUrl),
+      fetchVacanceRaw(siteUrl, vacance.id),
+      isSiteAdmin(siteUrl)
+    ]);
+    if (!fresh || (!admin && fresh.statut !== 'En attente')) {
+      console.error('[vacances] Décision refusée : demande introuvable ou déjà traitée', vacance.id);
+      return false;
+    }
+    if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.validateurEmail.toLowerCase())) {
+      console.error('[vacances] Décision refusée : utilisateur non autorisé', vacance.id);
+      return false;
+    }
     const keys = await resolveKeys(siteUrl);
     const fields: Record<string, unknown> = {
       [keys.statutKey]: action === 'valider' ? 'Approuvé' : 'Refusé',
       [keys.commentaireKey]: comment,
       [keys.dateDecisionKey]: date ? new Date(date).toISOString() : new Date().toISOString()
     };
-    const ok = await updateListItemFields(siteUrl, LIST_NAME, vacance.id, fields);
+    const ok = await updateListItemFields(siteUrl, LIST_NAME, fresh.id, fields);
     if (ok) {
       invalidateCache();
-      if (vacance.demandeurEmail) {
+      if (fresh.demandeurEmail) {
         const approved = action === 'valider';
-        const link = `${getAppPageUrl()}#page-workflow-detail-vacances&id=${vacance.id}`;
+        const link = `${getAppPageUrl()}#page-workflow-detail-vacances&id=${fresh.id}`;
         const subject = approved ? `Votre demande de vacances a été approuvée` : `Votre demande de vacances a été refusée`;
-        const body = `<p>Bonjour ${escapeHtml(vacance.demandeur)},</p>
-<p>Votre demande de vacances <strong>${escapeHtml(vacance.titre)}</strong> a été ${approved ? 'approuvée' : 'refusée'}.</p>
+        const body = `<p>Bonjour ${escapeHtml(fresh.demandeur)},</p>
+<p>Votre demande de vacances <strong>${escapeHtml(fresh.titre)}</strong> a été ${approved ? 'approuvée' : 'refusée'}.</p>
 ${comment ? `<p>Commentaire : ${escapeHtml(comment)}</p>` : ''}
 <p><a href="${link}">Voir la demande</a></p>`;
-        sendEmail(siteUrl, [vacance.demandeurEmail], subject, body).catch(() => undefined);
+        sendEmail(siteUrl, [fresh.demandeurEmail], subject, body).catch(() => undefined);
       }
     }
     return ok;

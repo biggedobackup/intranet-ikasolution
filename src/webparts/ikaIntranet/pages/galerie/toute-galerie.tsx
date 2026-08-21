@@ -158,7 +158,7 @@ export const TouteGalerie: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                     onClick={() => setLightbox(i)}
                     className="group relative rounded-xl overflow-hidden aspect-video bg-slate-900 cursor-pointer shadow"
                   >
-                    <img src={g.url} alt={g.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" />
+                    <img src={g.url} alt={g.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-2 flex flex-col justify-end">
                       <span className="text-[10px] font-bold text-white">{g.title}</span>
                     </div>
@@ -189,7 +189,7 @@ export const TouteGalerie: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
             <button onClick={() => setLightbox((lightbox + images.length - 1) % images.length)} className="absolute left-0 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center transition -translate-x-2">
               <FaChevronLeft />
             </button>
-            <img src={images[lightbox].url} alt="" className="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl" />
+            <img src={images[lightbox].url} alt="" className="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl" loading="lazy" />
             <button onClick={() => setLightbox((lightbox + 1) % images.length)} className="absolute right-0 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center transition translate-x-2">
               <FaChevronRight />
             </button>

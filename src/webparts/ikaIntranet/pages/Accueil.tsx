@@ -134,107 +134,129 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
       setGalerieLoading(false);
       return;
     }
+    let cancelled = false;
     loadAgendas(siteUrl)
       .then((data) => {
+        if (cancelled) return;
         setAgendas(data);
         setAgendaLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Agenda :', err);
         setAgendaLoading(false);
       });
     loadActualites(siteUrl)
       .then((data) => {
+        if (cancelled) return;
         setActualites(data);
         setActualitesLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Actualités :', err);
         setActualitesLoading(false);
       });
     loadEvenements(siteUrl)
       .then((data) => {
+        if (cancelled) return;
         setEvenements(data);
         setEvenementsLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Événements :', err);
         setEvenementsLoading(false);
       });
     loadMembres(siteUrl)
       .then((data) => {
+        if (cancelled) return;
         setMembres(data);
         setTeamLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Équipe :', err);
         setTeamLoading(false);
       });
     loadProjets(siteUrl)
       .then((data) => {
+        if (cancelled) return;
         setProjets(data);
         setProjetsLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Projets :', err);
         setProjetsLoading(false);
       });
     loadProduits(siteUrl)
       .then((data) => {
+        if (cancelled) return;
         setProduits(data);
         setProduitsLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Produits :', err);
         setProduitsLoading(false);
       });
     loadAnnonces(siteUrl)
       .then((data) => {
+        if (cancelled) return;
         setAnnonces(data);
         setAnnoncesLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Annonces :', err);
         setAnnoncesLoading(false);
       });
     loadEmployesMois(siteUrl)
       .then((data) => {
+        if (cancelled) return;
         setEmployesMois(data);
         setEmployesMoisLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Employés du mois :', err);
         setEmployesMoisLoading(false);
       });
     loadBilans(siteUrl)
       .then((data) => {
+        if (cancelled) return;
         setBilans(data);
         setBilansLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Bilans :', err);
         setBilansLoading(false);
       });
     getGalerieRootFolder(siteUrl)
       .then((root) => loadGalerieFolders(siteUrl, root))
       .then((folders) => {
+        if (cancelled) return;
         setGalerieFolders(folders);
         setGalerieLoading(false);
       })
       .catch((err) => {
+        if (cancelled) return;
         console.error('[Accueil] Galerie dossiers :', err);
         setGalerieLoading(false);
       });
     getCurrentUserEmail(siteUrl)
-      .then(setUserEmail)
+      .then((email) => { if (!cancelled) setUserEmail(email); })
       .catch((err) => {
-        console.error('[Accueil] Email courant :', err);
+        if (!cancelled) console.error('[Accueil] Email courant :', err);
       });
     getCurrentUserName(siteUrl)
-      .then(setUserName)
+      .then((name) => { if (!cancelled) setUserName(name); })
       .catch((err) => {
-        console.error('[Accueil] Nom courant :', err);
+        if (!cancelled) console.error('[Accueil] Nom courant :', err);
       });
+    return (): void => { cancelled = true; };
   }, [siteUrl]);
 
   const openGalerieFolder = (folder: IGalerieFolder): void => {
@@ -303,14 +325,17 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
     return () => { document.body.style.overflow = ''; };
   }, [commentModal, memberModal, galleryModal]);
 
-  const filteredTeam = membres.filter((m) => {
+  const filteredTeam = React.useMemo(() => membres.filter((m) => {
     const q = teamSearch.toLowerCase();
     const matchesSearch = m.name.toLowerCase().includes(q) || m.phone.toLowerCase().includes(q);
     const matchesDept = teamDept === 'all' || m.dept === teamDept;
     return matchesSearch && matchesDept;
-  });
+  }), [membres, teamSearch, teamDept]);
 
-  const filteredAnn = annonces.filter((a) => annFilter === 'all' || a.type === annFilter);
+  const filteredAnn = React.useMemo(
+    () => annonces.filter((a) => annFilter === 'all' || a.type === annFilter),
+    [annonces, annFilter]
+  );
 
   const toggleLike = (): void => {
     if (!siteUrl || !userEmail || employesMois.length === 0) return;
@@ -373,7 +398,10 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   };
 
   const event = evenements.length ? evenements[eventIndex % evenements.length] : null;
-  const derniersEvenements = [...evenements].sort((a, b) => b.id - a.id).slice(0, 3);
+  const derniersEvenements = React.useMemo(
+    () => [...evenements].sort((a, b) => b.id - a.id).slice(0, 3),
+    [evenements]
+  );
 
   return (
     <main id="page-accueil" className="pt-4 sm:pt-5 pb-14 min-h-screen bg-slate-100 text-slate-800">
@@ -423,7 +451,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
 
               {event ? (
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-5 sm:p-7 pb-5 z-10">
-                  <img src={event.img} alt={event.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-50 mix-blend-overlay -z-10" />
+                  <img src={event.img} alt={event.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-50 mix-blend-overlay -z-10" loading="lazy" />
                   <div className="max-w-xl mt-auto pr-10">
                     <h2 className="text-lg sm:text-xl font-bold text-white leading-snug drop-shadow-md">{event.title}</h2>
                     <div className="flex flex-wrap items-center gap-3 text-[11px] font-semibold text-slate-100 mt-2">
@@ -465,7 +493,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                 ) : (
                   actualites.slice(0, 4).map((n) => (
                     <a key={n.id} href={`#page-detail-actualite&id=${n.id}`} className="flex gap-3 group">
-                      <img src={n.img} alt={n.title} className="w-16 h-14 rounded-lg object-cover shrink-0 border border-slate-200" />
+                      <img src={n.img} alt={n.title} className="w-16 h-14 rounded-lg object-cover shrink-0 border border-slate-200" loading="lazy" />
                       <div>
                         <h3 className="text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition leading-snug">{n.title}</h3>
                         <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">{n.text}</p>
@@ -568,7 +596,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                     )}
                     {!teamLoading && filteredTeam.map((m) => (
                       <tr key={m.id} onClick={() => setMemberModal(m)} className="cursor-pointer hover:bg-slate-50 transition">                        <td className="py-2 px-2 flex items-center gap-2 font-bold text-slate-900">
-                          <img src={m.avatar} className="w-7 h-7 rounded-full object-cover border border-slate-300" alt={m.name} />
+                          <img src={m.avatar} className="w-7 h-7 rounded-full object-cover border border-slate-300" alt={m.name} loading="lazy" />
                           <span>{m.name}</span>
                         </td>
                         <td className="py-2 px-2">{m.role}</td>
@@ -650,7 +678,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                 )}
                 {!produitsLoading && produits.slice(0, 6).map((p) => (
                   <a key={p.id} href={`#page-detail-produit&id=${p.id}`} className="p-2.5 rounded-xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-blue-200 transition block cursor-pointer flex items-center gap-2.5">
-                    <img src={p.logo} alt="" className="w-8 h-8 rounded-lg object-cover border border-slate-200 shrink-0" />
+                    <img src={p.logo} alt="" className="w-8 h-8 rounded-lg object-cover border border-slate-200 shrink-0" loading="lazy" />
                     <h3 className="text-[11px] font-bold text-slate-900 leading-snug">{p.name}</h3>
                   </a>
                 ))}
@@ -691,7 +719,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                     return (
                       <div key={a.id} className="rounded-xl border border-slate-100 bg-white hover:bg-slate-50 transition p-2">
                         <a href={`#page-detail-annonce&id=${a.id}`} className="flex items-start gap-2.5 block cursor-pointer">
-                          <img src={a.avatar} alt="" className={`w-8 h-8 rounded-full object-cover ${a.badge} shrink-0`} />
+                          <img src={a.avatar} alt="" className={`w-8 h-8 rounded-full object-cover ${a.badge} shrink-0`} loading="lazy" />
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center justify-between text-xs">
                               <h3 className="font-bold text-slate-900">{a.title}</h3>
@@ -743,7 +771,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                     return (
                       <React.Fragment>
                         <div className="relative inline-block">
-                          <img src={em.photo} alt={em.name} className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover mx-auto border-4 border-amber-400 shadow-md" />
+                          <img src={em.photo} alt={em.name} className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover mx-auto border-4 border-amber-400 shadow-md" loading="lazy" />
                           <span className="absolute bottom-0 right-0 p-1.5 rounded-full bg-amber-400 text-slate-950 text-xs font-black shadow" title={`Trophée ${em.month} ${em.year}`}>
                             <FaCrown />
                           </span>
@@ -853,7 +881,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                         onClick={() => setGalleryModal(i)}
                         className="group relative rounded-xl overflow-hidden aspect-video bg-slate-900 cursor-pointer shadow"
                       >
-                        <img src={g.url} alt={g.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" />
+                        <img src={g.url} alt={g.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" loading="lazy" />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-2 flex flex-col justify-end">
                           <span className="text-[10px] font-bold text-white">{g.title}</span>
                         </div>
@@ -905,7 +933,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                       href={`#page-detail-evenement&id=${e.id}`}
                       className="group relative block rounded-xl overflow-hidden aspect-square bg-slate-900 shadow"
                     >
-                      <img src={e.img} alt={e.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" />
+                      <img src={e.img} alt={e.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent flex flex-col justify-end p-2.5">
                         <span className="text-[11px] font-bold text-white leading-snug line-clamp-2">{e.title}</span>
                         <span className="text-[10px] text-white/70 font-medium mt-0.5">{e.date}</span>
@@ -981,9 +1009,9 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
             </button>
             <div className="flex items-center gap-3">
               {employesMois.length > 0 ? (
-                <img src={employesMois[0].photo} className="w-12 h-12 rounded-full object-cover border-2 border-amber-400" alt="" />
+                <img src={employesMois[0].photo} className="w-12 h-12 rounded-full object-cover border-2 border-amber-400" alt="" loading="lazy" />
               ) : (
-                <img src={IMG.avatarEmpMonth} className="w-12 h-12 rounded-full object-cover border-2 border-amber-400" alt="" />
+                <img src={IMG.avatarEmpMonth} className="w-12 h-12 rounded-full object-cover border-2 border-amber-400" alt="" loading="lazy" />
               )}
               <div>
                 <h3 className="font-black text-slate-900 text-sm">Féliciter {employesMois.length > 0 ? employesMois[0].name : 'notre lauréat'}</h3>
@@ -1037,7 +1065,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                 <FaXmark className="text-sm" />
               </button>
               <div className="absolute -bottom-10 left-6">
-                <img src={memberModal.avatar} alt={memberModal.name} className="w-20 h-20 rounded-2xl object-cover border-4 border-white shadow-lg" />
+                <img src={memberModal.avatar} alt={memberModal.name} className="w-20 h-20 rounded-2xl object-cover border-4 border-white shadow-lg" loading="lazy" />
               </div>
             </div>
             <div className="pt-14 px-6 pb-6 space-y-4">
@@ -1094,7 +1122,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
             <button onClick={() => setGalleryIndex((galleryIndex + galerieFolderImages.length - 1) % galerieFolderImages.length)} className="absolute left-0 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center transition -translate-x-2">
               <FaChevronLeft />
             </button>
-            {galerieFolderImages[galleryIndex] && <img src={galerieFolderImages[galleryIndex].url} alt="" className="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl" />}
+            {galerieFolderImages[galleryIndex] && <img src={galerieFolderImages[galleryIndex].url} alt="" className="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl" loading="lazy" />}
             <button onClick={() => setGalleryIndex((galleryIndex + 1) % galerieFolderImages.length)} className="absolute right-0 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center transition translate-x-2">
               <FaChevronRight />
             </button>

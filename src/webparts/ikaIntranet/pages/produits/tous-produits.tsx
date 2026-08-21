@@ -85,7 +85,7 @@ export const TousProduits: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                 className="group bg-white rounded-2xl shadow-sm border border-slate-200 p-5 hover:shadow-lg transition block"
               >
                 <div className="w-14 h-14 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden">
-                  <img src={p.logo} alt={p.name} className="w-full h-full object-cover" />
+                  <img src={p.logo} alt={p.name} className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <h3 className="mt-3 text-sm font-black text-slate-900 group-hover:text-ikaBlue transition">{p.name}</h3>
                 <p className="mt-1.5 text-[11px] text-slate-500 line-clamp-2 leading-relaxed">{p.description}</p>

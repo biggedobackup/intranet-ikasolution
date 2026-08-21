@@ -73,7 +73,22 @@ export interface IComment {
   date: string;
 }
 
+const currentUserEmailCache: Record<string, { value: string; ts: number }> = {};
+const CURRENT_USER_CACHE_TTL = 5 * 60 * 1000;
+
+function setCurrentUserEmailCache(siteUrl: string, value: string): void {
+  currentUserEmailCache[siteUrl] = { value, ts: Date.now() };
+}
+
+/**
+ * Mise en cache courte (5 min) car cette fonction est désormais appelée à la
+ * fois par les pages (affichage) et par les services (vérification
+ * d'autorisation sur chaque écriture) — sans cache, une même page génère
+ * plusieurs requêtes identiques vers /_api/web/currentuser.
+ */
 export async function getCurrentUserEmail(siteUrl: string): Promise<string> {
+  const cached = currentUserEmailCache[siteUrl];
+  if (cached && Date.now() - cached.ts < CURRENT_USER_CACHE_TTL) return cached.value;
   try {
     const res = await fetch(
       `${siteUrl}/_api/web/currentuser?$select=Email,Title`,
@@ -81,7 +96,9 @@ export async function getCurrentUserEmail(siteUrl: string): Promise<string> {
     );
     if (!res.ok) return '';
     const data = await res.json();
-    return data.Email || '';
+    const value = data.Email || '';
+    setCurrentUserEmailCache(siteUrl, value);
+    return value;
   } catch {
     return '';
   }
@@ -106,6 +123,39 @@ export interface ISpUser {
   title: string;
   email: string;
   loginName: string;
+}
+
+const siteAdminCache: Record<string, { value: boolean; ts: number }> = {};
+const SITE_ADMIN_CACHE_TTL = 20 * 60 * 1000;
+
+function setSiteAdminCache(siteUrl: string, value: boolean): void {
+  siteAdminCache[siteUrl] = { value, ts: Date.now() };
+}
+
+/**
+ * Utilisée comme dérogation de visibilité/écriture (les administrateurs de
+ * collection de sites voient et peuvent tout gérer) dans les vérifications
+ * d'autorisation des workflows — voir applyXDecision/loadX/updateX/deleteX
+ * dans services/workflow/**. Le cache est indexé par siteUrl : le webpart
+ * peut être ajouté à plusieurs sites dans la même session navigateur, et le
+ * statut d'administrateur n'est pas le même d'un site à l'autre.
+ */
+export async function isSiteAdmin(siteUrl: string): Promise<boolean> {
+  const cached = siteAdminCache[siteUrl];
+  if (cached && Date.now() - cached.ts < SITE_ADMIN_CACHE_TTL) return cached.value;
+  try {
+    const res = await fetch(
+      `${siteUrl}/_api/web/currentuser?$select=IsSiteAdmin`,
+      { headers: { Accept: 'application/json;odata=nometadata' } }
+    );
+    if (!res.ok) return false;
+    const data = await res.json();
+    const value = !!data.IsSiteAdmin;
+    setSiteAdminCache(siteUrl, value);
+    return value;
+  } catch {
+    return false;
+  }
 }
 
 export async function getCurrentUser(siteUrl: string): Promise<ISpUser | undefined> {
@@ -379,7 +429,14 @@ export async function getAttachments(siteUrl: string, listName: string, itemId: 
   }
 }
 
+export const ALLOWED_ATTACHMENT_EXTENSIONS = ['pdf', 'doc', 'docx', 'jpg', 'jpeg', 'png', 'gif'];
+
 export async function addAttachment(siteUrl: string, listName: string, itemId: number, file: File): Promise<boolean> {
+  const ext = (file.name.split('.').pop() || '').toLowerCase();
+  if (ALLOWED_ATTACHMENT_EXTENSIONS.indexOf(ext) === -1) {
+    console.error('[addAttachment] Type de fichier refusé', listName, itemId, file.name);
+    return false;
+  }
   try {
     const digest = await getRequestDigest(siteUrl);
     if (!digest) {

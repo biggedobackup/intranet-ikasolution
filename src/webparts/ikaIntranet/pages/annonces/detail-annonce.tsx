@@ -156,7 +156,7 @@ export const DetailAnnonce: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
             <div className="p-6 sm:p-8">
               <div className="flex items-center gap-4">
                 {annonce.avatar ? (
-                  <img src={annonce.avatar} alt="" className={`w-14 h-14 rounded-full object-cover ${annonce.badge}`} />
+                  <img src={annonce.avatar} alt="" className={`w-14 h-14 rounded-full object-cover ${annonce.badge}`} loading="lazy" />
                 ) : typeIcon(annonce.type)}
                 <div>
                   <h1 className="text-xl sm:text-2xl font-black text-ikaBlueDark">{annonce.title}</h1>
@@ -212,7 +212,7 @@ export const DetailAnnonce: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                     href={`#page-detail-annonce&id=${a.id}`}
                     className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 hover:border-amber-300 hover:bg-amber-50/50 transition group"
                   >
-                    {a.avatar ? <img src={a.avatar} alt="" className={`w-9 h-9 rounded-full object-cover ${a.badge} shrink-0`} />
+                    {a.avatar ? <img src={a.avatar} alt="" className={`w-9 h-9 rounded-full object-cover ${a.badge} shrink-0`} loading="lazy" />
                       : typeIcon(a.type)}
                     <div className="min-w-0">
                       <h3 className="text-xs font-bold text-slate-900 group-hover:text-amber-600 transition">{a.title}</h3>

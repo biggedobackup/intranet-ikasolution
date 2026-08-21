@@ -1,5 +1,5 @@
 import { MSGraphClientV3 } from '@microsoft/sp-http';
-import { createListItem, updateListItemFields } from '../shared/index';
+import { createListItem, updateListItemFields, isSiteAdmin } from '../shared/index';
 
 export interface IMembre {
   id: number;
@@ -217,21 +217,20 @@ async function resolveImageUrl(
     folders.forEach((f) => candidates.push(`${siteUrl}${f}/Attachments/${itemId}/${encoded}`));
   }
 
-  const seen: Record<string, boolean> = {};
-  for (const c of candidates) {
-    if (seen[c]) continue;
-    seen[c] = true;
-    try {
-      const r = await fetch(c, { method: 'HEAD' });
-      const ct = (r.headers.get('content-type') || '').toLowerCase();
-      if (r.status === 200 && (ct.startsWith('image/') || ct.indexOf('octet-stream') !== -1)) {
-        console.log('[equipe] Photo item', itemId, '→', c);
-        return c;
+  const uniqueCandidates = Array.from(new Set(candidates));
+  const checks = await Promise.all(
+    uniqueCandidates.map(async (c) => {
+      try {
+        const r = await fetch(c, { method: 'HEAD' });
+        const ct = (r.headers.get('content-type') || '').toLowerCase();
+        return r.status === 200 && (ct.startsWith('image/') || ct.indexOf('octet-stream') !== -1) ? c : undefined;
+      } catch {
+        return undefined;
       }
-    } catch {
-      // candidat suivant
-    }
-  }
+    })
+  );
+  const found = checks.find((c) => !!c);
+  if (found) return found;
 
   console.warn('[equipe] Photo introuvable item', itemId, ':', fileName);
   return '';
@@ -352,10 +351,15 @@ export interface IImportAadResult {
   updated: number;
   errors: number;
   total: number;
+  unauthorized?: boolean;
 }
 
 export async function importMembresFromAad(siteUrl: string, graphClient: MSGraphClientV3): Promise<IImportAadResult> {
   const result: IImportAadResult = { created: 0, updated: 0, errors: 0, total: 0 };
+  if (!(await isSiteAdmin(siteUrl))) {
+    console.error('[equipe] Import AAD refusé : utilisateur non administrateur du site');
+    return { ...result, unauthorized: true };
+  }
   const aadUsers = await fetchAadUsers(graphClient);
   result.total = aadUsers.length;
   if (!aadUsers.length) return result;
@@ -365,7 +369,6 @@ export async function importMembresFromAad(siteUrl: string, graphClient: MSGraph
   const posteKey = fieldMap['poste'] || 'Poste';
   const deptKey = fieldMap['département'] || 'Departement';
   const phoneKey = fieldMap['téléphone mobile'] || 'TelephoneMobile';
-  const posteIpKey = fieldMap['poste ip'] || 'PosteIP';
   const emailKey = fieldMap['email'] || 'Email';
   const activeKey = fieldMap['active'] || 'Active';
 
@@ -390,13 +393,12 @@ export async function importMembresFromAad(siteUrl: string, graphClient: MSGraph
       } else {
         const fields: Record<string, unknown> = {
           [titreKey]: user.displayName,
-          [posteKey]: user.jobTitle || 'À définir',
-          [deptKey]: user.department || 'Non classé',
           [phoneKey]: user.phone,
-          [posteIpKey]: 0,
           [emailKey]: user.email,
           [activeKey]: true
         };
+        if (user.jobTitle) fields[posteKey] = user.jobTitle;
+        if (user.department) fields[deptKey] = user.department;
         const id = await createListItem(siteUrl, listName, fields);
         if (id) result.created += 1; else result.errors += 1;
       }

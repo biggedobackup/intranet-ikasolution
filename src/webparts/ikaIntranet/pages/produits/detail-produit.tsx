@@ -82,7 +82,7 @@ export const DetailProduit: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
           <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="relative h-40 sm:h-48 overflow-hidden bg-gradient-to-r from-ikaBlueDark to-ikaBlue flex flex-col items-center justify-center text-white p-6">
               <div className="w-20 h-20 rounded-2xl bg-white/15 border border-white/20 flex items-center justify-center overflow-hidden">
-                <img src={produit.logo} alt={produit.name} className="w-full h-full object-cover" />
+                <img src={produit.logo} alt={produit.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <h1 className="mt-3 text-xl sm:text-2xl font-black">{produit.name}</h1>
             </div>
@@ -114,7 +114,7 @@ export const DetailProduit: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                     className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 hover:border-ikaBlue hover:bg-slate-50 transition group"
                   >
                     <span className="w-9 h-9 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden shrink-0">
-                      <img src={p.logo} alt={p.name} className="w-full h-full object-cover" />
+                      <img src={p.logo} alt={p.name} className="w-full h-full object-cover" loading="lazy" />
                     </span>
                     <div className="min-w-0">
                       <h3 className="text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition">{p.name}</h3>

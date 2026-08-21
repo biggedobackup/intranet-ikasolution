@@ -31,7 +31,7 @@ const EventCard = (props: { event: IEvenement }): React.ReactElement => {
       className="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block"
     >
       <div className="relative h-44 overflow-hidden">
-        <img src={event.img} alt={event.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
+        <img src={event.img} alt={event.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
         <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaBlueDark backdrop-blur-sm">
           {event.category}
         </span>
@@ -168,7 +168,7 @@ export const DetailEvenement: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => 
           {/* Colonne principale */}
           <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
-              <img src={event.img} alt={event.title} className="w-full h-full object-cover object-top" />
+              <img src={event.img} alt={event.title} className="w-full h-full object-cover object-top" loading="lazy" />
               <span className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-white/90 text-[11px] font-black uppercase tracking-wide text-ikaBlueDark backdrop-blur-sm flex items-center gap-1.5">
                 <FaTag className="text-[10px]" /> {event.category}
               </span>

@@ -1,4 +1,4 @@
-import { getFieldMap, getVal, getCurrentUser, ensureUser, createListItem, updateListItemFields, deleteListItem, sendEmail, escapeHtml, getAppPageUrl, getAttachments, addAttachment, deleteAttachment, IAttachment } from '../../shared/index';
+import { getFieldMap, getVal, getCurrentUser, getCurrentUserEmail, isSiteAdmin, ensureUser, createListItem, updateListItemFields, deleteListItem, sendEmail, escapeHtml, getAppPageUrl, getAttachments, addAttachment, deleteAttachment, IAttachment } from '../../shared/index';
 
 export type BesoinStatus = 'En attente' | 'Approuvé' | 'Refusé' | 'Annulé';
 export type PrioriteBesoin = 'Basse' | 'Moyenne' | 'Haute';
@@ -150,7 +150,7 @@ function mapItem(it: Record<string, unknown>, keys: IKeys): IBesoin {
   };
 }
 
-export async function loadBesoins(siteUrl: string, force?: boolean): Promise<IBesoin[]> {
+async function fetchAllBesoins(siteUrl: string, force?: boolean): Promise<IBesoin[]> {
   if (!force) {
     const cached = readCache();
     if (cached) return cached;
@@ -175,7 +175,29 @@ export async function loadBesoins(siteUrl: string, force?: boolean): Promise<IBe
   }
 }
 
-export async function loadBesoin(siteUrl: string, id: number): Promise<IBesoin | undefined> {
+function canSee(item: IBesoin, email: string): boolean {
+  const e = email.toLowerCase();
+  return item.demandeurEmail.toLowerCase() === e || item.validateurEmail.toLowerCase() === e;
+}
+
+/**
+ * Liste des expressions de besoin visibles par l'utilisateur courant : les
+ * siennes en tant que demandeur, celles qu'il doit valider, ou tout si
+ * administrateur du site. Ce filtrage empêche un utilisateur standard de
+ * voir les demandes de collègues qui ne le concernent pas.
+ */
+export async function loadBesoins(siteUrl: string, force?: boolean): Promise<IBesoin[]> {
+  const [all, currentEmail, admin] = await Promise.all([
+    fetchAllBesoins(siteUrl, force),
+    getCurrentUserEmail(siteUrl),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (admin) return all;
+  if (!currentEmail) return [];
+  return all.filter((b) => canSee(b, currentEmail));
+}
+
+async function fetchBesoinRaw(siteUrl: string, id: number): Promise<IBesoin | undefined> {
   try {
     const keys = await resolveKeys(siteUrl);
     const expand = expandClause(keys);
@@ -192,12 +214,33 @@ export async function loadBesoin(siteUrl: string, id: number): Promise<IBesoin |
   }
 }
 
+/**
+ * Chargement d'une expression de besoin pour affichage : renvoie undefined
+ * si l'utilisateur courant n'est ni le demandeur, ni le validateur désigné,
+ * ni administrateur du site — empêche la consultation d'une demande d'un
+ * tiers en changeant simplement l'id dans l'URL.
+ */
+export async function loadBesoin(siteUrl: string, id: number): Promise<IBesoin | undefined> {
+  const [item, currentEmail, admin] = await Promise.all([
+    fetchBesoinRaw(siteUrl, id),
+    getCurrentUserEmail(siteUrl),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (!item) return undefined;
+  if (admin || (currentEmail && canSee(item, currentEmail))) return item;
+  return undefined;
+}
+
 export async function createBesoin(siteUrl: string, payload: IBesoinPayload): Promise<number | undefined> {
   try {
     const keys = await resolveKeys(siteUrl);
     const currentUser = await getCurrentUser(siteUrl);
     if (!currentUser) {
       console.error('[besoins] Utilisateur courant introuvable');
+      return undefined;
+    }
+    if (payload.validateurEmail && currentUser.email && payload.validateurEmail.toLowerCase() === currentUser.email.toLowerCase()) {
+      console.error('[besoins] Création refusée : le validateur ne peut pas être le demandeur');
       return undefined;
     }
     const fields: Record<string, unknown> = {
@@ -238,6 +281,23 @@ export async function createBesoin(siteUrl: string, payload: IBesoinPayload): Pr
 
 export async function updateBesoin(siteUrl: string, id: number, payload: IBesoinPayload): Promise<boolean> {
   try {
+    const [currentEmail, fresh, admin] = await Promise.all([
+      getCurrentUserEmail(siteUrl),
+      fetchBesoinRaw(siteUrl, id),
+      isSiteAdmin(siteUrl)
+    ]);
+    if (!fresh || (!admin && fresh.statut !== 'En attente')) {
+      console.error('[besoins] Modification refusée : expression introuvable ou déjà traitée', id);
+      return false;
+    }
+    if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.demandeurEmail.toLowerCase())) {
+      console.error('[besoins] Modification refusée : utilisateur non autorisé', id);
+      return false;
+    }
+    if (payload.validateurEmail && fresh.demandeurEmail && payload.validateurEmail.toLowerCase() === fresh.demandeurEmail.toLowerCase()) {
+      console.error('[besoins] Modification refusée : le validateur ne peut pas être le demandeur', id);
+      return false;
+    }
     const keys = await resolveKeys(siteUrl);
     const fields: Record<string, unknown> = {
       Title: payload.titre,
@@ -261,6 +321,20 @@ export async function updateBesoin(siteUrl: string, id: number, payload: IBesoin
 }
 
 export async function deleteBesoin(siteUrl: string, id: number): Promise<boolean> {
+  const [currentEmail, fresh, admin] = await Promise.all([
+    getCurrentUserEmail(siteUrl),
+    fetchBesoinRaw(siteUrl, id),
+    isSiteAdmin(siteUrl)
+  ]);
+  if (!fresh) return false;
+  if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.demandeurEmail.toLowerCase())) {
+    console.error('[besoins] Suppression refusée : utilisateur non autorisé', id);
+    return false;
+  }
+  if (!admin && fresh.statut !== 'En attente') {
+    console.error('[besoins] Suppression refusée : expression déjà traitée', id);
+    return false;
+  }
   const ok = await deleteListItem(siteUrl, LIST_NAME, id);
   if (ok) invalidateCache();
   return ok;
@@ -283,24 +357,37 @@ export type DecisionAction = 'valider' | 'rejeter';
 
 export async function applyBesoinDecision(siteUrl: string, besoin: IBesoin, action: DecisionAction, comment: string, date: string): Promise<boolean> {
   try {
+    const [currentEmail, fresh, admin] = await Promise.all([
+      getCurrentUserEmail(siteUrl),
+      fetchBesoinRaw(siteUrl, besoin.id),
+      isSiteAdmin(siteUrl)
+    ]);
+    if (!fresh || (!admin && fresh.statut !== 'En attente')) {
+      console.error('[besoins] Décision refusée : expression introuvable ou déjà traitée', besoin.id);
+      return false;
+    }
+    if (!admin && (!currentEmail || currentEmail.toLowerCase() !== fresh.validateurEmail.toLowerCase())) {
+      console.error('[besoins] Décision refusée : utilisateur non autorisé', besoin.id);
+      return false;
+    }
     const keys = await resolveKeys(siteUrl);
     const fields: Record<string, unknown> = {
       [keys.statutKey]: action === 'valider' ? 'Approuvé' : 'Refusé',
       [keys.commentaireKey]: comment,
       [keys.dateDecisionKey]: date ? new Date(date).toISOString() : new Date().toISOString()
     };
-    const ok = await updateListItemFields(siteUrl, LIST_NAME, besoin.id, fields);
+    const ok = await updateListItemFields(siteUrl, LIST_NAME, fresh.id, fields);
     if (ok) {
       invalidateCache();
-      if (besoin.demandeurEmail) {
+      if (fresh.demandeurEmail) {
         const approved = action === 'valider';
-        const link = `${getAppPageUrl()}#page-workflow-detail-besoin&id=${besoin.id}`;
+        const link = `${getAppPageUrl()}#page-workflow-detail-besoin&id=${fresh.id}`;
         const subject = approved ? `Votre expression de besoin a été approuvée` : `Votre expression de besoin a été refusée`;
-        const body = `<p>Bonjour ${escapeHtml(besoin.demandeur)},</p>
-<p>Votre expression de besoin <strong>${escapeHtml(besoin.titre)}</strong> a été ${approved ? 'approuvée' : 'refusée'}.</p>
+        const body = `<p>Bonjour ${escapeHtml(fresh.demandeur)},</p>
+<p>Votre expression de besoin <strong>${escapeHtml(fresh.titre)}</strong> a été ${approved ? 'approuvée' : 'refusée'}.</p>
 ${comment ? `<p>Commentaire : ${escapeHtml(comment)}</p>` : ''}
 <p><a href="${link}">Voir la demande</a></p>`;
-        sendEmail(siteUrl, [besoin.demandeurEmail], subject, body).catch(() => undefined);
+        sendEmail(siteUrl, [fresh.demandeurEmail], subject, body).catch(() => undefined);
       }
     }
     return ok;

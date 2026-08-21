@@ -77,6 +77,7 @@ export const DetailAbsence: React.FC<IDetailAbsenceProps> = (props) => {
 
   const isEnAttente = absence && absence.statut === 'En attente';
   const isValidateur = !!currentUserEmail && !!absence?.validateurEmail && currentUserEmail.toLowerCase() === absence.validateurEmail.toLowerCase();
+  const isDemandeur = !!currentUserEmail && !!absence?.demandeurEmail && currentUserEmail.toLowerCase() === absence.demandeurEmail.toLowerCase();
 
   const handleDecision = (comment: string, date: string): void => {
     if (!decision || !siteUrl || !absence) return;
@@ -84,10 +85,16 @@ export const DetailAbsence: React.FC<IDetailAbsenceProps> = (props) => {
     applyAbsenceDecision(siteUrl, absence, decision, comment, date)
       .then((ok) => {
         setDeciding(false);
-        if (ok) { setDecision(null); fetchAbsence(); }
-        else setError('La décision n’a pas pu être enregistrée. Réessayez.');
+        setDecision(null);
+        fetchAbsence();
+        if (!ok) setError('La décision n’a pas pu être enregistrée : le signalement a peut-être déjà été traité entre-temps, ou vous n’êtes plus autorisé à le faire.');
       })
-      .catch(() => { setDeciding(false); setError('La décision n’a pas pu être enregistrée. Réessayez.'); });
+      .catch(() => {
+        setDeciding(false);
+        setDecision(null);
+        fetchAbsence();
+        setError('La décision n’a pas pu être enregistrée. Réessayez.');
+      });
   };
 
   const handleDelete = (): void => {
@@ -96,10 +103,11 @@ export const DetailAbsence: React.FC<IDetailAbsenceProps> = (props) => {
     deleteAbsence(siteUrl, absence.id)
       .then((ok) => {
         setDeleting(false);
+        setConfirmDelete(false);
         if (ok) window.location.hash = '#page-workflow-liste-absence';
-        else { setConfirmDelete(false); setError('La suppression a échoué. Réessayez.'); }
+        else { fetchAbsence(); setError('La suppression a échoué : le signalement a peut-être déjà été traité entre-temps, ou vous n’êtes plus autorisé à le faire.'); }
       })
-      .catch(() => { setDeleting(false); setConfirmDelete(false); setError('La suppression a échoué. Réessayez.'); });
+      .catch(() => { setDeleting(false); setConfirmDelete(false); fetchAbsence(); setError('La suppression a échoué. Réessayez.'); });
   };
 
   if (loading) {
@@ -248,18 +256,22 @@ export const DetailAbsence: React.FC<IDetailAbsenceProps> = (props) => {
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <a
-                href={`#page-workflow-modifier-absence&id=${absence.id}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition"
-              >
-                <FaPen /> Modifier le signalement
-              </a>
-              <button
-                onClick={() => setConfirmDelete(true)}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-rose-200 bg-rose-50 text-rose-600 font-bold text-xs hover:bg-rose-100 transition"
-              >
-                <FaTrashCan /> Supprimer
-              </button>
+              {isDemandeur && isEnAttente ? (
+                <a
+                  href={`#page-workflow-modifier-absence&id=${absence.id}`}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition"
+                >
+                  <FaPen /> Modifier le signalement
+                </a>
+              ) : null}
+              {isDemandeur ? (
+                <button
+                  onClick={() => setConfirmDelete(true)}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-rose-200 bg-rose-50 text-rose-600 font-bold text-xs hover:bg-rose-100 transition"
+                >
+                  <FaTrashCan /> Supprimer
+                </button>
+              ) : null}
               <a
                 href="#page-workflow-liste-absence"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition"

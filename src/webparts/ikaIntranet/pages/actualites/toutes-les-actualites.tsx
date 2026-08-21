@@ -89,7 +89,7 @@ export const ToutesActualites: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =>
                 className="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition block"
               >
                 <div className="relative h-44 overflow-hidden">
-                  <img src={a.img} alt={a.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
+                  <img src={a.img} alt={a.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 text-[10px] font-black uppercase tracking-wide text-ikaRed backdrop-blur-sm">
                     {a.category}
                   </span>

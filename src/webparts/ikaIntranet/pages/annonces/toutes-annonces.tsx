@@ -99,7 +99,7 @@ export const ToutesAnnonces: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                 className="group bg-white rounded-2xl shadow-sm border border-slate-200 p-5 hover:shadow-lg transition block"
               >
                 <div className="flex items-center justify-between">
-                  {a.avatar ? <img src={a.avatar} alt="" className={`w-10 h-10 rounded-full object-cover ${a.badge}`} />
+                  {a.avatar ? <img src={a.avatar} alt="" className={`w-10 h-10 rounded-full object-cover ${a.badge}`} loading="lazy" />
                     : <span className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400"><FaBullhorn /></span>}
                   {typeBadge(a.type)}
                 </div>

@@ -76,6 +76,7 @@ export const DetailConge: React.FC<IDetailCongeProps> = (props) => {
 
   const isEnAttente = conge && conge.statut === 'En attente';
   const isValidateur = !!currentUserEmail && !!conge?.validateurEmail && currentUserEmail.toLowerCase() === conge.validateurEmail.toLowerCase();
+  const isDemandeur = !!currentUserEmail && !!conge?.demandeurEmail && currentUserEmail.toLowerCase() === conge.demandeurEmail.toLowerCase();
 
   const handleDecision = (comment: string, date: string): void => {
     if (!decision || !siteUrl || !conge) return;
@@ -83,10 +84,16 @@ export const DetailConge: React.FC<IDetailCongeProps> = (props) => {
     applyCongeDecision(siteUrl, conge, decision, comment, date)
       .then((ok) => {
         setDeciding(false);
-        if (ok) { setDecision(null); fetchConge(); }
-        else setError('La décision n’a pas pu être enregistrée. Réessayez.');
+        setDecision(null);
+        fetchConge();
+        if (!ok) setError('La décision n’a pas pu être enregistrée : la demande a peut-être déjà été traitée entre-temps, ou vous n’êtes plus autorisé à le faire.');
       })
-      .catch(() => { setDeciding(false); setError('La décision n’a pas pu être enregistrée. Réessayez.'); });
+      .catch(() => {
+        setDeciding(false);
+        setDecision(null);
+        fetchConge();
+        setError('La décision n’a pas pu être enregistrée. Réessayez.');
+      });
   };
 
   const handleDelete = (): void => {
@@ -95,10 +102,11 @@ export const DetailConge: React.FC<IDetailCongeProps> = (props) => {
     deleteConge(siteUrl, conge.id)
       .then((ok) => {
         setDeleting(false);
+        setConfirmDelete(false);
         if (ok) window.location.hash = '#page-workflow-liste-conge';
-        else { setConfirmDelete(false); setError('La suppression a échoué. Réessayez.'); }
+        else { fetchConge(); setError('La suppression a échoué : la demande a peut-être déjà été traitée entre-temps, ou vous n’êtes plus autorisé à le faire.'); }
       })
-      .catch(() => { setDeleting(false); setConfirmDelete(false); setError('La suppression a échoué. Réessayez.'); });
+      .catch(() => { setDeleting(false); setConfirmDelete(false); fetchConge(); setError('La suppression a échoué. Réessayez.'); });
   };
 
   if (loading) {
@@ -247,18 +255,22 @@ export const DetailConge: React.FC<IDetailCongeProps> = (props) => {
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <a
-                href={`#page-workflow-modifier-conge&id=${conge.id}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition"
-              >
-                <FaPen /> Modifier la demande
-              </a>
-              <button
-                onClick={() => setConfirmDelete(true)}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-rose-200 bg-rose-50 text-rose-600 font-bold text-xs hover:bg-rose-100 transition"
-              >
-                <FaTrashCan /> Supprimer
-              </button>
+              {isDemandeur && isEnAttente ? (
+                <a
+                  href={`#page-workflow-modifier-conge&id=${conge.id}`}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ikaBlue text-white font-bold text-xs hover:bg-blue-600 shadow transition"
+                >
+                  <FaPen /> Modifier la demande
+                </a>
+              ) : null}
+              {isDemandeur ? (
+                <button
+                  onClick={() => setConfirmDelete(true)}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-rose-200 bg-rose-50 text-rose-600 font-bold text-xs hover:bg-rose-100 transition"
+                >
+                  <FaTrashCan /> Supprimer
+                </button>
+              ) : null}
               <a
                 href="#page-workflow-liste-conge"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition"

@@ -83,7 +83,7 @@ export const DetailMembre: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
           <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="h-28 bg-gradient-to-r from-ikaBlueDark to-ikaBlue relative">
               <div className="absolute -bottom-12 left-6 sm:left-8">
-                <img src={membre.avatar} alt={membre.name} className="w-24 h-24 rounded-2xl object-cover border-4 border-white shadow-lg" />
+                <img src={membre.avatar} alt={membre.name} className="w-24 h-24 rounded-2xl object-cover border-4 border-white shadow-lg" loading="lazy" />
               </div>
             </div>
             <div className="pt-16 px-6 sm:px-8 pb-8">
@@ -153,7 +153,7 @@ export const DetailMembre: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                       href={`#page-detail-membre&id=${c.id}`}
                       className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-100 hover:border-ikaBlue hover:bg-slate-50 transition group"
                     >
-                      <img src={c.avatar} alt={c.name} className="w-10 h-10 rounded-full object-cover border border-slate-300 shrink-0" />
+                      <img src={c.avatar} alt={c.name} className="w-10 h-10 rounded-full object-cover border border-slate-300 shrink-0" loading="lazy" />
                       <div className="min-w-0">
                         <h3 className="text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition truncate">{c.name}</h3>
                         <p className="text-[11px] text-slate-500 truncate">{c.role}</p>

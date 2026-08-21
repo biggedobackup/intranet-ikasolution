@@ -28,7 +28,7 @@ export const Footer: React.FC<IFooterProps> = (props) => {
       <div className="mx-auto grid max-w-[1650px] gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <img className="h-14 w-auto bg-white p-1 rounded-xl shadow-md object-contain" src={logoSrc} alt="IKA SOLUTION" />
+            <img className="h-14 w-auto bg-white p-1 rounded-xl shadow-md object-contain" src={logoSrc} alt="IKA SOLUTION" loading="lazy" />
             <div>
               <h4 className="font-black text-white text-base">IKA INTRANET</h4>
               <p className="text-xs text-slate-400">Plateforme Interne</p>
