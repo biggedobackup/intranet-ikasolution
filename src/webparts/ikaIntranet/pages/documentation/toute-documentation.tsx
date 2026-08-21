@@ -17,12 +17,16 @@ export const TouteDocumentation: React.FC = () => {
 
   const folders = ['all', ...DOC_FOLDERS.map((f) => f.name)];
 
-  const filtered = DOCUMENTS.filter((d) => {
-    const q = search.toLowerCase();
-    const matchesSearch = d.name.toLowerCase().includes(q) || d.folder.toLowerCase().includes(q);
-    const matchesFolder = folder === 'all' || d.folder === folder;
-    return matchesSearch && matchesFolder;
-  });
+  const filtered = React.useMemo(
+    () =>
+      DOCUMENTS.filter((d) => {
+        const q = search.toLowerCase();
+        const matchesSearch = d.name.toLowerCase().includes(q) || d.folder.toLowerCase().includes(q);
+        const matchesFolder = folder === 'all' || d.folder === folder;
+        return matchesSearch && matchesFolder;
+      }),
+    [search, folder]
+  );
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">

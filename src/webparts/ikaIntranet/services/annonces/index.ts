@@ -256,7 +256,7 @@ export async function loadAnnonces(siteUrl: string): Promise<IAnnonce[]> {
   try {
     const fieldMap = await getFieldMap(siteUrl, LIST_NAME);
     const res = await fetch(
-      `${siteUrl}/_api/web/lists/getbytitle('${LIST_NAME}')/items?$select=*,Author/Title&$expand=Author/Title&$top=500`,
+      `${siteUrl}/_api/web/lists/getbytitle('${LIST_NAME}')/items?$select=*,Author/Title&$expand=Author/Title&$top=2000&$orderby=Id desc`,
       { headers: { Accept: 'application/json;odata=nometadata' } }
     );
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

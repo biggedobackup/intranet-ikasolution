@@ -21,14 +21,21 @@ export const TousProjets: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
       .catch(() => setLoading(false));
   }, [siteUrl]);
 
-  const statuses = ['all', ...Array.from(new Set(projets.map((p) => p.status)))];
+  const statuses = React.useMemo(
+    () => ['all', ...Array.from(new Set(projets.map((p) => p.status)))],
+    [projets]
+  );
 
-  const filtered = projets.filter((p) => {
-    const q = search.toLowerCase();
-    const matchesSearch = p.name.toLowerCase().includes(q) || p.client.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
-    const matchesStatus = status === 'all' || p.status === status;
-    return matchesSearch && matchesStatus;
-  });
+  const filtered = React.useMemo(
+    () =>
+      projets.filter((p) => {
+        const q = search.toLowerCase();
+        const matchesSearch = p.name.toLowerCase().includes(q) || p.client.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
+        const matchesStatus = status === 'all' || p.status === status;
+        return matchesSearch && matchesStatus;
+      }),
+    [projets, search, status]
+  );
 
   if (loading) {
     return (

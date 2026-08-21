@@ -140,9 +140,9 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
           <span className="text-amber-600">{employe.name}</span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Colonne principale */}
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          <div className="md:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="relative h-40 sm:h-48 overflow-hidden bg-gradient-to-r from-amber-500 to-amber-400 flex flex-col items-center justify-center text-white p-6">
               <div className="w-16 h-16 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center">
                 <FaTrophy className="text-3xl" />
@@ -179,7 +179,7 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
                 </h3>
                 <div className="mt-3 space-y-2">
                   {itemComments.map((c, i) => (
-                    <div key={i} className={`p-3 rounded-xl border text-xs ${c.email === userEmail ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
+                    <div key={`${c.email}-${c.date}`} className={`p-3 rounded-xl border text-xs ${c.email === userEmail ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
                       <span className="font-bold text-slate-900">{c.user} :</span>
                       <span className="text-slate-600"> {c.text}</span>
                     </div>

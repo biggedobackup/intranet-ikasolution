@@ -360,6 +360,19 @@ export interface IImportAadResult {
   unauthorized?: boolean;
 }
 
+const IMPORT_CONCURRENCY = 8;
+
+async function runWithConcurrency<T>(items: T[], limit: number, worker: (item: T) => Promise<void>): Promise<void> {
+  let index = 0;
+  async function next(): Promise<void> {
+    while (index < items.length) {
+      const current = items[index++];
+      await worker(current);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => next()));
+}
+
 export async function importMembresFromAad(siteUrl: string, graphClient: MSGraphClientV3): Promise<IImportAadResult> {
   const result: IImportAadResult = { created: 0, updated: 0, errors: 0, total: 0 };
   if (!(await isSiteAdmin(siteUrl))) {
@@ -385,7 +398,7 @@ export async function importMembresFromAad(siteUrl: string, graphClient: MSGraph
     if (m.email) existingByEmail.set(m.email.toLowerCase(), m);
   });
 
-  for (const user of aadUsers) {
+  await runWithConcurrency(aadUsers, IMPORT_CONCURRENCY, async (user) => {
     const match = existingByEmail.get(user.email.toLowerCase());
     try {
       if (match) {
@@ -413,7 +426,7 @@ export async function importMembresFromAad(siteUrl: string, graphClient: MSGraph
       console.error('[equipe] Erreur import AAD pour', user.email, err);
       result.errors += 1;
     }
-  }
+  });
 
   invalidateCache();
   return result;

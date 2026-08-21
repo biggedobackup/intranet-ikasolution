@@ -78,9 +78,9 @@ export const DetailMembre: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
           <span className="text-ikaBlue">{membre.name}</span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Colonne principale */}
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          <div className="md:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="h-28 bg-gradient-to-r from-ikaBlueDark to-ikaBlue relative">
               <div className="absolute -bottom-12 left-6 sm:left-8">
                 <img src={membre.avatar} alt={membre.name} className="w-24 h-24 rounded-2xl object-cover border-4 border-white shadow-lg" loading="lazy" />

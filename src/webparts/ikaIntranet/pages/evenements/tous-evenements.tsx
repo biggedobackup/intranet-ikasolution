@@ -18,14 +18,21 @@ export const TousEvenements: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
       .catch(() => setLoading(false));
   }, [siteUrl]);
 
-  const categories = ['all', ...Array.from(new Set(items.map((e) => e.category)))];
+  const categories = React.useMemo(
+    () => ['all', ...Array.from(new Set(items.map((e) => e.category)))],
+    [items]
+  );
 
-  const filtered = items.filter((e) => {
-    const q = search.toLowerCase();
-    const matchesSearch = e.title.toLowerCase().includes(q) || e.location.toLowerCase().includes(q) || e.text.toLowerCase().includes(q);
-    const matchesCat = category === 'all' || e.category === category;
-    return matchesSearch && matchesCat;
-  });
+  const filtered = React.useMemo(
+    () =>
+      items.filter((e) => {
+        const q = search.toLowerCase();
+        const matchesSearch = e.title.toLowerCase().includes(q) || e.location.toLowerCase().includes(q) || e.text.toLowerCase().includes(q);
+        const matchesCat = category === 'all' || e.category === category;
+        return matchesSearch && matchesCat;
+      }),
+    [items, search, category]
+  );
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">

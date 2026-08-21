@@ -63,14 +63,21 @@ export const TouteEquipe: React.FC<{ siteUrl?: string; msGraphClientFactory?: MS
       });
   };
 
-  const departments = ['all', ...Array.from(new Set(membres.map((m) => m.dept)))];
+  const departments = React.useMemo(
+    () => ['all', ...Array.from(new Set(membres.map((m) => m.dept)))],
+    [membres]
+  );
 
-  const filtered = membres.filter((m) => {
-    const q = search.toLowerCase();
-    const matchesSearch = m.name.toLowerCase().includes(q) || m.phone.toLowerCase().includes(q);
-    const matchesDept = dept === 'all' || m.dept === dept;
-    return matchesSearch && matchesDept;
-  });
+  const filtered = React.useMemo(
+    () =>
+      membres.filter((m) => {
+        const q = search.toLowerCase();
+        const matchesSearch = m.name.toLowerCase().includes(q) || m.phone.toLowerCase().includes(q);
+        const matchesDept = dept === 'all' || m.dept === dept;
+        return matchesSearch && matchesDept;
+      }),
+    [membres, search, dept]
+  );
 
   if (loading) {
     return (

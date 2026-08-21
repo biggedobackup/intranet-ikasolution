@@ -20,11 +20,15 @@ export const TousProduits: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
       .catch(() => setLoading(false));
   }, [siteUrl]);
 
-  const filtered = produits.filter((p) => {
-    const q = search.toLowerCase();
-    const matchesSearch = p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
-    return matchesSearch;
-  });
+  const filtered = React.useMemo(
+    () =>
+      produits.filter((p) => {
+        const q = search.toLowerCase();
+        const matchesSearch = p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
+        return matchesSearch;
+      }),
+    [produits, search]
+  );
 
   if (loading) {
     return (

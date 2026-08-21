@@ -106,6 +106,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   const [bilansLoading, setBilansLoading] = React.useState(true);
   const [galerieFolders, setGalerieFolders] = React.useState<IGalerieFolder[]>([]);
   const [galerieLoading, setGalerieLoading] = React.useState(true);
+  const [galerieRootImages, setGalerieRootImages] = React.useState<IGalerieImage[]>([]);
   const [galerieFolderImages, setGalerieFolderImages] = React.useState<IGalerieImage[]>([]);
   const [galerieActiveFolder, setGalerieActiveFolder] = React.useState<IGalerieFolder | null>(null);
   const [empMoisLikes, setEmpMoisLikes] = React.useState<Record<number, string[]>>({});
@@ -234,18 +235,32 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
         console.error('[Accueil] Bilans :', err);
         setBilansLoading(false);
       });
-    getGalerieRootFolder(siteUrl)
-      .then((root) => loadGalerieFolders(siteUrl, root))
-      .then((folders) => {
-        if (cancelled) return;
-        setGalerieFolders(folders);
-        setGalerieLoading(false);
-      })
-      .catch((err) => {
-        if (cancelled) return;
-        console.error('[Accueil] Galerie dossiers :', err);
-        setGalerieLoading(false);
-      });
+    getGalerieRootFolder(siteUrl).then((root) => {
+      loadGalerieFolders(siteUrl, root)
+        .then((folders) => {
+          if (cancelled) return;
+          setGalerieFolders(folders);
+          setGalerieLoading(false);
+        })
+        .catch((err) => {
+          if (cancelled) return;
+          console.error('[Accueil] Galerie dossiers :', err);
+          setGalerieLoading(false);
+        });
+      loadGalerieImages(siteUrl, root)
+        .then((imgs) => {
+          if (cancelled) return;
+          setGalerieRootImages(imgs);
+        })
+        .catch((err) => {
+          if (cancelled) return;
+          console.error('[Accueil] Galerie images racine :', err);
+        });
+    }).catch((err) => {
+      if (cancelled) return;
+      console.error('[Accueil] Galerie dossier racine :', err);
+      setGalerieLoading(false);
+    });
     getCurrentUserEmail(siteUrl)
       .then((email) => { if (!cancelled) setUserEmail(email); })
       .catch((err) => {
@@ -408,9 +423,9 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
       <div className="mx-auto max-w-[1900px] px-3 sm:px-5 lg:px-6 space-y-3">
 
         {/* ========== ROW 1: ÉVÉNEMENTS | ACTUALITÉ | AGENDA ========== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch">
           {/* SECTION 1: ÉVÉNEMENTS (SLIDER 6 COLS) */}
-          <section id="evenements" className="lg:col-span-6 bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200 flex flex-col justify-between relative overflow-hidden">
+          <section id="evenements" className="md:col-span-2 lg:col-span-6 bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200 flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
               <div className="flex items-center gap-2">
                 <span className="p-1.5 rounded-lg bg-blue-100 text-ikaBlue"><FaCalendarDays className="text-xs" /></span>
@@ -491,8 +506,8 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                 ) : actualites.length === 0 ? (
                   <p className="text-[11px] text-slate-400 font-semibold text-center py-4">Aucune actualité pour le moment.</p>
                 ) : (
-                  actualites.slice(0, 4).map((n) => (
-                    <a key={n.id} href={`#page-detail-actualite&id=${n.id}`} className="flex gap-3 group">
+                  actualites.slice(0, 4).map((n, i) => (
+                    <a key={n.id} href={`#page-detail-actualite&id=${n.id}`} className={`gap-3 group ${i === 3 ? 'hidden xl:flex' : 'flex'}`}>
                       <img src={n.img} alt={n.title} className="w-16 h-14 rounded-lg object-cover shrink-0 border border-slate-200" loading="lazy" />
                       <div>
                         <h3 className="text-xs font-bold text-slate-900 group-hover:text-ikaBlue transition leading-snug">{n.title}</h3>
@@ -519,8 +534,8 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                 ) : agendas.length === 0 ? (
                   <p className="text-[11px] text-slate-400 font-semibold text-center py-4">Aucun rendez-vous à venir.</p>
                 ) : (
-                  agendas.slice(0, 6).map((a) => (
-                    <a key={a.id} href={`#page-detail-agenda&id=${a.id}`} className="flex items-center gap-3 group">
+                  agendas.slice(0, 6).map((a, i) => (
+                    <a key={a.id} href={`#page-detail-agenda&id=${a.id}`} className={`items-center gap-3 group ${i === 5 ? 'hidden xl:flex' : 'flex'}`}>
                       <div className={`w-12 h-12 rounded-xl ${a.bg} text-white flex flex-col items-center justify-center shrink-0 shadow-sm`}>
                         <span className="text-[9px] font-black uppercase">{a.month}</span>
                         <span className="text-sm font-bold leading-none">{a.day}</span>
@@ -541,7 +556,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
         </div>
 
         {/* ========== ROW 2: NOTRE ÉQUIPE | PROJETS EN COURS ========== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch">
           {/* SECTION 6: NOTRE ÉQUIPE (7 COLS) */}
           <section id="equipe" className="lg:col-span-7 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between">
             <div>
@@ -851,7 +866,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
         </div>
 
         {/* ========== ROW 4: GALERIE | DOCUMENTATION ========== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch">
           {/* SECTION 5: GALERIE (6 COLS) */}
           <section id="galerie" className="lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between">
             <div>
@@ -868,14 +883,14 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                   <FaArrowLeft className="text-[9px]" /> Tous les dossiers
                 </button>
               )}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-[360px] overflow-y-auto pr-1">
                 {galerieLoading ? (
                   <div className="col-span-2 sm:col-span-3 text-center text-[11px] text-slate-400 font-semibold py-4">Chargement...</div>
                 ) : galerieActiveFolder ? (
                   galerieFolderImages.length === 0 ? (
                     <div className="col-span-2 sm:col-span-3 text-center text-[11px] text-slate-400 font-semibold py-4">Aucune image dans ce dossier.</div>
                   ) : (
-                    galerieFolderImages.slice(0, 6).map((g, i) => (
+                    galerieFolderImages.map((g, i) => (
                       <div
                         key={g.id}
                         onClick={() => setGalleryModal(i)}
@@ -891,24 +906,41 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                       </div>
                     ))
                   )
-                ) : galerieFolders.length === 0 ? (
+                ) : galerieFolders.length === 0 && galerieRootImages.length === 0 ? (
                   <div className="col-span-2 sm:col-span-3 text-center text-[11px] text-slate-400 font-semibold py-4">Aucun dossier dans la galerie.</div>
                 ) : (
-                  galerieFolders.slice(0, 6).map((f) => (
-                    <button
-                      key={f.serverRelativeUrl}
-                      onClick={() => openGalerieFolder(f)}
-                      className="group p-3 rounded-xl border border-slate-100 bg-slate-50 hover:border-purple-300 hover:bg-white hover:shadow-sm transition flex flex-col items-center gap-1.5 cursor-pointer"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-xl group-hover:scale-110 transition">
-                        <FaFolder />
+                  <>
+                    {galerieFolders.map((f) => (
+                      <button
+                        key={f.serverRelativeUrl}
+                        onClick={() => openGalerieFolder(f)}
+                        className="group p-3 rounded-xl border border-slate-100 bg-slate-50 hover:border-purple-300 hover:bg-white hover:shadow-sm transition flex flex-col items-center gap-1.5 cursor-pointer"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-xl group-hover:scale-110 transition">
+                          <FaFolder />
+                        </div>
+                        <span className="text-[10px] font-bold text-slate-700 group-hover:text-purple-600 text-center line-clamp-2">{f.name}</span>
+                        {f.itemCount > 0 && (
+                          <span className="px-1.5 py-0.5 rounded-full bg-slate-100 text-[9px] font-bold text-slate-500">{f.itemCount}</span>
+                        )}
+                      </button>
+                    ))}
+                    {galerieRootImages.map((g, i) => (
+                      <div
+                        key={g.id}
+                        onClick={() => { setGalerieFolderImages(galerieRootImages); setGalleryModal(i); }}
+                        className="group relative rounded-xl overflow-hidden aspect-video bg-slate-900 cursor-pointer shadow"
+                      >
+                        <img src={g.url} alt={g.title} className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition duration-500" loading="lazy" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-2 flex flex-col justify-end">
+                          <span className="text-[10px] font-bold text-white">{g.title}</span>
+                        </div>
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                          <span className="bg-white/20 backdrop-blur-sm rounded-full p-2"><FaExpand className="text-white text-sm" /></span>
+                        </div>
                       </div>
-                      <span className="text-[10px] font-bold text-slate-700 group-hover:text-purple-600 text-center line-clamp-2">{f.name}</span>
-                      {f.itemCount > 0 && (
-                        <span className="px-1.5 py-0.5 rounded-full bg-slate-100 text-[9px] font-bold text-slate-500">{f.itemCount}</span>
-                      )}
-                    </button>
-                  ))
+                    ))}
+                  </>
                 )}
               </div>
             </div>
@@ -921,11 +953,11 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
           <section id="derniers-evenements" className="lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between">
             <div>
               <SectionHeader iconCls="bg-blue-100 text-ikaBlue" icon={<FaCalendarDays className="text-xs" />} title="Derniers Événements" />
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {evenementsLoading ? (
-                  <p className="col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4">Chargement...</p>
+                  <p className="col-span-2 sm:col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4">Chargement...</p>
                 ) : derniersEvenements.length === 0 ? (
-                  <p className="col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4">Aucun événement pour le moment.</p>
+                  <p className="col-span-2 sm:col-span-3 text-[11px] text-slate-400 font-semibold text-center py-4">Aucun événement pour le moment.</p>
                 ) : (
                   derniersEvenements.map((e) => (
                     <a
@@ -966,10 +998,10 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
               </div>
             </div>
             <div className="max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs">
-              {(annComments[annonceCommentId] || []).map((c, i) => {
+              {(annComments[annonceCommentId] || []).map((c) => {
                 const isMe = c.email === userEmail;
                 return (
-                  <div key={i} className={`p-2 rounded-lg border ${isMe ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
+                  <div key={`${c.email}-${c.date}`} className={`p-2 rounded-lg border ${isMe ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
                     <span className="font-bold text-slate-900">{c.user} :</span>
                     <span className="text-slate-600"> {c.text}</span>
                   </div>
@@ -1020,8 +1052,8 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
             </div>
             <div className="max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs">
               {employesMois.length > 0 ? (
-                (empMoisComments[employesMois[0].id] || []).map((c, i) => (
-                  <div key={i} className={`p-2 rounded-lg border ${c.email === userEmail ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
+                (empMoisComments[employesMois[0].id] || []).map((c) => (
+                  <div key={`${c.email}-${c.date}`} className={`p-2 rounded-lg border ${c.email === userEmail ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
                     <span className="font-bold text-slate-900">{c.user} :</span>
                     <span className="text-slate-600"> {c.text}</span>
                   </div>

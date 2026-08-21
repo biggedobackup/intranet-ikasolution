@@ -158,9 +158,9 @@ export const DetailActualite: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => 
           <span className="text-ikaRed">{actualite.title}</span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Colonne principale */}
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          <div className="md:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
               <img src={actualite.img} alt={actualite.title} className="w-full h-full object-cover object-top" loading="lazy" />
               <span className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-white/90 text-[11px] font-black uppercase tracking-wide text-ikaRed backdrop-blur-sm flex items-center gap-1.5">
@@ -199,7 +199,7 @@ export const DetailActualite: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => 
                   {itemComments.map((c, i) => {
                     const isMe = c.email === userEmail;
                     return (
-                      <div key={i} className={`p-3 rounded-xl border text-xs ${isMe ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
+                      <div key={`${c.email}-${c.date}`} className={`p-3 rounded-xl border text-xs ${isMe ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
                         <span className="font-bold text-slate-900">{c.user} :</span>
                         <span className="text-slate-600"> {c.text}</span>
                       </div>

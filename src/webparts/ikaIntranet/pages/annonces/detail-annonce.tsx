@@ -147,9 +147,9 @@ export const DetailAnnonce: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
           <span className="text-amber-600">{annonce.title}</span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Colonne principale */}
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          <div className="md:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-6 sm:p-8">
               <div className="flex items-center gap-4">
                 {annonce.avatar ? (
@@ -190,7 +190,7 @@ export const DetailAnnonce: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                   {itemComments.map((c, i) => {
                     const isMe = c.email === userEmail;
                     return (
-                      <div key={i} className={`p-3 rounded-xl border text-xs ${isMe ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
+                      <div key={`${c.email}-${c.date}`} className={`p-3 rounded-xl border text-xs ${isMe ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
                         <span className="font-bold text-slate-900">{c.user} :</span>
                         <span className="text-slate-600"> {c.text}</span>
                       </div>

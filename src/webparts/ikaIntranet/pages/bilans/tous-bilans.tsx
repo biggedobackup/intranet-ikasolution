@@ -23,10 +23,14 @@ export const TousBilans: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
       });
   }, [siteUrl]);
 
-  const filtered = bilans.filter((b) => {
-    const q = search.toLowerCase();
-    return b.period.toLowerCase().includes(q) || b.file.toLowerCase().includes(q) || b.summary.toLowerCase().includes(q);
-  });
+  const filtered = React.useMemo(
+    () =>
+      bilans.filter((b) => {
+        const q = search.toLowerCase();
+        return b.period.toLowerCase().includes(q) || b.file.toLowerCase().includes(q) || b.summary.toLowerCase().includes(q);
+      }),
+    [bilans, search]
+  );
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">

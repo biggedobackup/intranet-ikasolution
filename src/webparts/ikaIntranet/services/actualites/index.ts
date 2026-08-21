@@ -262,7 +262,7 @@ export async function loadActualites(siteUrl: string): Promise<IActualite[]> {
     const listName = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
     const fieldMapFinal = Object.keys(fieldMap).length > 0 ? fieldMap : await getFieldMap(siteUrl, LIST_NAME_ALT);
     const res = await fetch(
-      `${siteUrl}/_api/web/lists/getbytitle('${listName}')/items?$select=*,Author/Title&$expand=Author/Title&$top=500`,
+      `${siteUrl}/_api/web/lists/getbytitle('${listName}')/items?$select=*,Author/Title&$expand=Author/Title&$top=2000&$orderby=Id desc`,
       { headers: { Accept: 'application/json;odata=nometadata' } }
     );
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

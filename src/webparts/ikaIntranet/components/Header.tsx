@@ -15,32 +15,60 @@ export interface IHeaderProps {
 
 export const Header: React.FC<IHeaderProps> = (props) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [openDropdown, setOpenDropdown] = React.useState<string | null>(null);
 
   const items = props.menuItems || [];
   const logoSrc = props.logoUrl || logoUrl;
 
+  React.useEffect(() => {
+    if (!openDropdown) return undefined;
+    const close = (): void => setOpenDropdown(null);
+    window.addEventListener('hashchange', close);
+    document.addEventListener('click', close);
+    const onKey = (e: KeyboardEvent): void => {
+      if (e.key === 'Escape') close();
+    };
+    document.addEventListener('keydown', onKey);
+    return (): void => {
+      window.removeEventListener('hashchange', close);
+      document.removeEventListener('click', close);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [openDropdown]);
+
   return (
     <header id="top" className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-md backdrop-blur">
       {/* Main Navigation Bar */}
-      <nav className="mx-auto flex h-20 max-w-[1650px] items-center justify-between px-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-8">
+      <nav className="mx-auto flex min-h-20 max-w-[1650px] items-center justify-between px-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-8">
         <a href="#page-accueil" className="flex items-center gap-3 justify-self-start" aria-label="IKA SOLUTION Intranet">
           <img className="h-14 w-auto object-contain" src={logoSrc} alt="IKA SOLUTION" />
         </a>
 
         {/* Desktop Nav Items */}
-        <div className="hidden items-center gap-3 xl:gap-4 text-sm font-bold text-slate-700 justify-self-center lg:flex">
+        <div className="hidden flex-wrap items-center gap-x-1 gap-y-1.5 py-2 lg:gap-x-2 xl:gap-x-4 text-sm font-bold text-slate-700 justify-self-center lg:flex">
           {items.map((item) => {
             if (item.children && item.children.length > 0) {
+              const isOpen = openDropdown === item.Title;
               return (
-                <div key={item.Title} className="relative group">
-                  <a
-                    href={item.MenuUrl}
-                    className="flex items-center gap-1.5 transition hover:text-ikaBlue px-3 py-1.5 rounded-lg hover:bg-slate-100/80 focus:outline-none"
-                  >
-                    <span>{item.Title}</span>
-                    <FaChevronDown className="text-[10px] text-slate-400 transition-transform duration-200 group-hover:rotate-180" />
-                  </a>
-                  <div className="absolute left-0 top-full hidden w-56 rounded-xl border border-slate-200 bg-white p-2 pt-3 shadow-premium group-hover:block transition-all duration-200 z-50">
+                <div key={item.Title} className="relative group" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex items-center rounded-lg hover:bg-slate-100/80 transition">
+                    <a
+                      href={item.MenuUrl}
+                      className="flex items-center gap-1.5 transition hover:text-ikaBlue pl-3 py-1.5 lg:pl-2 xl:pl-3 focus:outline-none"
+                    >
+                      <span>{item.Title}</span>
+                    </a>
+                    <button
+                      type="button"
+                      aria-label={`Sous-menu ${item.Title}`}
+                      aria-expanded={isOpen}
+                      onClick={() => setOpenDropdown(isOpen ? null : item.Title)}
+                      className="pr-2.5 pl-1 py-1.5 text-slate-400 hover:text-ikaBlue focus:outline-none"
+                    >
+                      <FaChevronDown className={`text-[10px] transition-transform duration-200 group-hover:rotate-180 ${isOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                  </div>
+                  <div className={`absolute left-0 top-full w-56 rounded-xl border border-slate-200 bg-white p-2 pt-3 shadow-premium transition-all duration-200 z-50 ${isOpen ? 'block' : 'hidden group-hover:block'}`}>
                     {item.children.map((child) => (
                       <a
                         key={child.Title}
@@ -58,7 +86,7 @@ export const Header: React.FC<IHeaderProps> = (props) => {
               <a
                 key={item.Title}
                 href={item.MenuUrl}
-                className="transition hover:text-ikaBlue px-3 py-1.5 rounded-lg hover:bg-slate-100/80"
+                className="transition hover:text-ikaBlue px-3 py-1.5 lg:px-2 xl:px-3 rounded-lg hover:bg-slate-100/80"
               >
                 {item.Title}
               </a>

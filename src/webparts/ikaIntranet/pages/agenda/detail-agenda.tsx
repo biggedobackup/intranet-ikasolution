@@ -102,9 +102,9 @@ export const DetailAgenda: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
           <span className="text-ikaBlue">{item.title}</span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Colonne principale */}
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          <div className="md:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="relative h-48 sm:h-56 overflow-hidden bg-ikaBlueDark flex flex-col items-center justify-center text-white">
               <div className={`w-20 h-20 rounded-2xl ${item.bg} text-white flex flex-col items-center justify-center shadow-lg`}>
                 <span className="text-sm font-black uppercase">{item.month}</span>

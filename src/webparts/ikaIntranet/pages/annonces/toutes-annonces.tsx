@@ -35,12 +35,18 @@ export const ToutesAnnonces: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
   }, [siteUrl]);
 
   const KNOWN_TYPES = ['anniversaire', 'mariage', 'naissance', 'absence'];
-  const typeFilters: Array<[string, string]> = [['all', 'Tous']];
-  Array.from(new Set([...KNOWN_TYPES, ...annonces.map((a) => a.type)])).forEach((t) => {
-    if (t) typeFilters.push([t, t.charAt(0).toUpperCase() + t.slice(1)]);
-  });
+  const typeFilters: Array<[string, string]> = React.useMemo(() => {
+    const result: Array<[string, string]> = [['all', 'Tous']];
+    Array.from(new Set([...KNOWN_TYPES, ...annonces.map((a) => a.type)])).forEach((t) => {
+      if (t) result.push([t, t.charAt(0).toUpperCase() + t.slice(1)]);
+    });
+    return result;
+  }, [annonces]);
 
-  const filtered = annonces.filter((a) => filter === 'all' || a.type === filter);
+  const filtered = React.useMemo(
+    () => annonces.filter((a) => filter === 'all' || a.type === filter),
+    [annonces, filter]
+  );
 
   if (loading) {
     return (

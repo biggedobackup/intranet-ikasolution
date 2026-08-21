@@ -16,14 +16,21 @@ export const ToutesAgenda: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
       .catch(() => undefined);
   }, [siteUrl]);
 
-  const categories = ['all', ...Array.from(new Set(items.map((a) => a.category)))];
+  const categories = React.useMemo(
+    () => ['all', ...Array.from(new Set(items.map((a) => a.category)))],
+    [items]
+  );
 
-  const filtered = items.filter((a) => {
-    const q = search.toLowerCase();
-    const matchesSearch = a.title.toLowerCase().includes(q) || a.location.toLowerCase().includes(q) || a.text.toLowerCase().includes(q);
-    const matchesCat = category === 'all' || a.category === category;
-    return matchesSearch && matchesCat;
-  });
+  const filtered = React.useMemo(
+    () =>
+      items.filter((a) => {
+        const q = search.toLowerCase();
+        const matchesSearch = a.title.toLowerCase().includes(q) || a.location.toLowerCase().includes(q) || a.text.toLowerCase().includes(q);
+        const matchesCat = category === 'all' || a.category === category;
+        return matchesSearch && matchesCat;
+      }),
+    [items, search, category]
+  );
 
   return (
     <main className="pt-6 sm:pt-8 pb-14 min-h-screen bg-slate-100 text-slate-800">
