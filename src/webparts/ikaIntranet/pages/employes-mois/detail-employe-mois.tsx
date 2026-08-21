@@ -7,8 +7,7 @@ import {
   FaComment,
   FaTrophy,
   FaCalendarDays,
-  FaPaperPlane,
-  FaXmark
+  FaPaperPlane
 } from 'react-icons/fa6';
 import { loadEmployesMois, updateEmployeMoisLikedBy, updateEmployeMoisComments, IEmployeMois } from '../../services/employes-mois/index';
 import { getCurrentUserEmail, getCurrentUserName, IComment } from '../../services/shared/index';
@@ -26,7 +25,6 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
   const [loading, setLoading] = React.useState(true);
   const [likedBy, setLikedBy] = React.useState<string[]>([]);
   const [itemComments, setItemComments] = React.useState<IComment[]>([]);
-  const [commentModal, setCommentModal] = React.useState(false);
   const [commentInput, setCommentInput] = React.useState('');
   const [userEmail, setUserEmail] = React.useState('');
   const [userName, setUserName] = React.useState('');
@@ -127,7 +125,6 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
     const newComments = [...itemComments, newComment];
     setItemComments(newComments);
     setCommentInput('');
-    setCommentModal(false);
     await updateEmployeMoisComments(siteUrl, employe.id, newComments);
   };
 
@@ -156,7 +153,7 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
               </span>
             </div>
             <div className="p-6 sm:p-8 text-center">
-              <img src={employe.photo} alt={employe.name} className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-amber-400 shadow-md" loading="lazy" />
+              <img src={employe.photo} alt={employe.name} className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-ikaBlue shadow-md" loading="lazy" />
               <h2 className="mt-4 text-lg font-black text-ikaBlueDark">{employe.name}</h2>
               <p className="text-sm font-bold text-ikaBlue mt-0.5">{employe.role} — {employe.dept}</p>
 
@@ -174,13 +171,35 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
                 >
                   <FaHeart /> {likedBy.length}
                 </button>
-                <button
-                  onClick={() => setCommentModal(true)}
-                  className="px-4 py-1.5 rounded-full border border-blue-200 bg-blue-50 text-ikaBlue font-bold text-xs flex items-center gap-1.5 hover:bg-blue-100 transition"
-                >
-                  <FaComment /> {itemComments.length}
-                </button>
               </div>
+
+              <section id="comments" className="mt-8 pt-6 border-t border-slate-100 text-left max-w-lg mx-auto">
+                <h3 className="text-sm font-black uppercase tracking-wider text-slate-900 flex items-center gap-2">
+                  <FaComment className="text-ikaBlue text-xs" /> Commentaires ({itemComments.length})
+                </h3>
+                <div className="mt-3 space-y-2">
+                  {itemComments.map((c, i) => (
+                    <div key={i} className={`p-3 rounded-xl border text-xs ${c.email === userEmail ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
+                      <span className="font-bold text-slate-900">{c.user} :</span>
+                      <span className="text-slate-600"> {c.text}</span>
+                    </div>
+                  ))}
+                  {itemComments.length === 0 && <p className="text-xs text-slate-400 text-center py-2">Aucun commentaire pour le moment.</p>}
+                </div>
+                <form onSubmit={addComment} className="mt-3 space-y-2">
+                  <textarea
+                    value={commentInput}
+                    onChange={(e) => setCommentInput(e.target.value)}
+                    required
+                    rows={2}
+                    placeholder="Écrivez votre commentaire ici..."
+                    className="w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue resize-none"
+                  />
+                  <button type="submit" className="px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5">
+                    <FaPaperPlane className="text-xs" /> Poster le commentaire
+                  </button>
+                </form>
+              </section>
 
               <div className="mt-8">
                 <a href="#page-tous-employes-mois" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-xs hover:bg-slate-50 transition">
@@ -203,7 +222,7 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
                     href={`#page-detail-employe-mois&id=${e.id}`}
                     className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 hover:border-amber-300 hover:bg-amber-50/50 transition group"
                   >
-                    <img src={e.photo} alt={e.name} className="w-11 h-11 rounded-full object-cover border border-amber-300 shrink-0" loading="lazy" />
+                    <img src={e.photo} alt={e.name} className="w-11 h-11 rounded-full object-cover border border-blue-300 shrink-0" loading="lazy" />
                     <div className="min-w-0">
                       <h3 className="text-xs font-bold text-slate-900 group-hover:text-amber-600 transition">{e.name}</h3>
                       <p className="text-[10px] text-slate-400 flex items-center gap-1">
@@ -236,52 +255,6 @@ export const DetailEmployeMois: React.FC<{ siteUrl?: string }> = ({ siteUrl }) =
           </aside>
         </div>
       </div>
-
-      {/* Modale commentaires */}
-      {commentModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl border border-slate-200 space-y-4 relative">
-            <button onClick={() => setCommentModal(false)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg">
-              <FaXmark />
-            </button>
-            <div className="flex items-center gap-3">
-              <img src={employe.photo} className="w-12 h-12 rounded-full object-cover border-2 border-amber-400" alt="" loading="lazy" />
-              <div>
-                <h3 className="font-black text-slate-900 text-sm">Féliciter {employe.name}</h3>
-                <p className="text-xs text-slate-500">Laissez un message d&apos;encouragement</p>
-              </div>
-            </div>
-            <div className="max-h-40 overflow-y-auto space-y-2 border-y border-slate-100 py-3 text-xs">
-              {itemComments.map((c, i) => (
-                <div key={i} className={`p-2 rounded-lg border ${c.email === userEmail ? 'bg-blue-50 border-blue-100 text-slate-800' : 'bg-slate-50 border-slate-100'}`}>
-                  <span className="font-bold text-slate-900">{c.user} :</span>
-                  <span className="text-slate-600"> {c.text}</span>
-                </div>
-              ))}
-              {itemComments.length === 0 && <p className="text-slate-400 text-center">Aucun commentaire pour le moment.</p>}
-            </div>
-            <form onSubmit={addComment} className="space-y-3">
-              <textarea
-                value={commentInput}
-                onChange={(e) => setCommentInput(e.target.value)}
-                required
-                rows={3}
-                placeholder="Écrivez votre commentaire ici..."
-                className="w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ikaBlue"
-              />
-              <div className="flex items-center justify-end gap-2">
-                <button type="button" onClick={() => setCommentModal(false)} className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50">
-                  Annuler
-                </button>
-                <button type="submit" className="px-4 py-2 rounded-xl bg-ikaBlue text-white text-xs font-bold hover:bg-blue-600 shadow transition flex items-center gap-1.5">
-                  <span>Envoyer</span>
-                  <FaPaperPlane className="text-xs" />
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </main>
   );
 };

@@ -11,14 +11,12 @@ export interface IEvenement {
   category: string;
   text: string;
   longText: string;
-  speaker: string;
-  seats: string;
   likedBy: string[];
   comments: IComment[];
 }
 
-const LIST_NAME = 'Evenement';
-const LIST_NAME_ALT = 'Evenements';
+const LIST_NAME = 'Évènements';
+const LIST_NAME_ALT = 'Evenement';
 const CACHE_TTL = 5 * 60 * 1000;
 
 const PLACEHOLDER_IMG =
@@ -103,15 +101,6 @@ function getVal(item: Record<string, unknown>, map: Record<string, string>, disp
     if (item[f] !== undefined) return item[f];
   }
   return undefined;
-}
-
-function getAuthor(item: Record<string, unknown>, map: Record<string, string>): string {
-  const raw = getVal(item, map, 'Créé par', ['Author', 'CreatedBy', 'Editor']);
-  if (raw && typeof raw === 'object') {
-    const title = (raw as { Title?: string }).Title;
-    if (title) return title;
-  }
-  return asString(raw);
 }
 
 function parseImages(value: unknown, siteUrl: string): string[] {
@@ -264,7 +253,7 @@ export async function loadEvenements(siteUrl: string): Promise<IEvenement[]> {
     const listName = fieldMap && Object.keys(fieldMap).length > 0 ? LIST_NAME : LIST_NAME_ALT;
     const fieldMapFinal = Object.keys(fieldMap).length > 0 ? fieldMap : await getFieldMap(siteUrl, LIST_NAME_ALT);
     const res = await fetch(
-      `${siteUrl}/_api/web/lists/getbytitle('${listName}')/items?$select=*,Author/Title&$expand=Author/Title&$top=500`,
+      `${siteUrl}/_api/web/lists/getbytitle('${listName}')/items?$select=*&$top=500`,
       { headers: { Accept: 'application/json;odata=nometadata' } }
     );
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -283,10 +272,8 @@ export async function loadEvenements(siteUrl: string): Promise<IEvenement[]> {
           const fileName = getImageFileName(rawImg);
           if (fileName) missingImages.push({ id, fileName });
         }
-        const startRaw = getVal(it, fieldMapFinal, 'Date et heure de début', ['DateDebut', 'StartTime', 'EventDate', 'StartDateTime']);
-        const endRaw = getVal(it, fieldMapFinal, 'Date et heure de fin', ['DateFin', 'EndTime', 'EndDate', 'EndDateTime']);
+        const startRaw = getVal(it, fieldMapFinal, 'Date et heure', ['DateDebut', 'StartTime', 'EventDate', 'StartDateTime', 'Date_x0020_et_x0020_heure']);
         const start = startRaw ? new Date(String(startRaw)) : null;
-        const end = endRaw ? new Date(String(endRaw)) : null;
         const color = ICON_COLORS[i % ICON_COLORS.length];
 
         return {
@@ -294,14 +281,12 @@ export async function loadEvenements(siteUrl: string): Promise<IEvenement[]> {
           img: images[0] || PLACEHOLDER_IMG,
           title,
           dateIcon: color,
-          date: formatDateRange(start, end),
+          date: formatDateRange(start, null),
           locationIcon: color,
           location: asString(getVal(it, fieldMapFinal, 'Localisation', ['Localisation', 'Location', 'Lieu'])),
           category: asString(getVal(it, fieldMapFinal, 'Catégorie', ['Categorie', 'Category'])),
           text: longText.slice(0, 140),
           longText,
-          speaker: getAuthor(it, fieldMapFinal),
-          seats: '',
           likedBy: parseLikedBy(getVal(it, fieldMapFinal, 'AimerPar', ['AimerPar'])),
           comments: parseComments(getVal(it, fieldMapFinal, 'CommenterPar', ['CommenterPar']))
         };

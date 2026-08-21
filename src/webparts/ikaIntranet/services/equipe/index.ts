@@ -17,7 +17,7 @@ const LIST_NAME_ALT = 'Equipe';
 const CACHE_TTL = 5 * 60 * 1000;
 
 const PLACEHOLDER_IMG =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='100%25' height='100%25' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='40' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EIKA%3C/text%3E%3C/svg%3E";
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='100' fill='%231270b8'/%3E%3Ccircle cx='100' cy='82' r='34' fill='%23ffffff'/%3E%3Cpath d='M100 128c-40 0-62 22-66 50-1 6 3 12 9 12h114c6 0 10-6 9-12-4-28-26-50-66-50z' fill='%23ffffff'/%3E%3C/svg%3E";
 
 export const DEPT_COLORS: Record<string, string> = {
   Direction: 'bg-blue-50 text-ikaBlue',
@@ -75,10 +75,14 @@ function setCachedFieldMap(cacheKey: string, value: Record<string, string>): voi
   fieldMapCache[cacheKey] = { value, ts: Date.now() };
 }
 
-async function getFieldMap(siteUrl: string, listName: string): Promise<Record<string, string>> {
+function normalizeFieldTitle(value: string): string {
+  return value.toLowerCase().trim().replace(/\s+/g, ' ');
+}
+
+async function getFieldMap(siteUrl: string, listName: string, force?: boolean): Promise<Record<string, string>> {
   const cacheKey = `${siteUrl}::${listName}`;
   const cached = fieldMapCache[cacheKey];
-  if (cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL) return cached.value;
+  if (!force && cached && Date.now() - cached.ts < FIELD_MAP_CACHE_TTL) return cached.value;
   try {
     const res = await fetch(
       `${siteUrl}/_api/web/lists/getbytitle('${listName}')/fields?$select=Title,InternalName&$top=500`,
@@ -88,8 +92,9 @@ async function getFieldMap(siteUrl: string, listName: string): Promise<Record<st
     const fields = (await res.json()).value as Array<{ Title?: string; InternalName?: string }> | undefined;
     const map: Record<string, string> = {};
     (fields || []).forEach((f) => {
-      if (f.Title && f.InternalName) map[String(f.Title).toLowerCase()] = f.InternalName;
+      if (f.Title && f.InternalName) map[normalizeFieldTitle(String(f.Title))] = f.InternalName;
     });
+    console.log('[equipe] Champs disponibles sur la liste', listName, ':', map);
     setCachedFieldMap(cacheKey, map);
     return map;
   } catch {
@@ -236,10 +241,10 @@ async function resolveImageUrl(
   return '';
 }
 
-async function resolveEquipeList(siteUrl: string): Promise<{ listName: string; fieldMap: Record<string, string> }> {
-  const fieldMap = await getFieldMap(siteUrl, LIST_NAME);
+async function resolveEquipeList(siteUrl: string, force?: boolean): Promise<{ listName: string; fieldMap: Record<string, string> }> {
+  const fieldMap = await getFieldMap(siteUrl, LIST_NAME, force);
   if (Object.keys(fieldMap).length > 0) return { listName: LIST_NAME, fieldMap };
-  const fieldMapAlt = await getFieldMap(siteUrl, LIST_NAME_ALT);
+  const fieldMapAlt = await getFieldMap(siteUrl, LIST_NAME_ALT, force);
   return { listName: LIST_NAME_ALT, fieldMap: fieldMapAlt };
 }
 
@@ -257,11 +262,12 @@ export async function loadMembres(siteUrl: string, force?: boolean): Promise<IMe
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     const items = ((await res.json()).value || []) as Array<Record<string, unknown>>;
+    const nameKey = fieldMapFinal['nom complet'] || fieldMapFinal['titre'] || 'Title';
     const missingImages: Array<{ id: number; fileName: string }> = [];
     const membres: IMembre[] = items
       .filter((it) => isActive(getVal(it, fieldMapFinal, 'Active', ['Active'])))
       .map((it) => {
-        const name = asString(getVal(it, fieldMapFinal, 'Titre', ['Title']));
+        const name = asString(it[nameKey]);
         const bio = asString(getVal(it, fieldMapFinal, 'Bio', ['Bio', 'Description']));
         const rawImg = getVal(it, fieldMapFinal, 'Photo', ['Photo', 'Image', 'Images']);
         const id = Number(getVal(it, fieldMapFinal, 'Id', ['Id']) ?? 0);
@@ -364,13 +370,14 @@ export async function importMembresFromAad(siteUrl: string, graphClient: MSGraph
   result.total = aadUsers.length;
   if (!aadUsers.length) return result;
 
-  const { listName, fieldMap } = await resolveEquipeList(siteUrl);
-  const titreKey = fieldMap['titre'] || 'Title';
+  const { listName, fieldMap } = await resolveEquipeList(siteUrl, true);
+  const titreKey = fieldMap['nom complet'] || fieldMap['titre'] || 'Title';
   const posteKey = fieldMap['poste'] || 'Poste';
   const deptKey = fieldMap['département'] || 'Departement';
   const phoneKey = fieldMap['téléphone mobile'] || 'TelephoneMobile';
   const emailKey = fieldMap['email'] || 'Email';
   const activeKey = fieldMap['active'] || 'Active';
+  console.log('[equipe] Import AAD — champ utilisé pour le nom :', titreKey, '| plan complet :', fieldMap);
 
   const existing = await loadMembres(siteUrl, true);
   const existingByEmail = new Map<string, IMembre>();

@@ -7,7 +7,7 @@ export interface IProjet {
   cls: string;
   client: string;
   description: string;
-  members: string;
+  responsable: string;
 }
 
 const LIST_NAME = 'Projets';
@@ -82,6 +82,15 @@ function getVal(item: Record<string, unknown>, map: Record<string, string>, disp
   return undefined;
 }
 
+function getAuthor(item: Record<string, unknown>, map: Record<string, string>): string {
+  const raw = getVal(item, map, 'Créé par', ['Author', 'CreatedBy', 'Editor']);
+  if (raw && typeof raw === 'object') {
+    const title = (raw as { Title?: string }).Title;
+    if (title) return title;
+  }
+  return asString(raw);
+}
+
 export async function loadProjets(siteUrl: string): Promise<IProjet[]> {
   const cached = readCache();
   if (cached) return cached;
@@ -98,7 +107,6 @@ export async function loadProjets(siteUrl: string): Promise<IProjet[]> {
       .filter((it) => isActive(getVal(it, fieldMap, 'Active', ['Active'])))
       .map((it) => {
         const status = asString(getVal(it, fieldMap, 'Statut', ['Statut', 'Status']));
-        const membersRaw = asString(getVal(it, fieldMap, 'Équipe projet', ['EquipeProjet', 'Team', 'Members', 'Equipe']));
         return {
           id: Number(getVal(it, fieldMap, 'Id', ['Id']) ?? 0),
           name: asString(getVal(it, fieldMap, 'Titre', ['Title'])),
@@ -108,11 +116,7 @@ export async function loadProjets(siteUrl: string): Promise<IProjet[]> {
           cls: statusCls(status),
           client: asString(getVal(it, fieldMap, 'Client', ['Client'])),
           description: asString(getVal(it, fieldMap, 'Description', ['Description'])),
-          members: membersRaw
-            .split(/[\n,;]+/)
-            .map((s) => s.trim())
-            .filter((s) => s !== '')
-            .join(', ')
+          responsable: getAuthor(it, fieldMap)
         };
       })
       .filter((p) => p.name !== '');

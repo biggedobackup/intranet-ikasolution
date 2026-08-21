@@ -450,8 +450,9 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
               </div>
 
               {event ? (
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-5 sm:p-7 pb-5 z-10">
-                  <img src={event.img} alt={event.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-50 mix-blend-overlay -z-10" loading="lazy" />
+                <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-7 pb-5 z-10">
+                  <img src={event.img} alt={event.title} className="absolute inset-0 w-full h-full object-cover object-top -z-10" loading="lazy" />
+                  <div className="absolute inset-x-0 bottom-0 h-56 sm:h-64 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent -z-[5]" />
                   <div className="max-w-xl mt-auto pr-10">
                     <h2 className="text-lg sm:text-xl font-bold text-white leading-snug drop-shadow-md">{event.title}</h2>
                     <div className="flex flex-wrap items-center gap-3 text-[11px] font-semibold text-slate-100 mt-2">
@@ -462,7 +463,6 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                         <FaLocationDot className={event.locationIcon} /> {event.location}
                       </span>
                     </div>
-                    <p className="mt-2 text-xs text-slate-200 line-clamp-2 leading-relaxed">{event.text}</p>
                     <div className="mt-3">
                       <a href={`#page-detail-evenement&id=${event.id}`} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg font-bold text-[11px] bg-white text-ikaBlueDark shadow transition hover:bg-slate-100">
                         <span>En savoir plus</span>
@@ -677,9 +677,9 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                   <div className="col-span-2 text-center text-[11px] text-slate-400 font-semibold py-3">Aucun produit disponible.</div>
                 )}
                 {!produitsLoading && produits.slice(0, 6).map((p) => (
-                  <a key={p.id} href={`#page-detail-produit&id=${p.id}`} className="p-2.5 rounded-xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-blue-200 transition block cursor-pointer flex items-center gap-2.5">
-                    <img src={p.logo} alt="" className="w-8 h-8 rounded-lg object-cover border border-slate-200 shrink-0" loading="lazy" />
-                    <h3 className="text-[11px] font-bold text-slate-900 leading-snug">{p.name}</h3>
+                  <a key={p.id} href={`#page-detail-produit&id=${p.id}`} className="aspect-square p-2.5 rounded-xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-blue-200 transition cursor-pointer flex flex-col items-center justify-center gap-1.5 text-center">
+                    <img src={p.logo} alt="" className="w-14 h-14 rounded-lg object-cover border border-slate-200 shrink-0" loading="lazy" />
+                    <h3 className="text-[11px] font-bold text-slate-900 leading-snug line-clamp-2">{p.name}</h3>
                   </a>
                 ))}
               </div>
@@ -695,7 +695,7 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
               <SectionHeader iconCls="bg-amber-100 text-amber-600" icon={<FaBullhorn className="text-xs" />} title="Annonces" />
               <div className="flex flex-wrap items-center gap-1 mb-3 text-[11px] font-bold">
                 {[['all', 'Tous']].concat(
-                  Array.from(new Set(annonces.map((a) => a.type))).filter((t) => t !== '').map((t) => [t, t.charAt(0).toUpperCase() + t.slice(1)] as [string, string])
+                  Array.from(new Set(['anniversaire', 'mariage', 'naissance', 'absence', ...annonces.map((a) => a.type)])).filter((t) => t !== '').map((t) => [t, t.charAt(0).toUpperCase() + t.slice(1)] as [string, string])
                 ).map(([type, label]) => (
                   <button
                     key={type}
@@ -771,8 +771,8 @@ export const Accueil: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                     return (
                       <React.Fragment>
                         <div className="relative inline-block">
-                          <img src={em.photo} alt={em.name} className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover mx-auto border-4 border-amber-400 shadow-md" loading="lazy" />
-                          <span className="absolute bottom-0 right-0 p-1.5 rounded-full bg-amber-400 text-slate-950 text-xs font-black shadow" title={`Trophée ${em.month} ${em.year}`}>
+                          <img src={em.photo} alt={em.name} className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover mx-auto border-4 border-ikaBlue shadow-md" loading="lazy" />
+                          <span className="absolute bottom-0 right-0 p-1.5 rounded-full bg-ikaRed text-white text-xs font-black shadow" title={`Trophée ${em.month} ${em.year}`}>
                             <FaCrown />
                           </span>
                         </div>

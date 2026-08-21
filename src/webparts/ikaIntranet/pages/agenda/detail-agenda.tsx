@@ -156,7 +156,7 @@ export const DetailAgenda: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                 <FaCalendarDays className="text-ikaBlue text-[11px]" /> Prochains rendez-vous
               </h2>
               <div className="grid grid-cols-1 gap-4">
-                {items.filter((a) => a.id !== item.id).map((a) => (
+                {items.filter((a) => a.id !== item.id).slice(0, 4).map((a) => (
                   <AgendaCard key={a.id} item={a} />
                 ))}
               </div>

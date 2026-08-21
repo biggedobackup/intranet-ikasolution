@@ -22,7 +22,7 @@ export const Header: React.FC<IHeaderProps> = (props) => {
   return (
     <header id="top" className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-md backdrop-blur">
       {/* Main Navigation Bar */}
-      <nav className="mx-auto grid h-20 max-w-[1650px] grid-cols-[1fr_auto_1fr] items-center px-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex h-20 max-w-[1650px] items-center justify-between px-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-8">
         <a href="#page-accueil" className="flex items-center gap-3 justify-self-start" aria-label="IKA SOLUTION Intranet">
           <img className="h-14 w-auto object-contain" src={logoSrc} alt="IKA SOLUTION" />
         </a>

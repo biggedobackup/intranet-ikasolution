@@ -34,8 +34,9 @@ export const ToutesAnnonces: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
       .catch(() => setLoading(false));
   }, [siteUrl]);
 
+  const KNOWN_TYPES = ['anniversaire', 'mariage', 'naissance', 'absence'];
   const typeFilters: Array<[string, string]> = [['all', 'Tous']];
-  Array.from(new Set(annonces.map((a) => a.type))).forEach((t) => {
+  Array.from(new Set([...KNOWN_TYPES, ...annonces.map((a) => a.type)])).forEach((t) => {
     if (t) typeFilters.push([t, t.charAt(0).toUpperCase() + t.slice(1)]);
   });
 

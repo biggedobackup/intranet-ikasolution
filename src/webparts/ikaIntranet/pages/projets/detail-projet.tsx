@@ -112,9 +112,9 @@ export const DetailProjet: React.FC<{ siteUrl?: string }> = ({ siteUrl }) => {
                   </p>
                 </section>
                 <section>
-                  <h2 className="text-sm font-black uppercase tracking-wider text-slate-900">Équipe projet</h2>
+                  <h2 className="text-sm font-black uppercase tracking-wider text-slate-900">Responsable</h2>
                   <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-slate-700">
-                    <FaUsers className="text-emerald-600 text-xs" /> {projet.members}
+                    <FaUsers className="text-emerald-600 text-xs" /> {projet.responsable}
                   </p>
                 </section>
               </div>
